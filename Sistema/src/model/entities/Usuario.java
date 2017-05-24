@@ -1,7 +1,18 @@
 package model.entities;
-ublic class Usuario {
+
+import java.time.LocalDate;
+
+class Usuario {
 
 	private String nome;
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getCPF() {
+		return CPF;
+	}
 
 	private String CPF;
 
@@ -9,28 +20,57 @@ ublic class Usuario {
 
 	private String email;
 
-	private Date dataIngresso;
+	private LocalDate dataIngresso;
 
 	private String telefone;
 
-	public void setNome() {
-
+	public Usuario(String nome, String cPF, String matricula, String email, LocalDate dataIngresso, String telefone) {
+		super();
+		this.nome = nome;
+		CPF = cPF;
+		this.matricula = matricula;
+		this.email = email;
+		this.dataIngresso = dataIngresso;
+		this.telefone = telefone;
 	}
 
-	public String getNome() {
-		return null;
+	public String getMatricula() {
+		return matricula;
 	}
 
-	public void setCPF() {
-
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
 	}
 
-	public String getCPF() {
-		return null;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setMatricula() {
-
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
+	public LocalDate getDataIngresso() {
+		return dataIngresso;
+	}
+
+	public void setDataIngresso(LocalDate dataIngresso) {
+		this.dataIngresso = dataIngresso;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setCPF(String cPF) {
+		CPF = cPF;
+	}
 }
