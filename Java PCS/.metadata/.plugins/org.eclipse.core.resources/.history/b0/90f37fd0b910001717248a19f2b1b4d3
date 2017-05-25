@@ -1,0 +1,8 @@
+package exercicio4;
+
+public class MDC {
+	public static int MaximoDivisorComum(int num1, int num2){
+		return 1;
+	}
+
+}

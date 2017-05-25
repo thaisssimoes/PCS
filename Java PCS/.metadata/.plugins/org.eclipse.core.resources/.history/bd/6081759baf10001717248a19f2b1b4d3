@@ -1,0 +1,22 @@
+package exercicio3;
+
+public class Potencia {
+	public static int potenciaPositiva(int num, int pot) {
+		int resultado=0;
+		
+		if (pot==0) {
+	        return 1;
+	    } 
+		else if(pot==1){
+	        return num * potenciaPositiva((num), pot-1);
+	    }
+		else if(num==1){
+			return 1;
+		}
+		else{
+			 return  num * potenciaPositiva((num),pot-1);
+
+		}
+
+	}
+}

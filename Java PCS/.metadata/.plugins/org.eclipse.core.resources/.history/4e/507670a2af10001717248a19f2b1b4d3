@@ -1,0 +1,10 @@
+package exercicio3;
+
+public class Exercicio3 {
+	public static void main(String args[]){
+		int num = 2;
+		int pot = -2;
+		int potencia = Potencia.potenciaPositiva(num, pot);
+		System.out.println(potencia);
+	}
+}

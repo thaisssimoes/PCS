@@ -1,0 +1,21 @@
+package exercicio4;
+
+public class MDC {
+	public static int MaximoDivisorComum(int num1, int num2){
+		int mdc=0;
+		if (num1 > num2){
+			return MaximoDivisorComum(num2, (num1%num2));
+		}
+		else if(num1 < num2){
+			return MaximoDivisorComum(num1, (num2%num1));
+		}
+		else if(num2==0){
+			mdc = num1;
+		}
+
+		return mdc;
+	}
+		
+}
+
+

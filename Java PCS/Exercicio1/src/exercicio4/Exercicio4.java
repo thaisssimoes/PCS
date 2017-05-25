@@ -1,0 +1,12 @@
+package exercicio4;
+
+public class Exercicio4 {
+	public static void main(String[] args) {
+		int numero1 = 27;
+		int numero2= -9;
+		int mdc = MDC.MaximoDivisorComum(numero1, numero2);
+		System.out.println(mdc);
+				
+	}
+
+}

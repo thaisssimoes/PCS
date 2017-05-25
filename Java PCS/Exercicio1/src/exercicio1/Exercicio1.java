@@ -1,0 +1,49 @@
+package exercicio1;
+
+public class Exercicio1 {
+	public static void main(String args[]){
+		int max = 15;
+		int min = 8;
+		int[] vetor = new int[]{1,2,3,4,5,6,7,8,9,10};
+		int[] resultado = entre_valores(vetor, max, min);
+		
+		if (resultado.length == 0){
+			System.out.println("Não existem valores no vetor entre os valores maximos e minimos");
+		}
+		
+		else{for (int i=0; i < resultado.length; i++){
+			System.out.println(resultado[i]);
+
+			}
+		
+		}
+	}
+	
+	
+	public static int tamanho_vetor(int vetor[], int max, int min){
+		int contador =0;
+		for (int i=0; i< vetor.length; i++){
+			if ((vetor[i] >= min) && (vetor[i])<=max){
+				contador++;			
+			}			
+		}
+		return contador;
+	}
+	
+
+	public static int[] entre_valores(int vetor[], int max, int min){
+		int contador = tamanho_vetor(vetor, max, min);
+		int[] vetor_resultado = new int[contador];
+		contador =0;
+		
+		for(int i=0; i < vetor.length; i++){
+			if ((vetor[i] >= min) && (vetor[i])<=max){
+				vetor_resultado[contador] = vetor[i];
+				contador++;
+			}
+		}
+		
+		return vetor_resultado;
+
+	}
+}
