@@ -9,12 +9,12 @@ package protocolo;
  *
  * @author labccet
  */
-public class telaAluno extends javax.swing.JFrame {
+public class telaProfessor extends javax.swing.JFrame {
 
     /**
      * Creates new form telaAluno
      */
-    public telaAluno() {
+    public telaProfessor() {
         initComponents();
     }
 
@@ -66,7 +66,7 @@ public class telaAluno extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(56, 113, 156));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/protocolo/lib/iBSI.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/protocolo/iBSI.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Lao MN", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,7 +152,7 @@ public class telaAluno extends javax.swing.JFrame {
         );
 
         jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Atualização de cadastro", "Cancelamento de matrícula", "Emissão de certificado ou diploma", "Emissão de histórico escolar", "Emissão do programa de disciplinas", "Isenção ou aproveitamento de disciplina", "Realização de segunda chamada", "Revisão de prova", "Trancamento de Disciplina", "Trancamento de matrícula", "Outros" };
+            String[] strings = { "Pedido de Afastamento", "Pedido de Progressão" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
@@ -162,43 +162,36 @@ public class telaAluno extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Protocolo", "Título", "Tipo", "Status"
+                "Título", "Tipo", "Status"
             }
         ));
         jTable2.setColumnSelectionAllowed(true);
-        jTable2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane4.setViewportView(jTable2);
         jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(0).setHeaderValue("Protocolo");
-            jTable2.getColumnModel().getColumn(1).setHeaderValue("Título");
-            jTable2.getColumnModel().getColumn(2).setHeaderValue("Tipo");
-            jTable2.getColumnModel().getColumn(3).setHeaderValue("Status");
-        }
 
         painelTelaAluno.addTab("Meus Requerimentos", jScrollPane4);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Protocolo", "Titulo", "Tipo", "Status"
+                "Título", "Tipo", "Status"
             }
         ));
         jTable1.setToolTipText("");
         jTable1.setColumnSelectionAllowed(true);
         jScrollPane3.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         painelTelaAluno.addTab("Meus Requerimentos Pendentes", jScrollPane3);
 
@@ -345,20 +338,21 @@ public class telaAluno extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(telaAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(telaProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(telaAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(telaProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(telaAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(telaProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(telaAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(telaProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new telaAluno().setVisible(true);
+                new telaProfessor().setVisible(true);
             }
         });
     }

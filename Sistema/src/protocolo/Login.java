@@ -50,7 +50,7 @@ public class Login extends javax.swing.JFrame {
         botaoLogin.setText("Entrar");
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 0));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/protocolo/lib/iBSI.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/protocolo/iBSI.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

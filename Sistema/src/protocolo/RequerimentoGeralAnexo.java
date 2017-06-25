@@ -9,10 +9,8 @@ package protocolo;
  *
  * @author labccet
  */
-
-
 public class RequerimentoGeralAnexo extends javax.swing.JFrame {
- 
+
     /**
      * Creates new form telaAluno
      */
@@ -46,7 +44,7 @@ public class RequerimentoGeralAnexo extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        numeroTelefone = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -72,7 +70,7 @@ public class RequerimentoGeralAnexo extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(56, 113, 156));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/protocolo/lib/iBSI.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/protocolo/iBSI.png"))); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -173,8 +171,8 @@ public class RequerimentoGeralAnexo extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setText("Telefone:");
 
-        numeroTelefone.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        numeroTelefone.setText("(21) 9-2222-2222");
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel18.setText("(21) 9-2222-2222");
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel19.setText("Período:");
@@ -201,7 +199,7 @@ public class RequerimentoGeralAnexo extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Cancelar");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/protocolo/lib/documentoAnexar.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/protocolo/documentoAnexar.png"))); // NOI18N
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel27.setText("Arraste para cá");
@@ -230,7 +228,7 @@ public class RequerimentoGeralAnexo extends javax.swing.JFrame {
                 .addGap(6, 6, 6))
         );
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/protocolo/lib/documentoAnexar.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/protocolo/documentoAnexar.png"))); // NOI18N
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel30.setText("Arraste para cá");
@@ -293,7 +291,7 @@ public class RequerimentoGeralAnexo extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel17)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(numeroTelefone))
+                                .addComponent(jLabel18))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel13)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -328,7 +326,7 @@ public class RequerimentoGeralAnexo extends javax.swing.JFrame {
                     .addComponent(jLabel15)
                     .addComponent(jLabel16)
                     .addComponent(jLabel17)
-                    .addComponent(numeroTelefone))
+                    .addComponent(jLabel18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -402,9 +400,7 @@ public class RequerimentoGeralAnexo extends javax.swing.JFrame {
             }
         });
     }
-    
-  
-        
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -418,6 +414,7 @@ public class RequerimentoGeralAnexo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -438,7 +435,5 @@ public class RequerimentoGeralAnexo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel numeroTelefone;
     // End of variables declaration//GEN-END:variables
 }
-
