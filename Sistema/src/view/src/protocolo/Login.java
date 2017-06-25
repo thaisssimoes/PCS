@@ -28,31 +28,26 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        tipoUsuario = new javax.swing.JComboBox<>();
+        tipoUsuario = new javax.swing.JComboBox<String>();
         campoCPF = new javax.swing.JTextField();
         campoSenha = new javax.swing.JPasswordField();
         botaoLogin = new javax.swing.JButton();
-        botaoCancelar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(56, 113, 156));
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 600));
-        jPanel2.setSize(new java.awt.Dimension(800, 600));
 
-        tipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aluno", "Professor", "Técnico" }));
+        tipoUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aluno", "Professor", "Técnico" }));
 
         campoCPF.setText("CPF");
 
         campoSenha.setText("senha");
 
         botaoLogin.setText("Entrar");
-
-        botaoCancelar.setText("Cancelar");
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/protocolo/iBSI.png"))); // NOI18N
@@ -67,18 +62,16 @@ public class Login extends javax.swing.JFrame {
                         .addGap(285, 285, 285)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(botaoLogin)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoCancelar))
-                                .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(339, 339, 339)
                         .addComponent(tipoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(330, 330, 330)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(354, 354, 354)
+                        .addComponent(botaoLogin)))
                 .addContainerGap(293, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -92,11 +85,9 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoLogin)
-                    .addComponent(botaoCancelar))
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addComponent(botaoLogin)
+                .addContainerGap(184, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,7 +142,6 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoCancelar;
     private javax.swing.JButton botaoLogin;
     private javax.swing.JTextField campoCPF;
     private javax.swing.JPasswordField campoSenha;
