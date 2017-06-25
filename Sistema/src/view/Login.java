@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package protocolo;
+package view;
 
 /**
  *
@@ -28,7 +28,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        tipoUsuario = new javax.swing.JComboBox<String>();
+        tipoUsuario = new javax.swing.JComboBox<>();
         campoCPF = new javax.swing.JTextField();
         campoSenha = new javax.swing.JPasswordField();
         botaoLogin = new javax.swing.JButton();
@@ -42,7 +42,7 @@ public class Login extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(56, 113, 156));
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 600));
 
-        tipoUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aluno", "Professor", "Técnico" }));
+        tipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aluno", "Professor", "Técnico" }));
 
         campoCPF.setText("CPF");
 
