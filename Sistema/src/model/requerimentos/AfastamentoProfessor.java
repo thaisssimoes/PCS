@@ -1,5 +1,7 @@
 package model.requerimentos;
 
+import java.time.LocalDate;
+
 public class AfastamentoProfessor extends RequerimentoProfessor {
 
 	private String evento;
@@ -12,8 +14,8 @@ public class AfastamentoProfessor extends RequerimentoProfessor {
 
 	private boolean tipoAfastamento;
 
-	private Date dataInicio;
+	private LocalDate dataInicio;
 
-	private Date dataFinal;
+	private LocalDate dataFinal;
 
 }

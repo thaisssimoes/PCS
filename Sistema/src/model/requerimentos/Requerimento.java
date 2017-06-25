@@ -1,5 +1,6 @@
 package model.requerimentos;
-import model.entities.Usuario;
+
+import java.io.File;
 
 public class Requerimento {
 
@@ -15,9 +16,9 @@ public class Requerimento {
 
 	private String observacao;
 
-	private PDF documentoAnexado;
+	private File documentoAnexado;
 
-	private Date dataCriacao;
+	private LocalDate dataCriacao;
 
 	private int prazoEstimado;
 
