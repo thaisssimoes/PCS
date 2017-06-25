@@ -162,36 +162,43 @@ public class telaAluno extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Título", "Tipo", "Status"
+                "Protocolo", "Título", "Tipo", "Status"
             }
         ));
         jTable2.setColumnSelectionAllowed(true);
+        jTable2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane4.setViewportView(jTable2);
         jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setHeaderValue("Protocolo");
+            jTable2.getColumnModel().getColumn(1).setHeaderValue("Título");
+            jTable2.getColumnModel().getColumn(2).setHeaderValue("Tipo");
+            jTable2.getColumnModel().getColumn(3).setHeaderValue("Status");
+        }
 
         painelTelaAluno.addTab("Meus Requerimentos", jScrollPane4);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Título", "Tipo", "Status"
+                "Protocolo", "Titulo", "Tipo", "Status"
             }
         ));
         jTable1.setToolTipText("");
         jTable1.setColumnSelectionAllowed(true);
         jScrollPane3.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
         painelTelaAluno.addTab("Meus Requerimentos Pendentes", jScrollPane3);
 
