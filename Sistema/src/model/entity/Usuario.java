@@ -19,6 +19,9 @@ public class Usuario {
     private String cpf;
     @Getter
     @Setter
+    private String senha;
+    @Getter
+    @Setter
     private String nome;
     @Getter
     @Setter
