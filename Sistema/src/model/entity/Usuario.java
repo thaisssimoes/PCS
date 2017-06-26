@@ -5,10 +5,34 @@
  */
 package model.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  *
  * @author RafaelSalazarStavale
  */
 public class Usuario {
-    
+
+    @Getter
+    @Setter
+    private String cpf;
+    @Getter
+    @Setter
+    private String nome;
+    @Getter
+    @Setter
+    private String dataNascimeto;
+    @Getter
+    @Setter
+    private String endereco;
+
+    public Usuario(String cpf, String nome, String dataNascimeto, String endereco) {
+        super();
+        this.cpf = cpf;
+        this.nome = nome;
+        this.dataNascimeto = dataNascimeto;
+        this.endereco = endereco;
+    }
+
 }

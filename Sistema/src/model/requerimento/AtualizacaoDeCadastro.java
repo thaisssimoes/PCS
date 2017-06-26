@@ -5,10 +5,16 @@
  */
 package model.requerimento;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author RafaelSalazarStavale
  */
-public class AtualizacaoDeCadastro {
-    
+public class AtualizacaoDeCadastro extends Requerimento {
+
+    public AtualizacaoDeCadastro(String requerente, String areaResponsavel, String status, String descricao, LocalDate dataCriacao, LocalDate dataSolucao, String feedback) {
+        super(requerente, areaResponsavel, status, descricao, dataCriacao, dataSolucao, feedback);
+    }
+
 }

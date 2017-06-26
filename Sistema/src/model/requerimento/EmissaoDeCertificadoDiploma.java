@@ -5,10 +5,16 @@
  */
 package model.requerimento;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author RafaelSalazarStavale
  */
-public interface EmissaoDeCertificadoDiploma {
-    
+public class EmissaoDeCertificadoDiploma extends Requerimento {
+
+    public EmissaoDeCertificadoDiploma(String requerente, String areaResponsavel, String status, String descricao, LocalDate dataCriacao, LocalDate dataSolucao, String feedback) {
+        super(requerente, areaResponsavel, status, descricao, dataCriacao, dataSolucao, feedback);
+    }
+
 }

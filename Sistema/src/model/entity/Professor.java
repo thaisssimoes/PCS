@@ -9,6 +9,10 @@ package model.entity;
  *
  * @author RafaelSalazarStavale
  */
-public class Professor {
+public class Professor extends Usuario{
+    
+    public Professor(String cpf, String nome, String dataNascimeto, String endereco) {
+        super(cpf, nome, dataNascimeto, endereco);
+    }
     
 }
