@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JList;
+
 /**
  *
  * @author labccet
@@ -38,7 +40,7 @@ public class telaAluno extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<String>();
+        lista = new javax.swing.JList<String>();
         painelTelaAluno = new javax.swing.JTabbedPane();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -150,12 +152,17 @@ public class telaAluno extends javax.swing.JFrame {
                                 .addGap(44, 44, 44))))))
         );
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
+        lista.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Atualização de cadastro", "Cancelamento de matrícula", "Emissão de certificado ou diploma", "Emissão de histórico escolar", "Emissão do programa de disciplinas", "Isenção ou aproveitamento de disciplina", "Realização de segunda chamada", "Revisão de prova", "Trancamento de Disciplina", "Trancamento de matrícula", "Outros" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        lista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(lista);
 
         painelTelaAluno.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -325,6 +332,21 @@ public class telaAluno extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void listaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaMouseClicked
+        String titulo;
+        JList list = (JList)evt.getSource();
+        titulo = (String) list.getSelectedValue();
+        if (evt.getClickCount() == 2) {
+            RequerimentoGeralAluno janelaRequerimento = new RequerimentoGeralAluno();
+            janelaRequerimento.setVisible(true);
+            janelaRequerimento.setTitle(titulo);
+            this.setVisible(false);
+            this.dispose(); 
+        }
+       
+        
+    }//GEN-LAST:event_listaMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -381,13 +403,13 @@ public class telaAluno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable2;
+    private javax.swing.JList<String> lista;
     private javax.swing.JTabbedPane painelTelaAluno;
     // End of variables declaration//GEN-END:variables
 }
