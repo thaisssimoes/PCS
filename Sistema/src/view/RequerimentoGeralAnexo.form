@@ -159,15 +159,14 @@
                           <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="130" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="130" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -482,7 +481,7 @@
         <Component class="javax.swing.JComboBox" name="jComboBox1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="38">
+              <StringArray count="35">
                 <StringItem index="0" value="Administra&#xe7;&#xe3;o Financeira"/>
                 <StringItem index="1" value="&#xc1;lgebra Linear"/>
                 <StringItem index="2" value="An&#xe1;lise de Algoritmo"/>
@@ -518,9 +517,6 @@
                 <StringItem index="32" value="T&#xe9;cnicas de Programa&#xe7;&#xe3;o I"/>
                 <StringItem index="33" value="T&#xe9;cnicas de Programa&#xe7;&#xe3;o II"/>
                 <StringItem index="34" value="Teorias e Pr&#xe1;ticas Discursivas"/>
-                <StringItem index="35" value=" "/>
-                <StringItem index="36" value=" "/>
-                <StringItem index="37" value=" "/>
               </StringArray>
             </Property>
           </Properties>
