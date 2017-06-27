@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package protocolo;
+package view;
 
 /**
  *
@@ -54,6 +54,7 @@ public class telaAluno extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -64,7 +65,7 @@ public class telaAluno extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(56, 113, 156));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iBSI.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\tsuba\\Documents\\PCS\\Sistema\\build\\classes\\view\\iBSI.png")); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Lao MN", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -208,9 +209,10 @@ public class telaAluno extends javax.swing.JFrame {
 
         jLabel19.setBackground(new java.awt.Color(255, 255, 255));
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/refresh.png"))); // NOI18N
 
         jLabel3.setText("Atualizar");
+
+        jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\tsuba\\Documents\\PCS\\Sistema\\build\\classes\\view\\refresh.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -222,14 +224,21 @@ public class telaAluno extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel19)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel19))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel19)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel19))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel20)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3))
         );
@@ -292,11 +301,11 @@ public class telaAluno extends javax.swing.JFrame {
                                     .addComponent(jLabel15)
                                     .addComponent(jLabel16)
                                     .addComponent(jLabel17)
-                                    .addComponent(jLabel18))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel4))
+                                    .addComponent(jLabel18)))
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addComponent(painelTelaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1))
                 .addGap(34, 34, 34))
@@ -364,6 +373,7 @@ public class telaAluno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

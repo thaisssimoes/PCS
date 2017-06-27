@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package protocolo;
+package view;
 
 /**
  *
@@ -39,14 +39,7 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -66,10 +59,6 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
@@ -98,7 +87,7 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(56, 113, 156));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iBSI.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\tsuba\\Documents\\PCS\\Sistema\\build\\classes\\view\\iBSI.png")); // NOI18N
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
@@ -118,7 +107,7 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jLabel22)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 90, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,6 +124,8 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
+
+        jLabel1.getAccessibleContext().setAccessibleParent(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("Nome");
@@ -157,29 +148,8 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel10.setText("Deficiência");
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel11.setText("CPF");
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel12.setText("RG");
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel13.setText("Número do Documento");
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel14.setText("Número do Documento");
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel15.setText("Órgão Emissor");
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel16.setText("Órgão Emissor");
-
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setText("Dados Pessoais");
-
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel18.setText("Documentos");
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setText("Endereço");
@@ -230,14 +200,6 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
         jLabel39.setText("Data Nascimento");
 
         jLabel40.setText("Tipo de Deficiência");
-
-        jLabel41.setText("123.456.789-10");
-
-        jLabel42.setText("123.456.789-10");
-
-        jLabel43.setText("Órgão Emissor");
-
-        jLabel44.setText("Órgão Emissor");
 
         jLabel45.setText("Tipo de Endereço");
 
@@ -296,7 +258,7 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
                             .addComponent(jLabel55)
                             .addComponent(jLabel32)
                             .addComponent(jLabel47))
-                        .addGap(128, 128, 128)
+                        .addGap(125, 125, 125)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel58)
                             .addComponent(jLabel25)
@@ -305,92 +267,61 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
                             .addComponent(jLabel26)
                             .addComponent(jLabel53)
                             .addComponent(jLabel56)
-                            .addComponent(jLabel60)
-                            .addComponent(jLabel61)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel37)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel41)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel42)
                             .addComponent(jLabel59))
+                        .addGap(129, 129, 129)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel36)
-                                    .addComponent(jLabel62)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(91, 91, 91)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel48)
                                     .addComponent(jLabel52)
                                     .addComponent(jLabel29)
-                                    .addComponent(jLabel23)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel35)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel40)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jLabel43)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel44)
-                                    .addComponent(jLabel34))
-                                .addGap(0, 25, Short.MAX_VALUE))))
+                                    .addComponent(jLabel23))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel62)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel57))
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel38)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel45)
-                            .addComponent(jLabel33))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(118, 118, 118))
+                                .addGap(244, 244, 244)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel60)
+                                    .addComponent(jLabel61)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel37)))
+                            .addComponent(jLabel19))
+                        .addGap(142, 142, 142)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel40)
+                            .addComponent(jLabel34)))
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel33)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel45))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel57)
+                .addGap(0, 137, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel17)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel2)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel33))
+                        .addGap(451, 451, 451)
+                        .addComponent(jLabel57))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addComponent(jLabel6)
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel39)
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel9)
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel38)
-                                .addGap(8, 8, 8)
-                                .addComponent(jLabel18)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel11)
-                                .addGap(13, 13, 13)
-                                .addComponent(jLabel12)
-                                .addGap(25, 25, 25))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(41, 41, 41)
                                 .addComponent(jLabel3)
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel34)
@@ -402,39 +333,43 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
                                 .addComponent(jLabel10)
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel40)
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel15)
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel43)
-                                .addGap(7, 7, 7)
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel44)
-                                .addGap(4, 4, 4)))
-                        .addComponent(jLabel57))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel17)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel2)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel33))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(64, 64, 64)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel60)
+                                                .addGap(6, 6, 6)
+                                                .addComponent(jLabel61)
+                                                .addGap(6, 6, 6)
+                                                .addComponent(jLabel8)
+                                                .addGap(6, 6, 6)
+                                                .addComponent(jLabel37))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel6)
+                                                .addGap(6, 6, 6)
+                                                .addComponent(jLabel39)
+                                                .addGap(6, 6, 6)
+                                                .addComponent(jLabel9)
+                                                .addGap(6, 6, 6)
+                                                .addComponent(jLabel38)))))
+                                .addGap(28, 28, 28)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel60)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel61)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel8)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel37)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(jLabel13)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel41)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel14)
-                                        .addGap(5, 5, 5)
-                                        .addComponent(jLabel42))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(249, 249, 249)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel59)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel58)
@@ -445,40 +380,12 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel26)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel53)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel31)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel56))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel19)
-                                        .addGap(7, 7, 7)
-                                        .addComponent(jLabel20)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel45)
-                                        .addGap(8, 8, 8)
-                                        .addComponent(jLabel21)
+                                        .addComponent(jLabel53)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel31)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(40, 40, 40)
-                                                .addComponent(jLabel50)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel27)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel51))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel46)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel24)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jLabel36)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jLabel62))))))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel56))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel23)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -489,15 +396,40 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
                                                 .addComponent(jLabel48)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel29)))
-                                        .addGap(40, 40, 40)))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel36)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel62)
+                                        .addGap(21, 21, 21)))
+                                .addGap(40, 40, 40))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel45)
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel21)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(40, 40, 40)
+                                        .addComponent(jLabel50)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel27)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel51))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel46)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel24)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel30)
                                 .addGap(5, 5, 5)
-                                .addComponent(jLabel55)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel32)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel47)
-                .addContainerGap(75, Short.MAX_VALUE))
+                                .addComponent(jLabel55)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel47)))))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -508,7 +440,7 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
         );
 
         pack();
@@ -553,14 +485,7 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -585,10 +510,6 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
