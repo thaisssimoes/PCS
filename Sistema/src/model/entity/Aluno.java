@@ -16,4 +16,8 @@ public class Aluno extends Usuario {
         // TODO Auto-generated constructor stub
     }
 
+    public Aluno() {
+    }
+
+
 }

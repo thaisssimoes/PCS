@@ -5,74 +5,37 @@
  */
 package dao;
 
+import java.beans.XMLDecoder;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import model.entity.Aluno;
+
 /**
  *
- * @author RafaelSalazarStavale
+ * @author rafae
  */
+public class XMLHandler {
 
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
+    public Aluno LerXmlProduto(String cpf) {
 
-public class XMLHandler<Type> {
+        Aluno aluno = null;
+        String PATH = "Alunos.xml";
 
-	private ArrayList<Type> lista = new ArrayList<Type>();
-	private String nomeArquivo;
+        try {
 
-	public XMLHandler(String nomeArquivo) {
-		this.nomeArquivo = nomeArquivo;
-	}
-
-	/**
-	 * Retorna um ArrayList do tipo especificado.
-	 */
-	public ArrayList<Type> getLista() {
-		return lista;
-	}
-
-	/**
-	 * Escreve no arquivo XML.
-	 */
-	public void escreveXML(Type type, boolean x) {
-		if (x)
-			lista.add(type);
-		else
-			lista.remove(type);
-
-		try {
-			XMLEncoder encoder = null;
-			try {
-				encoder = new XMLEncoder(new FileOutputStream(nomeArquivo));
-				encoder.writeObject(lista);
-
-			} finally {
-				if (encoder != null)
-					encoder.close();
-			}
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		}
-	}
-
-	/**
-	 * Lê o arquivo XML.
-	 */
-	public void leXML() {
-		try {
-			XMLDecoder decoder = null;
-			try {
-				decoder = new XMLDecoder(new FileInputStream(nomeArquivo));
-				lista = (ArrayList<Type>) decoder.readObject();
-			} finally {
-				if (decoder != null)
-					decoder.close();
-			}
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		}
-	}
-
+            XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream(PATH)));
+            while (decoder.readObject() != null) {
+                System.out.println("dentro");
+                aluno = (Aluno) decoder.readObject();
+                if (aluno.getCpf().equals(cpf)) {
+                    System.out.println("achou");
+                    decoder.close();
+                    return aluno;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return aluno;
+    }
 }

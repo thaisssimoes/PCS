@@ -14,5 +14,8 @@ public class Tecnico extends Usuario{
     public Tecnico(String cpf, String nome, String dataNascimeto, String endereco) {
         super(cpf, nome, dataNascimeto, endereco);
     }
+
+    public Tecnico() {
+    }
     
 }

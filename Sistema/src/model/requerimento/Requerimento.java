@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 import lombok.Getter;
 import lombok.Setter;
+import model.entity.Usuario;
 
 public class Requerimento {
 
@@ -13,10 +14,10 @@ public class Requerimento {
     private String numeroProtocolo;
     @Getter
     @Setter
-    private String requerente;
+    private Usuario requerente;
     @Getter
     @Setter
-    private String areaResponsavel;
+    private Usuario areaResponsavel;
     @Getter
     @Setter
     private String status;
@@ -33,7 +34,7 @@ public class Requerimento {
     @Setter
     private String feedback;
 
-    public Requerimento(String requerente, String areaResponsavel, String status, String descricao,
+    public Requerimento(Usuario requerente, Usuario areaResponsavel, String status, String descricao,
             LocalDate dataCriacao, LocalDate dataSolucao, String feedback) {
         super();
         this.requerente = requerente;

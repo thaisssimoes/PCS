@@ -6,6 +6,7 @@
 package model.requerimento;
 
 import java.time.LocalDate;
+import model.entity.Usuario;
 
 /**
  *
@@ -13,7 +14,7 @@ import java.time.LocalDate;
  */
 public class RealizacaoDeSegundaChamada extends Requerimento{
     
-    public RealizacaoDeSegundaChamada(String requerente, String areaResponsavel, String status, String descricao, LocalDate dataCriacao, LocalDate dataSolucao, String feedback) {
+    public RealizacaoDeSegundaChamada(Usuario requerente, Usuario areaResponsavel, String status, String descricao, LocalDate dataCriacao, LocalDate dataSolucao, String feedback) {
         super(requerente, areaResponsavel, status, descricao, dataCriacao, dataSolucao, feedback);
     }
     

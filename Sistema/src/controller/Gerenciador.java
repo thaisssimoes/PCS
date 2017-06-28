@@ -1,46 +1,77 @@
 package controller;
 
-import dao.XMLManager;
 import dao.XMLHandler;
+import java.time.LocalDate;
 import model.entity.Aluno;
+import model.entity.Professor;
+import model.entity.Tecnico;
 import model.entity.Usuario;
+import model.requerimento.Requerimento;
 import view.Login;
 
 public class Gerenciador {
 
-    private static Login login;
-    private static XMLHandler handler;
-    private static XMLManager leitor;
-    private static XMLManager manager = new XMLManager();
-
     public static void main(String[] args) {
-        // login = new Login();
+        //  Login login = new Login();
 
-        Aluno aluno = new Aluno("999", "Raf", "09/19/1991", "endereco1");
-        manager.gravarXML(aluno);
-        manager.lerXML();
-
-        // Usuario usuario = retornaUsuario("999", "senha", "ALUNO");
-        //Requerimento requerimento = new Requerimento(requerente, areaResponsavel, status, descricao, dataCriacao, dataSolucao, feedback)
+        Usuario usuario = new Aluno("133", "Raf", "datanacs", "endreco");
+        Usuario usuarioprof = new Professor("555", "stav", "datanacs2", "endreco2");
+        Requerimento requerimento = new Requerimento(usuario, usuarioprof, "TRIAGEM", "Descricao", LocalDate.now(), null, "feedback");
+        XMLHandler xml = new XMLHandler();
+        Aluno alunoTeste = xml.LerXmlProduto("133");
+        
+        analisaRequerimento(requerimento);
     }
 
-//    public static void retornaUsuario(String cpf, String senha, String tipoLogin) {
-//        if (tipoLogin == "ALUNO") {
-//            handler = new XMLHandler<Aluno>("aluno.xml");
-//            //handler.escreveXML();
-//
-//        }
-}
+    public static void analisaRequerimento(Requerimento requerimento) {
+        if (requerimento.getStatus().equals("TRIAGEM")) {
+            encaminharParaTecnico(requerimento);
+        } else if (requerimento.getStatus().equals("ATRIBUIDO")) {
+            if (requerimento.getAreaResponsavel().getClass().equals(Aluno.class)) {
+                encaminharParaAluno(requerimento);
+            } else if (requerimento.getAreaResponsavel().getClass().equals(Professor.class)) {
+                encaminharParaProfessor(requerimento);
+            } else if (requerimento.getAreaResponsavel().getClass().equals(Tecnico.class)) {
+                encaminharParaTecnico(requerimento);
+            }
 
-//    public void analisar(Requerimento requerimento) {
-//
-//        if (requerimento.getStatus() == "TRIAGEM") {
-//            //   handler = new XMLHandler<>("Secretaria.xml")
-//            // handler.escreveXML(requerimento);
-//
-//        }
-//    }
-//
-//    public void persistir(Requerimento requerimento, XMLHandler handler) {
-//
-//    }
+        }
+        if (requerimento.getStatus().equals("TRIAGEM")) {
+
+        }
+        if (requerimento.getStatus().equals("TRIAGEM")) {
+
+        }
+        if (requerimento.getStatus().equals("TRIAGEM")) {
+
+        }
+        if (requerimento.getStatus().equals("TRIAGEM")) {
+
+        }
+        if (requerimento.getStatus().equals("TRIAGEM")) {
+
+        }
+        if (requerimento.getStatus().equals("TRIAGEM")) {
+
+        }
+
+    }
+
+    private static void encaminharParaTecnico(Requerimento requerimento) {
+        ListaTecnico listaTecnico = new ListaTecnico();
+        listaTecnico.getLista().add(requerimento);
+
+    }
+
+    private static void encaminharParaAluno(Requerimento requerimento) {
+        ListaAluno listaAluno = new ListaAluno();
+        listaAluno.getLista().add(requerimento);
+
+    }
+
+    private static void encaminharParaProfessor(Requerimento requerimento) {
+        ListaProfessor listaProfessor = new ListaProfessor();
+        listaProfessor.getLista().add(requerimento);
+
+    }
+}

@@ -30,6 +30,10 @@ public class Usuario {
     @Setter
     private String endereco;
 
+    public Usuario() {
+    }
+
+    ;
     public Usuario(String cpf, String nome, String dataNascimeto, String endereco) {
         super();
         this.cpf = cpf;
