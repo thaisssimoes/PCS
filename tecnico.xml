@@ -1,0 +1,65 @@
+ <object class="Tecnico">
+  <void property="nome">
+   <string>Cicrano das venda</string>
+  </void>
+  <void property="CPF">
+   <string>987456321</string>
+  </void>
+  <void property="senha">
+   <string>senha123</string>
+  </void>
+    <void property="email">
+   <string>cicrano.vendas@uniriotec.br</string>
+  </void>  
+  <void property="mae">
+   <string>Receita classica</string>
+  </void> 
+  <?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_111" class="java.beans.XMLDecoder">
+  <void property="pai">
+   <string>Livro das Venda</string>
+  </void> 
+  <void property="rg">
+   <string>2356489</string>
+  </void> 
+  <void property="sexo">
+   <string>Masculino</string>
+  </void> 
+  <void property="nacionalidade">
+   <string>Brasileiro</string>
+  </void> 
+  <void property="nascimento">
+   <string>01/01/2003</string>
+  </void> 
+  <void property="tipoEndereco">
+   <string>Residencial</string>
+  </void> 
+  <void property="tipoLogradouro">
+   <string>Rua</string>
+  </void> 
+  <void property="logradouro">
+   <string>das bananas amarelas</string>
+  </void> 
+  <void property="numero">
+   <string>30</string>
+  </void> 
+  <void property="complemento">
+   <string>405</string>
+  </void> 
+  <void property="bairro">
+   <string>Tangenlo</string>
+  </void> 
+  <void property="pais">
+   <string>Brasil</string>
+  </void> 
+  <void property="estado">
+   <string>Rio de Janeiro</string>
+  </void> 
+  <void property="cep">
+   <string>11111-000</string>
+  </void> 
+  <void property="telefone">
+   <string>9-7777-4444</string>
+  </void>
+ </object>
+  </java>
