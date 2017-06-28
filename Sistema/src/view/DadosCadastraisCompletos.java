@@ -5,6 +5,9 @@
  */
 package view;
 
+import static controller.Gerenciador.obterAluno;
+import model.entity.Aluno;
+
 /**
  *
  * @author tsuba
@@ -16,6 +19,16 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
      */
     public DadosCadastraisCompletos() {
         initComponents();
+    }
+    Aluno aluno;
+
+    public DadosCadastraisCompletos(String cpf, String senha) {
+        initComponents();
+        aluno = obterAluno(cpf, senha);
+        emailAluno.setText(aluno.getEmail());
+        nomeAluno.setText(aluno.getNome());
+        //.setText(aluno.getMatricula());
+        telefoneCelularAluno.setText(aluno.getTelefone());
     }
 
     /**
@@ -52,31 +65,31 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
-        jLabel53 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
+        nomeAluno = new javax.swing.JLabel();
+        nomeMaeAluno = new javax.swing.JLabel();
+        nomePaiAluno = new javax.swing.JLabel();
+        nacionalidadeAluno = new javax.swing.JLabel();
+        estadoCivilAluno = new javax.swing.JLabel();
+        dataNasciAluno = new javax.swing.JLabel();
+        deficienciaAluno = new javax.swing.JLabel();
+        tipoEnderecoAluno = new javax.swing.JLabel();
+        tipoLogradouroAluno = new javax.swing.JLabel();
+        numeroAluno = new javax.swing.JLabel();
+        bairroAluno = new javax.swing.JLabel();
+        complementoAluno = new javax.swing.JLabel();
+        estadoAluno = new javax.swing.JLabel();
+        cepAluno = new javax.swing.JLabel();
+        cidadeAluno = new javax.swing.JLabel();
+        telefoneResidencialAluno = new javax.swing.JLabel();
+        telefoneCelularAluno = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
+        lougradouroAluno = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
+        sexoAluno = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
+        paisAluno = new javax.swing.JLabel();
+        emailAluno = new javax.swing.JLabel();
         okBotaoDadosCompletos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -186,41 +199,41 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
         jLabel32.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel32.setText("E-mail");
 
-        jLabel33.setText("Nome Completo do Aluno");
+        nomeAluno.setText("Nome Completo do Aluno");
 
-        jLabel34.setText("Nome Completo da Mãe do Aluno");
+        nomeMaeAluno.setText("Nome Completo da Mãe do Aluno");
 
-        jLabel35.setText("Nome Completo do Pai do Aluno");
+        nomePaiAluno.setText("Nome Completo do Pai do Aluno");
 
-        jLabel37.setText("Nacionalidade");
+        nacionalidadeAluno.setText("Nacionalidade");
 
-        jLabel38.setText("Estado Civil");
+        estadoCivilAluno.setText("Estado Civil");
 
-        jLabel39.setText("Data Nascimento");
+        dataNasciAluno.setText("Data Nascimento");
 
-        jLabel40.setText("Tipo de Deficiência");
+        deficienciaAluno.setText("Tipo de Deficiência");
 
-        jLabel45.setText("Tipo de Endereço");
+        tipoEnderecoAluno.setText("Tipo de Endereço");
 
-        jLabel46.setText("Tipo de Logradouro");
+        tipoLogradouroAluno.setText("Tipo de Logradouro");
 
-        jLabel48.setText("Número");
+        numeroAluno.setText("Número");
 
-        jLabel49.setText("Bairro");
+        bairroAluno.setText("Bairro");
 
-        jLabel50.setText("Complemento");
+        complementoAluno.setText("Complemento");
 
-        jLabel51.setText("Estado");
+        estadoAluno.setText("Estado");
 
-        jLabel52.setText("CEP");
+        cepAluno.setText("CEP");
 
-        jLabel53.setText("Cidade");
+        cidadeAluno.setText("Cidade");
 
-        jLabel55.setText("Telefone Residencial");
+        telefoneResidencialAluno.setText("Telefone Residencial");
 
-        jLabel56.setText("Telefone Celular");
+        telefoneCelularAluno.setText("Telefone Celular");
 
-        jLabel58.setText("Logradouro");
+        lougradouroAluno.setText("Logradouro");
 
         jLabel59.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel59.setText("Logradouro");
@@ -228,14 +241,14 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
         jLabel60.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel60.setText("Sexo");
 
-        jLabel61.setText("Sexo");
+        sexoAluno.setText("Sexo");
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel36.setText("País");
 
-        jLabel62.setText("País");
+        paisAluno.setText("País");
 
-        jLabel47.setText("E-mail");
+        emailAluno.setText("E-mail");
 
         okBotaoDadosCompletos.setText("Ok");
         okBotaoDadosCompletos.addActionListener(new java.awt.event.ActionListener() {
@@ -258,60 +271,60 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
                                 .addGap(244, 244, 244)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel60)
-                                    .addComponent(jLabel61)
+                                    .addComponent(sexoAluno)
                                     .addComponent(jLabel8)
-                                    .addComponent(jLabel37)))
+                                    .addComponent(nacionalidadeAluno)))
                             .addComponent(jLabel19))
                         .addGap(142, 142, 142)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel35)
+                            .addComponent(nomePaiAluno)
                             .addComponent(jLabel10)
-                            .addComponent(jLabel40)
-                            .addComponent(jLabel34)))
+                            .addComponent(deficienciaAluno)
+                            .addComponent(nomeMaeAluno)))
                     .addComponent(jLabel17)
                     .addComponent(jLabel2)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel39)
+                    .addComponent(dataNasciAluno)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel38)
-                    .addComponent(jLabel33)
+                    .addComponent(estadoCivilAluno)
+                    .addComponent(nomeAluno)
                     .addComponent(jLabel20)
-                    .addComponent(jLabel45)
+                    .addComponent(tipoEnderecoAluno)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(okBotaoDadosCompletos)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel46)
+                                    .addComponent(tipoLogradouroAluno)
                                     .addComponent(jLabel21)
                                     .addComponent(jLabel24)
-                                    .addComponent(jLabel50)
+                                    .addComponent(complementoAluno)
                                     .addComponent(jLabel27)
-                                    .addComponent(jLabel51)
+                                    .addComponent(estadoAluno)
                                     .addComponent(jLabel30)
-                                    .addComponent(jLabel55)
+                                    .addComponent(telefoneResidencialAluno)
                                     .addComponent(jLabel32)
-                                    .addComponent(jLabel47))
+                                    .addComponent(emailAluno))
                                 .addGap(125, 125, 125)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel58)
+                                    .addComponent(lougradouroAluno)
                                     .addComponent(jLabel25)
-                                    .addComponent(jLabel49)
+                                    .addComponent(bairroAluno)
                                     .addComponent(jLabel31)
                                     .addComponent(jLabel26)
-                                    .addComponent(jLabel53)
-                                    .addComponent(jLabel56)
+                                    .addComponent(cidadeAluno)
+                                    .addComponent(telefoneCelularAluno)
                                     .addComponent(jLabel59))))
                         .addGap(129, 129, 129)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel48)
-                            .addComponent(jLabel52)
+                            .addComponent(numeroAluno)
+                            .addComponent(cepAluno)
                             .addComponent(jLabel29)
                             .addComponent(jLabel23)
                             .addComponent(jLabel36)
-                            .addComponent(jLabel62))))
+                            .addComponent(paisAluno))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel57)
                 .addGap(0, 137, Short.MAX_VALUE))
@@ -331,15 +344,15 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
                                     .addGap(41, 41, 41)
                                     .addComponent(jLabel3)
                                     .addGap(6, 6, 6)
-                                    .addComponent(jLabel34)
+                                    .addComponent(nomeMaeAluno)
                                     .addGap(7, 7, 7)
                                     .addComponent(jLabel4)
                                     .addGap(6, 6, 6)
-                                    .addComponent(jLabel35)
+                                    .addComponent(nomePaiAluno)
                                     .addGap(6, 6, 6)
                                     .addComponent(jLabel10)
                                     .addGap(6, 6, 6)
-                                    .addComponent(jLabel40))
+                                    .addComponent(deficienciaAluno))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -348,26 +361,26 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
                                             .addGap(6, 6, 6)
                                             .addComponent(jLabel2)
                                             .addGap(6, 6, 6)
-                                            .addComponent(jLabel33))
+                                            .addComponent(nomeAluno))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addGap(64, 64, 64)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                                     .addComponent(jLabel60)
                                                     .addGap(6, 6, 6)
-                                                    .addComponent(jLabel61)
+                                                    .addComponent(sexoAluno)
                                                     .addGap(6, 6, 6)
                                                     .addComponent(jLabel8)
                                                     .addGap(6, 6, 6)
-                                                    .addComponent(jLabel37))
+                                                    .addComponent(nacionalidadeAluno))
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                                     .addComponent(jLabel6)
                                                     .addGap(6, 6, 6)
-                                                    .addComponent(jLabel39)
+                                                    .addComponent(dataNasciAluno)
                                                     .addGap(6, 6, 6)
                                                     .addComponent(jLabel9)
                                                     .addGap(6, 6, 6)
-                                                    .addComponent(jLabel38)))))))
+                                                    .addComponent(estadoCivilAluno)))))))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel19)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -377,63 +390,63 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                             .addComponent(jLabel59)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel58)
+                                            .addComponent(lougradouroAluno)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(jLabel25)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel49)
+                                            .addComponent(bairroAluno)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(jLabel26)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel53)
+                                            .addComponent(cidadeAluno)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(jLabel31)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel56))
+                                            .addComponent(telefoneCelularAluno))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                             .addComponent(jLabel23)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                                     .addGap(40, 40, 40)
-                                                    .addComponent(jLabel52))
+                                                    .addComponent(cepAluno))
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel48)
+                                                    .addComponent(numeroAluno)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                     .addComponent(jLabel29)))
                                             .addGap(18, 18, 18)
                                             .addComponent(jLabel36)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel62)
+                                            .addComponent(paisAluno)
                                             .addGap(21, 21, 21)))
                                     .addGap(40, 40, 40))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel20)
                                     .addGap(6, 6, 6)
-                                    .addComponent(jLabel45)
+                                    .addComponent(tipoEnderecoAluno)
                                     .addGap(8, 8, 8)
                                     .addComponent(jLabel21)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addGap(40, 40, 40)
-                                            .addComponent(jLabel50)
+                                            .addComponent(complementoAluno)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(jLabel27)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel51))
+                                            .addComponent(estadoAluno))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel46)
+                                            .addComponent(tipoLogradouroAluno)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(jLabel24)))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel30)
                                     .addGap(5, 5, 5)
-                                    .addComponent(jLabel55)
+                                    .addComponent(telefoneResidencialAluno)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel32)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel47)))))
+                                    .addComponent(emailAluno)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(451, 451, 451)
                         .addComponent(okBotaoDadosCompletos)))
@@ -455,10 +468,11 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okBotaoDadosCompletosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoDadosCompletosActionPerformed
-        this.setVisible(false);
-        this.dispose(); 
-        TelaAluno janelaTelaAluno = new TelaAluno();
+        
+        TelaAluno janelaTelaAluno = new TelaAluno(aluno.getCpf(),aluno.getSenha());
         janelaTelaAluno.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_okBotaoDadosCompletosActionPerformed
 
     /**
@@ -500,6 +514,15 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bairroAluno;
+    private javax.swing.JLabel cepAluno;
+    private javax.swing.JLabel cidadeAluno;
+    private javax.swing.JLabel complementoAluno;
+    private javax.swing.JLabel dataNasciAluno;
+    private javax.swing.JLabel deficienciaAluno;
+    private javax.swing.JLabel emailAluno;
+    private javax.swing.JLabel estadoAluno;
+    private javax.swing.JLabel estadoCivilAluno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel17;
@@ -518,38 +541,29 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lougradouroAluno;
+    private javax.swing.JLabel nacionalidadeAluno;
+    private javax.swing.JLabel nomeAluno;
+    private javax.swing.JLabel nomeMaeAluno;
+    private javax.swing.JLabel nomePaiAluno;
+    private javax.swing.JLabel numeroAluno;
     private javax.swing.JButton okBotaoDadosCompletos;
+    private javax.swing.JLabel paisAluno;
+    private javax.swing.JLabel sexoAluno;
+    private javax.swing.JLabel telefoneCelularAluno;
+    private javax.swing.JLabel telefoneResidencialAluno;
+    private javax.swing.JLabel tipoEnderecoAluno;
+    private javax.swing.JLabel tipoLogradouroAluno;
     // End of variables declaration//GEN-END:variables
 }

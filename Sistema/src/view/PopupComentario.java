@@ -5,6 +5,9 @@
  */
 package view;
 
+import static controller.Gerenciador.obterAluno;
+import model.entity.Aluno;
+
 /**
  *
  * @author tsuba
@@ -16,6 +19,13 @@ public class PopupComentario extends javax.swing.JFrame {
      */
     public PopupComentario() {
         initComponents();
+    }
+    Aluno aluno;
+
+    public PopupComentario(String cpf, String senha) {
+        initComponents();
+        aluno = obterAluno(cpf, senha);
+
     }
 
     /**
@@ -112,8 +122,8 @@ public class PopupComentario extends javax.swing.JFrame {
 
     private void cancelarBotaoComentarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoComentarioActionPerformed
         this.setVisible(false);
-        this.dispose();        
-    // TODO add your handling code here:
+        this.dispose();
+        // TODO add your handling code here:
     }//GEN-LAST:event_cancelarBotaoComentarioActionPerformed
 
     /**

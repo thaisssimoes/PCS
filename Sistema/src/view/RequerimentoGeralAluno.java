@@ -5,7 +5,9 @@
  */
 package view;
 
+import static controller.Gerenciador.obterAluno;
 import javax.swing.JList;
+import model.entity.Aluno;
 
 /**
  *
@@ -18,6 +20,15 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
      */
     public RequerimentoGeralAluno() {
         initComponents();
+    }
+    Aluno aluno;
+    public RequerimentoGeralAluno(String cpf, String senha){
+        initComponents();
+        aluno = obterAluno(cpf,senha);
+        emailAlunoLabel.setText(aluno.getEmail());
+        nomeCompletoAlunoLabel.setText(aluno.getNome());
+        matriculaAlunoLabel.setText(aluno.getMatricula());
+        telefoneAlunoLabel.setText(aluno.getTelefone());
     }
 
     /**
@@ -333,7 +344,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
 
     private void enviarBotaoAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoAlunoActionPerformed
         
-      ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio();
+      ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
       janelaConfirmacao.setVisible(true);
       this.setVisible(false);
         
@@ -342,13 +353,13 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
 
     private void atualizarBotaoAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoAlunoActionPerformed
 
-        PopupComentario janelaComentario = new PopupComentario();
+        PopupComentario janelaComentario = new PopupComentario(aluno.getCpf(),aluno.getSenha());
         janelaComentario.setVisible(true);
 
     }//GEN-LAST:event_atualizarBotaoAlunoActionPerformed
 
     private void cancelarBotaoAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoAlunoActionPerformed
-        TelaAluno janelaTelaAluno = new TelaAluno();
+        TelaAluno janelaTelaAluno = new TelaAluno(aluno.getCpf(),aluno.getSenha());
         janelaTelaAluno.setVisible(true);
         this.setVisible(false);
         this.dispose(); 

@@ -5,6 +5,9 @@
  */
 package view;
 
+import static controller.Gerenciador.obterAluno;
+import model.entity.Aluno;
+
 /**
  *
  * @author tsuba
@@ -16,6 +19,16 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
      */
     public EnviadoComSucesso() {
         initComponents();
+    }
+    Aluno aluno;
+
+    public EnviadoComSucesso(String cpf, String senha) {
+        initComponents();
+        aluno = obterAluno(cpf, senha);
+//        campoEmailAluno.setText(aluno.getEmail());
+//        campoNomeAluno.setText(aluno.getNome());
+//        campoMatriculaAluno.setText(aluno.getMatricula());
+//        campoTelefoneAluno.setText(aluno.getTelefone());
     }
 
     /**
@@ -99,12 +112,13 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okBotaoSucessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoSucessoActionPerformed
-            this.setVisible(false);
-            this.dispose();
-            int DISPOSE_ON_CLOSE1 = RequerimentoGeralAluno.DISPOSE_ON_CLOSE;
-            TelaAluno janelaTelaAluno = new TelaAluno();
-            janelaTelaAluno.setVisible(true);
-            
+        //int DISPOSE_ON_CLOSE1 = RequerimentoGeralAluno.DISPOSE_ON_CLOSE;
+        TelaAluno janelaTelaAluno = new TelaAluno(aluno.getCpf(), aluno.getSenha());
+        janelaTelaAluno.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
+        // 
+
 
     }//GEN-LAST:event_okBotaoSucessoActionPerformed
 

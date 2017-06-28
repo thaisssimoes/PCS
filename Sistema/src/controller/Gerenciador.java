@@ -15,7 +15,7 @@ import view.Login;
 public class Gerenciador {
 
     public static void main(String[] args) {
-        //  Login login = new Login();
+        // Login login = new Login();
 
         Aluno aluno = new Aluno("555", "stav", "Thay", "99@blablabla.com", "171-17171", "12345678");
 

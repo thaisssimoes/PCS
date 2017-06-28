@@ -140,7 +140,7 @@ public class Login extends javax.swing.JFrame {
         if (autenticado) {
             this.setVisible(false);
             this.dispose();
-            TelaAluno janelaTelaAluno = new TelaAluno(senha, cpf);
+            TelaAluno janelaTelaAluno = new TelaAluno(cpf, senha);
             janelaTelaAluno.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Erro no Login!");

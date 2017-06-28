@@ -60,9 +60,9 @@
                                   <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel60" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel61" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sexoAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nacionalidadeAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -71,58 +71,58 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="nomePaiAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="deficienciaAluno" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="nomeMaeAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                      <Component id="dataNasciAluno" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="estadoCivilAluno" min="-2" max="-2" attributes="0"/>
+                      <Component id="nomeAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                      <Component id="tipoEnderecoAluno" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="okBotaoDadosCompletos" min="-2" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel46" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tipoLogradouroAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel50" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="complementoAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="estadoAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
+                                      <Component id="telefoneResidencialAluno" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="emailAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel58" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lougradouroAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel49" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bairroAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cidadeAluno" min="-2" max="-2" attributes="0"/>
+                                      <Component id="telefoneCelularAluno" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel59" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="numeroAluno" min="-2" max="-2" attributes="0"/>
+                              <Component id="cepAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel62" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="paisAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -148,15 +148,15 @@
                                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                      <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nomeMaeAluno" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
                                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                      <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nomePaiAluno" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                      <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
+                                      <Component id="deficienciaAluno" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -166,7 +166,7 @@
                                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                              <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                                              <Component id="nomeAluno" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="64" pref="64" max="-2" attributes="0"/>
@@ -174,20 +174,20 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                                      <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="sexoAluno" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                                      <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="nacionalidadeAluno" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                                      <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="dataNasciAluno" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                                      <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="estadoCivilAluno" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -203,19 +203,19 @@
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="jLabel59" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lougradouroAluno" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
+                                              <Component id="bairroAluno" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
+                                              <Component id="cidadeAluno" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
+                                              <Component id="telefoneCelularAluno" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
@@ -223,10 +223,10 @@
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                                      <Component id="jLabel52" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="cepAluno" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="numeroAluno" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                                                   </Group>
@@ -234,7 +234,7 @@
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
+                                              <Component id="paisAluno" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -243,21 +243,21 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                      <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tipoEnderecoAluno" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
                                       <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                              <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
+                                              <Component id="complementoAluno" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
+                                              <Component id="estadoAluno" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tipoLogradouroAluno" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -265,11 +265,11 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                      <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
+                                      <Component id="telefoneResidencialAluno" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                                      <Component id="emailAluno" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -516,94 +516,94 @@
             <Property name="text" type="java.lang.String" value="E-mail"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel33">
+        <Component class="javax.swing.JLabel" name="nomeAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nome Completo do Aluno"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel34">
+        <Component class="javax.swing.JLabel" name="nomeMaeAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nome Completo da M&#xe3;e do Aluno"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel35">
+        <Component class="javax.swing.JLabel" name="nomePaiAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nome Completo do Pai do Aluno"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel37">
+        <Component class="javax.swing.JLabel" name="nacionalidadeAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nacionalidade"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel38">
+        <Component class="javax.swing.JLabel" name="estadoCivilAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Estado Civil"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel39">
+        <Component class="javax.swing.JLabel" name="dataNasciAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Data Nascimento"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel40">
+        <Component class="javax.swing.JLabel" name="deficienciaAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tipo de Defici&#xea;ncia"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel45">
+        <Component class="javax.swing.JLabel" name="tipoEnderecoAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tipo de Endere&#xe7;o"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel46">
+        <Component class="javax.swing.JLabel" name="tipoLogradouroAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tipo de Logradouro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel48">
+        <Component class="javax.swing.JLabel" name="numeroAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="N&#xfa;mero"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel49">
+        <Component class="javax.swing.JLabel" name="bairroAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Bairro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel50">
+        <Component class="javax.swing.JLabel" name="complementoAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Complemento"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel51">
+        <Component class="javax.swing.JLabel" name="estadoAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Estado"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel52">
+        <Component class="javax.swing.JLabel" name="cepAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="CEP"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel53">
+        <Component class="javax.swing.JLabel" name="cidadeAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cidade"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel55">
+        <Component class="javax.swing.JLabel" name="telefoneResidencialAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Telefone Residencial"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel56">
+        <Component class="javax.swing.JLabel" name="telefoneCelularAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Telefone Celular"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel57">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel58">
+        <Component class="javax.swing.JLabel" name="lougradouroAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Logradouro"/>
           </Properties>
@@ -624,7 +624,7 @@
             <Property name="text" type="java.lang.String" value="Sexo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel61">
+        <Component class="javax.swing.JLabel" name="sexoAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sexo"/>
           </Properties>
@@ -637,12 +637,12 @@
             <Property name="text" type="java.lang.String" value="Pa&#xed;s"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel62">
+        <Component class="javax.swing.JLabel" name="paisAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Pa&#xed;s"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel47">
+        <Component class="javax.swing.JLabel" name="emailAluno">
           <Properties>
             <Property name="text" type="java.lang.String" value="E-mail"/>
           </Properties>

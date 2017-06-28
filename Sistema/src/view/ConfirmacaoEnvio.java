@@ -5,6 +5,9 @@
  */
 package view;
 
+import static controller.Gerenciador.obterAluno;
+import model.entity.Aluno;
+
 /**
  *
  * @author tsuba
@@ -17,6 +20,16 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
     public ConfirmacaoEnvio() {
         initComponents();
 
+    }
+    Aluno aluno;
+
+    public ConfirmacaoEnvio(String cpf, String senha) {
+        initComponents();
+        aluno = obterAluno(cpf, senha);
+//        campoEmailAluno.setText(aluno.getEmail());
+//        campoNomeAluno.setText(aluno.getNome());
+//        campoMatriculaAluno.setText(aluno.getMatricula());
+//        campoTelefoneAluno.setText(aluno.getTelefone());
     }
 
     /**
@@ -99,7 +112,7 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void simBotaoConfirmacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simBotaoConfirmacaoActionPerformed
-        EnviadoComSucesso janelaSucesso = new EnviadoComSucesso();
+        EnviadoComSucesso janelaSucesso = new EnviadoComSucesso(aluno.getCpf(),aluno.getSenha());
         janelaSucesso.setVisible(true);
         this.setVisible(false);
         this.dispose();

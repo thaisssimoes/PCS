@@ -20,11 +20,13 @@ public class TelaAluno extends javax.swing.JFrame {
      */
     public TelaAluno() {
         initComponents();
-        
+
     }
-    public TelaAluno(String senha, String cpf){
+    Aluno aluno;
+
+    public TelaAluno(String cpf, String senha) {
         initComponents();
-        Aluno aluno = obterAluno(senha,cpf);
+        aluno = obterAluno(cpf, senha);
         campoEmailAluno.setText(aluno.getEmail());
         campoNomeAluno.setText(aluno.getNome());
         campoMatriculaAluno.setText(aluno.getMatricula());
@@ -350,23 +352,23 @@ public class TelaAluno extends javax.swing.JFrame {
 
     private void listaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaMouseClicked
         String titulo;
-        JList list = (JList)evt.getSource();
+        JList list = (JList) evt.getSource();
         titulo = (String) list.getSelectedValue();
         if (evt.getClickCount() == 2) {
-            RequerimentoGeralAluno janelaRequerimento = new RequerimentoGeralAluno();
+            RequerimentoGeralAluno janelaRequerimento = new RequerimentoGeralAluno(aluno.getCpf(), aluno.getSenha());
             janelaRequerimento.setVisible(true);
             janelaRequerimento.setTitle(titulo);
             this.setVisible(false);
-            this.dispose(); 
+            this.dispose();
         }
-       
-        
+
+
     }//GEN-LAST:event_listaMouseClicked
 
     private void verDadosCompletosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verDadosCompletosMouseClicked
-        DadosCadastraisCompletos janelaDados = new DadosCadastraisCompletos();
+        DadosCadastraisCompletos janelaDados = new DadosCadastraisCompletos(aluno.getCpf(), aluno.getSenha());
         janelaDados.setVisible(true);
-       
+
      }//GEN-LAST:event_verDadosCompletosMouseClicked
 
     /**
