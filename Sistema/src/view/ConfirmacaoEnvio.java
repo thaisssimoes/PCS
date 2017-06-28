@@ -29,8 +29,8 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        naoBotaoConfirmacao = new javax.swing.JButton();
+        simBotaoConfirmacao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,16 +38,21 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
 
         jLabel1.setText("Você deseja confirmar o envio do requerimento?");
 
-        jButton1.setBackground(new java.awt.Color(56, 113, 156));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Não");
-
-        jButton2.setBackground(new java.awt.Color(56, 113, 156));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Sim");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        naoBotaoConfirmacao.setBackground(new java.awt.Color(56, 113, 156));
+        naoBotaoConfirmacao.setForeground(new java.awt.Color(255, 255, 255));
+        naoBotaoConfirmacao.setText("Não");
+        naoBotaoConfirmacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                naoBotaoConfirmacaoActionPerformed(evt);
+            }
+        });
+
+        simBotaoConfirmacao.setBackground(new java.awt.Color(56, 113, 156));
+        simBotaoConfirmacao.setForeground(new java.awt.Color(255, 255, 255));
+        simBotaoConfirmacao.setText("Sim");
+        simBotaoConfirmacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simBotaoConfirmacaoActionPerformed(evt);
             }
         });
 
@@ -61,9 +66,9 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(naoBotaoConfirmacao)
                 .addGap(38, 38, 38)
-                .addComponent(jButton2)
+                .addComponent(simBotaoConfirmacao)
                 .addGap(89, 89, 89))
         );
         jPanel1Layout.setVerticalGroup(
@@ -73,8 +78,8 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(naoBotaoConfirmacao)
+                    .addComponent(simBotaoConfirmacao))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -94,12 +99,17 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void simBotaoConfirmacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simBotaoConfirmacaoActionPerformed
         EnviadoComSucesso janelaSucesso = new EnviadoComSucesso();
         janelaSucesso.setVisible(true);
         this.setVisible(false);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_simBotaoConfirmacaoActionPerformed
+
+    private void naoBotaoConfirmacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naoBotaoConfirmacaoActionPerformed
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_naoBotaoConfirmacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,9 +147,9 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton naoBotaoConfirmacao;
+    private javax.swing.JButton simBotaoConfirmacao;
     // End of variables declaration//GEN-END:variables
 }

@@ -80,15 +80,10 @@
                           </Group>
                           <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel62" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -156,7 +151,6 @@
                                   <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                   <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -192,7 +186,6 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -333,14 +326,9 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\tsuba\Documents\PCS\Sistema\build\classes\view\iBSI.png"/>
+                  <Image iconType="3" name="/images/iBSI.png"/>
                 </Property>
               </Properties>
-              <AccessibilityProperties>
-                <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="null"/>
-                </Property>
-              </AccessibilityProperties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
             </Component>

@@ -11,12 +11,12 @@ import javax.swing.JList;
  *
  * @author labccet
  */
-public class telaAluno extends javax.swing.JFrame {
+public class TelaAluno extends javax.swing.JFrame {
 
     /**
      * Creates new form telaAluno
      */
-    public telaAluno() {
+    public TelaAluno() {
         initComponents();
     }
 
@@ -67,7 +67,7 @@ public class telaAluno extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(56, 113, 156));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\tsuba\\Documents\\PCS\\Sistema\\build\\classes\\view\\iBSI.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iBSI.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Lao MN", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -219,7 +219,7 @@ public class telaAluno extends javax.swing.JFrame {
 
         jLabel3.setText("Atualizar");
 
-        jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\tsuba\\Documents\\PCS\\Sistema\\build\\classes\\view\\refresh.png")); // NOI18N
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/refresh.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -364,20 +364,21 @@ public class telaAluno extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(telaAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(telaAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(telaAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(telaAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new telaAluno().setVisible(true);
+                new TelaAluno().setVisible(true);
             }
         });
     }

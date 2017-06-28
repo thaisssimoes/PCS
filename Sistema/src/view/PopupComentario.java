@@ -9,12 +9,12 @@ package view;
  *
  * @author tsuba
  */
-public class popupComentario extends javax.swing.JFrame {
+public class PopupComentario extends javax.swing.JFrame {
 
     /**
      * Creates new form popupComentario
      */
-    public popupComentario() {
+    public PopupComentario() {
         initComponents();
     }
 
@@ -31,6 +31,8 @@ public class popupComentario extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
+        okBotaoComentario = new javax.swing.JButton();
+        cancelarBotaoComentario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,15 +44,36 @@ public class popupComentario extends javax.swing.JFrame {
 
         jLabel1.setText("Adicionar comentário:");
 
+        okBotaoComentario.setText("OK");
+        okBotaoComentario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okBotaoComentarioActionPerformed(evt);
+            }
+        });
+
+        cancelarBotaoComentario.setText("Cancelar");
+        cancelarBotaoComentario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarBotaoComentarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(cancelarBotaoComentario)
+                        .addGap(69, 69, 69)
+                        .addComponent(okBotaoComentario)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -60,7 +83,11 @@ public class popupComentario extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancelarBotaoComentario)
+                    .addComponent(okBotaoComentario))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -76,6 +103,18 @@ public class popupComentario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void okBotaoComentarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoComentarioActionPerformed
+        this.setVisible(false);
+        this.dispose();
+        //TODO: Colocar a leitura do XML
+    }//GEN-LAST:event_okBotaoComentarioActionPerformed
+
+    private void cancelarBotaoComentarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoComentarioActionPerformed
+        this.setVisible(false);
+        this.dispose();        
+    // TODO add your handling code here:
+    }//GEN-LAST:event_cancelarBotaoComentarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,28 +133,31 @@ public class popupComentario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(popupComentario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PopupComentario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(popupComentario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PopupComentario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(popupComentario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PopupComentario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(popupComentario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PopupComentario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new popupComentario().setVisible(true);
+                new PopupComentario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cancelarBotaoComentario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton okBotaoComentario;
     // End of variables declaration//GEN-END:variables
 }

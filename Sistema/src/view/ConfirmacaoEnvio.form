@@ -53,9 +53,9 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="naoBotaoConfirmacao" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="simBotaoConfirmacao" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -67,8 +67,8 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="naoBotaoConfirmacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="simBotaoConfirmacao" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="30" max="32767" attributes="0"/>
               </Group>
@@ -81,7 +81,7 @@
             <Property name="text" type="java.lang.String" value="Voc&#xea; deseja confirmar o envio do requerimento?"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="naoBotaoConfirmacao">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="9c" green="71" red="38" type="rgb"/>
@@ -91,8 +91,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="naoBotaoConfirmacaoActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="simBotaoConfirmacao">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="9c" green="71" red="38" type="rgb"/>
@@ -103,7 +106,7 @@
             <Property name="text" type="java.lang.String" value="Sim"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="simBotaoConfirmacaoActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
