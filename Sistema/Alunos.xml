@@ -2,10 +2,22 @@
 <java version="1.8.0_111" class="java.beans.XMLDecoder">
  <object class="model.entity.Aluno">
   <void property="cpf">
-   <string>999</string>
+   <string>555</string>
+  </void>
+  <void property="email">
+   <string>99@blablabla.com</string>
+  </void>
+  <void property="matricula">
+   <string>12345678</string>
+  </void>
+  <void property="nome">
+   <string>Thay</string>
   </void>
   <void property="senha">
-   <string>456senha</string>
+   <string>stav</string>
+  </void>
+  <void property="telefone">
+   <string>171-17171</string>
   </void>
  </object>
 </java>

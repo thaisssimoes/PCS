@@ -1,11 +1,14 @@
 package controller;
 
 import dao.XMLHandler;
+import java.beans.XMLDecoder;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.time.LocalDate;
 import model.entity.Aluno;
 import model.entity.Professor;
-import model.entity.Tecnico;
-import model.entity.Usuario;
+
 import model.requerimento.Requerimento;
 import view.Login;
 
@@ -14,20 +17,13 @@ public class Gerenciador {
     public static void main(String[] args) {
         //  Login login = new Login();
 
-        Aluno usuario1 = new Aluno("133", "senha123");
-        Aluno usuario2 = new Aluno("999", "456senha");
-        Professor usuarioprof = new Professor("555", "stav", "datanacs2", "endreco2");
-        Requerimento requerimento = new Requerimento(usuario1, usuarioprof, "TRIAGEM", "Descricao", LocalDate.now(), null, "feedback");
+        Aluno aluno = new Aluno("555", "stav", "Thay", "99@blablabla.com", "171-17171", "12345678");
+
         XMLHandler xml = new XMLHandler();
 
         //analisaRequerimento(requerimento);
-        xml.escreveAluno(usuario1);
-        xml.escreveAluno(usuario2);
+        xml.escreveAluno(aluno);
 
-        System.out.println(xml.lerAluno(usuario1).getCpf());
-        System.out.println(xml.lerAluno(usuario1).getSenha());
-        System.out.println(xml.lerAluno(usuario2).getCpf());
-        System.out.println(xml.lerAluno(usuario2).getSenha());
     }
 
     public static void analisaRequerimento(Requerimento requerimento) {
@@ -46,6 +42,28 @@ public class Gerenciador {
 //            }
 //        }
         }
+    }
+
+    public static Aluno obterAluno(String cpf, String senha) {
+        String PATH = "alunos.xml";
+        Aluno loginAluno = new Aluno();
+
+        try {
+            FileInputStream fis = new FileInputStream(PATH);
+            BufferedInputStream buff = new BufferedInputStream(fis);
+
+            XMLDecoder decoder = new XMLDecoder(buff);
+
+            loginAluno = (model.entity.Aluno) decoder.readObject();
+            if (loginAluno.getCpf().equals(cpf)) {
+                senha = loginAluno.getSenha();
+            }
+            decoder.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return loginAluno;
     }
 
     private static void encaminharParaTecnico(Requerimento requerimento) {

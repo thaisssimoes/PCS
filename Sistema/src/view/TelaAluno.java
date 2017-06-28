@@ -5,7 +5,9 @@
  */
 package view;
 
+import static controller.Gerenciador.obterAluno;
 import javax.swing.JList;
+import model.entity.Aluno;
 
 /**
  *
@@ -18,6 +20,15 @@ public class TelaAluno extends javax.swing.JFrame {
      */
     public TelaAluno() {
         initComponents();
+        
+    }
+    public TelaAluno(String senha, String cpf){
+        initComponents();
+        Aluno aluno = obterAluno(senha,cpf);
+        campoEmailAluno.setText(aluno.getEmail());
+        campoNomeAluno.setText(aluno.getNome());
+        campoMatriculaAluno.setText(aluno.getMatricula());
+        campoTelefoneAluno.setText(aluno.getTelefone());
     }
 
     /**
@@ -40,19 +51,19 @@ public class TelaAluno extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        lista = new javax.swing.JList<String>();
+        lista = new javax.swing.JList<>();
         painelTelaAluno = new javax.swing.JTabbedPane();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         verDadosCompletos = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        campoNomeAluno = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        campoMatriculaAluno = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        campoEmailAluno = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        campoTelefoneAluno = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -152,10 +163,10 @@ public class TelaAluno extends javax.swing.JFrame {
                                 .addGap(44, 44, 44))))))
         );
 
-        lista.setModel(new javax.swing.AbstractListModel() {
+        lista.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Atualização de cadastro", "Cancelamento de matrícula", "Emissão de certificado ou diploma", "Emissão de histórico escolar", "Emissão do programa de disciplinas", "Isenção ou aproveitamento de disciplina", "Realização de segunda chamada", "Revisão de prova", "Trancamento de Disciplina", "Trancamento de matrícula", "Outros" };
             public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+            public String getElementAt(int i) { return strings[i]; }
         });
         lista.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -195,26 +206,26 @@ public class TelaAluno extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Nome:");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel12.setText("Nome Completo do Aluno");
+        campoNomeAluno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        campoNomeAluno.setText("Nome Completo do Aluno");
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setText("Matrícula:");
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel14.setText("123456789");
+        campoMatriculaAluno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        campoMatriculaAluno.setText("123456789");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("E-mail:");
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel16.setText("nome.sobrenome@uniriotec.br");
+        campoEmailAluno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        campoEmailAluno.setText("nome.sobrenome@uniriotec.br");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setText("Telefone:");
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel18.setText("(21) 9-2222-2222");
+        campoTelefoneAluno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        campoTelefoneAluno.setText("(21) 9-2222-2222");
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(56, 113, 156), 2, true));
@@ -276,19 +287,19 @@ public class TelaAluno extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel11)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel12)
+                                        .addComponent(campoNomeAluno)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel13))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel15)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel16)
+                                        .addComponent(campoEmailAluno)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel17)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel14))))
+                                    .addComponent(campoTelefoneAluno)
+                                    .addComponent(campoMatriculaAluno))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(59, 59, 59))
@@ -304,16 +315,16 @@ public class TelaAluno extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel12)
+                                    .addComponent(campoNomeAluno)
                                     .addComponent(jLabel11)
                                     .addComponent(jLabel13)
-                                    .addComponent(jLabel14))
+                                    .addComponent(campoMatriculaAluno))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel15)
-                                    .addComponent(jLabel16)
+                                    .addComponent(campoEmailAluno)
                                     .addComponent(jLabel17)
-                                    .addComponent(jLabel18)))
+                                    .addComponent(campoTelefoneAluno)))
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(verDadosCompletos)
@@ -395,16 +406,16 @@ public class TelaAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel campoEmailAluno;
+    private javax.swing.JLabel campoMatriculaAluno;
+    private javax.swing.JLabel campoNomeAluno;
+    private javax.swing.JLabel campoTelefoneAluno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;

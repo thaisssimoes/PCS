@@ -8,6 +8,7 @@ package view;
 import controller.Autenticacao;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
+import model.entity.Usuario;
 
 /**
  *
@@ -138,8 +139,8 @@ public class Login extends javax.swing.JFrame {
         boolean autenticado = Autenticacao.reconhecerUsuario(tipoUsuarioString, cpf, senha);
         if (autenticado) {
             this.setVisible(false);
-            this.dispose(); 
-            TelaAluno janelaTelaAluno = new TelaAluno();
+            this.dispose();
+            TelaAluno janelaTelaAluno = new TelaAluno(senha, cpf);
             janelaTelaAluno.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Erro no Login!");

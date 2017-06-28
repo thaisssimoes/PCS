@@ -101,7 +101,7 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
     private void okBotaoSucessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoSucessoActionPerformed
             this.setVisible(false);
             this.dispose();
-        int DISPOSE_ON_CLOSE1 = RequerimentoGeralAluno.DISPOSE_ON_CLOSE;
+            int DISPOSE_ON_CLOSE1 = RequerimentoGeralAluno.DISPOSE_ON_CLOSE;
             TelaAluno janelaTelaAluno = new TelaAluno();
             janelaTelaAluno.setVisible(true);
             

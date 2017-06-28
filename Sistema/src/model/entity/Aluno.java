@@ -19,8 +19,15 @@ public class Aluno extends Usuario {
         super(cpf,senha);
     }
 
+    public Aluno(String cpf, String senha, String nome, String email, String telefone,String matricula) {
+        super(cpf, senha, nome, email, telefone, matricula);
+    }
+    
+
     public Aluno() {
     }
+
+    
 
 
 }

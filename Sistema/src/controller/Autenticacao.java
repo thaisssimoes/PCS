@@ -53,7 +53,6 @@ public class Autenticacao {
 
                     }
                 }
-
             } else {
                 while (decoder.readObject() != null || autenticado == true) {
                     loginProfessor = (Professor) decoder.readObject();
