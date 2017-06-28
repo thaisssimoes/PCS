@@ -19,42 +19,26 @@ public class Gerenciador {
         Requerimento requerimento = new Requerimento(usuario, usuarioprof, "TRIAGEM", "Descricao", LocalDate.now(), null, "feedback");
         XMLHandler xml = new XMLHandler();
         Aluno alunoTeste = xml.LerXmlProduto("133");
-        
+
         analisaRequerimento(requerimento);
     }
 
     public static void analisaRequerimento(Requerimento requerimento) {
         if (requerimento.getStatus().equals("TRIAGEM")) {
             encaminharParaTecnico(requerimento);
-        } else if (requerimento.getStatus().equals("ATRIBUIDO")) {
-            if (requerimento.getAreaResponsavel().getClass().equals(Aluno.class)) {
-                encaminharParaAluno(requerimento);
-            } else if (requerimento.getAreaResponsavel().getClass().equals(Professor.class)) {
-                encaminharParaProfessor(requerimento);
-            } else if (requerimento.getAreaResponsavel().getClass().equals(Tecnico.class)) {
-                encaminharParaTecnico(requerimento);
-            }
-
+//
+//        } else {
+//            if (requerimento.getStatus().equals("ATRIBUIDO")) {
+//                if (requerimento.getAreaResponsavel().getClass().equals(Aluno.class)) {
+//                    encaminharParaAluno(requerimento);
+//                } else if (requerimento.getAreaResponsavel().getClass().equals(Professor.class)) {
+//                    encaminharParaProfessor(requerimento);
+//                } else if (requerimento.getAreaResponsavel().getClass().equals(Tecnico.class)) {
+//                    encaminharParaTecnico(requerimento);
+//                }
+//            }
+//        }
         }
-        if (requerimento.getStatus().equals("TRIAGEM")) {
-
-        }
-        if (requerimento.getStatus().equals("TRIAGEM")) {
-
-        }
-        if (requerimento.getStatus().equals("TRIAGEM")) {
-
-        }
-        if (requerimento.getStatus().equals("TRIAGEM")) {
-
-        }
-        if (requerimento.getStatus().equals("TRIAGEM")) {
-
-        }
-        if (requerimento.getStatus().equals("TRIAGEM")) {
-
-        }
-
     }
 
     private static void encaminharParaTecnico(Requerimento requerimento) {
@@ -72,6 +56,10 @@ public class Gerenciador {
     private static void encaminharParaProfessor(Requerimento requerimento) {
         ListaProfessor listaProfessor = new ListaProfessor();
         listaProfessor.getLista().add(requerimento);
+
+    }
+
+    private static void criar(Requerimento requerimento) {
 
     }
 }
