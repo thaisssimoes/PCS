@@ -364,6 +364,8 @@ public class TelaAluno extends javax.swing.JFrame {
     private void verDadosCompletosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verDadosCompletosMouseClicked
         DadosCadastraisCompletos janelaDados = new DadosCadastraisCompletos(aluno.getCpf(), aluno.getSenha());
         janelaDados.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
 
      }//GEN-LAST:event_verDadosCompletosMouseClicked
 
