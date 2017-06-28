@@ -5,6 +5,10 @@
  */
 package view;
 
+import controller.Autenticacao;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author labccet
@@ -28,7 +32,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        tipoUsuario = new javax.swing.JComboBox<String>();
+        tipoUsuario = new javax.swing.JComboBox<>();
         campoCPF = new javax.swing.JTextField();
         campoSenha = new javax.swing.JPasswordField();
         botaoLogin = new javax.swing.JButton();
@@ -44,13 +48,23 @@ public class Login extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(56, 113, 156));
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 600));
 
-        tipoUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aluno", "Professor", "Técnico" }));
+        tipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aluno", "Professor", "Técnico" }));
 
         campoCPF.setText("CPF");
 
         campoSenha.setText("senha");
+        campoSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoSenhaActionPerformed(evt);
+            }
+        });
 
         botaoLogin.setText("Entrar");
+        botaoLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoLoginActionPerformed(evt);
+            }
+        });
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/protocolo/iBSI.png"))); // NOI18N
@@ -123,6 +137,26 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoSenhaActionPerformed
+
+    private void botaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginActionPerformed
+        String senha;
+        String cpf;
+        String tipoUsuarioString;
+        tipoUsuarioString = Arrays.toString((String[]) tipoUsuario.getSelectedItem());
+        senha = Arrays.toString(campoSenha.getPassword());
+        cpf = campoCPF.getText();
+        boolean autenticado = Autenticacao.reconhecerUsuario(tipoUsuarioString, cpf, senha);
+        if (autenticado) {
+            JOptionPane.showMessageDialog(this, "Sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro no Login!");
+        }
+
+    }//GEN-LAST:event_botaoLoginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -137,16 +171,24 @@ public class Login extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

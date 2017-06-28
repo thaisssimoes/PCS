@@ -15,6 +15,9 @@ public class Aluno extends Usuario {
         super(cpf, nome, dataNascimeto, endereco);
         // TODO Auto-generated constructor stub
     }
+    public Aluno(String cpf, String senha){
+        super(cpf,senha);
+    }
 
     public Aluno() {
     }

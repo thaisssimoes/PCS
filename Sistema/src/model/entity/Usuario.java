@@ -42,4 +42,9 @@ public class Usuario {
         this.endereco = endereco;
     }
 
+    public Usuario(String cpf, String senha) {
+        this.cpf = cpf;
+        this.senha = senha;
+    }
+
 }

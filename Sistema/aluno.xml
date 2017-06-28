@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_111" class="java.beans.XMLDecoder">
+ <object class="Aluno">
+  <void property="nome">
+   <string>Fulana de tal</string>
+  </void>
+  <void property="CPF">
+   <string>123456789</string>
+  </void>
+  <void property="senha">
+   <string>senha123</string>
+  </void>
+    <void property="email">
+   <string>fulana.tal@uniriotec.br</string>
+  </void>  
+  <void property="mae">
+   <string>Ful Ana</string>
+  </void> 
+  <void property="pai">
+   <string>De tal</string>
+  </void> 
+  <void property="rg">
+   <string>456789</string>
+  </void> 
+  <void property="sexo">
+   <string>Feminino</string>
+  </void> 
+  <void property="nacionalidade">
+   <string>Brasileira</string>
+  </void> 
+  <void property="nascimento">
+   <string>15/12/2010</string>
+  </void> 
+  <void property="tipoEndereco">
+   <string>Residencial</string>
+  </void> 
+  <void property="tipoLogradouro">
+   <string>Rua</string>
+  </void> 
+  <void property="logradouro">
+   <string>dos tijolos amarelos</string>
+  </void> 
+  <void property="numero">
+   <string>135</string>
+  </void> 
+  <void property="complemento">
+   <string>802</string>
+  </void> 
+  <void property="bairro">
+   <string>Carreiros</string>
+  </void> 
+  <void property="pais">
+   <string>Brasil</string>
+  </void> 
+  <void property="estado">
+   <string>Rio de Janeiro</string>
+  </void> 
+  <void property="cep">
+   <string>00000-000</string>
+  </void> 
+  <void property="telefone">
+   <string>9-1111-1111</string>
+  </void>
+ </object>
+ 
+ 
+
+ 
+ 
+ 
+ </java>

@@ -14,13 +14,16 @@ public class Gerenciador {
     public static void main(String[] args) {
         //  Login login = new Login();
 
-        Usuario usuario = new Aluno("133", "Raf", "datanacs", "endreco");
-        Usuario usuarioprof = new Professor("555", "stav", "datanacs2", "endreco2");
+        Aluno usuario = new Aluno("133", "Rafael", "datanacs", "endreco");
+        Professor usuarioprof = new Professor("555", "stav", "datanacs2", "endreco2");
         Requerimento requerimento = new Requerimento(usuario, usuarioprof, "TRIAGEM", "Descricao", LocalDate.now(), null, "feedback");
         XMLHandler xml = new XMLHandler();
-        Aluno alunoTeste = xml.LerXmlProduto("133");
-
-        analisaRequerimento(requerimento);
+        Aluno alunoTeste = xml.lerAluno(usuario);
+        System.out.println(alunoTeste.getNome());
+        //analisaRequerimento(requerimento);
+        xml.escreveAluno(usuario);
+        xml.lerAluno(usuario);
+        System.out.println(usuario.getNome());
     }
 
     public static void analisaRequerimento(Requerimento requerimento) {

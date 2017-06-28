@@ -1,41 +1,48 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
 import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import model.entity.Aluno;
 
 /**
  *
- * @author rafae
+ * @author Thaïs Simões Classe responsável pelo armazenamento em XML dos dados
+ * da agenda.
  */
 public class XMLHandler {
 
-    public Aluno LerXmlProduto(String cpf) {
-
-        Aluno aluno = null;
+    public void escreveAluno(Aluno aluno) {
         String PATH = "Alunos.xml";
 
         try {
+            XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(PATH)));
 
-            XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream(PATH)));
-            while (decoder.readObject() != null) {
-                System.out.println("dentro");
-                aluno = (Aluno) decoder.readObject();
-                if (aluno.getCpf().equals(cpf)) {
-                    System.out.println("achou");
-                    decoder.close();
-                    return aluno;
-                }
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+            encoder.writeObject(aluno);
+
+            encoder.close();
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        }
+    }
+
+    public Aluno lerAluno(Aluno aluno) {
+
+        try {
+            XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream("Alunos.xml")));
+
+            aluno = (Aluno) decoder.readObject();
+
+            decoder.close();
+
+        } catch (Exception exc) {
+            exc.printStackTrace();
         }
         return aluno;
+
     }
+
 }

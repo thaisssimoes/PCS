@@ -1,21 +1,17 @@
-<model.entity.Aluno>
-  <cpf>999</cpf>
-  <nome>Raf</nome>
-  <dataNascimeto>09/19/1991</dataNascimeto>
-  <endereco>endereco1</endereco>
-</model.entity.Aluno><model.entity.Aluno>
-  <cpf>999</cpf>
-  <nome>Raf</nome>
-  <dataNascimeto>09/19/1991</dataNascimeto>
-  <endereco>endereco1</endereco>
-</model.entity.Aluno><model.entity.Aluno>
-  <cpf>999</cpf>
-  <nome>Raf</nome>
-  <dataNascimeto>09/19/1991</dataNascimeto>
-  <endereco>endereco1</endereco>
-</model.entity.Aluno><model.entity.Aluno>
-  <cpf>999</cpf>
-  <nome>Raf</nome>
-  <dataNascimeto>09/19/1991</dataNascimeto>
-  <endereco>endereco1</endereco>
-</model.entity.Aluno>
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_111" class="java.beans.XMLDecoder">
+ <object class="model.entity.Aluno">
+  <void property="cpf">
+   <string>133</string>
+  </void>
+  <void property="dataNascimeto">
+   <string>datanacs</string>
+  </void>
+  <void property="endereco">
+   <string>endreco</string>
+  </void>
+  <void property="nome">
+   <string>Rafael</string>
+  </void>
+ </object>
+</java>
