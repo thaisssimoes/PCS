@@ -44,7 +44,7 @@ public class TelaAluno extends javax.swing.JFrame {
         painelTelaAluno = new javax.swing.JTabbedPane();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
+        verDadosCompletos = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -184,8 +184,13 @@ public class TelaAluno extends javax.swing.JFrame {
 
         painelTelaAluno.addTab("Meus Requerimentos em aberto", jScrollPane4);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setText("Ver dados cadastrais completos");
+        verDadosCompletos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        verDadosCompletos.setText("Ver dados cadastrais completos");
+        verDadosCompletos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                verDadosCompletosMouseClicked(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Nome:");
@@ -265,7 +270,7 @@ public class TelaAluno extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
+                            .addComponent(verDadosCompletos)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -311,7 +316,7 @@ public class TelaAluno extends javax.swing.JFrame {
                                     .addComponent(jLabel18)))
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
+                        .addComponent(verDadosCompletos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addComponent(painelTelaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1))
@@ -346,6 +351,12 @@ public class TelaAluno extends javax.swing.JFrame {
        
         
     }//GEN-LAST:event_listaMouseClicked
+
+    private void verDadosCompletosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verDadosCompletosMouseClicked
+        DadosCadastraisCompletos janelaDados = new DadosCadastraisCompletos();
+        janelaDados.setVisible(true);
+       
+     }//GEN-LAST:event_verDadosCompletosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -398,7 +409,6 @@ public class TelaAluno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -412,5 +422,6 @@ public class TelaAluno extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JList<String> lista;
     private javax.swing.JTabbedPane painelTelaAluno;
+    private javax.swing.JLabel verDadosCompletos;
     // End of variables declaration//GEN-END:variables
 }

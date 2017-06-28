@@ -32,7 +32,7 @@ public class Requerimento {
     private LocalDate dataSolucao;
     @Getter
     @Setter
-    private String feedback;
+    private String resposta;
 
     public Requerimento(Usuario requerente, Usuario areaResponsavel, String status, String descricao,
             LocalDate dataCriacao, LocalDate dataSolucao, String feedback) {
@@ -43,7 +43,7 @@ public class Requerimento {
         this.descricao = descricao;
         this.dataCriacao = dataCriacao;
         this.dataSolucao = dataSolucao;
-        this.feedback = feedback;
+        this.resposta = feedback;
         this.numeroProtocolo = gerarNumeroProtocolo();
     }
 
