@@ -14,5 +14,8 @@ public class Professor extends Usuario{
     public Professor(String cpf, String nome, String dataNascimeto, String endereco) {
         super(cpf, nome, dataNascimeto, endereco);
     }
+
+    public Professor() {
+    }
     
 }
