@@ -53,9 +53,9 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel25 = new javax.swing.JLabel();
-        enviarAluno = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        enviarBotaoAluno = new javax.swing.JButton();
+        atualizarBotaoAluno = new javax.swing.JButton();
+        cancelarBotaoAluno = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel26 = new javax.swing.JLabel();
@@ -69,7 +69,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(56, 113, 156));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\tsuba\\Documents\\PCS\\Sistema\\build\\classes\\view\\iBSI.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iBSI.png"))); // NOI18N
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Data de abertura:");
@@ -192,25 +192,35 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setText("Resposta:");
 
-        enviarAluno.setBackground(new java.awt.Color(56, 113, 156));
-        enviarAluno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        enviarAluno.setForeground(new java.awt.Color(255, 255, 255));
-        enviarAluno.setText("Enviar");
-        enviarAluno.addActionListener(new java.awt.event.ActionListener() {
+        enviarBotaoAluno.setBackground(new java.awt.Color(56, 113, 156));
+        enviarBotaoAluno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        enviarBotaoAluno.setForeground(new java.awt.Color(255, 255, 255));
+        enviarBotaoAluno.setText("Enviar");
+        enviarBotaoAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enviarAlunoActionPerformed(evt);
+                enviarBotaoAlunoActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(56, 113, 156));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Atualizar");
+        atualizarBotaoAluno.setBackground(new java.awt.Color(56, 113, 156));
+        atualizarBotaoAluno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        atualizarBotaoAluno.setForeground(new java.awt.Color(255, 255, 255));
+        atualizarBotaoAluno.setText("Atualizar");
+        atualizarBotaoAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atualizarBotaoAlunoActionPerformed(evt);
+            }
+        });
 
-        jButton5.setBackground(new java.awt.Color(56, 113, 156));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Cancelar");
+        cancelarBotaoAluno.setBackground(new java.awt.Color(56, 113, 156));
+        cancelarBotaoAluno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cancelarBotaoAluno.setForeground(new java.awt.Color(255, 255, 255));
+        cancelarBotaoAluno.setText("Cancelar");
+        cancelarBotaoAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarBotaoAlunoActionPerformed(evt);
+            }
+        });
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -263,11 +273,11 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(153, 153, 153)
-                        .addComponent(jButton5)
+                        .addComponent(cancelarBotaoAluno)
                         .addGap(64, 64, 64)
-                        .addComponent(jButton4)
+                        .addComponent(atualizarBotaoAluno)
                         .addGap(59, 59, 59)
-                        .addComponent(enviarAluno)))
+                        .addComponent(enviarBotaoAluno)))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -299,9 +309,9 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4)
-                    .addComponent(enviarAluno))
+                    .addComponent(cancelarBotaoAluno)
+                    .addComponent(atualizarBotaoAluno)
+                    .addComponent(enviarBotaoAluno))
                 .addGap(36, 36, 36))
         );
 
@@ -321,13 +331,27 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void enviarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarAlunoActionPerformed
+    private void enviarBotaoAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoAlunoActionPerformed
         
       ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio();
       janelaConfirmacao.setVisible(true);
         
 
-    }//GEN-LAST:event_enviarAlunoActionPerformed
+    }//GEN-LAST:event_enviarBotaoAlunoActionPerformed
+
+    private void atualizarBotaoAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoAlunoActionPerformed
+
+        PopupComentario janelaComentario = new PopupComentario();
+        janelaComentario.setVisible(true);
+
+    }//GEN-LAST:event_atualizarBotaoAlunoActionPerformed
+
+    private void cancelarBotaoAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoAlunoActionPerformed
+        TelaAluno janelaTelaAluno = new TelaAluno();
+        janelaTelaAluno.setVisible(true);
+        this.setVisible(false);
+        this.dispose(); 
+    }//GEN-LAST:event_cancelarBotaoAlunoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -372,9 +396,9 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton enviarAluno;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton atualizarBotaoAluno;
+    private javax.swing.JButton cancelarBotaoAluno;
+    private javax.swing.JButton enviarBotaoAluno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

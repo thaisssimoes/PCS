@@ -9,12 +9,12 @@ package view;
  *
  * @author tsuba
  */
-public class dadosCadastraisCompletos extends javax.swing.JFrame {
+public class DadosCadastraisCompletos extends javax.swing.JFrame {
 
     /**
      * Creates new form dadosCadastraisCompleto
      */
-    public dadosCadastraisCompletos() {
+    public DadosCadastraisCompletos() {
         initComponents();
     }
 
@@ -87,7 +87,7 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(56, 113, 156));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\tsuba\\Documents\\PCS\\Sistema\\build\\classes\\view\\iBSI.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iBSI.png"))); // NOI18N
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,8 +124,6 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
-
-        jLabel1.getAccessibleContext().setAccessibleParent(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("Nome");
@@ -270,13 +268,10 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
                             .addComponent(jLabel59))
                         .addGap(129, 129, 129)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel48)
-                                    .addComponent(jLabel52)
-                                    .addComponent(jLabel29)
-                                    .addComponent(jLabel23))
-                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jLabel48)
+                            .addComponent(jLabel52)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel23)
                             .addComponent(jLabel36)
                             .addComponent(jLabel62)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -332,8 +327,7 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel10)
                                 .addGap(6, 6, 6)
-                                .addComponent(jLabel40)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                                .addComponent(jLabel40))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,8 +355,7 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
                                                 .addGap(6, 6, 6)
                                                 .addComponent(jLabel9)
                                                 .addGap(6, 6, 6)
-                                                .addComponent(jLabel38)))))
-                                .addGap(28, 28, 28)))
+                                                .addComponent(jLabel38)))))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -463,21 +456,23 @@ public class dadosCadastraisCompletos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(dadosCadastraisCompletos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DadosCadastraisCompletos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(dadosCadastraisCompletos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DadosCadastraisCompletos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(dadosCadastraisCompletos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DadosCadastraisCompletos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(dadosCadastraisCompletos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DadosCadastraisCompletos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new dadosCadastraisCompletos().setVisible(true);
+                new DadosCadastraisCompletos().setVisible(true);
             }
         });
     }
