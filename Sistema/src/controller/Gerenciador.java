@@ -14,16 +14,20 @@ public class Gerenciador {
     public static void main(String[] args) {
         //  Login login = new Login();
 
-        Aluno usuario = new Aluno("133", "Rafael", "datanacs", "endreco");
+        Aluno usuario1 = new Aluno("133", "senha123");
+        Aluno usuario2 = new Aluno("999", "456senha");
         Professor usuarioprof = new Professor("555", "stav", "datanacs2", "endreco2");
-        Requerimento requerimento = new Requerimento(usuario, usuarioprof, "TRIAGEM", "Descricao", LocalDate.now(), null, "feedback");
+        Requerimento requerimento = new Requerimento(usuario1, usuarioprof, "TRIAGEM", "Descricao", LocalDate.now(), null, "feedback");
         XMLHandler xml = new XMLHandler();
-        Aluno alunoTeste = xml.lerAluno(usuario);
-        System.out.println(alunoTeste.getNome());
+
         //analisaRequerimento(requerimento);
-        xml.escreveAluno(usuario);
-        xml.lerAluno(usuario);
-        System.out.println(usuario.getNome());
+        xml.escreveAluno(usuario1);
+        xml.escreveAluno(usuario2);
+
+        System.out.println(xml.lerAluno(usuario1).getCpf());
+        System.out.println(xml.lerAluno(usuario1).getSenha());
+        System.out.println(xml.lerAluno(usuario2).getCpf());
+        System.out.println(xml.lerAluno(usuario2).getSenha());
     }
 
     public static void analisaRequerimento(Requerimento requerimento) {

@@ -132,12 +132,15 @@ public class Login extends javax.swing.JFrame {
         String senha;
         String cpf;
         String tipoUsuarioString;
-        tipoUsuarioString = Arrays.toString((String[]) tipoUsuario.getSelectedItem());
-        senha = Arrays.toString(campoSenha.getPassword());
+        tipoUsuarioString = String.valueOf(tipoUsuario.getSelectedItem());
+        senha = String.valueOf(campoSenha.getPassword());
         cpf = campoCPF.getText();
         boolean autenticado = Autenticacao.reconhecerUsuario(tipoUsuarioString, cpf, senha);
         if (autenticado) {
-            JOptionPane.showMessageDialog(this, "Sucesso!");
+            this.setVisible(false);
+            this.dispose(); 
+            TelaAluno janelaTelaAluno = new TelaAluno();
+            janelaTelaAluno.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Erro no Login!");
         }

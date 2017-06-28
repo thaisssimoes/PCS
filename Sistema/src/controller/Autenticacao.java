@@ -15,11 +15,11 @@ public class Autenticacao {
     public static boolean reconhecerUsuario(String tipoUsuario, String cpfTela, String senhaTela) {
         String PATH = "";
         if (tipoUsuario.equals("Aluno")) {
-            PATH = "aluno.xml";
+            PATH = "alunos.xml";
         } else if (tipoUsuario.equals("Tecnico")) {
-            PATH = "tecnico.xml";
+            PATH = "tecnicos.xml";
         } else {
-            PATH = "professor.xml";
+            PATH = "professores.xml";
         }
 
         String senha;
@@ -36,13 +36,12 @@ public class Autenticacao {
             XMLDecoder decoder = new XMLDecoder(buff);
 
             if (tipoUsuario == "Aluno") {
-                while (decoder.readObject() != null || autenticado == true) {
-                    loginAluno = (Aluno) decoder.readObject();
-                    if (loginAluno.getCpf().equals(cpfTela)) {
-                        senha = loginAluno.getSenha();
-                        autenticado = autenticacao(senha, senhaTela);
 
-                    }
+                loginAluno = (model.entity.Aluno) decoder.readObject();
+                if (loginAluno.getCpf().equals(cpfTela)) {
+                    senha = loginAluno.getSenha();
+                    autenticado = autenticacao(senha, senhaTela);
+
                 }
 
             } else if (tipoUsuario == "Tecnico") {

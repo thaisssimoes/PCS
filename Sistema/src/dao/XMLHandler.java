@@ -16,13 +16,15 @@ import model.entity.Aluno;
 public class XMLHandler {
 
     public void escreveAluno(Aluno aluno) {
-        String PATH = "Alunos.xml";
+        String PATH = "alunos.xml";
 
         try {
-            XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(PATH)));
+            FileOutputStream fos = new FileOutputStream(PATH);
+            BufferedOutputStream buffout = new BufferedOutputStream(fos);
+            XMLEncoder encoder = new XMLEncoder(buffout);
 
             encoder.writeObject(aluno);
-
+            
             encoder.close();
         } catch (Exception exc) {
             exc.printStackTrace();
@@ -32,7 +34,7 @@ public class XMLHandler {
     public Aluno lerAluno(Aluno aluno) {
 
         try {
-            XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream("Alunos.xml")));
+            XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream("alunos.xml")));
 
             aluno = (Aluno) decoder.readObject();
 
