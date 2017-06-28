@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package protocolo;
+package view;
 
 /**
  *
@@ -45,6 +45,11 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(56, 113, 156));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Sim");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -88,6 +93,13 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        EnviadoComSucesso janelaSucesso = new EnviadoComSucesso();
+        janelaSucesso.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
