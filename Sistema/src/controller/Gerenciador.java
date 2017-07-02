@@ -20,12 +20,14 @@ public class Gerenciador {
 
         //analisaRequerimento(requerimento);
         ManipuladorXML manipulador = new ManipuladorXML("alunos.xml");
-        manipulador.adiciona(aluno1);
-        manipulador.adiciona(aluno2);
-        manipulador.escreveXML();
+        //manipulador.adiciona(aluno1);
+        //manipulador.adiciona(aluno2);
+       // manipulador.escreveXML();
         manipulador.leXML();
         ArrayList<Aluno> lista = manipulador.getLista();
-        System.out.println(lista.get(1).getCpf());
+        for(int i =0; i<lista.size(); i++ ){
+        System.out.println(lista.get(i).getEmail());
+        }
     }
 
     public static void analisaRequerimento(Requerimento requerimento) {

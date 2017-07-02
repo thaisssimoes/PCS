@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_111" class="java.beans.XMLDecoder">
- <object class="Aluno">
+ <void method="add">
+   <object class="model.entity.Aluno">
   <void property="nome">
    <string>Fulana de tal</string>
   </void>
