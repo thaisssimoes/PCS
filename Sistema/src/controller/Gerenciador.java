@@ -72,7 +72,7 @@ public class Gerenciador {
     }
 
     public static ArrayList acessarXML(String tipoUsuario) {
-        ManipuladorXML manipulador = new ManipuladorXML(String.valueOf(tipoUsuario) + ".xml");
+        ManipuladorXML manipulador = new ManipuladorXML(String.valueOf(tipoUsuario) + "s.xml");
         manipulador.leXML();
         return manipulador.getLista();
     }
