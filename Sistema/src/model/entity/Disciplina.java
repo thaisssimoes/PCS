@@ -12,7 +12,7 @@ import lombok.Setter;
  *
  * @author RafaelSalazarStavale
  */
-class Disciplina {
+public class Disciplina {
     @Getter
     @Setter
     private String nome;

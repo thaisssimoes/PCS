@@ -63,14 +63,10 @@ public class Gerenciador {
     }
 
     private static void encaminharParaAluno(Requerimento requerimento) {
-        ListaAluno listaAluno = new ListaAluno();
-        listaAluno.getLista().add(requerimento);
 
     }
 
     private static void encaminharParaProfessor(Requerimento requerimento) {
-        ListaProfessor listaProfessor = new ListaProfessor();
-        listaProfessor.getLista().add(requerimento);
 
     }
 

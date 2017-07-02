@@ -33,19 +33,23 @@ public class Requerimento {
     @Getter
     @Setter
     private String resposta;
+    @Getter
+    @Setter
+    private String tipoRequerimento;
 
-    public Requerimento(Usuario requerente, Usuario areaResponsavel, String status, String descricao,
-            LocalDate dataCriacao, LocalDate dataSolucao, String feedback) {
-        super();
+    public Requerimento(Usuario requerente, Usuario areaResponsavel, String status, String descricao, LocalDate dataCriacao, LocalDate dataSolucao, String resposta, String tipoRequerimento) {
+        this.numeroProtocolo = gerarNumeroProtocolo();
         this.requerente = requerente;
         this.areaResponsavel = areaResponsavel;
         this.status = status;
         this.descricao = descricao;
         this.dataCriacao = dataCriacao;
         this.dataSolucao = dataSolucao;
-        this.resposta = feedback;
-        this.numeroProtocolo = gerarNumeroProtocolo();
+        this.resposta = resposta;
+        this.tipoRequerimento = tipoRequerimento;
     }
+
+    
 
     private String gerarNumeroProtocolo() {
         return Instant.now().toString();
