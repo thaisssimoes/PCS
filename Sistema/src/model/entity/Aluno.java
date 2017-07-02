@@ -5,29 +5,31 @@
  */
 package model.entity;
 
+import java.util.ArrayList;
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  *
  * @author RafaelSalazarStavale
  */
 public class Aluno extends Usuario {
 
-    public Aluno(String cpf, String nome, String dataNascimeto, String endereco) {
-        super(cpf, nome, dataNascimeto, endereco);
-        // TODO Auto-generated constructor stub
-    }
-    public Aluno(String cpf, String senha){
-        super(cpf,senha);
-    }
-
-    public Aluno(String cpf, String senha, String nome, String email, String telefone,String matricula) {
-        super(cpf, senha, nome, email, telefone, matricula);
-    }
-    
+    @Getter
+    @Setter
+    private ArrayList<Disciplina> grade;
+    @Getter
+    @Setter
+    private String matricula;
 
     public Aluno() {
     }
 
+    public Aluno(String matricula, String cpf, String senha, String nome, String dataNascimeto, String nacionalidade, String email, String periodo, String telefone, String estadoCivil, String sexo, String nomeDaMae, String nomeDoPai, String deficiencia, String tipoDeEndereco, String tipoLogradouro, String complemento, String estado, String telefoneResidencial, String bairro, String cidade, String telefoneCelular, String numero, String cep, String pais) {
+        super(cpf, senha, nome, dataNascimeto, nacionalidade, email, periodo, telefone, estadoCivil, sexo, nomeDaMae, nomeDoPai, deficiencia, tipoDeEndereco, tipoLogradouro, complemento, estado, telefoneResidencial, bairro, cidade, telefoneCelular, numero, cep, pais);
+        this.matricula = matricula;
+    }
     
-
+    
 
 }

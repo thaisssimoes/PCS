@@ -19,9 +19,6 @@ public class Usuario {
     private String cpf;
     @Getter
     @Setter
-    private String matricula;
-    @Getter
-    @Setter
     private String senha;
     @Getter
     @Setter
@@ -31,7 +28,7 @@ public class Usuario {
     private String dataNascimeto;
     @Getter
     @Setter
-    private String endereco;
+    private String nacionalidade;
     @Getter
     @Setter
     private String email;
@@ -41,34 +38,82 @@ public class Usuario {
     @Getter
     @Setter
     private String telefone;
+    @Getter
+    @Setter
+    private String estadoCivil;
+    @Getter
+    @Setter
+    private String sexo;
+    @Getter
+    @Setter
+    private String nomeDaMae;
+    @Getter
+    @Setter
+    private String nomeDoPai;
+    @Getter
+    @Setter
+    private String deficiencia;
+    @Getter
+    @Setter
+    private String tipoDeEndereco;
+    @Getter
+    @Setter
+    private String tipoLogradouro;
+    @Getter
+    @Setter
+    private String complemento;
+    @Getter
+    @Setter
+    private String estado;
+    @Getter
+    @Setter
+    private String telefoneResidencial;
+    @Getter
+    @Setter
+    private String bairro;
+    @Getter
+    @Setter
+    private String cidade;
+    @Getter
+    @Setter
+    private String telefoneCelular;
+    @Getter
+    @Setter
+    private String numero;
+    @Getter
+    @Setter
+    private String cep;
+    @Getter
+    @Setter
+    private String pais;
 
     public Usuario() {
     }
 
-    ;
-    public Usuario(String cpf, String nome, String dataNascimeto, String endereco) {
-        super();
+    public Usuario(String cpf, String senha, String nome, String dataNascimeto, String nacionalidade, String email, String periodo, String telefone, String estadoCivil, String sexo, String nomeDaMae, String nomeDoPai, String deficiencia, String tipoDeEndereco, String tipoLogradouro, String complemento, String estado, String telefoneResidencial, String bairro, String cidade, String telefoneCelular, String numero, String cep, String pais) {
         this.cpf = cpf;
+        this.senha = senha;
         this.nome = nome;
         this.dataNascimeto = dataNascimeto;
-        this.endereco = endereco;
-    }
-
-    public Usuario(String cpf, String senha) {
-        this.cpf = cpf;
-        this.senha = senha;
-    }
-
-    public Usuario(String cpf, String senha, String nome, String email, String telefone, String matricula) {
-        this.cpf = cpf;
-        this.senha = senha;
-        this.nome = nome;
+        this.nacionalidade = nacionalidade;
         this.email = email;
+        this.periodo = periodo;
         this.telefone = telefone;
-        this.matricula = matricula;
-    }
-
-    public String getMatricula() {
-        return matricula;
+        this.estadoCivil = estadoCivil;
+        this.sexo = sexo;
+        this.nomeDaMae = nomeDaMae;
+        this.nomeDoPai = nomeDoPai;
+        this.deficiencia = deficiencia;
+        this.tipoDeEndereco = tipoDeEndereco;
+        this.tipoLogradouro = tipoLogradouro;
+        this.complemento = complemento;
+        this.estado = estado;
+        this.telefoneResidencial = telefoneResidencial;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.telefoneCelular = telefoneCelular;
+        this.numero = numero;
+        this.cep = cep;
+        this.pais = pais;
     }
 }
