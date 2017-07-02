@@ -23,7 +23,6 @@
     </void>
    </object>
   </void>
-  
   <void method="add">
    <object class="model.entity.Aluno">
   <void property="nome">

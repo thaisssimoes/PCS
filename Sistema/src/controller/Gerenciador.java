@@ -11,14 +11,16 @@ public class Gerenciador {
     public static void main(String[] args) {
         // Login login = new Login();
 
-
         //analisaRequerimento(requerimento);
         ManipuladorXML manipulador = new ManipuladorXML("alunos.xml");
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2ca7e37b9ba85bcef1d93e0855619525d55ea0c8
         manipulador.leXML();
         ArrayList<Aluno> lista = manipulador.getLista();
-        for(int i =0; i<lista.size(); i++ ){
-        System.out.println(lista.get(i).getEmail());
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println(lista.get(i).getEmail());
         }
     }
 
