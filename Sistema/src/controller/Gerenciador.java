@@ -11,19 +11,12 @@ public class Gerenciador {
     public static void main(String[] args) {
         // Login login = new Login();
 
-
         //analisaRequerimento(requerimento);
         ManipuladorXML manipulador = new ManipuladorXML("alunos.xml");
-<<<<<<< HEAD
-        //manipulador.adiciona(aluno1);
-        //manipulador.adiciona(aluno2);
-       // manipulador.escreveXML();
-=======
->>>>>>> e3e1dcbdd6b52f4c970850c476a440e41301886a
         manipulador.leXML();
         ArrayList<Aluno> lista = manipulador.getLista();
-        for(int i =0; i<lista.size(); i++ ){
-        System.out.println(lista.get(i).getEmail());
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println(lista.get(i).getEmail());
         }
     }
 
