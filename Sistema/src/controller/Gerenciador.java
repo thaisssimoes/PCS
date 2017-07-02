@@ -1,34 +1,40 @@
 package controller;
 
-import dao.XMLHandler;
-import java.beans.XMLDecoder;
-
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.time.LocalDate;
+import dao.ManipuladorXML;
+import java.util.ArrayList;
 import model.entity.Aluno;
-import model.entity.Professor;
 
 import model.requerimento.Requerimento;
-import view.Login;
 
 public class Gerenciador {
 
     public static void main(String[] args) {
         // Login login = new Login();
 
-        Aluno aluno = new Aluno("555", "stav", "Thay", "99@blablabla.com", "171-17171", "12345678");
-
-        XMLHandler xml = new XMLHandler();
+        Aluno aluno1 = new Aluno("123", "sol", "Galileu", "galileu@blablabla.com", "171-17171", "12345678");
+        Aluno aluno2 = new Aluno("456", "jupiter", "Galilei", "galilei@blablabla.com", "171-17171", "12345678");
+        Aluno aluno3 = new Aluno("789", "stav", "Thay", "99@blablabla.com", "171-17171", "12345678");
+        Aluno aluno4 = new Aluno("101112", "stav", "Thay", "99@blablabla.com", "171-17171", "12345678");
+        Aluno aluno5 = new Aluno("131415", "stav", "Thay", "99@blablabla.com", "171-17171", "12345678");
+        Aluno aluno6 = new Aluno("161718", "stav", "Thay", "99@blablabla.com", "171-17171", "12345678");
 
         //analisaRequerimento(requerimento);
-        xml.escreveAluno(aluno);
-
+        ManipuladorXML manipulador = new ManipuladorXML("alunos.xml");
+        manipulador.adiciona(aluno1);
+        manipulador.adiciona(aluno2);
+        manipulador.escreveXML();
+        manipulador.leXML();
+        ArrayList<Aluno> lista = manipulador.getLista();
+        System.out.println(lista.get(1).getCpf());
     }
 
     public static void analisaRequerimento(Requerimento requerimento) {
         if (requerimento.getStatus().equals("TRIAGEM")) {
-            encaminharParaTecnico(requerimento);
+            ManipuladorXML xml = new ManipuladorXML("Requerimentos.xml");
+            xml.adiciona(requerimento);
+            xml.escreveXML();
+
+            //    encaminharParaTecnico(requerimento);
 //
 //        } else {
 //            if (requerimento.getStatus().equals("ATRIBUIDO")) {
@@ -45,30 +51,23 @@ public class Gerenciador {
     }
 
     public static Aluno obterAluno(String cpf, String senha) {
-        String PATH = "alunos.xml";
-        Aluno loginAluno = new Aluno();
-
-        try {
-            FileInputStream fis = new FileInputStream(PATH);
-            BufferedInputStream buff = new BufferedInputStream(fis);
-
-            XMLDecoder decoder = new XMLDecoder(buff);
-
-            loginAluno = (model.entity.Aluno) decoder.readObject();
-            if (loginAluno.getCpf().equals(cpf)) {
-                senha = loginAluno.getSenha();
+        ArrayList<Aluno> lista;
+        Aluno alunoObtido;
+        alunoObtido = null;
+        ManipuladorXML manipulador = new ManipuladorXML("alunos.xml");
+        manipulador.leXML();
+        lista = manipulador.getLista();
+        for (int i = 0; i < lista.size(); i++) {
+            if ((lista.get(i).getCpf().equals(cpf)) && lista.get(i).getSenha().equals(senha)) {
+                alunoObtido = lista.get(i);
+                return alunoObtido;
             }
-            decoder.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-        return loginAluno;
+        return alunoObtido;
     }
 
     private static void encaminharParaTecnico(Requerimento requerimento) {
-        ListaTecnico listaTecnico = new ListaTecnico();
-        listaTecnico.getLista().add(requerimento);
+        ManipuladorXML xml = new ManipuladorXML("");
 
     }
 
@@ -84,7 +83,9 @@ public class Gerenciador {
 
     }
 
-    private static void criar(Requerimento requerimento) {
-
+    public static ArrayList acessarXML(String tipoUsuario) {
+        ManipuladorXML manipulador = new ManipuladorXML(String.valueOf(tipoUsuario) + ".xml");
+        manipulador.leXML();
+        return manipulador.getLista();
     }
 }
