@@ -62,6 +62,9 @@ public class Login extends javax.swing.JFrame {
 
         campoSenha.setText("senha");
         campoSenha.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campoSenhaLimparTabFocus(evt);
+            }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 campoSenhaColocarTexto(evt);
             }
@@ -79,6 +82,10 @@ public class Login extends javax.swing.JFrame {
         campoSenha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 login_enter(evt);
+                campoSenhaLimparTab(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                campoSenhaLimparTab(evt);
             }
         });
 
@@ -208,6 +215,18 @@ public class Login extends javax.swing.JFrame {
             campoSenha.setText("senha");
         }
     }//GEN-LAST:event_campoSenhaColocarTexto
+
+    private void campoSenhaLimparTab(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoSenhaLimparTab
+        if(evt.getKeyCode() == KeyEvent.VK_TAB){
+                campoSenha.setText("");
+        }
+
+    }//GEN-LAST:event_campoSenhaLimparTab
+
+    private void campoSenhaLimparTabFocus(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoSenhaLimparTabFocus
+        campoSenha.setText("");
+        
+    }//GEN-LAST:event_campoSenhaLimparTabFocus
 
     
     /**

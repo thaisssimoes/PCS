@@ -14,12 +14,7 @@ public class Gerenciador {
 
         //analisaRequerimento(requerimento);
         ManipuladorXML manipulador = new ManipuladorXML("alunos.xml");
-<<<<<<< HEAD
-        //manipulador.adiciona(aluno1);
-        //manipulador.adiciona(aluno2);
-       // manipulador.escreveXML();
-=======
->>>>>>> e3e1dcbdd6b52f4c970850c476a440e41301886a
+
         manipulador.leXML();
         ArrayList<Aluno> lista = manipulador.getLista();
         for(int i =0; i<lista.size(); i++ ){
@@ -79,7 +74,7 @@ public class Gerenciador {
     }
 
     public static ArrayList acessarXML(String tipoUsuario) {
-        ManipuladorXML manipulador = new ManipuladorXML(String.valueOf(tipoUsuario) + ".xml");
+        ManipuladorXML manipulador = new ManipuladorXML(String.valueOf(tipoUsuario) + "s.xml");
         manipulador.leXML();
         return manipulador.getLista();
     }
