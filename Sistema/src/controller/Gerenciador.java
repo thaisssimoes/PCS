@@ -9,6 +9,7 @@ import model.requerimento.Requerimento;
 public class Gerenciador {
 
     public static void main(String[] args) {
+
         //matricula, cpf, senha, nome, dataNascimeto, 
         //nacionalidade, email, periodo, estadoCivil, 
         //sexo, nomeDaMae, nomeDoPai, deficiencia, 
@@ -33,13 +34,22 @@ public class Gerenciador {
 
         ManipuladorXML manipulador = new ManipuladorXML("Alunos.xml");
         ArrayList<Aluno> lista;
+
+        // Login login = new Login();       
+       //matricula, cpf, senha, nome, dataNascimeto, 
+       //nacionalidade, email, periodo, estadoCivil, 
+       //sexo, nomeDaMae, nomeDoPai, deficiencia, 
+       //tipoDeEndereco, tipoLogradouro, logradouro, 
+       //complemento, estado, telefoneResidencial, bairro, 
+       //cidade, telefoneCelular, numero, cep, pais)
+       
         manipulador.adiciona(aluno);
         manipulador.adiciona(aluno2);
         manipulador.adiciona(aluno3);
         manipulador.escreveXML();
-        manipulador.leXML();
         lista = manipulador.getLista();
-
+        manipulador.leXML();
+        
         for (int i = 0; i < lista.size(); i++) {
             System.out.println(lista.get(i).getEmail());
 

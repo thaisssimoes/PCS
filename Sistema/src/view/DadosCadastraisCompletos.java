@@ -470,16 +470,15 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
-    private void centralizarTela(){
+    private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
-    
-    
+
+
     private void okBotaoDadosCompletosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoDadosCompletosActionPerformed
-        
-        TelaAluno janelaTelaAluno = new TelaAluno(aluno.getCpf(),aluno.getSenha());
+
+        TelaAluno janelaTelaAluno = new TelaAluno(aluno.getCpf(), aluno.getSenha());
         janelaTelaAluno.setVisible(true);
         this.setVisible(false);
         this.dispose();

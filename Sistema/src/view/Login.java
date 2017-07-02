@@ -186,28 +186,28 @@ public class Login extends javax.swing.JFrame {
 
     private void login_enter(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_login_enter
 
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             String senha;
-        String cpf;
-        String tipoUsuarioString;
-        tipoUsuarioString = String.valueOf(tipoUsuario.getSelectedItem());
-        senha = String.valueOf(campoSenha.getPassword());
-        cpf = campoCPF.getText();
-        boolean autenticado = Autenticacao.reconhecerUsuario(tipoUsuarioString, cpf, senha);
-        if (autenticado) {
-            this.setVisible(false);
-            this.dispose();
-            TelaAluno janelaTelaAluno = new TelaAluno(cpf, senha);
-            janelaTelaAluno.setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(this, "Erro no Login!");
-        }
+            String cpf;
+            String tipoUsuarioString;
+            tipoUsuarioString = String.valueOf(tipoUsuario.getSelectedItem());
+            senha = String.valueOf(campoSenha.getPassword());
+            cpf = campoCPF.getText();
+            boolean autenticado = Autenticacao.reconhecerUsuario(tipoUsuarioString, cpf, senha);
+            if (autenticado) {
+                this.setVisible(false);
+                this.dispose();
+                TelaAluno janelaTelaAluno = new TelaAluno(cpf, senha);
+                janelaTelaAluno.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro no Login!");
+            }
         }
 
     }//GEN-LAST:event_login_enter
 
     private void campoCPFColocarTexto(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoCPFColocarTexto
-        if(campoCPF.getText().equals("")){
+        if (campoCPF.getText().equals("")) {
             campoCPF.setText("CPF");
         }
     }//GEN-LAST:event_campoCPFColocarTexto
@@ -226,10 +226,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_campoSenhaLimparSenha
 
     private void campoSenhaColocarTexto(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoSenhaColocarTexto
-        if((String.valueOf(campoSenha.getPassword())).equals("")){
+        if ((String.valueOf(campoSenha.getPassword())).equals("")) {
             campoSenha.setText("senha");
         }
     }//GEN-LAST:event_campoSenhaColocarTexto
+
 
     private void campoSenhaLimparTab(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoSenhaLimparTab
         if(evt.getKeyCode() == KeyEvent.VK_TAB){
@@ -244,6 +245,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_campoSenhaLimparTabFocus
 
     
+
     /**
      * @param args the command line arguments
      */
