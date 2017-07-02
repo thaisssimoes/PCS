@@ -156,12 +156,12 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void centralizarTela(){
+    private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
-            
-            
+
+
     private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
     }//GEN-LAST:event_campoSenhaActionPerformed
 
@@ -176,8 +176,17 @@ public class Login extends javax.swing.JFrame {
         if (autenticado) {
             this.setVisible(false);
             this.dispose();
-            TelaAluno janelaTelaAluno = new TelaAluno(cpf, senha);
-            janelaTelaAluno.setVisible(true);
+
+            if (tipoUsuarioString.equals("Aluno")) {
+                TelaAluno janelaTelaAluno = new TelaAluno(cpf, senha);
+                janelaTelaAluno.setVisible(true);
+            } else {
+                if (tipoUsuarioString.equals("Professor")) {
+                    TelaProfessor janelaTelaProfessor = new TelaProfessor(cpf, senha);
+                } else {
+                    TelaSecretaria janelaTelaTecnico = new TelaSecretaria(cpf, senha);
+                }
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Erro no Login");
         }
@@ -197,10 +206,21 @@ public class Login extends javax.swing.JFrame {
             if (autenticado) {
                 this.setVisible(false);
                 this.dispose();
-                TelaAluno janelaTelaAluno = new TelaAluno(cpf, senha);
-                janelaTelaAluno.setVisible(true);
+
+                if (tipoUsuarioString.equals("Aluno")) {
+                    TelaAluno janelaTelaAluno = new TelaAluno(cpf, senha);
+                    janelaTelaAluno.setVisible(true);
+                } else {
+                    if (tipoUsuarioString.equals("Professor")) {
+                        TelaProfessor janelaTelaProfessor = new TelaProfessor(cpf, senha);
+                        janelaTelaProfessor.setVisible(true);
+                    } else {
+                        TelaSecretaria janelaTelaTecnico = new TelaSecretaria(cpf, senha);
+                        janelaTelaTecnico.setVisible(true);
+                    }
+                }
             } else {
-                JOptionPane.showMessageDialog(this, "Erro no Login!");
+                JOptionPane.showMessageDialog(this, "Erro no Login");
             }
         }
 
@@ -213,16 +233,16 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_campoCPFColocarTexto
 
     private void campoCPFLimparTexto(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campoCPFLimparTexto
-        if(campoCPF.getText().equals("CPF")){
+        if (campoCPF.getText().equals("CPF")) {
             campoCPF.setText("");
         }
-        
+
     }//GEN-LAST:event_campoCPFLimparTexto
 
     private void campoSenhaLimparSenha(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campoSenhaLimparSenha
         campoSenha.setText("");
-        
-        
+
+
     }//GEN-LAST:event_campoSenhaLimparSenha
 
     private void campoSenhaColocarTexto(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoSenhaColocarTexto
@@ -233,18 +253,16 @@ public class Login extends javax.swing.JFrame {
 
 
     private void campoSenhaLimparTab(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoSenhaLimparTab
-        if(evt.getKeyCode() == KeyEvent.VK_TAB){
-                campoSenha.setText("");
+        if (evt.getKeyCode() == KeyEvent.VK_TAB) {
+            campoSenha.setText("");
         }
 
     }//GEN-LAST:event_campoSenhaLimparTab
 
     private void campoSenhaLimparTabFocus(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoSenhaLimparTabFocus
         campoSenha.setText("");
-        
-    }//GEN-LAST:event_campoSenhaLimparTabFocus
 
-    
+    }//GEN-LAST:event_campoSenhaLimparTabFocus
 
     /**
      * @param args the command line arguments

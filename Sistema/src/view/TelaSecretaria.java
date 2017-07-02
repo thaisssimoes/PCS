@@ -27,6 +27,13 @@ public class TelaSecretaria extends javax.swing.JFrame {
            
         }
     
+    public TelaSecretaria(String cpf, String senha) {
+        
+        initComponents();
+        centralizarTela();
+           
+        }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -117,7 +124,7 @@ public class TelaSecretaria extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(jLabel5))
         );
         jPanel2Layout.setVerticalGroup(
@@ -360,9 +367,8 @@ public class TelaSecretaria extends javax.swing.JFrame {
                             .addComponent(jLabel28))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel17)
-                        .addComponent(jLabel18))
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel18)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel19)
                         .addComponent(jLabel22)))

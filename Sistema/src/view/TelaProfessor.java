@@ -28,6 +28,14 @@ public class TelaProfessor extends javax.swing.JFrame {
            
         }
     
+    public TelaProfessor(String cpf, String senha) {
+        
+        initComponents();
+        visibilidadeAbaProfessor("Decano");   
+        centralizarTela();
+           
+        }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

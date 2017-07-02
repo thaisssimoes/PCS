@@ -34,9 +34,6 @@ public class Usuario {
     private String email;
     @Getter
     @Setter
-    private String periodo;
-    @Getter
-    @Setter
     private String estadoCivil;
     @Getter
     @Setter
@@ -90,14 +87,13 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String cpf, String senha, String nome, String dataNascimeto, String nacionalidade, String email, String periodo, String estadoCivil, String sexo, String nomeDaMae, String nomeDoPai, String deficiencia, String tipoDeEndereco, String tipoLogradouro, String logradouro, String complemento, String estado, String telefoneResidencial, String bairro, String cidade, String telefoneCelular, String numero, String cep, String pais) {
+    public Usuario(String cpf, String senha, String nome, String dataNascimeto, String nacionalidade, String email, String estadoCivil, String sexo, String nomeDaMae, String nomeDoPai, String deficiencia, String tipoDeEndereco, String tipoLogradouro, String logradouro, String complemento, String estado, String telefoneResidencial, String bairro, String cidade, String telefoneCelular, String numero, String cep, String pais) {
         this.cpf = cpf;
         this.senha = senha;
         this.nome = nome;
         this.dataNascimeto = dataNascimeto;
         this.nacionalidade = nacionalidade;
         this.email = email;
-        this.periodo = periodo;
         this.estadoCivil = estadoCivil;
         this.sexo = sexo;
         this.nomeDaMae = nomeDaMae;

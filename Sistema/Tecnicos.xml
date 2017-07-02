@@ -2,69 +2,72 @@
 <java version="1.8.0_111" class="java.beans.XMLDecoder">
  <object class="java.util.ArrayList">
   <void method="add">
-   <object class="model.entity.Aluno">
+   <object class="model.entity.Tecnico">
     <void property="bairro">
-     <string>NemUm</string>
+     <string>Milanhood</string>
     </void>
     <void property="cep">
-     <string>12345678</string>
+     <string>101607</string>
     </void>
     <void property="cidade">
-     <string>Bonn</string>
+     <string>Milan</string>
     </void>
     <void property="complemento">
-     <string>99</string>
+     <string>01</string>
     </void>
     <void property="cpf">
-     <string>12345678901</string>
+     <string>12376598707</string>
     </void>
     <void property="dataNascimeto">
-     <string>16/12/1770</string>
+     <string>11/02/1847</string>
     </void>
     <void property="deficiencia">
-     <string>Surdo</string>
+     <string>Nenhuma</string>
     </void>
     <void property="email">
-     <string>ludwig.beethoven@uniriotec.br</string>
+     <string>thomas.edison@uniriotec.br</string>
     </void>
     <void property="estado">
-     <string>PRU</string>
+     <string>Ohio</string>
     </void>
     <void property="estadoCivil">
      <string>Solteiro</string>
     </void>
     <void property="logradouro">
-     <string>AlgumNomeAlemao</string>
+     <string>Das Luzes</string>
     </void>
     <void property="nacionalidade">
-     <string>Alemã</string>
+     <string>Estadunidense</string>
     </void>
     <void property="nome">
-     <string>Ludwig Van Beethoven</string>
+     <string>Thomas Alva Edison</string>
     </void>
     <void property="nomeDaMae">
-     <string>Maria</string>
+     <string>Nancy</string>
     </void>
     <void property="nomeDoPai">
-     <string>Johann</string>
+     <string>Samuel</string>
     </void>
     <void property="numero">
-     <string>66</string>
+     <string>10</string>
     </void>
     <void property="pais">
-     <string>Prussia</string>
+     <string>Estados Unidos</string>
     </void>
     <void property="senha">
-     <string>123</string>
+     <string>000</string>
     </void>
     <void property="sexo">
      <string>Masculino</string>
     </void>
+    <void property="siape">
+     <string>000111</string>
+    </void>
     <void property="telefoneCelular">
-     <string>21912345678</string>
+     <string>5553034</string>
     </void>
     <void property="telefoneResidencial">
-     <string>2112236666</string>
+     <string>25556769</string>
     </void>
     <void property="tipoDeEndereco">
      <string>Residencial</string>
@@ -75,69 +78,72 @@
    </object>
   </void>
   <void method="add">
-   <object class="model.entity.Aluno">
+   <object class="model.entity.Tecnico">
     <void property="bairro">
-     <string>Algum</string>
+     <string>Smiljanhood</string>
     </void>
     <void property="cep">
-     <string>12345678</string>
+     <string>101607</string>
     </void>
     <void property="cidade">
-     <string>Florença</string>
+     <string>Aust</string>
     </void>
     <void property="complemento">
-     <string>44</string>
+     <string>09</string>
     </void>
     <void property="cpf">
-     <string>12345678903</string>
+     <string>65748390012</string>
     </void>
     <void property="dataNascimeto">
-     <string>15/02/1564</string>
+     <string>10/07/1856</string>
     </void>
     <void property="deficiencia">
-     <string>Não se aplica</string>
+     <string>Nenhuma</string>
     </void>
     <void property="email">
-     <string>galileu.galilei@uniriotec.br</string>
+     <string>nikola.tesla@uniriotec.br</string>
     </void>
     <void property="estado">
-     <string>PIS</string>
+     <string>Smiljan</string>
     </void>
     <void property="estadoCivil">
      <string>Solteiro</string>
     </void>
     <void property="logradouro">
-     <string>AlgumNomeItaliano</string>
+     <string>Chocante</string>
     </void>
     <void property="nacionalidade">
-     <string>Italiana</string>
+     <string>Sérvio</string>
     </void>
     <void property="nome">
-     <string>Galileu Galilei</string>
+     <string>Nikola Tesla</string>
     </void>
     <void property="nomeDaMae">
-     <string>Giulia</string>
+     <string>Đuka Mandici</string>
     </void>
     <void property="nomeDoPai">
-     <string>Vincenzo</string>
+     <string>Milutin Tesla</string>
     </void>
     <void property="numero">
-     <string>66</string>
+     <string>10</string>
     </void>
     <void property="pais">
-     <string>Itália</string>
+     <string>Império Austríaco</string>
     </void>
     <void property="senha">
-     <string>456</string>
+     <string>222</string>
     </void>
     <void property="sexo">
      <string>Masculino</string>
     </void>
+    <void property="siape">
+     <string>222333</string>
+    </void>
     <void property="telefoneCelular">
-     <string>21912345678</string>
+     <string>5553034</string>
     </void>
     <void property="telefoneResidencial">
-     <string>2112236666</string>
+     <string>25556769</string>
     </void>
     <void property="tipoDeEndereco">
      <string>Residencial</string>
@@ -148,69 +154,72 @@
    </object>
   </void>
   <void method="add">
-   <object class="model.entity.Aluno">
+   <object class="model.entity.Tecnico">
     <void property="bairro">
-     <string>São Luís</string>
+     <string>Manhattanhood</string>
     </void>
     <void property="cep">
-     <string>12345678</string>
+     <string>101607</string>
     </void>
     <void property="cidade">
-     <string>São Paulo</string>
+     <string>Nova York</string>
     </void>
     <void property="complemento">
-     <string>44</string>
+     <string>101</string>
     </void>
     <void property="cpf">
-     <string>12345678902</string>
+     <string>19181716151</string>
     </void>
     <void property="dataNascimeto">
-     <string>05/08/1872</string>
+     <string>05/10/1958</string>
     </void>
     <void property="deficiencia">
-     <string>Não se aplica</string>
+     <string>Nenhuma</string>
     </void>
     <void property="email">
-     <string>osvaldo.cruz@uniriotec.br</string>
+     <string>neil.tyson@uniriotec.br</string>
     </void>
     <void property="estado">
-     <string>SP</string>
+     <string>Manhattan</string>
     </void>
     <void property="estadoCivil">
-     <string>Solteiro</string>
+     <string>Casado</string>
     </void>
     <void property="logradouro">
-     <string>AlgumNomePortuguês</string>
+     <string>Dos Planetas</string>
     </void>
     <void property="nacionalidade">
-     <string>Brasileira</string>
+     <string>Estadunidense</string>
     </void>
     <void property="nome">
-     <string>Oswaldo Gonçalves Cruz</string>
+     <string>Neil deGrasse Tyson</string>
     </void>
     <void property="nomeDaMae">
-     <string>Maria</string>
+     <string> Sunchita</string>
     </void>
     <void property="nomeDoPai">
-     <string>Jose</string>
+     <string>Cyril</string>
     </void>
     <void property="numero">
-     <string>66</string>
+     <string>010</string>
     </void>
     <void property="pais">
-     <string>Brasil</string>
+     <string>Estados Unidos</string>
     </void>
     <void property="senha">
-     <string>789</string>
+     <string>444</string>
     </void>
     <void property="sexo">
      <string>Masculino</string>
     </void>
+    <void property="siape">
+     <string>444555</string>
+    </void>
     <void property="telefoneCelular">
-     <string>21912345678</string>
+     <string>5553034</string>
     </void>
     <void property="telefoneResidencial">
-     <string>2112236666</string>
+     <string>25556769</string>
     </void>
     <void property="tipoDeEndereco">
      <string>Residencial</string>
