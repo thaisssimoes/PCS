@@ -11,18 +11,15 @@ public class Gerenciador {
     public static void main(String[] args) {
         // Login login = new Login();
 
-        Aluno aluno1 = new Aluno("123", "sol", "Galileu", "galileu@blablabla.com", "171-17171", "12345678");
-        Aluno aluno2 = new Aluno("456", "jupiter", "Galilei", "galilei@blablabla.com", "171-17171", "12345678");
-        Aluno aluno3 = new Aluno("789", "stav", "Thay", "99@blablabla.com", "171-17171", "12345678");
-        Aluno aluno4 = new Aluno("101112", "stav", "Thay", "99@blablabla.com", "171-17171", "12345678");
-        Aluno aluno5 = new Aluno("131415", "stav", "Thay", "99@blablabla.com", "171-17171", "12345678");
-        Aluno aluno6 = new Aluno("161718", "stav", "Thay", "99@blablabla.com", "171-17171", "12345678");
 
         //analisaRequerimento(requerimento);
         ManipuladorXML manipulador = new ManipuladorXML("alunos.xml");
+<<<<<<< HEAD
         //manipulador.adiciona(aluno1);
         //manipulador.adiciona(aluno2);
        // manipulador.escreveXML();
+=======
+>>>>>>> e3e1dcbdd6b52f4c970850c476a440e41301886a
         manipulador.leXML();
         ArrayList<Aluno> lista = manipulador.getLista();
         for(int i =0; i<lista.size(); i++ ){
