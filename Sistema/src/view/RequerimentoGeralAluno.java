@@ -30,7 +30,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
         matriculaAlunoLabel.setText(aluno.getMatricula());
-        telefoneAlunoLabel.setText(aluno.getTelefone());
+        telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
         centralizarTela();
     }
 
@@ -286,8 +286,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(periodoLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel20)))))
-                        .addGap(46, 46, 46))
+                                        .addComponent(jLabel20))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(162, 162, 162)
                         .addComponent(cancelarBotaoAluno)
@@ -295,7 +294,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                         .addComponent(atualizarBotaoAluno)
                         .addGap(66, 66, 66)
                         .addComponent(enviarBotaoAluno)))
-                .addContainerGap())
+                .addGap(56, 56, 56))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,9 +316,9 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                     .addComponent(jLabel17)
                     .addComponent(telefoneAlunoLabel))
                 .addGap(53, 53, 53)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel26))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)

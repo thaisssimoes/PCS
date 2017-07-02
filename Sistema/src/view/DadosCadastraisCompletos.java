@@ -9,9 +9,6 @@ import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import model.entity.Aluno;
-import java.awt.event.WindowAdapter;
-import javax.swing.JOptionPane;
-import java.awt.event.WindowEvent;
 
 /**
  *
@@ -33,7 +30,7 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
         emailAluno.setText(aluno.getEmail());
         nomeAluno.setText(aluno.getNome());
         //.setText(aluno.getMatricula());
-        telefoneCelularAluno.setText(aluno.getTelefone());
+        telefoneCelularAluno.setText(aluno.getTelefoneCelular());
         centralizarTela();
     }
 

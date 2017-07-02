@@ -9,16 +9,42 @@ import model.requerimento.Requerimento;
 public class Gerenciador {
 
     public static void main(String[] args) {
-        // Login login = new Login();
+        //matricula, cpf, senha, nome, dataNascimeto, 
+        //nacionalidade, email, periodo, estadoCivil, 
+        //sexo, nomeDaMae, nomeDoPai, deficiencia, 
+        //tipoDeEndereco, tipoLogradouro, logradouro, 
+        //complemento, estado, telefoneResidencial, bairro, 
+        //cidade, telefoneCelular, numero, cep, pais)
+        Aluno aluno = new Aluno("18002210002", "12345678901", "123", "Ludwig Van Beethoven",
+                "16/12/1770", "Alemã", "ludwig.beethoven@uniriotec.br", "9", "Solteiro",
+                "Masculino", "Maria", "Johann", "Surdo",
+                "Residencial", "Avenida", "AlgumNomeAlemao", "99", "PRU", "2112236666",
+                "NemUm", "Bonn", "21912345678", "66", "12345678", "Prussia");
+        Aluno aluno2 = new Aluno("1585210001", "10987654321", "456", "Galileu Galilei",
+                "15/02/1564", "Italiana", "galileu.galilei@uniriotec.br", "3", "Solteiro",
+                "Masculino", "Giulia", "Vincenzo", "Não se aplica",
+                "Residencial", "Avenida", "AlgumNomeItaliano", "44", "PIS", "2112236666",
+                "Algum", "Florença", "21912345678", "66", "12345678", "Itália");
+        Aluno aluno3 = new Aluno("18941210003", "12345678902", "789", "Oswaldo Gonçalves Cruz",
+                "05/08/1872", "Brasileira", "osvaldo.cruz@uniriotec.br", "1", "Solteiro",
+                "Masculino", "Maria", "Jose", "Não se aplica",
+                "Residencial", "Avenida", "AlgumNomePortuguês", "44", "SP", "2112236666",
+                "São Luís", "São Paulo", "21912345678", "66", "12345678", "Brasil");
 
-        //analisaRequerimento(requerimento);
-        ManipuladorXML manipulador = new ManipuladorXML("alunos.xml");
-
+        ManipuladorXML manipulador = new ManipuladorXML("Alunos.xml");
+        ArrayList<Aluno> lista;
+        manipulador.adiciona(aluno);
+        manipulador.adiciona(aluno2);
+        manipulador.adiciona(aluno3);
+        manipulador.escreveXML();
         manipulador.leXML();
-        ArrayList<Aluno> lista = manipulador.getLista();
+        lista = manipulador.getLista();
+
         for (int i = 0; i < lista.size(); i++) {
             System.out.println(lista.get(i).getEmail());
+
         }
+
     }
 
     public static void analisaRequerimento(Requerimento requerimento) {
