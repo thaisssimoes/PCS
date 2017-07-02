@@ -6,6 +6,8 @@
 package view;
 
 import static controller.Gerenciador.obterAluno;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JList;
 import model.entity.Aluno;
 
@@ -30,7 +32,12 @@ public class TelaAluno extends javax.swing.JFrame {
         campoEmailAluno.setText(aluno.getEmail());
         campoNomeAluno.setText(aluno.getNome());
         campoMatriculaAluno.setText(aluno.getMatricula());
+<<<<<<< HEAD
         campoTelefoneAluno.setText(aluno.getTelefoneCelular());
+=======
+        campoTelefoneAluno.setText(aluno.getTelefone());
+        centralizarTela();
+>>>>>>> 4b26736d7ec09e5c051b46f99962340a6a531551
     }
 
     /**
@@ -350,16 +357,33 @@ public class TelaAluno extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void centralizarTela(){
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+    }
+    
     private void listaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaMouseClicked
         String titulo;
         JList list = (JList) evt.getSource();
         titulo = (String) list.getSelectedValue();
         if (evt.getClickCount() == 2) {
-            RequerimentoGeralAluno janelaRequerimento = new RequerimentoGeralAluno(aluno.getCpf(), aluno.getSenha());
-            janelaRequerimento.setVisible(true);
-            janelaRequerimento.setTitle(titulo);
-            this.setVisible(false);
-            this.dispose();
+            if(!titulo.equals("Realização de segunda chamada") 
+                && !titulo.equals("Revisão de prova") 
+                && !titulo.equals("Isenção ou aproveitamento de disciplina")){
+                    RequerimentoGeralAluno janelaRequerimento = new RequerimentoGeralAluno(aluno.getCpf(), aluno.getSenha());
+                    janelaRequerimento.setVisible(true);
+                    janelaRequerimento.setTitle(titulo);
+                    this.setVisible(false);
+                    this.dispose();
+            }
+            else{
+                RequerimentoGeralAnexoAluno janelaRequerimento = new RequerimentoGeralAnexoAluno(aluno.getCpf(), aluno.getSenha());
+                janelaRequerimento.setVisible(true);
+                janelaRequerimento.setTitle(titulo);
+                this.setVisible(false);
+                this.dispose();
+            }
+            
         }
 
 

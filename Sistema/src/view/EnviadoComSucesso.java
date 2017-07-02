@@ -6,6 +6,8 @@
 package view;
 
 import static controller.Gerenciador.obterAluno;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import model.entity.Aluno;
 
 /**
@@ -29,6 +31,7 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
 //        campoNomeAluno.setText(aluno.getNome());
 //        campoMatriculaAluno.setText(aluno.getMatricula());
 //        campoTelefoneAluno.setText(aluno.getTelefone());
+        centralizarTela();
     }
 
     /**
@@ -111,6 +114,11 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void centralizarTela(){
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+    }
+    
     private void okBotaoSucessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoSucessoActionPerformed
         //int DISPOSE_ON_CLOSE1 = RequerimentoGeralAluno.DISPOSE_ON_CLOSE;
         TelaAluno janelaTelaAluno = new TelaAluno(aluno.getCpf(), aluno.getSenha());

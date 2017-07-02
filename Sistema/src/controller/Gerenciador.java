@@ -12,6 +12,7 @@ public class Gerenciador {
         // Login login = new Login();
 /*
         //analisaRequerimento(requerimento);
+<<<<<<< HEAD
         ManipuladorXML manipulador = new ManipuladorXML("Alunos.xml");
        
        //matricula, cpf, senha, nome, dataNascimeto, 
@@ -42,6 +43,12 @@ public class Gerenciador {
         manipulador.escreveXML();
         ArrayList<Aluno> lista;
         lista = manipulador.getLista();
+=======
+        ManipuladorXML manipulador = new ManipuladorXML("alunos.xml");
+
+        manipulador.leXML();
+        ArrayList<Aluno> lista = manipulador.getLista();
+>>>>>>> 4b26736d7ec09e5c051b46f99962340a6a531551
         for (int i = 0; i < lista.size(); i++) {
             System.out.println(lista.get(i).getEmail());
 

@@ -6,7 +6,12 @@
 package view;
 
 import static controller.Gerenciador.obterAluno;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import model.entity.Aluno;
+import java.awt.event.WindowAdapter;
+import javax.swing.JOptionPane;
+import java.awt.event.WindowEvent;
 
 /**
  *
@@ -28,7 +33,12 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
         emailAluno.setText(aluno.getEmail());
         nomeAluno.setText(aluno.getNome());
         //.setText(aluno.getMatricula());
+<<<<<<< HEAD
         telefoneCelularAluno.setText(aluno.getTelefoneCelular());
+=======
+        telefoneCelularAluno.setText(aluno.getTelefone());
+        centralizarTela();
+>>>>>>> 4b26736d7ec09e5c051b46f99962340a6a531551
     }
 
     /**
@@ -92,7 +102,7 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
         emailAluno = new javax.swing.JLabel();
         okBotaoDadosCompletos = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 700));
         setResizable(false);
 
@@ -467,6 +477,13 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+    private void centralizarTela(){
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+    }
+    
+    
     private void okBotaoDadosCompletosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoDadosCompletosActionPerformed
         
         TelaAluno janelaTelaAluno = new TelaAluno(aluno.getCpf(),aluno.getSenha());
