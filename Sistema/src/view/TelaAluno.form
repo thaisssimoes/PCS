@@ -317,7 +317,7 @@
                     <StringItem index="7" value="Revis&#xe3;o de prova"/>
                     <StringItem index="8" value="Trancamento de Disciplina"/>
                     <StringItem index="9" value="Trancamento de matr&#xed;cula"/>
-                    <StringItem index="10" value="Outros"/>
+                    <StringItem index="10" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>

@@ -1,35 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_111" class="java.beans.XMLDecoder">
- <object class="java.util.ArrayList">
-  <void method="add">
-   <object class="model.entity.Aluno">
-    <void property="cpf">
-     <string>123</string>
-    </void>
-    <void property="email">
-     <string>galileu@blablabla.com</string>
-    </void>
-    <void property="matricula">
-     <string>12345678</string>
-    </void>
-    <void property="nome">
-     <string>Galileu</string>
-    </void>
-    <void property="senha">
-     <string>sol</string>
-    </void>
-    <void property="telefone">
-     <string>171-17171</string>
-    </void>
-   </object>
-  </void>
-  
-  <void method="add">
+ <void method="add">
    <object class="model.entity.Aluno">
   <void property="nome">
    <string>Fulana de tal</string>
   </void>
-  <void property="cpf">
+  <void property="CPF">
    <string>123456789</string>
   </void>
   <void property="senha">
@@ -87,28 +63,10 @@
    <string>9-1111-1111</string>
   </void>
  </object>
- </void>
-  <void method="add">
-   <object class="model.entity.Aluno">
-    <void property="cpf">
-     <string>456</string>
-    </void>
-    <void property="email">
-     <string>galilei@blablabla.com</string>
-    </void>
-    <void property="matricula">
-     <string>12345678</string>
-    </void>
-    <void property="nome">
-     <string>Galilei</string>
-    </void>
-    <void property="senha">
-     <string>jupiter</string>
-    </void>
-    <void property="telefone">
-     <string>171-17171</string>
-    </void>
-   </object>
-  </void>
- </object>
-</java>
+ 
+ 
+
+ 
+ 
+ 
+ </java>
