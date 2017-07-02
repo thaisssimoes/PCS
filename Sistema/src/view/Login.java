@@ -6,6 +6,8 @@
 package view;
 
 import controller.Autenticacao;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
@@ -22,6 +24,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        centralizarTela();
     }
 
     /**
@@ -44,6 +47,8 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(56, 113, 156));
+        jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel2.setDoubleBuffered(false);
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 600));
 
         tipoUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aluno", "Professor", "Técnico" }));
@@ -151,7 +156,12 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void centralizarTela(){
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+    }
+            
+            
     private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
     }//GEN-LAST:event_campoSenhaActionPerformed
 
@@ -203,11 +213,16 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_campoCPFColocarTexto
 
     private void campoCPFLimparTexto(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campoCPFLimparTexto
-        campoCPF.setText("");
+        if(campoCPF.getText().equals("CPF")){
+            campoCPF.setText("");
+        }
+        
     }//GEN-LAST:event_campoCPFLimparTexto
 
     private void campoSenhaLimparSenha(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campoSenhaLimparSenha
         campoSenha.setText("");
+        
+        
     }//GEN-LAST:event_campoSenhaLimparSenha
 
     private void campoSenhaColocarTexto(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoSenhaColocarTexto

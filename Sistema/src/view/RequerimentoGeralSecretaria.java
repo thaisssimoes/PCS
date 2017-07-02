@@ -15,16 +15,18 @@ import model.entity.Aluno;
  *
  * @author labccet
  */
-public class RequerimentoGeralAluno extends javax.swing.JFrame {
+public class RequerimentoGeralSecretaria extends javax.swing.JFrame {
 
     /**
      * Creates new form telaAluno
      */
-    public RequerimentoGeralAluno() {
+    public RequerimentoGeralSecretaria() {
         initComponents();
+        tituloDataFechamento.setVisible(false);
+        dataFechamento.setVisible(false);
     }
     Aluno aluno;
-    public RequerimentoGeralAluno(String cpf, String senha){
+    public RequerimentoGeralSecretaria(String cpf, String senha){
         initComponents();
         aluno = obterAluno(cpf,senha);
         emailAlunoLabel.setText(aluno.getEmail());
@@ -32,6 +34,8 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         matriculaAlunoLabel.setText(aluno.getMatricula());
         telefoneAlunoLabel.setText(aluno.getTelefone());
         centralizarTela();
+        tituloDataFechamento.setVisible(false);
+        dataFechamento.setVisible(false);
     }
 
     /**
@@ -48,11 +52,11 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
         numeroProtocolo = new javax.swing.JLabel();
         numeroProtocolo1 = new javax.swing.JLabel();
+        tituloDataFechamento = new javax.swing.JLabel();
+        dataFechamento = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         nomeCompletoAlunoLabel = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -67,12 +71,12 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel25 = new javax.swing.JLabel();
-        enviarBotaoAluno = new javax.swing.JButton();
-        atualizarBotaoAluno = new javax.swing.JButton();
-        cancelarBotaoAluno = new javax.swing.JButton();
+        cancelarBotaoSecretaria = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel26 = new javax.swing.JLabel();
+        enviarBotaoSecretaria = new javax.swing.JButton();
+        exportarBotaoAlunoSecretaria = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -88,15 +92,8 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Data de abertura:");
 
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Data de fechamento:");
-
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("dd/mm/yyyy");
-
-        jLabel24.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("dd/mm/yyyy");
 
         numeroProtocolo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         numeroProtocolo.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,6 +102,12 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         numeroProtocolo1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         numeroProtocolo1.setForeground(new java.awt.Color(255, 255, 255));
         numeroProtocolo1.setText("numero de protocolo");
+
+        tituloDataFechamento.setForeground(new java.awt.Color(255, 255, 255));
+        tituloDataFechamento.setText("Data de fechamento:");
+
+        dataFechamento.setForeground(new java.awt.Color(255, 255, 255));
+        dataFechamento.setText("dd/mm/yyyy");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -115,28 +118,24 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
+                        .addGap(92, 539, Short.MAX_VALUE)
                         .addComponent(jLabel5))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(78, 78, 78)
-                                .addComponent(numeroProtocolo))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(numeroProtocolo1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel23))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel22)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel24)))
-                        .addGap(99, 99, 99))))
+                        .addGap(30, 30, 30)
+                        .addComponent(numeroProtocolo1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel23)
+                        .addGap(99, 99, 99))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(numeroProtocolo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
+                        .addComponent(tituloDataFechamento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(dataFechamento)
+                        .addGap(84, 84, 84))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,19 +149,19 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(26, 26, 26)
+                                .addComponent(numeroProtocolo1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(numeroProtocolo))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel23))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel22)
-                                    .addComponent(jLabel24)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(26, 26, 26)
-                                .addComponent(numeroProtocolo1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(numeroProtocolo)))
+                                    .addComponent(tituloDataFechamento)
+                                    .addComponent(dataFechamento))))
                         .addGap(59, 59, 59))))
         );
 
@@ -206,42 +205,44 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setText("Resposta:");
 
-        enviarBotaoAluno.setBackground(new java.awt.Color(56, 113, 156));
-        enviarBotaoAluno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        enviarBotaoAluno.setForeground(new java.awt.Color(255, 255, 255));
-        enviarBotaoAluno.setText("Enviar");
-        enviarBotaoAluno.addActionListener(new java.awt.event.ActionListener() {
+        cancelarBotaoSecretaria.setBackground(new java.awt.Color(56, 113, 156));
+        cancelarBotaoSecretaria.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cancelarBotaoSecretaria.setForeground(new java.awt.Color(255, 255, 255));
+        cancelarBotaoSecretaria.setText("Rejeitar");
+        cancelarBotaoSecretaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enviarBotaoAlunoActionPerformed(evt);
-            }
-        });
-
-        atualizarBotaoAluno.setBackground(new java.awt.Color(56, 113, 156));
-        atualizarBotaoAluno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        atualizarBotaoAluno.setForeground(new java.awt.Color(255, 255, 255));
-        atualizarBotaoAluno.setText("Atualizar");
-        atualizarBotaoAluno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atualizarBotaoAlunoActionPerformed(evt);
-            }
-        });
-
-        cancelarBotaoAluno.setBackground(new java.awt.Color(56, 113, 156));
-        cancelarBotaoAluno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cancelarBotaoAluno.setForeground(new java.awt.Color(255, 255, 255));
-        cancelarBotaoAluno.setText("Cancelar");
-        cancelarBotaoAluno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarBotaoAlunoActionPerformed(evt);
+                cancelarBotaoSecretariaActionPerformed(evt);
             }
         });
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
+        jTextArea2.setEnabled(false);
         jScrollPane2.setViewportView(jTextArea2);
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel26.setText("Descrição:");
+
+        enviarBotaoSecretaria.setBackground(new java.awt.Color(56, 113, 156));
+        enviarBotaoSecretaria.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        enviarBotaoSecretaria.setForeground(new java.awt.Color(255, 255, 255));
+        enviarBotaoSecretaria.setText("Aceitar");
+        enviarBotaoSecretaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enviarBotaoSecretariaActionPerformed(evt);
+            }
+        });
+
+        exportarBotaoAlunoSecretaria.setBackground(new java.awt.Color(56, 113, 156));
+        exportarBotaoAlunoSecretaria.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        exportarBotaoAlunoSecretaria.setForeground(new java.awt.Color(255, 255, 255));
+        exportarBotaoAlunoSecretaria.setText("Exportar");
+        exportarBotaoAlunoSecretaria.setEnabled(false);
+        exportarBotaoAlunoSecretaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exportarBotaoAlunoSecretariaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -249,29 +250,27 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel26)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel26)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(52, 52, 52)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel25)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel15)
+                                .addGap(18, 18, 18)
+                                .addComponent(emailAlunoLabel))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel15)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(emailAlunoLabel))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(nomeCompletoAlunoLabel)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel11)
+                                .addGap(18, 18, 18)
+                                .addComponent(nomeCompletoAlunoLabel)
+                                .addGap(77, 77, 77)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel17)
@@ -281,21 +280,22 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                                         .addComponent(jLabel13)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(matriculaAlunoLabel)
-                                        .addGap(76, 76, 76)
+                                        .addGap(77, 77, 77)
                                         .addComponent(jLabel19)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(periodoLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel20)))
-                                .addGap(15, 15, 15))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addComponent(cancelarBotaoAluno)
-                        .addGap(57, 57, 57)
-                        .addComponent(atualizarBotaoAluno)
-                        .addGap(66, 66, 66)
-                        .addComponent(enviarBotaoAluno)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                                        .addComponent(jLabel20)))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(43, 43, 43))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cancelarBotaoSecretaria)
+                .addGap(65, 65, 65)
+                .addComponent(exportarBotaoAlunoSecretaria)
+                .addGap(65, 65, 65)
+                .addComponent(enviarBotaoSecretaria)
+                .addGap(160, 160, 160))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,19 +324,21 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cancelarBotaoAluno)
-                    .addComponent(atualizarBotaoAluno)
-                    .addComponent(enviarBotaoAluno))
-                .addGap(44, 44, 44))
+                    .addComponent(cancelarBotaoSecretaria)
+                    .addComponent(enviarBotaoSecretaria)
+                    .addComponent(exportarBotaoAlunoSecretaria))
+                .addGap(33, 33, 33))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,8 +353,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     }
     
-    
-    private void enviarBotaoAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoAlunoActionPerformed
+    private void exportarBotaoAlunoSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportarBotaoAlunoSecretariaActionPerformed
         
       ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
       janelaConfirmacao.setVisible(true);
@@ -360,21 +361,18 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
       this.dispose();
         
 
-    }//GEN-LAST:event_enviarBotaoAlunoActionPerformed
+    }//GEN-LAST:event_exportarBotaoAlunoSecretariaActionPerformed
 
-    private void atualizarBotaoAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoAlunoActionPerformed
-
-        PopupComentario janelaComentario = new PopupComentario(aluno.getCpf(),aluno.getSenha());
-        janelaComentario.setVisible(true);
-
-    }//GEN-LAST:event_atualizarBotaoAlunoActionPerformed
-
-    private void cancelarBotaoAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoAlunoActionPerformed
+    private void cancelarBotaoSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoSecretariaActionPerformed
         TelaAluno janelaTelaAluno = new TelaAluno(aluno.getCpf(),aluno.getSenha());
         janelaTelaAluno.setVisible(true);
         this.setVisible(false);
         this.dispose(); 
-    }//GEN-LAST:event_cancelarBotaoAlunoActionPerformed
+    }//GEN-LAST:event_cancelarBotaoSecretariaActionPerformed
+
+    private void enviarBotaoSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoSecretariaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enviarBotaoSecretariaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -393,14 +391,22 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralSecretaria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralSecretaria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralSecretaria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralSecretaria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -413,16 +419,17 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RequerimentoGeralAluno().setVisible(true);
+                new RequerimentoGeralSecretaria().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton atualizarBotaoAluno;
-    private javax.swing.JButton cancelarBotaoAluno;
+    private javax.swing.JButton cancelarBotaoSecretaria;
+    private javax.swing.JLabel dataFechamento;
     private javax.swing.JLabel emailAlunoLabel;
-    private javax.swing.JButton enviarBotaoAluno;
+    private javax.swing.JButton enviarBotaoSecretaria;
+    private javax.swing.JButton exportarBotaoAlunoSecretaria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -430,9 +437,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
@@ -449,5 +454,6 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
     private javax.swing.JLabel numeroProtocolo1;
     private javax.swing.JLabel periodoLabel;
     private javax.swing.JLabel telefoneAlunoLabel;
+    private javax.swing.JLabel tituloDataFechamento;
     // End of variables declaration//GEN-END:variables
 }

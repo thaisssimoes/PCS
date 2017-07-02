@@ -6,6 +6,9 @@
 package view;
 
 import static controller.Gerenciador.obterAluno;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 import model.entity.Aluno;
 
 /**
@@ -25,6 +28,7 @@ public class PopupComentario extends javax.swing.JFrame {
     public PopupComentario(String cpf, String senha) {
         initComponents();
         aluno = obterAluno(cpf, senha);
+        centralizarTela();
 
     }
 
@@ -113,7 +117,14 @@ public class PopupComentario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
 
+    private void centralizarTela(){
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+    }
+    
+    
     private void okBotaoComentarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoComentarioActionPerformed
         this.setVisible(false);
         this.dispose();
