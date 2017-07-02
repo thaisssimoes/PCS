@@ -28,7 +28,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
         matriculaAlunoLabel.setText(aluno.getMatricula());
-        telefoneAlunoLabel.setText(aluno.getTelefone());
+        telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
     }
 
     /**

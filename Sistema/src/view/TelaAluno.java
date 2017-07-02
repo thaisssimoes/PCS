@@ -30,7 +30,7 @@ public class TelaAluno extends javax.swing.JFrame {
         campoEmailAluno.setText(aluno.getEmail());
         campoNomeAluno.setText(aluno.getNome());
         campoMatriculaAluno.setText(aluno.getMatricula());
-        campoTelefoneAluno.setText(aluno.getTelefone());
+        campoTelefoneAluno.setText(aluno.getTelefoneCelular());
     }
 
     /**

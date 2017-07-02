@@ -28,7 +28,7 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
         emailAluno.setText(aluno.getEmail());
         nomeAluno.setText(aluno.getNome());
         //.setText(aluno.getMatricula());
-        telefoneCelularAluno.setText(aluno.getTelefone());
+        telefoneCelularAluno.setText(aluno.getTelefoneCelular());
     }
 
     /**

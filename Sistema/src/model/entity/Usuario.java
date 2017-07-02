@@ -37,9 +37,6 @@ public class Usuario {
     private String periodo;
     @Getter
     @Setter
-    private String telefone;
-    @Getter
-    @Setter
     private String estadoCivil;
     @Getter
     @Setter
@@ -59,6 +56,9 @@ public class Usuario {
     @Getter
     @Setter
     private String tipoLogradouro;
+    @Getter
+    @Setter
+    private String logradouro;
     @Getter
     @Setter
     private String complemento;
@@ -90,7 +90,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String cpf, String senha, String nome, String dataNascimeto, String nacionalidade, String email, String periodo, String telefone, String estadoCivil, String sexo, String nomeDaMae, String nomeDoPai, String deficiencia, String tipoDeEndereco, String tipoLogradouro, String complemento, String estado, String telefoneResidencial, String bairro, String cidade, String telefoneCelular, String numero, String cep, String pais) {
+    public Usuario(String cpf, String senha, String nome, String dataNascimeto, String nacionalidade, String email, String periodo, String estadoCivil, String sexo, String nomeDaMae, String nomeDoPai, String deficiencia, String tipoDeEndereco, String tipoLogradouro, String logradouro, String complemento, String estado, String telefoneResidencial, String bairro, String cidade, String telefoneCelular, String numero, String cep, String pais) {
         this.cpf = cpf;
         this.senha = senha;
         this.nome = nome;
@@ -98,7 +98,6 @@ public class Usuario {
         this.nacionalidade = nacionalidade;
         this.email = email;
         this.periodo = periodo;
-        this.telefone = telefone;
         this.estadoCivil = estadoCivil;
         this.sexo = sexo;
         this.nomeDaMae = nomeDaMae;
@@ -106,6 +105,7 @@ public class Usuario {
         this.deficiencia = deficiencia;
         this.tipoDeEndereco = tipoDeEndereco;
         this.tipoLogradouro = tipoLogradouro;
+        this.logradouro = logradouro;
         this.complemento = complemento;
         this.estado = estado;
         this.telefoneResidencial = telefoneResidencial;
@@ -116,4 +116,5 @@ public class Usuario {
         this.cep = cep;
         this.pais = pais;
     }
+
 }
