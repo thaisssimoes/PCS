@@ -6,6 +6,7 @@
 package view;
 
 import controller.Autenticacao;
+import java.awt.event.KeyEvent;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 import model.entity.Usuario;
@@ -33,27 +34,51 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        tipoUsuario = new javax.swing.JComboBox<>();
+        tipoUsuario = new javax.swing.JComboBox<String>();
         campoCPF = new javax.swing.JTextField();
         campoSenha = new javax.swing.JPasswordField();
         botaoLogin = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(56, 113, 156));
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 600));
 
-        tipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aluno", "Professor", "Técnico" }));
+        tipoUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aluno", "Professor", "Técnico" }));
 
         campoCPF.setText("CPF");
+        campoCPF.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoCPFColocarTexto(evt);
+            }
+        });
+        campoCPF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                campoCPFLimparTexto(evt);
+            }
+        });
 
         campoSenha.setText("senha");
+        campoSenha.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoSenhaColocarTexto(evt);
+            }
+        });
+        campoSenha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                campoSenhaLimparSenha(evt);
+            }
+        });
         campoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoSenhaActionPerformed(evt);
+            }
+        });
+        campoSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                login_enter(evt);
             }
         });
 
@@ -64,7 +89,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-       
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iBSI.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -80,8 +104,7 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(330, 330, 330)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)))
+                        .addComponent(jLabel4))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(351, 351, 351)
                         .addComponent(tipoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -95,10 +118,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(127, 127, 127)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(tipoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -106,7 +126,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(botaoLogin)
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,7 +146,6 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_campoSenhaActionPerformed
 
     private void botaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginActionPerformed
@@ -143,11 +162,54 @@ public class Login extends javax.swing.JFrame {
             TelaAluno janelaTelaAluno = new TelaAluno(cpf, senha);
             janelaTelaAluno.setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(this, "Erro no Login!");
+            JOptionPane.showMessageDialog(this, "Erro no Login");
         }
 
     }//GEN-LAST:event_botaoLoginActionPerformed
 
+    private void login_enter(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_login_enter
+
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            String senha;
+        String cpf;
+        String tipoUsuarioString;
+        tipoUsuarioString = String.valueOf(tipoUsuario.getSelectedItem());
+        senha = String.valueOf(campoSenha.getPassword());
+        cpf = campoCPF.getText();
+        boolean autenticado = Autenticacao.reconhecerUsuario(tipoUsuarioString, cpf, senha);
+        if (autenticado) {
+            this.setVisible(false);
+            this.dispose();
+            TelaAluno janelaTelaAluno = new TelaAluno(cpf, senha);
+            janelaTelaAluno.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro no Login!");
+        }
+        }
+
+    }//GEN-LAST:event_login_enter
+
+    private void campoCPFColocarTexto(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoCPFColocarTexto
+        if(campoCPF.getText().equals("")){
+            campoCPF.setText("CPF");
+        }
+    }//GEN-LAST:event_campoCPFColocarTexto
+
+    private void campoCPFLimparTexto(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campoCPFLimparTexto
+        campoCPF.setText("");
+    }//GEN-LAST:event_campoCPFLimparTexto
+
+    private void campoSenhaLimparSenha(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campoSenhaLimparSenha
+        campoSenha.setText("");
+    }//GEN-LAST:event_campoSenhaLimparSenha
+
+    private void campoSenhaColocarTexto(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoSenhaColocarTexto
+        if((String.valueOf(campoSenha.getPassword())).equals("")){
+            campoSenha.setText("senha");
+        }
+    }//GEN-LAST:event_campoSenhaColocarTexto
+
+    
     /**
      * @param args the command line arguments
      */
