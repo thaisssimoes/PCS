@@ -34,7 +34,6 @@ public class Aluno extends Usuario {
         super(cpf, senha, nome, dataNascimeto, nacionalidade, email, estadoCivil, sexo, nomeDaMae, nomeDoPai, deficiencia, tipoDeEndereco, tipoLogradouro, logradouro, complemento, estado, telefoneResidencial, bairro, cidade, telefoneCelular, numero, cep, pais);
         this.matricula = matricula;
         this.periodo = periodo;
-
     }
 
 }
