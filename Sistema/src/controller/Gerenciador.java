@@ -1,6 +1,7 @@
 package controller;
 
 import dao.ManipuladorXML;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import model.entity.Aluno;
 import model.entity.Professor;
@@ -46,8 +47,7 @@ public class Gerenciador {
 
         for (int i = 0; i < lista.size(); i++) {
             System.out.println(lista.get(i).getEmail());
-            
-            
+
         }
         /*
   (siape, regimeTrabalho, classeDocente, titulacao, cargo, cpf, 
@@ -131,22 +131,27 @@ public class Gerenciador {
     public static void analisaRequerimento(Requerimento requerimento) {
         if (requerimento.getStatus().equals("TRIAGEM")) {
             ManipuladorXML xml = new ManipuladorXML("Requerimentos.xml");
+            xml.leXML();
+            xml.adiciona(requerimento);
+            xml.escreveXML();
+            
+        } else if (requerimento.getStatus().equals("DESIGNADO")) {
+            ManipuladorXML xml = new ManipuladorXML("Requerimentos.xml");
+            xml.leXML();
+            xml.adiciona(requerimento);
+            xml.escreveXML();
+        
+        } else if (requerimento.getStatus().equals("ACEITO")) {
+            ManipuladorXML xml = new ManipuladorXML("Requerimentos.xml");
+            xml.leXML();
             xml.adiciona(requerimento);
             xml.escreveXML();
 
-            //    encaminharParaTecnico(requerimento);
-//
-//        } else {
-//            if (requerimento.getStatus().equals("ATRIBUIDO")) {
-//                if (requerimento.getAreaResponsavel().getClass().equals(Aluno.class)) {
-//                    encaminharParaAluno(requerimento);
-//                } else if (requerimento.getAreaResponsavel().getClass().equals(Professor.class)) {
-//                    encaminharParaProfessor(requerimento);
-//                } else if (requerimento.getAreaResponsavel().getClass().equals(Tecnico.class)) {
-//                    encaminharParaTecnico(requerimento);
-//                }
-//            }
-//        }
+        }else if (requerimento.getStatus().equals("REJEITADO")) {
+            ManipuladorXML xml = new ManipuladorXML("Requerimentos.xml");
+            xml.leXML();
+            xml.adiciona(requerimento);
+            xml.escreveXML();
         }
     }
 

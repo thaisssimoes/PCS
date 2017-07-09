@@ -52,6 +52,6 @@ public class Requerimento {
     
 
     private String gerarNumeroProtocolo() {
-        return Instant.now().toString();
+        return String.valueOf(Instant.now());
     }
 }
