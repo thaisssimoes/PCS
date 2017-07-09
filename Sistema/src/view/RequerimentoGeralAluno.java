@@ -372,12 +372,11 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         requerimento.setDataCriacao(LocalDate.now().toString());
         ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno, requerimento);
         janelaConfirmacao.setVisible(true);
-        this.setVisible(false);
-        this.dispose();
+//        this.setVisible(false);
+//        this.dispose();
     }//GEN-LAST:event_enviarBotaoAlunoActionPerformed
 
     private void atualizarBotaoAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoAlunoActionPerformed
-
         PopupComentario janelaComentario = new PopupComentario(aluno.getCpf(), aluno.getSenha());
         janelaComentario.setVisible(true);
     }//GEN-LAST:event_atualizarBotaoAlunoActionPerformed
