@@ -17,7 +17,7 @@ public class Professor extends Usuario {
 
     @Getter
     @Setter
-    ArrayList<Disciplina> grade;
+    ArrayList<String> grade;
     @Getter
     @Setter
     String siape;

@@ -64,10 +64,17 @@ public class RequerimentoAnexo {
         this.numeroProtocolo = gerarNumeroProtocolo();
 
     }
+<<<<<<< HEAD
 
 
 private String gerarNumeroProtocolo() {
         return String.valueOf(System.currentTimeMillis());
+=======
+    
+    private String gerarNumeroProtocolo() {
+        return String.valueOf(Instant.now());
+
+>>>>>>> 91046c9d2d728a387d8332cc165d1a1a18dde705
     }    
     
 }

@@ -4,6 +4,7 @@ import dao.ManipuladorXML;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import model.entity.Aluno;
+import model.entity.Disciplina;
 import model.entity.Professor;
 import model.entity.Tecnico;
 
@@ -11,8 +12,11 @@ import model.requerimento.Requerimento;
 
 public class Gerenciador {
 
-    public static void main(String[] args) {
+    private static String REQUERIMENTO = "Requerimentos.xml";
+    private static String OBRIGATORIA = "Obrigatória";
 
+    public static void main(String[] args) {
+        /*
         //matricula, cpf, senha, nome, dataNascimeto, 
         //nacionalidade, email, periodo, estadoCivil, 
         //sexo, nomeDaMae, nomeDoPai, deficiencia, 
@@ -49,13 +53,13 @@ public class Gerenciador {
             System.out.println(lista.get(i).getEmail());
 
         }
-        /*
-  (siape, regimeTrabalho, classeDocente, titulacao, cargo, cpf, 
-          senha, nome, dataNascimeto, nacionalidade, email,
-          estadoCivil, sexo, nomeDaMae, nomeDoPai, deficiencia, tipoDeEndereco, 
-          tipoLogradouro, logradouro, complemento, estado, telefoneResidencial, 
-          bairro, cidade, telefoneCelular, numero, cep, pais);
-         */
+        
+//  (siape, regimeTrabalho, classeDocente, titulacao, cargo, cpf, 
+//          senha, nome, dataNascimeto, nacionalidade, email,
+//          estadoCivil, sexo, nomeDaMae, nomeDoPai, deficiencia, tipoDeEndereco, 
+//          tipoLogradouro, logradouro, complemento, estado, telefoneResidencial, 
+//          bairro, cidade, telefoneCelular, numero, cep, pais);
+         
         Professor prof = new Professor("123456", "Regime3", "Classe3", "Doutora", "Decano",
                 "99900011122", "123", "Ada Augusta King", "10/12/1815",
                 "Inglesa", "ada.lovelace@uniriotec.br",
@@ -125,30 +129,31 @@ public class Gerenciador {
         for (int i = 0; i < lista3.size(); i++) {
             System.out.println(lista3.get(i).getEmail());
         }
+         */
 
     }
 
     public static void analisaRequerimento(Requerimento requerimento) {
         if (requerimento.getStatus().equals("TRIAGEM")) {
-            ManipuladorXML xml = new ManipuladorXML("Requerimentos.xml");
-            xml.leXML();
-            xml.adiciona(requerimento);
-            xml.escreveXML();
-            
-        } else if (requerimento.getStatus().equals("DESIGNADO")) {
-            ManipuladorXML xml = new ManipuladorXML("Requerimentos.xml");
-            xml.leXML();
-            xml.adiciona(requerimento);
-            xml.escreveXML();
-        
-        } else if (requerimento.getStatus().equals("ACEITO")) {
-            ManipuladorXML xml = new ManipuladorXML("Requerimentos.xml");
+            ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
             xml.adiciona(requerimento);
             xml.escreveXML();
 
-        }else if (requerimento.getStatus().equals("REJEITADO")) {
-            ManipuladorXML xml = new ManipuladorXML("Requerimentos.xml");
+        } else if (requerimento.getStatus().equals("DESIGNADO")) {
+            ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
+            xml.leXML();
+            xml.adiciona(requerimento);
+            xml.escreveXML();
+
+        } else if (requerimento.getStatus().equals("ACEITO")) {
+            ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
+            xml.leXML();
+            xml.adiciona(requerimento);
+            xml.escreveXML();
+
+        } else if (requerimento.getStatus().equals("REJEITADO")) {
+            ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
             xml.adiciona(requerimento);
             xml.escreveXML();
@@ -171,9 +176,50 @@ public class Gerenciador {
         return alunoObtido;
     }
 
-    private static void encaminharParaTecnico(Requerimento requerimento) {
-        ManipuladorXML xml = new ManipuladorXML("");
+    public static Professor obterProfessor(String cpf, String senha) {
+        ArrayList<Professor> lista;
+        Professor professorObtido;
+        professorObtido = null;
+        ManipuladorXML manipulador = new ManipuladorXML("Professors.xml");
+        manipulador.leXML();
+        lista = manipulador.getLista();
+        for (int i = 0; i < lista.size(); i++) {
+            if ((lista.get(i).getCpf().equals(cpf)) && lista.get(i).getSenha().equals(senha)) {
+                professorObtido = lista.get(i);
+                return professorObtido;
+            }
+        }
+        return professorObtido;
+    }
 
+    public static Professor obterProfessor(String disciplina) {
+        ArrayList<Professor> lista;
+        Professor professorObtido;
+        professorObtido = null;
+        ManipuladorXML manipulador = new ManipuladorXML("Professors.xml");
+        manipulador.leXML();
+        lista = manipulador.getLista();
+        for (int i = 0; i < lista.size(); i++) {
+            if ((lista.get(i).getGrade().contains(disciplina))) {
+                professorObtido = lista.get(i);
+                return professorObtido;
+            }
+        }
+        return professorObtido;
+    }
+
+    private static ArrayList<Requerimento> buscarTriagem() {
+        ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
+        xml.leXML();
+        ArrayList<Requerimento> lista = xml.getLista();
+        ArrayList<Requerimento> listaRetorno = new ArrayList<>();
+
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getStatus().equals("TRIAGEM")) {
+                listaRetorno.add(lista.get(i));
+            }
+        }
+        return listaRetorno;
     }
 
     private static void encaminharParaAluno(Requerimento requerimento) {
