@@ -505,7 +505,7 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         janelaComentario.setVisible(true);
         String comentario = janelaComentario.escreverComentario();
         String resposta = requerimento.getResposta();
-        requerimento.setDescricao(resposta + "Nota de Rejeição:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
+        requerimento.setResposta(resposta + "Nota de Rejeição:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
 
     }//GEN-LAST:event_rejeitarBotaoActionPerformed
 
@@ -523,7 +523,7 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         janelaComentario.setVisible(true);
         String comentario = janelaComentario.escreverComentario();
         String resposta = requerimento.getResposta();
-        requerimento.setDescricao(resposta + "Nota de Pendência:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
+        requerimento.setResposta(resposta + "Nota de Pendência:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
     }//GEN-LAST:event_pendenciaBotaoActionPerformed
 
     private void aceitarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceitarBotaoActionPerformed
@@ -531,7 +531,7 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         janelaComentario.setVisible(true);
         String comentario = janelaComentario.escreverComentario();
         String resposta = requerimento.getResposta();
-        requerimento.setDescricao(resposta + "Nota de Aceitação:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
+        requerimento.setResposta(resposta + "Nota de Aceitação:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
      }//GEN-LAST:event_aceitarBotaoActionPerformed
 
     

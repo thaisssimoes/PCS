@@ -36,15 +36,14 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
         dataFechamentoLabel.setVisible(false);
         professorLabelDisciplina.setVisible(false);
     }
-    //Aluno aluno;
+    Aluno aluno;
     Requerimento requerimento;
-    Usuario aluno;
   
     public RequerimentoGeralAnexoAlunoLeitura(Requerimento requerimento, String titulo) {
         this.setTitle(titulo);
         initComponents();
         this.requerimento = requerimento;
-        this.aluno = requerimento.getRequerente();
+        this.aluno = (Aluno) requerimento.getRequerente();
         preencherTela();
         preencherCamposLeitura();
         centralizarTela();
@@ -460,7 +459,7 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
      private void preencherCamposLeitura() {
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
-        //matriculaAlunoLabel.setText(aluno.getMatricula());
+        matriculaAlunoLabel.setText(aluno.getMatricula());
         telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
         dataAberturaLabel.setText(requerimento.getDataCriacao());
         statusLabel.setText(requerimento.getStatus());
@@ -468,6 +467,7 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
         descricaoAreaTexto.setText(requerimento.getDescricao());
         disciplinaLabel.setText(requerimento.getDisciplina());
         respostaAreaTexto.setText(requerimento.getResposta());
+        periodoLabel.setText(aluno.getPeriodo());
         
     }
     
