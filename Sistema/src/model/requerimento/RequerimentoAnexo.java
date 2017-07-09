@@ -61,11 +61,11 @@ public class RequerimentoAnexo {
     }
 
     public RequerimentoAnexo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
 private String gerarNumeroProtocolo() {
-        return Instant.now().toString();
+        return String.valueOf(Instant.now());
     }    
     
 }
