@@ -48,16 +48,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         preencherCamposEscrita();
         centralizarTela();
     }
-<<<<<<< HEAD
-//    public RequerimentoGeralAnexoAluno(String titulo) {
-//        this.setTitle(titulo);
-//        initComponents();
-//        preencherTela();
-//        preencherCamposLeitura();
-//        criarRequerimento(requerimento);
-//        centralizarTela();
-//    }
-=======
+
     
     public RequerimentoGeralAnexoAluno(Requerimento requerimento, String titulo) {
         this.setTitle(titulo);
@@ -66,7 +57,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         preencherCamposLeitura();
         centralizarTela();
     }
->>>>>>> a56b9e5cdd373fa7f56a1403324aa7a768734086
+
 
     /**
      * This method is called from within the constructor to initialize the form.
