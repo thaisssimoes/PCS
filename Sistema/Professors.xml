@@ -208,7 +208,7 @@
      <string>Princeton</string>
     </void>
     <void property="cargo">
-     <string>SemCargo</string>
+     <string>Diretor</string>
     </void>
     <void property="cep">
      <string>22233356</string>
