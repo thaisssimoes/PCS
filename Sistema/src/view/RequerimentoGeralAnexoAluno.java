@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.Gerenciador;
 import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -27,9 +28,9 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
      */
     public RequerimentoGeralAnexoAluno() {
         initComponents();
-        criarRequerimento();
+        criarRequerimento(requerimento);
         preencherTela();
-
+        
         dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
         dataFechamentoFixo.setVisible(false);
         dataFechamentoLabel.setVisible(false);
@@ -37,16 +38,17 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
     }
     Aluno aluno;
     Requerimento requerimento;
-
+    
     public RequerimentoGeralAnexoAluno(Aluno aluno, String titulo) {
         this.setTitle(titulo);
         initComponents();
         this.aluno = aluno;
         preencherTela();
-        requerimento = criarRequerimento();
+        criarRequerimento(requerimento);
         preencherCamposEscrita();
         centralizarTela();
     }
+    
     public RequerimentoGeralAnexoAluno(Requerimento requerimento, String titulo) {
         this.setTitle(titulo);
         initComponents();
@@ -481,8 +483,8 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         
     }
     
-     private void preencherCamposLeitura() {
-        Aluno aluno =  (Aluno)requerimento.getRequerente();
+    private void preencherCamposLeitura() {
+        Aluno aluno = (Aluno) requerimento.getRequerente();
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
         matriculaAlunoLabel.setText(aluno.getMatricula());
@@ -491,7 +493,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         
     }
     
-    private void preencherTela(){
+    private void preencherTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         String titulo = this.getTitle();
         System.out.println(titulo);
@@ -499,32 +501,31 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         dataFechamentoFixo.setVisible(false);
         professorLabelFixo.setVisible(false);
         professorLabelDisciplina.setVisible(false);
-        if(titulo.equals("Realização de segunda chamada")
-            || titulo.equals("Revisão de prova")
-            || titulo.equals("Isenção ou aproveitamento de disciplina")){
+        if (titulo.equals("Realização de segunda chamada")
+                || titulo.equals("Revisão de prova")
+                || titulo.equals("Isenção ou aproveitamento de disciplina")) {
             disciplinaLabelFixo.setVisible(true);
             disciplinaComboBox.setVisible(true);
             anexo1.setVisible(true);
             anexo2.setVisible(true);
-        }
-        else{         
+        } else {
             disciplinaLabelFixo.setVisible(false);
             disciplinaComboBox.setVisible(false);
             anexo1.setVisible(false);
             anexo2.setVisible(false);
             this.setBounds(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2, 700, 500);
-               
+            
         }
     }
-
+    
     private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
-
+    
 
     private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
-
+        
         ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno, requerimento);
         janelaConfirmacao.setVisible(true);
         this.setVisible(false);
@@ -542,29 +543,32 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_cancelarBotaoActionPerformed
-
-    private Requerimento criarRequerimento() {
-        Requerimento novoRequerimento = new Requerimento();
-        numeroProtocoloLabel.setText(novoRequerimento.getNumeroProtocolo());
-        novoRequerimento.setDataCriacao(LocalDate.now().toString());
-        novoRequerimento.setDescricao(descricaoAreaTexto.getText());
-        novoRequerimento.setRequerente(aluno);
-        novoRequerimento.setStatus("TRIAGEM");
-        novoRequerimento.setTipoRequerimento(this.getTitle());
-        return novoRequerimento;
-
+    
+    private void criarRequerimento(Requerimento requerimento) {
+        numeroProtocoloLabel.setText(requerimento.getNumeroProtocolo());
+        requerimento.setDataCriacao(LocalDate.now().toString());
+        requerimento.setDescricao(descricaoAreaTexto.getText());
+        requerimento.setRequerente(aluno);
+        requerimento.setStatus("TRIAGEM");
+        requerimento.setTipoRequerimento(this.getTitle());
+        if (encontrarCargoTipoRequerimento().equals("Criar tecnico")) {
+            requerimento.setAreaResponsavel(Gerenciador.criarTecnicoGenerico());
+        } else {
+            requerimento.setAreaResponsavel(Gerenciador.obterProfessorCargo(encontrarCargoTipoRequerimento()));
+            
+        }
     }
-
-    private String encontrarAreaResponsavel() {
+    
+    private String encontrarCargoTipoRequerimento() {
         if (this.getTitle().equals("Cancelamento de matrícula")) {
             return "Diretor";
         } else if (this.getTitle().equals("Revisão de prova")) {
             return "Chefe de Departamento";
         } else {
-            return null;
+            return "Criar tecnico";
         }
     }
-
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
