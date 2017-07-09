@@ -145,32 +145,61 @@ public class Gerenciador {
 
     public static void analisaRequerimento(Requerimento requerimento) {
         if (requerimento.getStatus().equals("TRIAGEM")) {
-            System.out.println(requerimento.getDataCriacao());
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
+            ArrayList<Requerimento> listaInicial = xml.getLista();
+            for (int i = 0; i < listaInicial.size(); i++) {
+                if (listaInicial.get(i).getNumeroProtocolo().equals(requerimento.getNumeroProtocolo())) {
+                    xml.remove(i);
+                }
+            }
             xml.adiciona(requerimento);
             xml.escreveXML();
 
         } else if (requerimento.getStatus().equals("DESIGNADO")) {
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
+            ArrayList<Requerimento> listaInicial = xml.getLista();
+            for (int i = 0; i < listaInicial.size(); i++) {
+                if (listaInicial.get(i).getNumeroProtocolo().equals(requerimento.getNumeroProtocolo())) {
+                    xml.remove(i);
+                }
+            }
             xml.adiciona(requerimento);
             xml.escreveXML();
 
         } else if (requerimento.getStatus().equals("ACEITO")) {
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
+            ArrayList<Requerimento> listaInicial = xml.getLista();
+            for (int i = 0; i < listaInicial.size(); i++) {
+                if (listaInicial.get(i).getNumeroProtocolo().equals(requerimento.getNumeroProtocolo())) {
+                    xml.remove(i);
+                }
+            }
             xml.adiciona(requerimento);
             xml.escreveXML();
 
         } else if (requerimento.getStatus().equals("REJEITADO")) {
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
+            ArrayList<Requerimento> listaInicial = xml.getLista();
+            for (int i = 0; i < listaInicial.size(); i++) {
+                if (listaInicial.get(i).getNumeroProtocolo().equals(requerimento.getNumeroProtocolo())) {
+                    xml.remove(i);
+                }
+            }
             xml.adiciona(requerimento);
             xml.escreveXML();
         } else if (requerimento.getStatus().equals("PENDENTE")) {
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
+            ArrayList<Requerimento> listaInicial = xml.getLista();
+            for (int i = 0; i < listaInicial.size(); i++) {
+                if (listaInicial.get(i).getNumeroProtocolo().equals(requerimento.getNumeroProtocolo())) {
+                    xml.remove(i);
+                }
+            }
             xml.adiciona(requerimento);
             xml.escreveXML();
         }
@@ -354,7 +383,7 @@ public class Gerenciador {
         ArrayList<Requerimento> listaRetorno = new ArrayList<>();
 
         for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i).getAreaResponsavel() instanceof model.entity.Tecnico) {
+            if (lista.get(i).getAreaResponsavel() instanceof model.entity.Tecnico && !lista.get(i).getStatus().equals("TRIAGEM")) {
                 listaRetorno.add(lista.get(i));
             }
         }

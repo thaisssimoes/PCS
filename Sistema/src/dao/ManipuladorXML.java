@@ -32,6 +32,7 @@ public class ManipuladorXML<Tipo> {
     public void remove(Tipo tipo) {
             lista.remove(tipo);
     }
+    
 
     public void escreveXML() {
         try {
