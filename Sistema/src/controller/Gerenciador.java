@@ -6,21 +6,19 @@ import java.util.ArrayList;
 import model.entity.Aluno;
 
 import model.entity.Professor;
+import model.entity.Tecnico;
 
 import model.requerimento.Requerimento;
 
 public class Gerenciador {
 
-    private static String REQUERIMENTO = "Requerimentos.xml";
+    private static final String REQUERIMENTO = "Requerimentos.xml";
+    private static final String PROFESSOR = "Professors.xml";
+    private static final String TECNICO = "Tecnicos.xml";
+    private static final String ALUNO = "Alunos.xml";
 
     public static void main(String[] args) {
         /*
-        //matricula, cpf, senha, nome, dataNascimeto, 
-        //nacionalidade, email, periodo, estadoCivil, 
-        //sexo, nomeDaMae, nomeDoPai, deficiencia, 
-        //tipoDeEndereco, tipoLogradouro, logradouro, 
-        //complemento, estado, telefoneResidencial, bairro, 
-        //cidade, telefoneCelular, numero, cep, pais)
         Aluno aluno = new Aluno("18002210002", "12345678901", "123", "Ludwig Van Beethoven",
                 "16/12/1770", "Alemã", "ludwig.beethoven@uniriotec.br", "9", "Solteiro",
                 "Masculino", "Maria", "Johann", "Surdo",
@@ -51,13 +49,7 @@ public class Gerenciador {
             System.out.println(lista.get(i).getEmail());
 
         }
-        
-//  (siape, regimeTrabalho, classeDocente, titulacao, cargo, cpf, 
-//          senha, nome, dataNascimeto, nacionalidade, email,
-//          estadoCivil, sexo, nomeDaMae, nomeDoPai, deficiencia, tipoDeEndereco, 
-//          tipoLogradouro, logradouro, complemento, estado, telefoneResidencial, 
-//          bairro, cidade, telefoneCelular, numero, cep, pais);
-         */
+
         Professor prof = new Professor("123456", "Regime3", "Classe3", "Doutora", "Decano",
                 "99900011122", "123", "Ada Augusta King", "10/12/1815",
                 "Inglesa", "ada.lovelace@uniriotec.br",
@@ -73,7 +65,7 @@ public class Gerenciador {
                 "88", "Passy", "5556677", "Local", "Paris", "6655474",
                 "88", "64745678", "Polônia");
 
-        Professor prof3 = new Professor("345678", "Regime1", "Classe1", "Doutor", "SemCargo",
+        Professor prof3 = new Professor("345678", "Regime1", "Classe1", "Doutor", "Diretor",
                 "11122233344", "345", "Albert Einstein", "14/03/1879",
                 "Alemã", "albert.einstein@uniriotec.br",
                 "Casado", "Masculino", "Pauline",
@@ -107,29 +99,23 @@ public class Gerenciador {
             System.out.println(lista2.get(i2).getEmail());
 
         }
-        /*
-        //(siape, cpf, senha, nome, dataNascimeto, 
-        // nacionalidade, email, estadoCivil, sexo, nomeDaMae, nomeDoPai, 
-        // deficiencia, tipoDeEndereco, tipoLogradouro, logradouro, 
-        // complemento, estado, telefoneResidencial, bairro, cidade, 
-        // telefoneCelular, numero, cep, pais)
-        Tecnico tecnico = new Tecnico("000111", "12376598707", "000", "Thomas Alva Edison",
+        Tecnico tecnico = new Tecnico("Escola de Informática Aplicada", "CCET", "000111", "12376598707", "000", "Thomas Alva Edison",
                 "11/02/1847", "Estadunidense", "thomas.edison@uniriotec.br",
                 "Solteiro", "Masculino", "Nancy", "Samuel", "Nenhuma", "Residencial", "Avenida",
                 "Das Luzes", "01", "Ohio", "25556769", "Milanhood", "Milan", "5553034", "10", "101607",
                 "Estados Unidos");
-        Tecnico tecnico2 = new Tecnico("222333", "65748390012", "222", "Nikola Tesla",
+        Tecnico tecnico2 = new Tecnico("Escola de Informática Aplicada", "CCET", "222333", "65748390012", "222", "Nikola Tesla",
                 "10/07/1856", "Sérvio", "nikola.tesla@uniriotec.br",
                 "Solteiro", "Masculino", "Đuka Mandici", "Milutin Tesla", "Nenhuma", "Residencial", "Avenida",
                 "Chocante", "09", "Smiljan", "25556769", "Smiljanhood", "Aust", "5553034", "10", "101607",
                 "Império Austríaco");
-        Tecnico tecnico3 = new Tecnico("444555", "19181716151", "444", "Neil deGrasse Tyson",
+        Tecnico tecnico3 = new Tecnico("Escola de Informática Aplicada", "CCET", "444555", "19181716151", "444", "Neil deGrasse Tyson",
                 "05/10/1958", "Estadunidense", "neil.tyson@uniriotec.br",
                 "Casado", "Masculino", " Sunchita", "Cyril", "Nenhuma", "Residencial", "Avenida",
                 "Dos Planetas", "101", "Manhattan", "25556769", "Manhattanhood", "Nova York", "5553034", "010", "101607",
                 "Estados Unidos");
 
-        ManipuladorXML manipulador3 = new ManipuladorXML("Tecnicos.xml");
+        ManipuladorXML manipulador3 = new ManipuladorXML(TECNICO);
         ArrayList<Tecnico> lista3;
         manipulador3.adiciona(tecnico);
         manipulador3.adiciona(tecnico2);
@@ -141,11 +127,11 @@ public class Gerenciador {
             System.out.println(lista3.get(i).getEmail());
         }
          */
-
     }
 
     public static void analisaRequerimento(Requerimento requerimento) {
         if (requerimento.getStatus().equals("TRIAGEM")) {
+            System.out.println(requerimento.getDataCriacao());
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
             xml.adiciona(requerimento);
@@ -175,7 +161,7 @@ public class Gerenciador {
         ArrayList<Aluno> lista;
         Aluno alunoObtido;
         alunoObtido = null;
-        ManipuladorXML manipulador = new ManipuladorXML("Alunos.xml");
+        ManipuladorXML manipulador = new ManipuladorXML(ALUNO);
         manipulador.leXML();
         lista = manipulador.getLista();
         for (int i = 0; i < lista.size(); i++) {
@@ -187,27 +173,27 @@ public class Gerenciador {
         return alunoObtido;
     }
 
-    public static Professor obterProfessor(String cpf, String senha) {
-        ArrayList<Professor> lista;
-        Professor professorObtido;
-        professorObtido = null;
-        ManipuladorXML manipulador = new ManipuladorXML("Professors.xml");
+    public static Tecnico obterTecnico(String cpf, String senha) {
+        ArrayList<Tecnico> lista;
+        Tecnico tenicoObtido;
+        tenicoObtido = null;
+        ManipuladorXML manipulador = new ManipuladorXML(TECNICO);
         manipulador.leXML();
         lista = manipulador.getLista();
         for (int i = 0; i < lista.size(); i++) {
             if ((lista.get(i).getCpf().equals(cpf)) && lista.get(i).getSenha().equals(senha)) {
-                professorObtido = lista.get(i);
-                return professorObtido;
+                tenicoObtido = lista.get(i);
+                return tenicoObtido;
             }
         }
-        return professorObtido;
+        return tenicoObtido;
     }
 
-    public static Professor obterProfessor(String disciplina) {
+    public static Professor obterProfessorDisciplina(String disciplina) {
         ArrayList<Professor> lista;
         Professor professorObtido;
         professorObtido = null;
-        ManipuladorXML manipulador = new ManipuladorXML("Professors.xml");
+        ManipuladorXML manipulador = new ManipuladorXML(PROFESSOR);
         manipulador.leXML();
         lista = manipulador.getLista();
         for (int i = 0; i < lista.size(); i++) {
@@ -223,11 +209,27 @@ public class Gerenciador {
         ArrayList<Professor> lista;
         Professor professorObtido;
         professorObtido = null;
-        ManipuladorXML manipulador = new ManipuladorXML("Professors.xml");
+        ManipuladorXML manipulador = new ManipuladorXML(PROFESSOR);
         manipulador.leXML();
         lista = manipulador.getLista();
         for (int i = 0; i < lista.size(); i++) {
             if ((lista.get(i).getCargo().equals(cargo))) {
+                professorObtido = lista.get(i);
+                return professorObtido;
+            }
+        }
+        return professorObtido;
+    }
+
+    public static Professor obterProfessorCPF(String cpf, String senha) {
+        ArrayList<Professor> lista;
+        Professor professorObtido;
+        professorObtido = null;
+        ManipuladorXML manipulador = new ManipuladorXML(PROFESSOR);
+        manipulador.leXML();
+        lista = manipulador.getLista();
+        for (int i = 0; i < lista.size(); i++) {
+            if ((lista.get(i).getCpf().equals(cpf)) && lista.get(i).getSenha().equals(senha)) {
                 professorObtido = lista.get(i);
                 return professorObtido;
             }
@@ -261,10 +263,6 @@ public class Gerenciador {
             }
         }
         return listaRetorno;
-    }
-
-    private static void encaminharParaProfessor(Requerimento requerimento) {
-
     }
 
     public static ArrayList acessarXML(String tipoUsuario) {

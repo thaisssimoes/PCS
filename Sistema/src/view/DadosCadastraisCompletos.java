@@ -9,6 +9,7 @@ import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import model.entity.Aluno;
+import model.entity.Usuario;
 
 /**
  *
@@ -24,13 +25,29 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
     }
     Aluno aluno;
 
-    public DadosCadastraisCompletos(String cpf, String senha) {
+    public DadosCadastraisCompletos(Aluno aluno) {
         initComponents();
-        aluno = obterAluno(cpf, senha);
+        this.aluno = aluno;
         emailAluno.setText(aluno.getEmail());
         nomeAluno.setText(aluno.getNome());
-        //.setText(aluno.getMatricula());
-        telefoneCelularAluno.setText(aluno.getTelefoneCelular());
+        this.bairroAluno.setText(aluno.getBairro());
+        this.cepAluno.setText(aluno.getCep());
+        this.cidadeAluno.setText(aluno.getCidade());
+        this.complementoAluno.setText(aluno.getComplemento());
+        this.dataNasciAluno.setText(aluno.getDataNascimeto());
+        this.deficienciaAluno.setText(aluno.getDeficiencia());
+        this.estadoAluno.setText(aluno.getEstado());
+        this.estadoCivilAluno.setText(aluno.getEstadoCivil());
+        this.lougradouroAluno.setText(aluno.getLogradouro());
+        this.nacionalidadeAluno.setText(aluno.getNacionalidade());
+        this.nomeMaeAluno.setText(aluno.getNomeDaMae());
+        this.nomePaiAluno.setText(aluno.getNomeDoPai());
+        this.numeroAluno.setText(aluno.getNumero());
+        this.sexoAluno.setText(aluno.getSexo());
+        this.telefoneCelularAluno.setText(aluno.getTelefoneCelular());
+        this.telefoneResidencialAluno.setText(aluno.getTelefoneResidencial());
+        this.tipoEnderecoAluno.setText(aluno.getTipoDeEndereco());
+        this.tipoLogradouroAluno.setText(aluno.getTipoLogradouro());
         centralizarTela();
     }
 
@@ -478,7 +495,7 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
 
     private void okBotaoDadosCompletosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoDadosCompletosActionPerformed
 
-        TelaAluno janelaTelaAluno = new TelaAluno(aluno.getCpf(), aluno.getSenha());
+        TelaAluno janelaTelaAluno = new TelaAluno(aluno);
         janelaTelaAluno.setVisible(true);
         this.setVisible(false);
         this.dispose();

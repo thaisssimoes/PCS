@@ -6,7 +6,7 @@
 package view;
 
 import controller.Gerenciador;
-import static controller.Gerenciador.obterAluno;
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import model.entity.Aluno;
@@ -27,9 +27,10 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
     }
     Aluno aluno;
     Requerimento requerimento;
-    public ConfirmacaoEnvio(String cpf, String senha, Requerimento requerimento) {
+
+    public ConfirmacaoEnvio(Aluno aluno, Requerimento requerimento) {
         initComponents();
-        aluno = obterAluno(cpf, senha);
+        this.aluno = aluno;
         this.requerimento = requerimento;
         centralizarTela();
     }
@@ -113,25 +114,26 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void centralizarTela(){
+    private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
-    
-    
+
+
     private void simBotaoConfirmacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simBotaoConfirmacaoActionPerformed
         Gerenciador.analisaRequerimento(requerimento);
-        EnviadoComSucesso janelaSucesso = new EnviadoComSucesso(aluno.getCpf(),aluno.getSenha());
+        EnviadoComSucesso janelaSucesso = new EnviadoComSucesso(aluno);
         janelaSucesso.setVisible(true);
         this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_simBotaoConfirmacaoActionPerformed
 
     private void naoBotaoConfirmacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naoBotaoConfirmacaoActionPerformed
-
+        TelaAluno janelaTelaAluno = new TelaAluno(aluno);
+        janelaTelaAluno.setVisible(true);
         this.setVisible(false);
         this.dispose();
-        
+
     }//GEN-LAST:event_naoBotaoConfirmacaoActionPerformed
 
     /**

@@ -5,10 +5,8 @@
  */
 package view;
 
-import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.JList;
 import javax.swing.table.DefaultTableModel;
@@ -32,7 +30,13 @@ public class TelaAluno extends javax.swing.JFrame {
 
     public TelaAluno(String cpf, String senha) {
         initComponents();
-        aluno = obterAluno(cpf, senha);
+        preencherCampos();
+        centralizarTela();
+    }
+
+    public TelaAluno(Aluno aluno) {
+        initComponents();
+        this.aluno = aluno;
         preencherCampos();
         centralizarTela();
     }
@@ -57,7 +61,7 @@ public class TelaAluno extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        lista = new javax.swing.JList<String>();
+        lista = new javax.swing.JList<>();
         painelTelaAluno = new javax.swing.JTabbedPane();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -169,10 +173,10 @@ public class TelaAluno extends javax.swing.JFrame {
                                 .addGap(44, 44, 44))))))
         );
 
-        lista.setModel(new javax.swing.AbstractListModel() {
+        lista.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Atualização de cadastro", "Cancelamento de matrícula", "Emissão de certificado ou diploma", "Emissão de histórico escolar", "Emissão do programa de disciplinas", "Isenção ou aproveitamento de disciplina", "Realização de segunda chamada", "Revisão de prova", "Trancamento de Disciplina", "Trancamento de matrícula", "Outros" };
             public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+            public String getElementAt(int i) { return strings[i]; }
         });
         lista.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -239,6 +243,11 @@ public class TelaAluno extends javax.swing.JFrame {
         jLabel3.setText("Atualizar");
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/refresh.png"))); // NOI18N
+        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel20MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -350,65 +359,70 @@ public class TelaAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    private void preencherCampos(){
+
+    private void preencherCampos() {
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
         matriculaAlunoLabel.setText(aluno.getMatricula());
         telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
 
     }
-    private void popularRequerimentos(){
+
+    private void popularRequerimentos() {
+
         DefaultTableModel model = (DefaultTableModel) painelTelaAluno.getModel();
         ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoCPF(aluno.getCpf());
         Object rowData[] = new Object[3];
-        for(int i=0; i < requerimentos.size(); i++){
-            rowData[0]= requerimentos.get(i).getNumeroProtocolo();
-            rowData[1]= requerimentos.get(i).getTipoRequerimento();
-            rowData[2]=requerimentos.get(i).getStatus();
+        for (int i = 0; i < requerimentos.size(); i++) {
+            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+            rowData[1] = requerimentos.get(i).getTipoRequerimento();
+            rowData[2] = requerimentos.get(i).getStatus();
             model.addRow(rowData);
-      }
+        }
     }
 
-    private void centralizarTela(){
+    private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
-    
+
     private void listaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaMouseClicked
         String titulo;
         JList list = (JList) evt.getSource();
         titulo = (String) list.getSelectedValue();
         if (evt.getClickCount() == 2) {
-            if(!titulo.equals("Realização de segunda chamada") 
-                && !titulo.equals("Revisão de prova") 
-                && !titulo.equals("Isenção ou aproveitamento de disciplina")){
-                    RequerimentoGeralAluno janelaRequerimento = new RequerimentoGeralAluno(aluno.getCpf(), aluno.getSenha());
-                    janelaRequerimento.setVisible(true);
-                    janelaRequerimento.setTitle(titulo);
-                    this.setVisible(false);
-                    this.dispose();
-            }
-            else{
-                RequerimentoGeralAnexoAluno janelaRequerimento = new RequerimentoGeralAnexoAluno(aluno.getCpf(), aluno.getSenha());
+            if (!titulo.equals("Realização de segunda chamada")
+                    && !titulo.equals("Revisão de prova")
+                    && !titulo.equals("Isenção ou aproveitamento de disciplina")) {
+                RequerimentoGeralAluno janelaRequerimento = new RequerimentoGeralAluno(aluno);
+                janelaRequerimento.setVisible(true);
+                janelaRequerimento.setTitle(titulo);
+                this.setVisible(false);
+                this.dispose();
+            } else {
+                RequerimentoGeralAnexoAluno janelaRequerimento = new RequerimentoGeralAnexoAluno(aluno);
                 janelaRequerimento.setVisible(true);
                 janelaRequerimento.setTitle(titulo);
                 this.setVisible(false);
                 this.dispose();
             }
-            
+
         }
 
 
     }//GEN-LAST:event_listaMouseClicked
 
     private void verDadosCompletosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verDadosCompletosMouseClicked
-        DadosCadastraisCompletos janelaDados = new DadosCadastraisCompletos(aluno.getCpf(), aluno.getSenha());
+        DadosCadastraisCompletos janelaDados = new DadosCadastraisCompletos(aluno);
         janelaDados.setVisible(true);
         this.setVisible(false);
         this.dispose();
 
      }//GEN-LAST:event_verDadosCompletosMouseClicked
+
+    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+        popularRequerimentos();
+    }//GEN-LAST:event_jLabel20MouseClicked
 
     /**
      * @param args the command line arguments

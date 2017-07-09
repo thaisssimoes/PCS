@@ -11,6 +11,9 @@ import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
+import model.entity.Aluno;
+import model.entity.Professor;
+import model.entity.Tecnico;
 import model.entity.Usuario;
 
 /**
@@ -169,6 +172,10 @@ public class Login extends javax.swing.JFrame {
         String senha;
         String cpf;
         String tipoUsuarioString;
+
+        Aluno aluno = null;
+        Professor professor = null;
+        Tecnico tecnico = null;
         tipoUsuarioString = String.valueOf(tipoUsuario.getSelectedItem());
         senha = String.valueOf(campoSenha.getPassword());
         cpf = campoCPF.getText();
@@ -178,13 +185,18 @@ public class Login extends javax.swing.JFrame {
             this.dispose();
 
             if (tipoUsuarioString.equals("Aluno")) {
-                TelaAluno janelaTelaAluno = new TelaAluno(cpf, senha);
+                aluno = controller.Gerenciador.obterAluno(cpf, senha);
+                TelaAluno janelaTelaAluno = new TelaAluno(aluno);
                 janelaTelaAluno.setVisible(true);
             } else {
                 if (tipoUsuarioString.equals("Professor")) {
-                    TelaProfessor janelaTelaProfessor = new TelaProfessor(cpf, senha);
+                    professor = controller.Gerenciador.obterProfessorCPF(cpf, senha);
+                    TelaProfessor janelaTelaProfessor = new TelaProfessor(professor);
+                    janelaTelaProfessor.setVisible(true);
                 } else {
-                    TelaSecretaria janelaTelaTecnico = new TelaSecretaria(cpf, senha);
+                    tecnico = controller.Gerenciador.obterTecnico(cpf, senha);
+                    TelaSecretaria janelaTelaTecnico = new TelaSecretaria(tecnico);
+                    janelaTelaTecnico.setVisible(true);
                 }
             }
         } else {
@@ -199,6 +211,9 @@ public class Login extends javax.swing.JFrame {
             String senha;
             String cpf;
             String tipoUsuarioString;
+            Aluno aluno = null;
+            Professor professor = null;
+            Tecnico tecnico = null;
             tipoUsuarioString = String.valueOf(tipoUsuario.getSelectedItem());
             senha = String.valueOf(campoSenha.getPassword());
             cpf = campoCPF.getText();
@@ -208,14 +223,17 @@ public class Login extends javax.swing.JFrame {
                 this.dispose();
 
                 if (tipoUsuarioString.equals("Aluno")) {
-                    TelaAluno janelaTelaAluno = new TelaAluno(cpf, senha);
+                    aluno = controller.Gerenciador.obterAluno(cpf, senha);
+                    TelaAluno janelaTelaAluno = new TelaAluno(aluno);
                     janelaTelaAluno.setVisible(true);
                 } else {
                     if (tipoUsuarioString.equals("Professor")) {
-                        TelaProfessor janelaTelaProfessor = new TelaProfessor(cpf, senha);
+                        professor = controller.Gerenciador.obterProfessorCPF(cpf, senha);
+                        TelaProfessor janelaTelaProfessor = new TelaProfessor(professor);
                         janelaTelaProfessor.setVisible(true);
                     } else {
-                        TelaSecretaria janelaTelaTecnico = new TelaSecretaria(cpf, senha);
+                        tecnico = controller.Gerenciador.obterTecnico(cpf, senha);
+                        TelaSecretaria janelaTelaTecnico = new TelaSecretaria(tecnico);
                         janelaTelaTecnico.setVisible(true);
                     }
                 }

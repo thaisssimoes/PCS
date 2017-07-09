@@ -10,6 +10,7 @@ import java.awt.Toolkit;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
+import model.entity.Professor;
 
 /**
  *
@@ -21,21 +22,20 @@ public class TelaProfessor extends javax.swing.JFrame {
      * Creates new form telaAluno
      */
     public TelaProfessor() {
-        
+
         initComponents();
-        visibilidadeAbaProfessor("Decano");   
+        visibilidadeAbaProfessor("Decano");
         centralizarTela();
-           
-        }
-    
-    public TelaProfessor(String cpf, String senha) {
-        
+
+    }
+
+    public TelaProfessor(Professor professor) {
+
         initComponents();
-        visibilidadeAbaProfessor("Decano");   
+        visibilidadeAbaProfessor("Decano");
         centralizarTela();
-           
-        }
-    
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -538,39 +538,38 @@ public class TelaProfessor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void centralizarTela(){
+    private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
     private void selecionarRequerimento(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecionarRequerimento
         String titulo;
         JList list = (JList) evt.getSource();
         titulo = (String) list.getSelectedValue();
         if (evt.getClickCount() == 2) {
-            if(titulo.equals("Pedido de Progressão")){
+            if (titulo.equals("Pedido de Progressão")) {
                 PedidoProgressao janelaPedidoProgressao = new PedidoProgressao();
                 janelaPedidoProgressao.setVisible(true);
                 janelaPedidoProgressao.setTitle(titulo);
                 this.setVisible(false);
-            }
-            else if(titulo.equals("Pedido de Afastamento")){
+            } else if (titulo.equals("Pedido de Afastamento")) {
                 PedidoAfastamento janelaPedidoAfastamento = new PedidoAfastamento();
                 janelaPedidoAfastamento.setVisible(true);
                 janelaPedidoAfastamento.setTitle(titulo);
                 this.setVisible(false);
-                
+
             }
         }
-        
+
     }//GEN-LAST:event_selecionarRequerimento
 
-    
-    public void visibilidadeAbaProfessor(String cargo){    
-        if(!cargo.equals("Decano")&&!cargo.equals("Chefe de Departamento")){
+    public void visibilidadeAbaProfessor(String cargo) {
+        if (!cargo.equals("Decano") && !cargo.equals("Chefe de Departamento")) {
             painelRequerimentosProfessores.remove(morraDesgracado);     //TODO: tirar essa aba
         }
-        
+
     }
+
     /**
      * @param args the command line arguments
      */
@@ -608,8 +607,7 @@ public class TelaProfessor extends javax.swing.JFrame {
                 new TelaProfessor().setVisible(true);
             }
         });
-        
-       
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

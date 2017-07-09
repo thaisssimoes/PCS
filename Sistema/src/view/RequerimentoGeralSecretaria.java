@@ -5,11 +5,9 @@
  */
 package view;
 
-import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import javax.swing.JList;
-import model.entity.Aluno;
+import model.entity.Tecnico;
 
 /**
  *
@@ -25,17 +23,18 @@ public class RequerimentoGeralSecretaria extends javax.swing.JFrame {
         tituloDataFechamento.setVisible(false);
         dataFechamento.setVisible(false);
     }
-    Aluno aluno;
-    public RequerimentoGeralSecretaria(String cpf, String senha){
+    Tecnico tecnico;
+
+    public RequerimentoGeralSecretaria(Tecnico tecnico) {
         initComponents();
-        aluno = obterAluno(cpf,senha);
-        emailAlunoLabel.setText(aluno.getEmail());
-        nomeCompletoAlunoLabel.setText(aluno.getNome());
-        matriculaAlunoLabel.setText(aluno.getMatricula());
-        telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
-        centralizarTela();
+        this.tecnico = tecnico;
+        emailTecnico.setText(tecnico.getEmail());
+        nomeCompletoTecnico.setText(tecnico.getNome());
+        siapeTecnico.setText(tecnico.getSiape());
+        telefoneTecnico.setText(tecnico.getTelefoneCelular());
         tituloDataFechamento.setVisible(false);
         dataFechamento.setVisible(false);
+        centralizarTela();
     }
 
     /**
@@ -58,16 +57,13 @@ public class RequerimentoGeralSecretaria extends javax.swing.JFrame {
         tituloDataFechamento = new javax.swing.JLabel();
         dataFechamento = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        nomeCompletoAlunoLabel = new javax.swing.JLabel();
+        nomeCompletoTecnico = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        matriculaAlunoLabel = new javax.swing.JLabel();
+        siapeTecnico = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        emailAlunoLabel = new javax.swing.JLabel();
+        emailTecnico = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        telefoneAlunoLabel = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        periodoLabel = new javax.swing.JLabel();
+        telefoneTecnico = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel25 = new javax.swing.JLabel();
@@ -168,34 +164,26 @@ public class RequerimentoGeralSecretaria extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Nome:");
 
-        nomeCompletoAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        nomeCompletoAlunoLabel.setText("Nome Completo do Aluno");
+        nomeCompletoTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nomeCompletoTecnico.setText("Nome Completo do Aluno");
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setText("Matrícula:");
+        jLabel13.setText("SIAPE");
 
-        matriculaAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        matriculaAlunoLabel.setText("123456789");
+        siapeTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        siapeTecnico.setText("123456789");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("E-mail:");
 
-        emailAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        emailAlunoLabel.setText("nome.sobrenome@uniriotec.br");
+        emailTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        emailTecnico.setText("nome.sobrenome@uniriotec.br");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setText("Telefone:");
 
-        telefoneAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        telefoneAlunoLabel.setText("(21) 9-2222-2222");
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel19.setText("Período:");
-
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel20.setText("período");
-
-        periodoLabel.setText("X");
+        telefoneTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        telefoneTecnico.setText("(21) 9-2222-2222");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -265,28 +253,22 @@ public class RequerimentoGeralSecretaria extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addGap(18, 18, 18)
-                                .addComponent(emailAlunoLabel))
+                                .addComponent(emailTecnico))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
-                                .addComponent(nomeCompletoAlunoLabel)
+                                .addComponent(nomeCompletoTecnico)
                                 .addGap(77, 77, 77)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel17)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(telefoneAlunoLabel))
+                                        .addComponent(telefoneTecnico))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel13)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(matriculaAlunoLabel)
-                                        .addGap(77, 77, 77)
-                                        .addComponent(jLabel19)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(periodoLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel20)))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                        .addComponent(siapeTecnico)))))
+                        .addGap(0, 158, Short.MAX_VALUE)))
                 .addGap(43, 43, 43))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -304,18 +286,15 @@ public class RequerimentoGeralSecretaria extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(nomeCompletoAlunoLabel)
+                    .addComponent(nomeCompletoTecnico)
                     .addComponent(jLabel13)
-                    .addComponent(matriculaAlunoLabel)
-                    .addComponent(jLabel19)
-                    .addComponent(periodoLabel)
-                    .addComponent(jLabel20))
+                    .addComponent(siapeTecnico))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(emailAlunoLabel)
+                    .addComponent(emailTecnico)
                     .addComponent(jLabel17)
-                    .addComponent(telefoneAlunoLabel))
+                    .addComponent(telefoneTecnico))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
@@ -348,21 +327,21 @@ public class RequerimentoGeralSecretaria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void centralizarTela(){
+    private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
-    
+
     private void exportarBotaoAlunoSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportarBotaoAlunoSecretariaActionPerformed
-        
+
 
     }//GEN-LAST:event_exportarBotaoAlunoSecretariaActionPerformed
 
     private void cancelarBotaoSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoSecretariaActionPerformed
-        TelaAluno janelaTelaAluno = new TelaAluno(aluno.getCpf(),aluno.getSenha());
-        janelaTelaAluno.setVisible(true);
+        TelaSecretaria janelaTelaSecretaria = new TelaSecretaria(tecnico);
+        janelaTelaSecretaria.setVisible(true);
         this.setVisible(false);
-        this.dispose(); 
+        this.dispose();
     }//GEN-LAST:event_cancelarBotaoSecretariaActionPerformed
 
     private void enviarBotaoSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoSecretariaActionPerformed
@@ -422,7 +401,7 @@ public class RequerimentoGeralSecretaria extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelarBotaoSecretaria;
     private javax.swing.JLabel dataFechamento;
-    private javax.swing.JLabel emailAlunoLabel;
+    private javax.swing.JLabel emailTecnico;
     private javax.swing.JButton enviarBotaoSecretaria;
     private javax.swing.JButton exportarBotaoAlunoSecretaria;
     private javax.swing.JLabel jLabel1;
@@ -430,8 +409,6 @@ public class RequerimentoGeralSecretaria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -443,12 +420,11 @@ public class RequerimentoGeralSecretaria extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JLabel matriculaAlunoLabel;
-    private javax.swing.JLabel nomeCompletoAlunoLabel;
+    private javax.swing.JLabel nomeCompletoTecnico;
     private javax.swing.JLabel numeroProtocolo;
     private javax.swing.JLabel numeroProtocolo1;
-    private javax.swing.JLabel periodoLabel;
-    private javax.swing.JLabel telefoneAlunoLabel;
+    private javax.swing.JLabel siapeTecnico;
+    private javax.swing.JLabel telefoneTecnico;
     private javax.swing.JLabel tituloDataFechamento;
     // End of variables declaration//GEN-END:variables
 }

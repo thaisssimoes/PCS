@@ -28,19 +28,20 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
     public RequerimentoGeralAnexoAluno() {
         initComponents();
         criarRequerimento();
-        dataAberturaLabel.setText(String.valueOf(LocalDate.now())); 
+        dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
         dataFechamentoFixo.setVisible(false);
         dataFechamentoLabel.setVisible(false);
         professorLabelDisciplina.setVisible(false);
     }
-     Aluno aluno;
-    public RequerimentoGeralAnexoAluno(String cpf, String senha){
+    Aluno aluno;
+    Requerimento requerimento;
+
+    public RequerimentoGeralAnexoAluno(Aluno aluno) {
         initComponents();
-        aluno = obterAluno(cpf,senha);
-        criarRequerimento();
+        this.aluno = aluno;
         dataFechamentoFixo.setVisible(false);
         dataFechamentoLabel.setVisible(false);
-        professorLabelDisciplina.setVisible(false);
+        requerimento = criarRequerimento();
         preencherCampos();
         centralizarTela();
     }
@@ -462,7 +463,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void preencherCampos(){
+    private void preencherCampos() {
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
         matriculaAlunoLabel.setText(aluno.getMatricula());
@@ -470,52 +471,55 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
         dataFechamentoLabel.setVisible(false);
     }
-    private void centralizarTela(){
+
+    private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
-    
-    
+
+
     private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
-            
-//      ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
-//      janelaConfirmacao.setVisible(true);
+
+        ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno, requerimento);
+        janelaConfirmacao.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_enviarBotaoActionPerformed
 
     private void atualizarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoActionPerformed
-        PopupComentario janelaComentario = new PopupComentario(aluno.getCpf(),aluno.getSenha());
+        PopupComentario janelaComentario = new PopupComentario(aluno.getCpf(), aluno.getSenha());
         janelaComentario.setVisible(true);    }//GEN-LAST:event_atualizarBotaoActionPerformed
 
     private void cancelarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoActionPerformed
-        TelaAluno janelaTelaAluno = new TelaAluno(aluno.getCpf(),aluno.getSenha());
+        TelaAluno janelaTelaAluno = new TelaAluno(aluno);
         janelaTelaAluno.setVisible(true);
         this.setVisible(false);
-        this.dispose(); ; 
+        this.dispose();
 
     }//GEN-LAST:event_cancelarBotaoActionPerformed
-    
-    private void criarRequerimento(){
+
+    private Requerimento criarRequerimento() {
         Requerimento novoRequerimento = new Requerimento();
         numeroProtocoloLabel.setText(novoRequerimento.getNumeroProtocolo());
-        novoRequerimento.setDataCriacao(LocalDate.now());
+        novoRequerimento.setDataCriacao(LocalDate.now().toString());
         novoRequerimento.setDescricao(descricaoAreaTexto.getText());
         novoRequerimento.setRequerente(aluno);
         novoRequerimento.setStatus("TRIAGEM");
         novoRequerimento.setTipoRequerimento(this.getTitle());
-            
+        return novoRequerimento;
 
     }
-    
-    //private String mudarLabelProfessor(){
-//        String nomeProfessorLecionaDisciplina = obterProfessorDisciplina();
-//        professorLabelDisciplina.setText(nomeProfessorLecionaDisciplina);
-//        professorLabelDisciplina.setVisible(true);
-        //return nomeProfessorLecionaDisciplina
-    //}
-    
-    /**
-     * @param args the command line arguments
-     */
+
+    private String encontrarAreaResponsavel() {
+        if (this.getTitle().equals("Cancelamento de matrícula")) {
+            return "Diretor";
+        } else if (this.getTitle().equals("Revisão de prova")) {
+            return "Chefe de Departamento";
+        } else {
+            return null;
+        }
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

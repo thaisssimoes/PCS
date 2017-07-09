@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_111" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="model.requerimento.Requerimento">
+    <void property="dataCriacao">
+     <string>2017-07-09</string>
+    </void>
+    <void property="descricao">
+     <string></string>
+    </void>
+    <void property="numeroProtocolo">
+     <string>1499592966950</string>
+    </void>
+    <void property="requerente">
+     <object class="model.entity.Aluno">
+      <void property="bairro">
+       <string>Algum</string>
+      </void>
+      <void property="cep">
+       <string>12345678</string>
+      </void>
+      <void property="cidade">
+       <string>Florença</string>
+      </void>
+      <void property="complemento">
+       <string>44</string>
+      </void>
+      <void property="cpf">
+       <string>12345678903</string>
+      </void>
+      <void property="dataNascimeto">
+       <string>15/02/1564</string>
+      </void>
+      <void property="deficiencia">
+       <string>Não se aplica</string>
+      </void>
+      <void property="email">
+       <string>galileu.galilei@uniriotec.br</string>
+      </void>
+      <void property="estado">
+       <string>PIS</string>
+      </void>
+      <void property="estadoCivil">
+       <string>Solteiro</string>
+      </void>
+      <void property="logradouro">
+       <string>AlgumNomeItaliano</string>
+      </void>
+      <void property="matricula">
+       <string>1585210001</string>
+      </void>
+      <void property="nacionalidade">
+       <string>Italiana</string>
+      </void>
+      <void property="nome">
+       <string>Galileu Galilei</string>
+      </void>
+      <void property="nomeDaMae">
+       <string>Giulia</string>
+      </void>
+      <void property="nomeDoPai">
+       <string>Vincenzo</string>
+      </void>
+      <void property="numero">
+       <string>66</string>
+      </void>
+      <void property="pais">
+       <string>Itália</string>
+      </void>
+      <void property="periodo">
+       <string>3</string>
+      </void>
+      <void property="senha">
+       <string>456</string>
+      </void>
+      <void property="sexo">
+       <string>Masculino</string>
+      </void>
+      <void property="telefoneCelular">
+       <string>21912345678</string>
+      </void>
+      <void property="telefoneResidencial">
+       <string>2112236666</string>
+      </void>
+      <void property="tipoDeEndereco">
+       <string>Residencial</string>
+      </void>
+      <void property="tipoLogradouro">
+       <string>Avenida</string>
+      </void>
+     </object>
+    </void>
+    <void property="status">
+     <string>TRIAGEM</string>
+    </void>
+    <void property="tipoRequerimento">
+     <string>Atualização de cadastro</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

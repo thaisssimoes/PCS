@@ -10,6 +10,7 @@ import java.awt.Toolkit;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
+import model.entity.Tecnico;
 
 /**
  *
@@ -21,19 +22,21 @@ public class TelaSecretaria extends javax.swing.JFrame {
      * Creates new form telaAluno
      */
     public TelaSecretaria() {
-        
+
         initComponents();
         centralizarTela();
-           
-        }
-    
-    public TelaSecretaria(String cpf, String senha) {
-        
+
+    }
+    Tecnico tecnico;
+
+    public TelaSecretaria(Tecnico tecnico) {
+
         initComponents();
+        this.tecnico = tecnico;
+        preencherCampos();
         centralizarTela();
-           
-        }
-    
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,20 +64,20 @@ public class TelaSecretaria extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        emailTecnico = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        telefoneCelTecnico = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
+        siapeTecnico = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+        centroAcademicoTecnico = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
+        lotacaoTecnico = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        nomeTecnico = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -229,32 +232,32 @@ public class TelaSecretaria extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("E-mail:");
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel16.setText("nome.sobrenome@uniriotec.br");
+        emailTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        emailTecnico.setText("nome.sobrenome@uniriotec.br");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setText("Telefone:");
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel18.setText("(21) 9-2222-2222");
+        telefoneCelTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        telefoneCelTecnico.setText("(21) 9-2222-2222");
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel19.setText("Matrícula SIAPE:");
 
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel22.setText("SIAPE");
+        siapeTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        siapeTecnico.setText("SIAPE");
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel23.setText("Centro Acadêmico:");
 
-        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel24.setText("CCET");
+        centroAcademicoTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        centroAcademicoTecnico.setText("CCET");
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel27.setText("Lotação:");
 
-        jLabel28.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel28.setText("Escola de Informática Aplicada");
+        lotacaoTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lotacaoTecnico.setText("Escola de Informática Aplicada");
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(56, 113, 156), 2, true));
@@ -295,8 +298,8 @@ public class TelaSecretaria extends javax.swing.JFrame {
                 .addComponent(jLabel36))
         );
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel20.setText("Nome Completo do Tecnico");
+        nomeTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nomeTecnico.setText("Nome Completo do Tecnico");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -311,30 +314,30 @@ public class TelaSecretaria extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel16))
+                                .addComponent(emailTecnico))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel20)))
+                                .addComponent(nomeTecnico)))
                         .addGap(98, 98, 98))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel18)
+                        .addComponent(telefoneCelTecnico)
                         .addGap(161, 161, 161)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel23)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel24))
+                        .addComponent(centroAcademicoTecnico))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel27)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel28))
+                        .addComponent(lotacaoTecnico))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel22)))
+                        .addComponent(siapeTecnico)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -352,26 +355,26 @@ public class TelaSecretaria extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(jLabel20))
+                            .addComponent(nomeTecnico))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
-                            .addComponent(jLabel16)))
+                            .addComponent(emailTecnico)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel23)
-                            .addComponent(jLabel24))
+                            .addComponent(centroAcademicoTecnico))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
-                            .addComponent(jLabel28))))
+                            .addComponent(lotacaoTecnico))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
-                    .addComponent(jLabel18)
+                    .addComponent(telefoneCelTecnico)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel19)
-                        .addComponent(jLabel22)))
+                        .addComponent(siapeTecnico)))
                 .addGap(22, 22, 22)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -393,17 +396,18 @@ public class TelaSecretaria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void centralizarTela(){
+    private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
-    
-    public void visibilidadeAbaProfessor(String cargo){    
-        if(!cargo.equals("Decano")&&!cargo.equals("Chefe de Departamento")){
+
+    public void visibilidadeAbaProfessor(String cargo) {
+        if (!cargo.equals("Decano") && !cargo.equals("Chefe de Departamento")) {
             painelRequerimentosProfessores.remove(morraDesgracado);     //TODO: tirar essa aba
         }
-        
+
     }
+
     /**
      * @param args the command line arguments
      */
@@ -445,26 +449,21 @@ public class TelaSecretaria extends javax.swing.JFrame {
                 new TelaSecretaria().setVisible(true);
             }
         });
-        
-       
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel centroAcademicoTecnico;
+    private javax.swing.JLabel emailTecnico;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
@@ -478,8 +477,21 @@ public class TelaSecretaria extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JLabel lotacaoTecnico;
     private javax.swing.JScrollPane morraDesgracado;
+    private javax.swing.JLabel nomeTecnico;
     private javax.swing.JTabbedPane painelRequerimentosProfessores;
+    private javax.swing.JLabel siapeTecnico;
     private javax.swing.JTable tabRequerimentosDeProfessores;
+    private javax.swing.JLabel telefoneCelTecnico;
     // End of variables declaration//GEN-END:variables
+
+    private void preencherCampos() {
+        this.centroAcademicoTecnico.setText(tecnico.getCentroAcademico());
+        this.emailTecnico.setText(tecnico.getEmail());
+        this.lotacaoTecnico.setText(tecnico.getLotacao());
+        this.nomeTecnico.setText(tecnico.getNome());
+        this.telefoneCelTecnico.setText(tecnico.getTelefoneCelular());
+        this.siapeTecnico.setText(tecnico.getSiape());
+    }
 }

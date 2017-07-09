@@ -25,13 +25,9 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
     }
     Aluno aluno;
 
-    public EnviadoComSucesso(String cpf, String senha) {
+    public EnviadoComSucesso(Aluno aluno) {
         initComponents();
-        aluno = obterAluno(cpf, senha);
-//        campoEmailAluno.setText(aluno.getEmail());
-//        campoNomeAluno.setText(aluno.getNome());
-//        campoMatriculaAluno.setText(aluno.getMatricula());
-//        campoTelefoneAluno.setText(aluno.getTelefone());
+        this.aluno = aluno;
         centralizarTela();
     }
 
@@ -122,7 +118,7 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
     
     private void okBotaoSucessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoSucessoActionPerformed
         //int DISPOSE_ON_CLOSE1 = RequerimentoGeralAluno.DISPOSE_ON_CLOSE;
-        TelaAluno janelaTelaAluno = new TelaAluno(aluno.getCpf(), aluno.getSenha());
+        TelaAluno janelaTelaAluno = new TelaAluno(aluno);
         janelaTelaAluno.setVisible(true);
         this.setVisible(false);
         this.dispose();

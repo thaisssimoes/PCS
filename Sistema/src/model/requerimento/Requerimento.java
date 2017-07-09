@@ -1,7 +1,7 @@
 package model.requerimento;
 
 import java.io.File;
-import java.time.Instant;
+
 import java.time.LocalDate;
 
 import lombok.Getter;
@@ -27,10 +27,10 @@ public class Requerimento {
     private String descricao;
     @Getter
     @Setter
-    private LocalDate dataCriacao;
+    private String dataCriacao;
     @Getter
     @Setter
-    private LocalDate dataSolucao;
+    private String dataSolucao;
     @Getter
     @Setter
     private String resposta;
@@ -44,10 +44,10 @@ public class Requerimento {
     @Setter
     private String disciplina;
 
-    public Requerimento(Usuario requerente, 
-            Usuario areaResponsavel, String status, 
-            String descricao, LocalDate dataCriacao, 
-            LocalDate dataSolucao, String resposta, 
+    public Requerimento(Usuario requerente,
+            Usuario areaResponsavel, String status,
+            String descricao, String dataCriacao,
+            String dataSolucao, String resposta,
             String tipoRequerimento) {
         this.numeroProtocolo = gerarNumeroProtocolo();
         this.requerente = requerente;
@@ -59,10 +59,11 @@ public class Requerimento {
         this.resposta = resposta;
         this.tipoRequerimento = tipoRequerimento;
     }
-    public Requerimento(Usuario requerente, 
-            Usuario areaResponsavel, String status, 
-            String descricao, LocalDate dataCriacao, 
-            LocalDate dataSolucao, String resposta, 
+
+    public Requerimento(Usuario requerente,
+            Usuario areaResponsavel, String status,
+            String descricao, String dataCriacao,
+            String dataSolucao, String resposta,
             String tipoRequerimento, File anexo, String disciplina) {
         this.numeroProtocolo = gerarNumeroProtocolo();
         this.requerente = requerente;
@@ -76,12 +77,11 @@ public class Requerimento {
         this.anexo = anexo;
         this.disciplina = disciplina;
     }
-    
 
     public Requerimento() {
         this.numeroProtocolo = gerarNumeroProtocolo();
 
-    } 
+    }
 
     private String gerarNumeroProtocolo() {
         return String.valueOf(System.currentTimeMillis());

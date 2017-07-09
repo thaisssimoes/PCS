@@ -6,6 +6,9 @@
     <void property="bairro">
      <string>Milanhood</string>
     </void>
+    <void property="centroAcademico">
+     <string>CCET</string>
+    </void>
     <void property="cep">
      <string>101607</string>
     </void>
@@ -35,6 +38,9 @@
     </void>
     <void property="logradouro">
      <string>Das Luzes</string>
+    </void>
+    <void property="lotacao">
+     <string>Escola de Informática Aplicada</string>
     </void>
     <void property="nacionalidade">
      <string>Estadunidense</string>
@@ -82,6 +88,9 @@
     <void property="bairro">
      <string>Smiljanhood</string>
     </void>
+    <void property="centroAcademico">
+     <string>CCET</string>
+    </void>
     <void property="cep">
      <string>101607</string>
     </void>
@@ -111,6 +120,9 @@
     </void>
     <void property="logradouro">
      <string>Chocante</string>
+    </void>
+    <void property="lotacao">
+     <string>Escola de Informática Aplicada</string>
     </void>
     <void property="nacionalidade">
      <string>Sérvio</string>
@@ -158,6 +170,9 @@
     <void property="bairro">
      <string>Manhattanhood</string>
     </void>
+    <void property="centroAcademico">
+     <string>CCET</string>
+    </void>
     <void property="cep">
      <string>101607</string>
     </void>
@@ -187,6 +202,9 @@
     </void>
     <void property="logradouro">
      <string>Dos Planetas</string>
+    </void>
+    <void property="lotacao">
+     <string>Escola de Informática Aplicada</string>
     </void>
     <void property="nacionalidade">
      <string>Estadunidense</string>
