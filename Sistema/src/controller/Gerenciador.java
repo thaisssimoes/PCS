@@ -234,7 +234,7 @@ public class Gerenciador {
         return listaRetorno;
     }
 
-    private static ArrayList<Requerimento> buscarRequerimentoCPF(String cpf) {
+    public static ArrayList<Requerimento> buscarRequerimentoCPF(String cpf) {
         ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
         xml.leXML();
         ArrayList<Requerimento> lista = xml.getLista();

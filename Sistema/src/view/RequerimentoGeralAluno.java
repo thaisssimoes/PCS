@@ -393,10 +393,21 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         novoRequerimento.setRequerente(aluno);
         novoRequerimento.setStatus("TRIAGEM");
         novoRequerimento.setTipoRequerimento(this.getTitle());
+        novoRequerimento.setAreaResponsavel(Gerenciador.obterProfessorPeloCargo(encontrarAreaResponsavel()););
             
 
     }
-    
+    private String encontrarAreaResponsavel(){
+        if(this.getTitle().equals("Cancelamento de matrícula")){
+            return "Diretor";
+        }
+        else if(this.getTitle().equals("Revisão de prova")){
+            return "Chefe de Departamento";
+        }
+        else{
+            return null;
+        }
+    }
     /**
      * @param args the command line arguments
      */
