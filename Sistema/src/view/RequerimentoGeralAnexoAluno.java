@@ -9,6 +9,7 @@ import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import model.entity.Aluno;
+import model.requerimento.RequerimentoAnexo;
 
 /**
  *
@@ -28,12 +29,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
     public RequerimentoGeralAnexoAluno(String cpf, String senha){
         initComponents();
         aluno = obterAluno(cpf,senha);
-        emailAlunoLabel.setText(aluno.getEmail());
-        nomeCompletoAlunoLabel.setText(aluno.getNome());
-        matriculaAlunoLabel.setText(aluno.getMatricula());
-        telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
-        professorLabel.setVisible(false);
-        professorComboBox.setVisible(false);
+        preencherCampos();
         centralizarTela();
     }
 
@@ -458,7 +454,12 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void preencherCampos(){
+        emailAlunoLabel.setText(aluno.getEmail());
+        nomeCompletoAlunoLabel.setText(aluno.getNome());
+        matriculaAlunoLabel.setText(aluno.getMatricula());
+        telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
+    }
     private void centralizarTela(){
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
@@ -487,7 +488,10 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         this.dispose(); ; 
 
     }//GEN-LAST:event_cancelarBotaoActionPerformed
-
+    
+    private void criarRequerimento(){
+        RequerimentoAnexo novoRequerimentoAnexo = new RequerimentoAnexo();
+    }
     /**
      * @param args the command line arguments
      */
