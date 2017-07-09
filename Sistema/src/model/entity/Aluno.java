@@ -14,10 +14,7 @@ import lombok.Setter;
  * @author RafaelSalazarStavale
  */
 public class Aluno extends Usuario {
-
-    @Getter
-    @Setter
-    private ArrayList<Disciplina> grade;
+    
     @Getter
     @Setter
     private String matricula;
