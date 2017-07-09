@@ -470,10 +470,10 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
     }//GEN-LAST:event_professorComboBoxActionPerformed
 
     private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
-        ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
-        janelaConfirmacao.setVisible(true);
-        this.setVisible(false);
-        this.dispose();
+//        ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
+//        janelaConfirmacao.setVisible(true);
+//        this.setVisible(false);
+//        this.dispose();
     }//GEN-LAST:event_enviarBotaoActionPerformed
 
     private void atualizarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoActionPerformed

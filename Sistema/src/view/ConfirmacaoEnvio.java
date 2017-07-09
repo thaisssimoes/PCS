@@ -5,10 +5,12 @@
  */
 package view;
 
+import controller.Gerenciador;
 import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import model.entity.Aluno;
+import model.requerimento.Requerimento;
 
 /**
  *
@@ -24,14 +26,11 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
 
     }
     Aluno aluno;
-
-    public ConfirmacaoEnvio(String cpf, String senha) {
+    Requerimento requerimento;
+    public ConfirmacaoEnvio(String cpf, String senha, Requerimento requerimento) {
         initComponents();
         aluno = obterAluno(cpf, senha);
-//        campoEmailAluno.setText(aluno.getEmail());
-//        campoNomeAluno.setText(aluno.getNome());
-//        campoMatriculaAluno.setText(aluno.getMatricula());
-//        campoTelefoneAluno.setText(aluno.getTelefone());
+        this.requerimento = requerimento;
         centralizarTela();
     }
 
@@ -121,6 +120,7 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
     
     
     private void simBotaoConfirmacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simBotaoConfirmacaoActionPerformed
+        Gerenciador.analisaRequerimento(requerimento);
         EnviadoComSucesso janelaSucesso = new EnviadoComSucesso(aluno.getCpf(),aluno.getSenha());
         janelaSucesso.setVisible(true);
         this.setVisible(false);

@@ -14,14 +14,7 @@ import static java.time.temporal.TemporalQueries.localDate;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import model.entity.Aluno;
-<<<<<<< HEAD
 import model.requerimento.Requerimento;
-=======
-
-
-import model.requerimento.Requerimento;
-
->>>>>>> 16897ee118ada8b51d4532ba1d78bf70305b31ff
 
 /**
  *
@@ -485,8 +478,8 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
     
     private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
             
-      ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
-      janelaConfirmacao.setVisible(true);
+//      ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
+//      janelaConfirmacao.setVisible(true);
     }//GEN-LAST:event_enviarBotaoActionPerformed
 
     private void atualizarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoActionPerformed

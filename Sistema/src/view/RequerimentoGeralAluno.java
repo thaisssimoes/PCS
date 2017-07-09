@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.Gerenciador;
 import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -30,12 +31,14 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         dataFechamentoLabel.setVisible(false);
     }
     Aluno aluno;
+    Requerimento requerimento;
     public RequerimentoGeralAluno(String cpf, String senha){
         initComponents();
         aluno = obterAluno(cpf,senha);
         criarRequerimento();
         dataFechamentoFixo.setVisible(false);
         dataFechamentoLabel.setVisible(false);
+        requerimento = criarRequerimento();
         preencherCampos();
         centralizarTela();
     }
@@ -365,7 +368,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
     
     private void enviarBotaoAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoAlunoActionPerformed
         
-      ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
+      ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha(), requerimento);
       janelaConfirmacao.setVisible(true);
        
 
@@ -385,7 +388,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         this.dispose(); 
     }//GEN-LAST:event_cancelarBotaoAlunoActionPerformed
 
-    private void criarRequerimento(){
+    public Requerimento criarRequerimento(){
         Requerimento novoRequerimento = new Requerimento();
         numeroProtocoloLabel.setText(novoRequerimento.getNumeroProtocolo());
         novoRequerimento.setDataCriacao(LocalDate.now());
@@ -393,9 +396,9 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         novoRequerimento.setRequerente(aluno);
         novoRequerimento.setStatus("TRIAGEM");
         novoRequerimento.setTipoRequerimento(this.getTitle());
-        novoRequerimento.setAreaResponsavel(Gerenciador.obterProfessorPeloCargo(encontrarAreaResponsavel()););
-            
-
+        novoRequerimento.setAreaResponsavel(controller.Gerenciador.obterProfessorCargo(encontrarAreaResponsavel()));      
+        
+        return novoRequerimento;
     }
     private String encontrarAreaResponsavel(){
         if(this.getTitle().equals("Cancelamento de matrícula")){

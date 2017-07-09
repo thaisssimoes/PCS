@@ -355,11 +355,6 @@ public class RequerimentoGeralSecretaria extends javax.swing.JFrame {
     
     private void exportarBotaoAlunoSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportarBotaoAlunoSecretariaActionPerformed
         
-      ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
-      janelaConfirmacao.setVisible(true);
-      this.setVisible(false);
-      this.dispose();
-        
 
     }//GEN-LAST:event_exportarBotaoAlunoSecretariaActionPerformed
 
