@@ -36,6 +36,9 @@
     <void property="logradouro">
      <string>AlgumNomeAlemao</string>
     </void>
+    <void property="matricula">
+     <string>18002210002</string>
+    </void>
     <void property="nacionalidade">
      <string>Alemã</string>
     </void>
@@ -53,6 +56,9 @@
     </void>
     <void property="pais">
      <string>Prussia</string>
+    </void>
+    <void property="periodo">
+     <string>9</string>
     </void>
     <void property="senha">
      <string>123</string>
@@ -109,6 +115,9 @@
     <void property="logradouro">
      <string>AlgumNomeItaliano</string>
     </void>
+    <void property="matricula">
+     <string>1585210001</string>
+    </void>
     <void property="nacionalidade">
      <string>Italiana</string>
     </void>
@@ -126,6 +135,9 @@
     </void>
     <void property="pais">
      <string>Itália</string>
+    </void>
+    <void property="periodo">
+     <string>3</string>
     </void>
     <void property="senha">
      <string>456</string>
@@ -182,6 +194,9 @@
     <void property="logradouro">
      <string>AlgumNomePortuguês</string>
     </void>
+    <void property="matricula">
+     <string>18941210003</string>
+    </void>
     <void property="nacionalidade">
      <string>Brasileira</string>
     </void>
@@ -199,6 +214,9 @@
     </void>
     <void property="pais">
      <string>Brasil</string>
+    </void>
+    <void property="periodo">
+     <string>1</string>
     </void>
     <void property="senha">
      <string>789</string>

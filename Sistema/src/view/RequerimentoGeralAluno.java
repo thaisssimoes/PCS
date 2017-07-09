@@ -27,10 +27,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
     public RequerimentoGeralAluno(String cpf, String senha){
         initComponents();
         aluno = obterAluno(cpf,senha);
-        emailAlunoLabel.setText(aluno.getEmail());
-        nomeCompletoAlunoLabel.setText(aluno.getNome());
-        matriculaAlunoLabel.setText(aluno.getMatricula());
-        telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
+        preencherCampos();
         centralizarTela();
     }
 
@@ -344,7 +341,13 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void preencherCampos(){
+        emailAlunoLabel.setText(aluno.getEmail());
+        nomeCompletoAlunoLabel.setText(aluno.getNome());
+        matriculaAlunoLabel.setText(aluno.getMatricula());
+        telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
+    }
+    
     private void centralizarTela(){
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
