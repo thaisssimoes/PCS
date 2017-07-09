@@ -504,8 +504,6 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
 
 
     private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
-        TelaAluno janelaTelaAluno = new TelaAluno(aluno);
-        janelaTelaAluno.setVisible(true);
         this.setVisible(false);
         this.dispose();
 

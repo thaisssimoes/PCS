@@ -127,6 +127,20 @@ public class Gerenciador {
             System.out.println(lista3.get(i).getEmail());
         }
          */
+        
+        ArrayList<Requerimento> lista = buscarRequerimentoRequerenteAluno();
+        for (int i = 0; i < lista.size(); i++) {
+            System.err.println(lista.get(i).getStatus());
+            
+        }
+        
+        System.err.println("-------------------------");
+        lista = buscarRequerimentoRequerenteProfessor();
+        for (int i = 0; i < lista.size(); i++) {
+            System.err.println(lista.get(i).getStatus());
+            
+        }
+        
     }
 
     public static void analisaRequerimento(Requerimento requerimento) {
@@ -154,8 +168,7 @@ public class Gerenciador {
             xml.leXML();
             xml.adiciona(requerimento);
             xml.escreveXML();
-        }
-        else if (requerimento.getStatus().equals("PENDENTE")) {
+        } else if (requerimento.getStatus().equals("PENDENTE")) {
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
             xml.adiciona(requerimento);
@@ -256,6 +269,7 @@ public class Gerenciador {
         }
         return listaRetorno;
     }
+
     public static ArrayList<Requerimento> buscarRequerimentoProtocolo(String numeroProtocolo) {
         ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
         xml.leXML();
@@ -278,6 +292,34 @@ public class Gerenciador {
 
         for (int i = 0; i < lista.size(); i++) {
             if (lista.get(i).getRequerente().getCpf().equals(cpf)) {
+                listaRetorno.add(lista.get(i));
+            }
+        }
+        return listaRetorno;
+    }
+
+    public static ArrayList<Requerimento> buscarRequerimentoRequerenteAluno() {
+        ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
+        xml.leXML();
+        ArrayList<Requerimento> lista = xml.getLista();
+        ArrayList<Requerimento> listaRetorno = new ArrayList<>();
+
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getRequerente() instanceof model.entity.Aluno) {
+                listaRetorno.add(lista.get(i));
+            }
+        }
+        return listaRetorno;
+    }
+    
+    public static ArrayList<Requerimento> buscarRequerimentoRequerenteProfessor() {
+        ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
+        xml.leXML();
+        ArrayList<Requerimento> lista = xml.getLista();
+        ArrayList<Requerimento> listaRetorno = new ArrayList<>();
+
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getRequerente() instanceof model.entity.Professor) {
                 listaRetorno.add(lista.get(i));
             }
         }
