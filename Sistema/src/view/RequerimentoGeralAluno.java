@@ -355,9 +355,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         
       ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
       janelaConfirmacao.setVisible(true);
-      this.setVisible(false);
-      this.dispose();
-        
+       
 
     }//GEN-LAST:event_enviarBotaoAlunoActionPerformed
 
