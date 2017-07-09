@@ -8,8 +8,10 @@ package view;
 import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.time.LocalDate;
 import javax.swing.JList;
 import model.entity.Aluno;
+import model.requerimento.Requerimento;
 
 /**
  *
@@ -22,11 +24,18 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
      */
     public RequerimentoGeralAluno() {
         initComponents();
+        criarRequerimento();
+        dataAberturaLabel.setText(String.valueOf(LocalDate.now())); 
+        dataFechamentoFixo.setVisible(false);
+        dataFechamentoLabel.setVisible(false);
     }
     Aluno aluno;
     public RequerimentoGeralAluno(String cpf, String senha){
         initComponents();
         aluno = obterAluno(cpf,senha);
+        criarRequerimento();
+        dataFechamentoFixo.setVisible(false);
+        dataFechamentoLabel.setVisible(false);
         preencherCampos();
         centralizarTela();
     }
@@ -45,11 +54,11 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        numeroProtocolo = new javax.swing.JLabel();
-        numeroProtocolo1 = new javax.swing.JLabel();
+        dataFechamentoFixo = new javax.swing.JLabel();
+        dataAberturaLabel = new javax.swing.JLabel();
+        dataFechamentoLabel = new javax.swing.JLabel();
+        statusLabel = new javax.swing.JLabel();
+        numeroProtocoloLabel = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         nomeCompletoAlunoLabel = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -62,13 +71,13 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         periodoLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        respostaAreaTexto = new javax.swing.JTextArea();
         jLabel25 = new javax.swing.JLabel();
         enviarBotaoAluno = new javax.swing.JButton();
         atualizarBotaoAluno = new javax.swing.JButton();
         cancelarBotaoAluno = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        descricaoAreaTexto = new javax.swing.JTextArea();
         jLabel26 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,23 +94,23 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Data de abertura:");
 
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Data de fechamento:");
+        dataFechamentoFixo.setForeground(new java.awt.Color(255, 255, 255));
+        dataFechamentoFixo.setText("Data de fechamento:");
 
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("dd/mm/yyyy");
+        dataAberturaLabel.setForeground(new java.awt.Color(255, 255, 255));
+        dataAberturaLabel.setText("dd/mm/yyyy");
 
-        jLabel24.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("dd/mm/yyyy");
+        dataFechamentoLabel.setBackground(new java.awt.Color(255, 255, 255));
+        dataFechamentoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        dataFechamentoLabel.setText("dd/mm/yyyy");
 
-        numeroProtocolo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        numeroProtocolo.setForeground(new java.awt.Color(255, 255, 255));
-        numeroProtocolo.setText("status");
+        statusLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        statusLabel.setForeground(new java.awt.Color(255, 255, 255));
+        statusLabel.setText("status");
 
-        numeroProtocolo1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        numeroProtocolo1.setForeground(new java.awt.Color(255, 255, 255));
-        numeroProtocolo1.setText("numero de protocolo");
+        numeroProtocoloLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        numeroProtocoloLabel.setForeground(new java.awt.Color(255, 255, 255));
+        numeroProtocoloLabel.setText("numero de protocolo");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -118,21 +127,21 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(78, 78, 78)
-                                .addComponent(numeroProtocolo))
+                                .addComponent(statusLabel))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
-                                .addComponent(numeroProtocolo1)))
+                                .addComponent(numeroProtocoloLabel)))
                         .addGap(123, 123, 123)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel23))
+                                .addComponent(dataAberturaLabel))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel22)
+                                .addComponent(dataFechamentoFixo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel24)))
+                                .addComponent(dataFechamentoLabel)))
                         .addGap(99, 99, 99))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -149,17 +158,17 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3)
-                                    .addComponent(jLabel23))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(dataAberturaLabel))
+                                .addGap(21, 21, 21)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel22)
-                                    .addComponent(jLabel24)))
+                                    .addComponent(dataFechamentoFixo)
+                                    .addComponent(dataFechamentoLabel)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(26, 26, 26)
-                                .addComponent(numeroProtocolo1)
+                                .addComponent(numeroProtocoloLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(numeroProtocolo)))
+                                .addComponent(statusLabel)))
                         .addGap(59, 59, 59))))
         );
 
@@ -195,10 +204,10 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
 
         periodoLabel.setText("X");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setEnabled(false);
-        jScrollPane1.setViewportView(jTextArea1);
+        respostaAreaTexto.setColumns(20);
+        respostaAreaTexto.setRows(5);
+        respostaAreaTexto.setEnabled(false);
+        jScrollPane1.setViewportView(respostaAreaTexto);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setText("Resposta:");
@@ -233,9 +242,9 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
             }
         });
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        descricaoAreaTexto.setColumns(20);
+        descricaoAreaTexto.setRows(5);
+        jScrollPane2.setViewportView(descricaoAreaTexto);
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel26.setText("Descrição:");
@@ -244,7 +253,7 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -291,13 +300,13 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
                         .addComponent(atualizarBotaoAluno)
                         .addGap(66, 66, 66)
                         .addComponent(enviarBotaoAluno)))
-                .addGap(56, 56, 56))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(nomeCompletoAlunoLabel)
@@ -376,6 +385,18 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
         this.dispose(); 
     }//GEN-LAST:event_cancelarBotaoAlunoActionPerformed
 
+    private void criarRequerimento(){
+        Requerimento novoRequerimento = new Requerimento();
+        numeroProtocoloLabel.setText(novoRequerimento.getNumeroProtocolo());
+        novoRequerimento.setDataCriacao(LocalDate.now());
+        novoRequerimento.setDescricao(descricaoAreaTexto.getText());
+        novoRequerimento.setRequerente(aluno);
+        novoRequerimento.setStatus("TRIAGEM");
+        novoRequerimento.setTipoRequerimento(this.getTitle());
+            
+
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -421,6 +442,10 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atualizarBotaoAluno;
     private javax.swing.JButton cancelarBotaoAluno;
+    private javax.swing.JLabel dataAberturaLabel;
+    private javax.swing.JLabel dataFechamentoFixo;
+    private javax.swing.JLabel dataFechamentoLabel;
+    private javax.swing.JTextArea descricaoAreaTexto;
     private javax.swing.JLabel emailAlunoLabel;
     private javax.swing.JButton enviarBotaoAluno;
     private javax.swing.JLabel jLabel1;
@@ -430,9 +455,6 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
@@ -441,13 +463,12 @@ public class RequerimentoGeralAluno extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel matriculaAlunoLabel;
     private javax.swing.JLabel nomeCompletoAlunoLabel;
-    private javax.swing.JLabel numeroProtocolo;
-    private javax.swing.JLabel numeroProtocolo1;
+    private javax.swing.JLabel numeroProtocoloLabel;
     private javax.swing.JLabel periodoLabel;
+    private javax.swing.JTextArea respostaAreaTexto;
+    private javax.swing.JLabel statusLabel;
     private javax.swing.JLabel telefoneAlunoLabel;
     // End of variables declaration//GEN-END:variables
 }

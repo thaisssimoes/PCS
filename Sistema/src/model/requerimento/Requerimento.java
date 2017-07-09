@@ -49,9 +49,12 @@ public class Requerimento {
         this.tipoRequerimento = tipoRequerimento;
     }
 
-    
+    public Requerimento() {
+        this.numeroProtocolo = gerarNumeroProtocolo();
+
+    } 
 
     private String gerarNumeroProtocolo() {
-        return String.valueOf(Instant.now());
+        return String.valueOf(System.currentTimeMillis());
     }
 }
