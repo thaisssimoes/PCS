@@ -28,10 +28,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
      */
     public RequerimentoGeralAnexoAluno() {
         initComponents();
-<<<<<<< HEAD
         criarRequerimento(requerimento);
-=======
->>>>>>> dcdfcae463e6d92c05d3eda34936f20742d36351
         preencherTela();
         
         dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
@@ -40,36 +37,23 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         professorLabelDisciplina.setVisible(false);
     }
     Aluno aluno;
-<<<<<<< HEAD
     Requerimento requerimento;
     
-=======
-    Requerimento requerimento = new Requerimento();
-
->>>>>>> dcdfcae463e6d92c05d3eda34936f20742d36351
     public RequerimentoGeralAnexoAluno(Aluno aluno, String titulo) {
         this.setTitle(titulo);
         initComponents();
         this.aluno = aluno;
         preencherTela();
-<<<<<<< HEAD
         criarRequerimento(requerimento);
         preencherCamposEscrita();
         centralizarTela();
     }
     
     public RequerimentoGeralAnexoAluno(Requerimento requerimento, String titulo) {
-=======
-        preencherCamposEscrita();
-        centralizarTela();
-    }
-    public RequerimentoGeralAnexoAluno(String titulo) {
->>>>>>> dcdfcae463e6d92c05d3eda34936f20742d36351
         this.setTitle(titulo);
         initComponents();
         preencherTela();
         preencherCamposLeitura();
-        criarRequerimento(requerimento);
         centralizarTela();
     }
 
@@ -490,7 +474,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void preencherCamposEscrita() {
+     private void preencherCamposEscrita() {
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
         matriculaAlunoLabel.setText(aluno.getMatricula());
@@ -538,21 +522,15 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
-    
+
 
     private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
-<<<<<<< HEAD
-        
-=======
-        requerimento.setDescricao(this.descricaoAreaTexto.getText());
-        requerimento.setTipoRequerimento(this.getTitle());
-        requerimento.setAreaResponsavel(controller.Gerenciador.obterProfessorCargo(encontrarAreaResponsavel()));
-        requerimento.setDataCriacao(LocalDate.now().toString());
->>>>>>> dcdfcae463e6d92c05d3eda34936f20742d36351
         ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno, requerimento);
         janelaConfirmacao.setVisible(true);
-        
-      
+        this.setVisible(false);
+        this.dispose();
+
+
     }//GEN-LAST:event_enviarBotaoActionPerformed
 
     private void atualizarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoActionPerformed
@@ -560,14 +538,14 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         janelaComentario.setVisible(true);    }//GEN-LAST:event_atualizarBotaoActionPerformed
 
     private void cancelarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoActionPerformed
-        TelaAluno janelaTelaAluno = new TelaAluno(aluno);
+         TelaAluno janelaTelaAluno = new TelaAluno(aluno);
         janelaTelaAluno.setVisible(true);
         this.setVisible(false);
         this.dispose();
 
     }//GEN-LAST:event_cancelarBotaoActionPerformed
-<<<<<<< HEAD
     
+
     private void criarRequerimento(Requerimento requerimento) {
         numeroProtocoloLabel.setText(requerimento.getNumeroProtocolo());
         requerimento.setDataCriacao(LocalDate.now().toString());
@@ -581,24 +559,9 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
             requerimento.setAreaResponsavel(Gerenciador.obterProfessorCargo(encontrarCargoTipoRequerimento()));
             
         }
-=======
-
-    private Requerimento criarRequerimento(Requerimento requerimento) {
-        Requerimento novoRequerimento = new Requerimento();
-        numeroProtocoloLabel.setText(novoRequerimento.getNumeroProtocolo());
-        novoRequerimento.setDataCriacao(LocalDate.now().toString());
-        novoRequerimento.setDescricao(descricaoAreaTexto.getText());
-        novoRequerimento.setRequerente(aluno);
-        novoRequerimento.setStatus("TRIAGEM");
-        novoRequerimento.setTipoRequerimento(this.getTitle());
-        return novoRequerimento;
-        
-       
-
->>>>>>> dcdfcae463e6d92c05d3eda34936f20742d36351
     }
-    
-    private String encontrarCargoTipoRequerimento() {
+
+     private String encontrarCargoTipoRequerimento() {
         if (this.getTitle().equals("Cancelamento de matrícula")) {
             return "Diretor";
         } else if (this.getTitle().equals("Revisão de prova")) {
@@ -607,7 +570,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
             return "Criar tecnico";
         }
     }
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
