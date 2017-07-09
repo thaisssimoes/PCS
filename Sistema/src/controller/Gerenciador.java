@@ -155,6 +155,12 @@ public class Gerenciador {
             xml.adiciona(requerimento);
             xml.escreveXML();
         }
+        else if (requerimento.getStatus().equals("PENDENTE")) {
+            ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
+            xml.leXML();
+            xml.adiciona(requerimento);
+            xml.escreveXML();
+        }
     }
 
     public static Aluno obterAluno(String cpf, String senha) {
@@ -245,6 +251,19 @@ public class Gerenciador {
 
         for (int i = 0; i < lista.size(); i++) {
             if (lista.get(i).getStatus().equals("TRIAGEM")) {
+                listaRetorno.add(lista.get(i));
+            }
+        }
+        return listaRetorno;
+    }
+    public static ArrayList<Requerimento> buscarRequerimentoProtocolo(String numeroProtocolo) {
+        ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
+        xml.leXML();
+        ArrayList<Requerimento> lista = xml.getLista();
+        ArrayList<Requerimento> listaRetorno = new ArrayList<>();
+
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getNumeroProtocolo().equals(numeroProtocolo)) {
                 listaRetorno.add(lista.get(i));
             }
         }

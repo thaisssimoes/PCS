@@ -54,7 +54,7 @@ public class Login extends javax.swing.JFrame {
         jPanel2.setDoubleBuffered(false);
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 600));
 
-        tipoUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aluno", "Professor", "Técnico" }));
+        tipoUsuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aluno", "Professor", "Tecnico" }));
 
         campoCPF.setText("CPF");
         campoCPF.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -188,19 +188,17 @@ public class Login extends javax.swing.JFrame {
                 aluno = controller.Gerenciador.obterAluno(cpf, senha);
                 TelaAluno janelaTelaAluno = new TelaAluno(aluno);
                 janelaTelaAluno.setVisible(true);
+            } else if (tipoUsuarioString.equals("Professor")) {
+                professor = controller.Gerenciador.obterProfessorCPF(cpf, senha);
+                TelaProfessor janelaTelaProfessor = new TelaProfessor(professor);
+                janelaTelaProfessor.setVisible(true);
+            } else if (tipoUsuarioString.equals("Tecnico")){
+                tecnico = controller.Gerenciador.obterTecnico(cpf, senha);
+                TelaSecretaria janelaTelaTecnico = new TelaSecretaria(tecnico);
+                janelaTelaTecnico.setVisible(true);
             } else {
-                if (tipoUsuarioString.equals("Professor")) {
-                    professor = controller.Gerenciador.obterProfessorCPF(cpf, senha);
-                    TelaProfessor janelaTelaProfessor = new TelaProfessor(professor);
-                    janelaTelaProfessor.setVisible(true);
-                } else {
-                    tecnico = controller.Gerenciador.obterTecnico(cpf, senha);
-                    TelaSecretaria janelaTelaTecnico = new TelaSecretaria(tecnico);
-                    janelaTelaTecnico.setVisible(true);
-                }
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Erro no Login");
+                JOptionPane.showMessageDialog(this, "Erro no Login");
+            } 
         }
 
     }//GEN-LAST:event_botaoLoginActionPerformed
@@ -223,21 +221,20 @@ public class Login extends javax.swing.JFrame {
                 this.dispose();
 
                 if (tipoUsuarioString.equals("Aluno")) {
-                    aluno = controller.Gerenciador.obterAluno(cpf, senha);
-                    TelaAluno janelaTelaAluno = new TelaAluno(aluno);
-                    janelaTelaAluno.setVisible(true);
-                } else {
-                    if (tipoUsuarioString.equals("Professor")) {
-                        professor = controller.Gerenciador.obterProfessorCPF(cpf, senha);
-                        TelaProfessor janelaTelaProfessor = new TelaProfessor(professor);
-                        janelaTelaProfessor.setVisible(true);
-                    } else {
-                        tecnico = controller.Gerenciador.obterTecnico(cpf, senha);
-                        TelaSecretaria janelaTelaTecnico = new TelaSecretaria(tecnico);
-                        janelaTelaTecnico.setVisible(true);
-                    }
-                }
+                aluno = controller.Gerenciador.obterAluno(cpf, senha);
+                TelaAluno janelaTelaAluno = new TelaAluno(aluno);
+                janelaTelaAluno.setVisible(true);
+            } else if (tipoUsuarioString.equals("Professor")) {
+                professor = controller.Gerenciador.obterProfessorCPF(cpf, senha);
+                TelaProfessor janelaTelaProfessor = new TelaProfessor(professor);
+                janelaTelaProfessor.setVisible(true);
             } else {
+                tecnico = controller.Gerenciador.obterTecnico(cpf, senha);
+                TelaSecretaria janelaTelaTecnico = new TelaSecretaria(tecnico);
+                janelaTelaTecnico.setVisible(true);
+                }
+            } 
+            else {
                 JOptionPane.showMessageDialog(this, "Erro no Login");
             }
         }

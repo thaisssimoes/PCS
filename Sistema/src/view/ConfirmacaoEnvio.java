@@ -129,10 +129,7 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
     }//GEN-LAST:event_simBotaoConfirmacaoActionPerformed
 
     private void naoBotaoConfirmacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naoBotaoConfirmacaoActionPerformed
-        TelaAluno janelaTelaAluno = new TelaAluno(aluno);
-        janelaTelaAluno.setVisible(true);
         this.setVisible(false);
-        this.dispose();
 
     }//GEN-LAST:event_naoBotaoConfirmacaoActionPerformed
 

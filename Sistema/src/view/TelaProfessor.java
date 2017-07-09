@@ -7,10 +7,13 @@ package view;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import model.entity.Professor;
+import model.requerimento.Requerimento;
 
 /**
  *
@@ -28,10 +31,11 @@ public class TelaProfessor extends javax.swing.JFrame {
         centralizarTela();
 
     }
-
+    Professor professor;
     public TelaProfessor(Professor professor) {
 
         initComponents();
+        this.professor = professor;
         visibilidadeAbaProfessor("Decano");
         centralizarTela();
 
@@ -49,22 +53,14 @@ public class TelaProfessor extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lista = new javax.swing.JList<String>();
         painelRequerimentosProfessores = new javax.swing.JTabbedPane();
-        morraDesgracado = new javax.swing.JScrollPane();
-        tabRequerimentosDeProfessores = new javax.swing.JTable();
+        tabRequerimentoProfessores = new javax.swing.JScrollPane();
+        tabelaRequerimentosDeProfessores = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaMeusRequerimentos = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -74,9 +70,7 @@ public class TelaProfessor extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         painelTelaAluno1 = new javax.swing.JTabbedPane();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        tabelaRequerimentoAlunos = new javax.swing.JTable();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
@@ -88,10 +82,10 @@ public class TelaProfessor extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        quadradoAtualizacao = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
+        setinhaAtualizacao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -104,30 +98,6 @@ public class TelaProfessor extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iBSI.png"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Lao MN", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Novos Requerimentos");
-
-        jLabel6.setFont(new java.awt.Font("Malayalam MN", 0, 48)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("0");
-
-        jLabel7.setFont(new java.awt.Font("Lao MN", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Requerimentos Em Andamento");
-
-        jLabel8.setFont(new java.awt.Font("Malayalam MN", 0, 48)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("0");
-
-        jLabel9.setFont(new java.awt.Font("Malayalam MN", 0, 48)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("0");
-
-        jLabel10.setFont(new java.awt.Font("Lao MN", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Requerimentos Pendentes");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -135,27 +105,7 @@ public class TelaProfessor extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(75, 75, 75))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(132, 132, 132)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(75, 75, 75)
-                        .addComponent(jLabel7))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86)))
-                .addGap(65, 65, 65)
+                .addGap(937, 937, 937)
                 .addComponent(jLabel5))
         );
         jPanel2Layout.setVerticalGroup(
@@ -164,28 +114,12 @@ public class TelaProfessor extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel10)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(124, 124, 124))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel2))
-                                .addGap(44, 44, 44))))))
+                        .addComponent(jLabel5)
+                        .addGap(124, 124, 124))))
         );
 
         lista.setModel(new javax.swing.AbstractListModel() {
@@ -203,14 +137,33 @@ public class TelaProfessor extends javax.swing.JFrame {
         painelRequerimentosProfessores.setBackground(new java.awt.Color(255, 255, 255));
 
         if("Professor".equals("Decano") || "Professor".equals("Chefe de Departamento")){
-            tabRequerimentosDeProfessores = new javax.swing.JTable();
+            tabelaRequerimentosDeProfessores = new javax.swing.JTable();
         }
-        tabRequerimentosDeProfessores.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaRequerimentosDeProfessores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
+            },
+            new String [] {
+                "Protocolo", "Nome Requerente", "Tipo", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaRequerimentosDeProfessores.setColumnSelectionAllowed(true);
+        tabRequerimentoProfessores.setViewportView(tabelaRequerimentosDeProfessores);
+        tabelaRequerimentosDeProfessores.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        painelRequerimentosProfessores.addTab("Requerimentos de Professores", tabRequerimentoProfessores);
+
+        tabelaMeusRequerimentos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
             },
             new String [] {
                 "Protocolo", "Tipo", "Status"
@@ -224,52 +177,11 @@ public class TelaProfessor extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        morraDesgracado.setViewportView(tabRequerimentosDeProfessores);
-
-        painelRequerimentosProfessores.addTab("Requerimentos de Professores", morraDesgracado);
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Protocolo", "Tipo", "Status"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable2.setColumnSelectionAllowed(true);
-        jScrollPane4.setViewportView(jTable2);
-        jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabelaMeusRequerimentos.setColumnSelectionAllowed(true);
+        jScrollPane4.setViewportView(tabelaMeusRequerimentos);
+        tabelaMeusRequerimentos.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         painelRequerimentosProfessores.addTab("Meus Requerimentos", jScrollPane4);
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Protocolo", "Tipo", "Status"
-            }
-        ));
-        jTable1.setToolTipText("");
-        jTable1.setColumnSelectionAllowed(true);
-        jScrollPane3.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-
-        painelRequerimentosProfessores.addTab("Meus Requerimentos Pendentes", jScrollPane3);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Nome:");
@@ -294,46 +206,27 @@ public class TelaProfessor extends javax.swing.JFrame {
 
         painelTelaAluno1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaRequerimentoAlunos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "Protocolo", "Tipo", "Status"
+                "Protocolo", "Nome Requerente", "Tipo", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(jTable3);
-        jTable3.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabelaRequerimentoAlunos.setColumnSelectionAllowed(true);
+        jScrollPane5.setViewportView(tabelaRequerimentoAlunos);
+        tabelaRequerimentoAlunos.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         painelTelaAluno1.addTab("Requerimentos de Alunos", jScrollPane5);
-
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Protocolo", "Tipo", "Status"
-            }
-        ));
-        jTable4.setToolTipText("");
-        jScrollPane6.setViewportView(jTable4);
-        jTable4.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-
-        painelTelaAluno1.addTab("Requerimentos Pendentes de Alunos", jScrollPane6);
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel22.setText("SIAPE");
@@ -368,41 +261,41 @@ public class TelaProfessor extends javax.swing.JFrame {
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel32.setText("Titulação");
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(56, 113, 156), 2, true));
+        quadradoAtualizacao.setBackground(new java.awt.Color(255, 255, 255));
+        quadradoAtualizacao.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(56, 113, 156), 2, true));
 
         jLabel35.setBackground(new java.awt.Color(255, 255, 255));
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel36.setText("Atualizar");
 
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/refresh.png"))); // NOI18N
+        setinhaAtualizacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/refresh.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout quadradoAtualizacaoLayout = new javax.swing.GroupLayout(quadradoAtualizacao);
+        quadradoAtualizacao.setLayout(quadradoAtualizacaoLayout);
+        quadradoAtualizacaoLayout.setHorizontalGroup(
+            quadradoAtualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, quadradoAtualizacaoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel36)
                 .addContainerGap())
-            .addGroup(jPanel5Layout.createSequentialGroup()
+            .addGroup(quadradoAtualizacaoLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel37)
+                .addGroup(quadradoAtualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(setinhaAtualizacao)
                     .addComponent(jLabel35))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+        quadradoAtualizacaoLayout.setVerticalGroup(
+            quadradoAtualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(quadradoAtualizacaoLayout.createSequentialGroup()
+                .addGroup(quadradoAtualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(quadradoAtualizacaoLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jLabel35))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGroup(quadradoAtualizacaoLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel37)))
+                        .addComponent(setinhaAtualizacao)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel36))
         );
@@ -464,7 +357,7 @@ public class TelaProfessor extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel26)))
                         .addGap(82, 82, 82)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(quadradoAtualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(51, 51, 51))
         );
         jPanel1Layout.setVerticalGroup(
@@ -474,7 +367,7 @@ public class TelaProfessor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(54, 54, 54)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(quadradoAtualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,6 +431,41 @@ public class TelaProfessor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void popularMeusRequerimentos(){ 
+        DefaultTableModel model = (DefaultTableModel) tabelaMeusRequerimentos.getModel();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoCPF(professor.getCpf());
+        Object rowData[] = new Object[3];
+        for (int i = 0; i < requerimentos.size(); i++) {
+            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+            rowData[1] = requerimentos.get(i).getTipoRequerimento();
+            rowData[2] = requerimentos.get(i).getStatus();
+            model.addRow(rowData);
+        }
+    }
+//    private void popularRequerimentosAlunos(){
+//     DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoAlunos.getModel();
+//        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoCPF(aluno.getCpf());
+//        Object rowData[] = new Object[3];
+//        for (int i = 0; i < requerimentos.size(); i++) {
+//            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+//            rowData[1] = requerimentos.get(i).getTipoRequerimento();
+//            rowData[2] = requerimentos.get(i).getStatus();
+//            model.addRow(rowData);
+//        }
+//    }
+//    private void popularRequerimentosProfessores(){
+//     DefaultTableModel model = (DefaultTableModel) tabelaRequerimentosDeProfessores.getModel();
+//        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoCPF(aluno.getCpf());
+//        Object rowData[] = new Object[3];
+//        for (int i = 0; i < requerimentos.size(); i++) {
+//            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+//            rowData[1] = requerimentos.get(i).getTipoRequerimento();
+//            rowData[2] = requerimentos.get(i).getStatus();
+//            model.addRow(rowData);
+//        }
+//    }
+
+    
     private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
@@ -565,7 +493,7 @@ public class TelaProfessor extends javax.swing.JFrame {
 
     public void visibilidadeAbaProfessor(String cargo) {
         if (!cargo.equals("Decano") && !cargo.equals("Chefe de Departamento")) {
-            painelRequerimentosProfessores.remove(morraDesgracado);     //TODO: tirar essa aba
+            painelRequerimentosProfessores.remove(tabRequerimentoProfessores);     
         }
 
     }
@@ -612,7 +540,6 @@ public class TelaProfessor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
@@ -620,7 +547,6 @@ public class TelaProfessor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -634,28 +560,20 @@ public class TelaProfessor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JList<String> lista;
-    private javax.swing.JScrollPane morraDesgracado;
     private javax.swing.JTabbedPane painelRequerimentosProfessores;
     private javax.swing.JTabbedPane painelTelaAluno1;
-    private javax.swing.JTable tabRequerimentosDeProfessores;
+    private javax.swing.JPanel quadradoAtualizacao;
+    private javax.swing.JLabel setinhaAtualizacao;
+    private javax.swing.JScrollPane tabRequerimentoProfessores;
+    private javax.swing.JTable tabelaMeusRequerimentos;
+    private javax.swing.JTable tabelaRequerimentoAlunos;
+    private javax.swing.JTable tabelaRequerimentosDeProfessores;
     // End of variables declaration//GEN-END:variables
 }

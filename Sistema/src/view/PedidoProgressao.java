@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import java.util.Calendar;
 import java.util.Date;
 import model.entity.Aluno;
+import model.entity.Professor;
 import org.jdesktop.swingx.JXDatePicker;
 
 /**
@@ -32,13 +33,11 @@ public class PedidoProgressao extends javax.swing.JFrame {
 //        calendario.setLinkDate(System.currentTimeMillis(), "Hoje é: {0}");
     }
      Aluno aluno;
-    public PedidoProgressao(String cpf, String senha){
+     Professor professor;
+    public PedidoProgressao(Professor professor){
         initComponents();
-        aluno = obterAluno(cpf,senha);
-        emailAlunoLabel.setText(aluno.getEmail());
-        nomeCompletoAlunoLabel.setText(aluno.getNome());
-        matriculaAlunoLabel.setText(aluno.getMatricula());
-        telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
+        this.professor= professor;
+        
 //        calendario.setFormats(new String[] {"dd/MM/yyyy"});
 //        calendario.setLinkDate(System.currentTimeMillis(), "Hoje é: {0}");
         centralizarTela();
@@ -68,11 +67,11 @@ public class PedidoProgressao extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        nomeCompletoAlunoLabel = new javax.swing.JLabel();
+        nomeCompletoProfessorLabel = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         matriculaAlunoLabel = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        emailAlunoLabel = new javax.swing.JLabel();
+        emailProfessorLabel = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         telefoneAlunoLabel = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -97,13 +96,13 @@ public class PedidoProgressao extends javax.swing.JFrame {
         checkReconhecimento = new javax.swing.JCheckBox();
         checkComprovante = new javax.swing.JCheckBox();
         jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        siapeProfessorLabel = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        cargoProfessorLabel = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
+        telefoneCelularProfessorLabel = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
+        lotacaoProfessorLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         categoriaComboBox = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
@@ -167,7 +166,7 @@ public class PedidoProgressao extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(64, 64, 64)
@@ -183,12 +182,8 @@ public class PedidoProgressao extends javax.swing.JFrame {
                             .addComponent(jLabel33))
                         .addGap(413, 413, 413)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel10))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel26)))
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel26))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel31)
@@ -243,8 +238,8 @@ public class PedidoProgressao extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Nome:");
 
-        nomeCompletoAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        nomeCompletoAlunoLabel.setText("Nome Completo do Professor");
+        nomeCompletoProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nomeCompletoProfessorLabel.setText("Nome Completo do Professor");
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setText("Matrícula:");
@@ -255,8 +250,8 @@ public class PedidoProgressao extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("E-mail:");
 
-        emailAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        emailAlunoLabel.setText("nome.sobrenome@uniriotec.br");
+        emailProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        emailProfessorLabel.setText("nome.sobrenome@uniriotec.br");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setText("Telefone:");
@@ -408,26 +403,26 @@ public class PedidoProgressao extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setText("SIAPE:");
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel14.setText("numeroSIAPE");
+        siapeProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        siapeProfessorLabel.setText("numeroSIAPE");
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setText("Cargo/Função:");
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel18.setText("Cargo/Função");
+        cargoProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cargoProfessorLabel.setText("Cargo/Função");
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel22.setText("Lotação:");
 
-        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel23.setText("222222222");
+        telefoneCelularProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        telefoneCelularProfessorLabel.setText("222222222");
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel24.setText("Telefone: ");
 
-        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel25.setText("Lotação");
+        lotacaoProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lotacaoProfessorLabel.setText("Lotação");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Categoria:");
@@ -450,7 +445,7 @@ public class PedidoProgressao extends javax.swing.JFrame {
         jLabel6.setText("Escola:");
 
         escolaComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        escolaComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "CCJP", "CCET", "IBIO" }));
+        escolaComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "EIA", "EEP", "-" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -472,9 +467,9 @@ public class PedidoProgressao extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(centroComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(nomeCompletoAlunoLabel)
-                                    .addComponent(jLabel23)
-                                    .addComponent(emailAlunoLabel)
+                                    .addComponent(nomeCompletoProfessorLabel)
+                                    .addComponent(telefoneCelularProfessorLabel)
+                                    .addComponent(emailProfessorLabel)
                                     .addComponent(categoriaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(155, 155, 155)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,11 +482,11 @@ public class PedidoProgressao extends javax.swing.JFrame {
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel12)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel14))
+                                                .addComponent(siapeProfessorLabel))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel16)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel18)))
+                                                .addComponent(cargoProfessorLabel)))
                                         .addGap(447, 447, 447)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -511,7 +506,7 @@ public class PedidoProgressao extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel22)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel25))))
+                                        .addComponent(lotacaoProfessorLabel))))
                             .addComponent(checkRelatorio)
                             .addComponent(checkReconhecimento)
                             .addComponent(checkPortaria)
@@ -541,15 +536,15 @@ public class PedidoProgressao extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(nomeCompletoAlunoLabel)
+                            .addComponent(nomeCompletoProfessorLabel)
                             .addComponent(jLabel12)
-                            .addComponent(jLabel14))
+                            .addComponent(siapeProfessorLabel))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
-                            .addComponent(emailAlunoLabel)
+                            .addComponent(emailProfessorLabel)
                             .addComponent(jLabel16)
-                            .addComponent(jLabel18)))
+                            .addComponent(cargoProfessorLabel)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
@@ -565,8 +560,8 @@ public class PedidoProgressao extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel22)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel23)
-                        .addComponent(jLabel25)
+                        .addComponent(telefoneCelularProfessorLabel)
+                        .addComponent(lotacaoProfessorLabel)
                         .addComponent(jLabel24)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -615,6 +610,14 @@ public class PedidoProgressao extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void preencherCampos(){
+        emailProfessorLabel.setText(professor.getEmail());
+        nomeCompletoProfessorLabel.setText(professor.getNome());
+        siapeProfessorLabel.setText(professor.getSiape());
+        telefoneCelularProfessorLabel.setText(professor.getTelefoneCelular());
+        lotacaoProfessorLabel.setText(professor.getLotacao());
+        cargoProfessorLabel.setText(professor.getCargo());
+    }
     private void categoriaComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoriaComboBoxActionPerformed
         categoriaComboBox.getSelectedItem();
         if (categoriaComboBox.getSelectedItem().equals("D")){
@@ -631,10 +634,29 @@ public class PedidoProgressao extends javax.swing.JFrame {
     }//GEN-LAST:event_checkRelatorioActionPerformed
 
     private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
-//        ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
-//        janelaConfirmacao.setVisible(true);
-//        this.setVisible(false);
-//        this.dispose();
+        if((checkRelatorio.isSelected())&& (checkPortaria.isSelected())&&(checkReconhecimento.isSelected())){
+            if(checkComprovante.isVisible()){
+                if(checkComprovante.isSelected()){
+//                   ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
+//                   janelaConfirmacao.setVisible(true);
+                    this.setVisible(false);
+                    this.dispose();
+            }
+            }
+            else{
+//                   ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
+//                   janelaConfirmacao.setVisible(true);
+                    this.setVisible(false);
+                    this.dispose();
+            }
+//            
+            
+        }
+        else{
+            PreenchaDadosPopUp dadosIncompletos = new PreenchaDadosPopUp();
+            dadosIncompletos.setVisible(true);
+        }
+        
     }//GEN-LAST:event_enviarBotaoActionPerformed
 
     private void cancelarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoActionPerformed
@@ -769,13 +791,14 @@ private void teste(){
     private javax.swing.JPanel areaAnexo3;
     private javax.swing.JPanel areaAnexo4;
     private javax.swing.JButton cancelarBotao;
+    private javax.swing.JLabel cargoProfessorLabel;
     private javax.swing.JComboBox categoriaComboBox;
     private javax.swing.JComboBox centroComboBox;
     private javax.swing.JCheckBox checkComprovante;
     private javax.swing.JCheckBox checkPortaria;
     private javax.swing.JCheckBox checkReconhecimento;
     private javax.swing.JCheckBox checkRelatorio;
-    private javax.swing.JLabel emailAlunoLabel;
+    private javax.swing.JLabel emailProfessorLabel;
     private javax.swing.JButton enviarBotao;
     private javax.swing.JComboBox escolaComboBox;
     private javax.swing.JLabel imagemAnexo1;
@@ -787,18 +810,14 @@ private void teste(){
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -814,8 +833,11 @@ private void teste(){
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lotacaoProfessorLabel;
     private javax.swing.JLabel matriculaAlunoLabel;
-    private javax.swing.JLabel nomeCompletoAlunoLabel;
+    private javax.swing.JLabel nomeCompletoProfessorLabel;
+    private javax.swing.JLabel siapeProfessorLabel;
     private javax.swing.JLabel telefoneAlunoLabel;
+    private javax.swing.JLabel telefoneCelularProfessorLabel;
     // End of variables declaration//GEN-END:variables
 }

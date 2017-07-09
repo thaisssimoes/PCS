@@ -8,24 +8,28 @@ package view;
 import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.WindowEvent;
 import model.entity.Aluno;
+import model.requerimento.Requerimento;
 
 /**
  *
  * @author tsuba
  */
-public class PopupComentario extends javax.swing.JFrame {
+public class PreenchaDadosPopUp extends javax.swing.JFrame {
 
     /**
-     * Creates new form popupComentario
+     * Creates new form EnviadoComSucesso
      */
-    public PopupComentario() {
+    public PreenchaDadosPopUp() {
         initComponents();
-        centralizarTela();
-
     }
-    
+    Aluno aluno;
+
+    public PreenchaDadosPopUp(Aluno aluno) {
+        initComponents();
+        this.aluno = aluno;
+        centralizarTela();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,33 +41,25 @@ public class PopupComentario extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        comentarioAreaTexto = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
-        okBotaoComentario = new javax.swing.JButton();
-        cancelarBotaoComentario = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        okBotaoSucesso = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        comentarioAreaTexto.setColumns(20);
-        comentarioAreaTexto.setRows(5);
-        jScrollPane1.setViewportView(comentarioAreaTexto);
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Dados incompletos!");
 
-        jLabel1.setText("Adicionar comentário:");
+        jLabel5.setText("Por favor, preencha todos os dados antes de enviar");
 
-        okBotaoComentario.setText("OK");
-        okBotaoComentario.addActionListener(new java.awt.event.ActionListener() {
+        okBotaoSucesso.setBackground(new java.awt.Color(56, 113, 156));
+        okBotaoSucesso.setForeground(new java.awt.Color(255, 255, 255));
+        okBotaoSucesso.setText("OK");
+        okBotaoSucesso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okBotaoComentarioActionPerformed(evt);
-            }
-        });
-
-        cancelarBotaoComentario.setText("Cancelar");
-        cancelarBotaoComentario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarBotaoComentarioActionPerformed(evt);
+                okBotaoSucessoActionPerformed(evt);
             }
         });
 
@@ -74,28 +70,25 @@ public class PopupComentario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addComponent(jLabel5))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(cancelarBotaoComentario)
-                        .addGap(69, 69, 69)
-                        .addComponent(okBotaoComentario)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(okBotaoSucesso)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(jLabel1)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cancelarBotaoComentario)
-                    .addComponent(okBotaoComentario))
+                .addComponent(okBotaoSucesso)
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -112,29 +105,21 @@ public class PopupComentario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
 
     private void centralizarTela(){
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     }
     
-    
-    private void okBotaoComentarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoComentarioActionPerformed
-        escreverComentario();
+    private void okBotaoSucessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoSucessoActionPerformed
+        //int DISPOSE_ON_CLOSE1 = RequerimentoGeralAluno.DISPOSE_ON_CLOSE;
         this.setVisible(false);
         this.dispose();
-        //TODO: Colocar a leitura do XML
-    }//GEN-LAST:event_okBotaoComentarioActionPerformed
+        // 
 
-    private void cancelarBotaoComentarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoComentarioActionPerformed
-        this.setVisible(false);
-        this.dispose();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelarBotaoComentarioActionPerformed
-    public String escreverComentario(){
-        return comentarioAreaTexto.getText();
-    }
+
+    }//GEN-LAST:event_okBotaoSucessoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -152,31 +137,31 @@ public class PopupComentario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PopupComentario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PreenchaDadosPopUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PopupComentario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PreenchaDadosPopUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PopupComentario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PreenchaDadosPopUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PopupComentario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PreenchaDadosPopUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PopupComentario().setVisible(true);
+                new PreenchaDadosPopUp().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cancelarBotaoComentario;
-    private javax.swing.JTextArea comentarioAreaTexto;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton okBotaoComentario;
+    private javax.swing.JButton okBotaoSucesso;
     // End of variables declaration//GEN-END:variables
 }

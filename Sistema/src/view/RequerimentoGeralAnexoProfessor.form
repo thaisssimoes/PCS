@@ -94,18 +94,9 @@
                               </Group>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="professorLabelFixo" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="professorLabelDisciplina" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="disciplinaLabelFixo" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                                              <Component id="disciplinaComboBox" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <Component id="disciplinaLabelFixo" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="disciplinaLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="anexo1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -126,12 +117,14 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                          <Component id="cancelarBotao" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                          <Component id="atualizarBotao" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                          <Component id="enviarBotao" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+                          <Component id="voltarBotao" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Component id="pendenciaBotao" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                          <Component id="rejeitarBotao" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="aceitarBotao" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
@@ -170,23 +163,17 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="disciplinaComboBox" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="anexo1" min="-2" max="-2" attributes="0"/>
                               <Component id="anexo2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="disciplinaLabelFixo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="professorLabelFixo" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                              <Component id="professorLabelDisciplina" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="disciplinaLabelFixo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="disciplinaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
@@ -203,12 +190,15 @@
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cancelarBotao" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="atualizarBotao" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="enviarBotao" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="aceitarBotao" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rejeitarBotao" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="voltarBotao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="pendenciaBotao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="29" max="32767" attributes="0"/>
+                  <EmptySpace pref="47" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -460,6 +450,7 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -472,7 +463,7 @@
             <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="atualizarBotao">
+        <Component class="javax.swing.JButton" name="voltarBotao">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="9c" green="71" red="38" type="rgb"/>
@@ -483,13 +474,13 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Atualizar"/>
+            <Property name="text" type="java.lang.String" value="voltar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atualizarBotaoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="voltarBotaoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="cancelarBotao">
+        <Component class="javax.swing.JButton" name="rejeitarBotao">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="9c" green="71" red="38" type="rgb"/>
@@ -500,71 +491,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cancelar"/>
+            <Property name="text" type="java.lang.String" value="Rejeitar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelarBotaoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rejeitarBotaoActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="enviarBotao">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="9c" green="71" red="38" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Enviar"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="enviarBotaoActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="disciplinaComboBox">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="35">
-                <StringItem index="0" value="Administra&#xe7;&#xe3;o Financeira"/>
-                <StringItem index="1" value="&#xc1;lgebra Linear"/>
-                <StringItem index="2" value="An&#xe1;lise de Algoritmo"/>
-                <StringItem index="3" value="An&#xe1;lise de Sistemas"/>
-                <StringItem index="4" value="An&#xe1;lise Empresarial e Admin."/>
-                <StringItem index="5" value="Banco de Dados I"/>
-                <StringItem index="6" value="Banco de Dados II"/>
-                <StringItem index="7" value="C&#xe1;lculo Diferenc. e Integral I"/>
-                <StringItem index="8" value="C&#xe1;lculo Diferenc. e Integral II"/>
-                <StringItem index="9" value="Desenvolv. de P&#xe1;ginas Web"/>
-                <StringItem index="10" value="Empreendedorismo"/>
-                <StringItem index="11" value="Estat&#xed;stica"/>
-                <StringItem index="12" value="Estruturas de Dados I"/>
-                <StringItem index="13" value="Estruturas de Dados II"/>
-                <StringItem index="14" value="Estruturas Discretas"/>
-                <StringItem index="15" value="Fund. de Sist. de Informa&#xe7;&#xe3;o"/>
-                <StringItem index="16" value="Ger&#xea;ncia de Proj. de Informat."/>
-                <StringItem index="17" value="Intera&#xe7;&#xe3;o Humano Computador"/>
-                <StringItem index="18" value="Introdu&#xe7;&#xe3;o &#xe0; L&#xf3;gica Computac."/>
-                <StringItem index="19" value="Linguag. Formais e Aut&#xf4;matos"/>
-                <StringItem index="20" value="Matem&#xe1;tica B&#xe1;sica"/>
-                <StringItem index="21" value="Organiza&#xe7;&#xe3;o de Computadores"/>
-                <StringItem index="22" value="Probabilidade"/>
-                <StringItem index="23" value="Processos de Software"/>
-                <StringItem index="24" value="Programa&#xe7;&#xe3;o Modular"/>
-                <StringItem index="25" value="Projeto de Gradua&#xe7;&#xe3;o I"/>
-                <StringItem index="26" value="Projeto de Gradua&#xe7;&#xe3;o II"/>
-                <StringItem index="27" value="Proj. e Const. de Sistemas"/>
-                <StringItem index="28" value="Proj. Const. Sistemas-SGBD"/>
-                <StringItem index="29" value="Redes de Computadores I"/>
-                <StringItem index="30" value="Redes de Computadores II"/>
-                <StringItem index="31" value="Sistemas Operacionais"/>
-                <StringItem index="32" value="T&#xe9;cnicas de Programa&#xe7;&#xe3;o I"/>
-                <StringItem index="33" value="T&#xe9;cnicas de Programa&#xe7;&#xe3;o II"/>
-                <StringItem index="34" value="Teorias e Pr&#xe1;ticas Discursivas"/>
-              </StringArray>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="disciplinaLabelFixo">
           <Properties>
@@ -585,7 +516,6 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -682,21 +612,47 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="professorLabelFixo">
+        <Component class="javax.swing.JLabel" name="disciplinaLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Professor:"/>
+            <Property name="text" type="java.lang.String" value="Disciplina"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="professorLabelDisciplina">
+        <Component class="javax.swing.JButton" name="pendenciaBotao">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="0"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="9c" green="71" red="38" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Professor"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Pend&#xea;ncia"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pendenciaBotaoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="aceitarBotao">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="9c" green="71" red="38" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Aceitar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aceitarBotaoActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
