@@ -311,7 +311,7 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
         atualizarBotao.setBackground(new java.awt.Color(56, 113, 156));
         atualizarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         atualizarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        atualizarBotao.setText("Voltar");
+        atualizarBotao.setText("Atualizar");
         atualizarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 atualizarBotaoActionPerformed(evt);
