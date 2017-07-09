@@ -78,10 +78,10 @@ public class TelaSecretaria extends javax.swing.JFrame {
         centroAcademicoTecnicoLabel = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         lotacaoTecnicoLabel = new javax.swing.JLabel();
-        quadradoAtualizacao = new javax.swing.JPanel();
+        quadradoAtualizar = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        setinhaAtualizacao = new javax.swing.JLabel();
+        setinhaAtualizar = new javax.swing.JLabel();
         nomeCompletoTecnicoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -154,7 +154,7 @@ public class TelaSecretaria extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -222,11 +222,11 @@ public class TelaSecretaria extends javax.swing.JFrame {
         lotacaoTecnicoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lotacaoTecnicoLabel.setText("Escola de Informática Aplicada");
 
-        quadradoAtualizacao.setBackground(new java.awt.Color(255, 255, 255));
-        quadradoAtualizacao.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(56, 113, 156), 2, true));
-        quadradoAtualizacao.addMouseListener(new java.awt.event.MouseAdapter() {
+        quadradoAtualizar.setBackground(new java.awt.Color(255, 255, 255));
+        quadradoAtualizar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(56, 113, 156), 2, true));
+        quadradoAtualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                quadradoAtualizacaoMouseClicked(evt);
+                quadradoAtualizarMouseClicked(evt);
             }
         });
 
@@ -235,38 +235,38 @@ public class TelaSecretaria extends javax.swing.JFrame {
 
         jLabel36.setText("Atualizar");
 
-        setinhaAtualizacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/refresh.png"))); // NOI18N
-        setinhaAtualizacao.addMouseListener(new java.awt.event.MouseAdapter() {
+        setinhaAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/refresh.png"))); // NOI18N
+        setinhaAtualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                setinhaAtualizacaoMouseClicked(evt);
+                setinhaAtualizarMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout quadradoAtualizacaoLayout = new javax.swing.GroupLayout(quadradoAtualizacao);
-        quadradoAtualizacao.setLayout(quadradoAtualizacaoLayout);
-        quadradoAtualizacaoLayout.setHorizontalGroup(
-            quadradoAtualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, quadradoAtualizacaoLayout.createSequentialGroup()
+        javax.swing.GroupLayout quadradoAtualizarLayout = new javax.swing.GroupLayout(quadradoAtualizar);
+        quadradoAtualizar.setLayout(quadradoAtualizarLayout);
+        quadradoAtualizarLayout.setHorizontalGroup(
+            quadradoAtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, quadradoAtualizarLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel36)
                 .addContainerGap())
-            .addGroup(quadradoAtualizacaoLayout.createSequentialGroup()
+            .addGroup(quadradoAtualizarLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(quadradoAtualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(setinhaAtualizacao)
+                .addGroup(quadradoAtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(setinhaAtualizar)
                     .addComponent(jLabel35))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        quadradoAtualizacaoLayout.setVerticalGroup(
-            quadradoAtualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(quadradoAtualizacaoLayout.createSequentialGroup()
-                .addGroup(quadradoAtualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(quadradoAtualizacaoLayout.createSequentialGroup()
+        quadradoAtualizarLayout.setVerticalGroup(
+            quadradoAtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(quadradoAtualizarLayout.createSequentialGroup()
+                .addGroup(quadradoAtualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(quadradoAtualizarLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jLabel35))
-                    .addGroup(quadradoAtualizacaoLayout.createSequentialGroup()
+                    .addGroup(quadradoAtualizarLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(setinhaAtualizacao)))
+                        .addComponent(setinhaAtualizar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel36))
         );
@@ -315,7 +315,7 @@ public class TelaSecretaria extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(36, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(quadradoAtualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(quadradoAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(painelRequerimentosProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
@@ -349,7 +349,7 @@ public class TelaSecretaria extends javax.swing.JFrame {
                         .addComponent(jLabel19)
                         .addComponent(siapeTecnicoLabel)))
                 .addGap(22, 22, 22)
-                .addComponent(quadradoAtualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(quadradoAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(painelRequerimentosProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(362, Short.MAX_VALUE))
@@ -369,17 +369,17 @@ public class TelaSecretaria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void setinhaAtualizacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setinhaAtualizacaoMouseClicked
+    private void setinhaAtualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setinhaAtualizarMouseClicked
         popularRequerimentosSecretaria();
         popularRequerimentos();
         popularRequerimentosTriagem();
-    }//GEN-LAST:event_setinhaAtualizacaoMouseClicked
+    }//GEN-LAST:event_setinhaAtualizarMouseClicked
 
-    private void quadradoAtualizacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quadradoAtualizacaoMouseClicked
+    private void quadradoAtualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quadradoAtualizarMouseClicked
         popularRequerimentosSecretaria();
         popularRequerimentos();
         popularRequerimentosTriagem();        
-    }//GEN-LAST:event_quadradoAtualizacaoMouseClicked
+    }//GEN-LAST:event_quadradoAtualizarMouseClicked
 
     private void tabelaTriagemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaTriagemMouseClicked
         tabelaTriagem = (JTable) evt.getSource();
@@ -389,12 +389,12 @@ public class TelaSecretaria extends javax.swing.JFrame {
             String numeroProtocolo = (String) tabelaTriagem.getValueAt(numeroLinha,0);
             String tipoRequerimento =(String) tabelaTriagem.getValueAt(numeroLinha,1);
             ArrayList<Requerimento> requerimento = buscarRequerimentoProtocolo(numeroProtocolo);
-            RequerimentoGeralAnexoAlunoLeitura requerimentoAlunoLeitura;
-            requerimentoAlunoLeitura = new RequerimentoGeralAnexoAlunoLeitura(requerimento.get(0),tipoRequerimento);
+            RequerimentoGeralAnexoSecretaria requerimentoAlunoLeitura;
+            requerimentoAlunoLeitura = new RequerimentoGeralAnexoSecretaria(requerimento.get(0),tipoRequerimento);
             requerimentoAlunoLeitura.setVisible(true);
         }    }//GEN-LAST:event_tabelaTriagemMouseClicked
 
-    
+     
     private void popularRequerimentosTriagem() {
 
         DefaultTableModel model = (DefaultTableModel) tabelaTriagem.getModel();
@@ -412,7 +412,7 @@ public class TelaSecretaria extends javax.swing.JFrame {
     private void popularRequerimentos() {
 
         DefaultTableModel model = (DefaultTableModel) tabelaTodosRequerimentos.getModel();
-        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarTriagem();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoRequerenteAluno();
         Object rowData[] = new Object[3];
         for (int i = 0; i < requerimentos.size(); i++) {
             rowData[0] = requerimentos.get(i).getNumeroProtocolo();
@@ -425,7 +425,7 @@ public class TelaSecretaria extends javax.swing.JFrame {
       private void popularRequerimentosSecretaria() {
 
         DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoSecretaria.getModel();
-        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarTriagem();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoRequerenteProfessor();
         Object rowData[] = new Object[3];
         for (int i = 0; i < requerimentos.size(); i++) {
             rowData[0] = requerimentos.get(i).getNumeroProtocolo();
@@ -514,8 +514,8 @@ public class TelaSecretaria extends javax.swing.JFrame {
     private javax.swing.JScrollPane morraDesgracado;
     private javax.swing.JLabel nomeCompletoTecnicoLabel;
     private javax.swing.JTabbedPane painelRequerimentosProfessores;
-    private javax.swing.JPanel quadradoAtualizacao;
-    private javax.swing.JLabel setinhaAtualizacao;
+    private javax.swing.JPanel quadradoAtualizar;
+    private javax.swing.JLabel setinhaAtualizar;
     private javax.swing.JLabel siapeTecnicoLabel;
     private javax.swing.JTable tabelaRequerimentoSecretaria;
     private javax.swing.JTable tabelaTodosRequerimentos;

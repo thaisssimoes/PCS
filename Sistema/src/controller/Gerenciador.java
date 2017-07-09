@@ -194,18 +194,18 @@ public class Gerenciador {
 
     public static Tecnico obterTecnico(String cpf, String senha) {
         ArrayList<Tecnico> lista;
-        Tecnico tenicoObtido;
-        tenicoObtido = null;
+        Tecnico tecnicoObtido;
+        tecnicoObtido = null;
         ManipuladorXML manipulador = new ManipuladorXML(TECNICO);
         manipulador.leXML();
         lista = manipulador.getLista();
         for (int i = 0; i < lista.size(); i++) {
             if ((lista.get(i).getCpf().equals(cpf)) && lista.get(i).getSenha().equals(senha)) {
-                tenicoObtido = lista.get(i);
-                return tenicoObtido;
+                tecnicoObtido = lista.get(i);
+                return tecnicoObtido;
             }
         }
-        return tenicoObtido;
+        return tecnicoObtido;
     }
 
     public static Professor obterProfessorDisciplina(String disciplina) {

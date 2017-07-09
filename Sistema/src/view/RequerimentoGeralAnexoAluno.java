@@ -45,14 +45,14 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         preencherCamposEscrita();
         centralizarTela();
     }
-    public RequerimentoGeralAnexoAluno(String titulo) {
-        this.setTitle(titulo);
-        initComponents();
-        preencherTela();
-        preencherCamposLeitura();
-        criarRequerimento(requerimento);
-        centralizarTela();
-    }
+//    public RequerimentoGeralAnexoAluno(String titulo) {
+//        this.setTitle(titulo);
+//        initComponents();
+//        preencherTela();
+//        preencherCamposLeitura();
+//        criarRequerimento(requerimento);
+//        centralizarTela();
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
