@@ -171,8 +171,9 @@ public class Gerenciador {
         return alunoObtido;
     }
 
-    private static void encaminharParaTecnico(Requerimento requerimento) {
+    private static ArrayList<Requerimento> buscarTriagem() {
         ManipuladorXML xml = new ManipuladorXML("");
+        return null;
 
     }
 
