@@ -15,17 +15,17 @@ import model.requerimento.Requerimento;
  *
  * @author tsuba
  */
-public class EnviadoComSucesso extends javax.swing.JFrame {
+public class PreenchaDadosPopUp extends javax.swing.JFrame {
 
     /**
      * Creates new form EnviadoComSucesso
      */
-    public EnviadoComSucesso() {
+    public PreenchaDadosPopUp() {
         initComponents();
     }
     Aluno aluno;
 
-    public EnviadoComSucesso(Aluno aluno) {
+    public PreenchaDadosPopUp(Aluno aluno) {
         initComponents();
         this.aluno = aluno;
         centralizarTela();
@@ -43,7 +43,6 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         okBotaoSucesso = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,12 +50,9 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Seu requerimento foi enviado com sucesso!");
+        jLabel4.setText("Dados incompletos!");
 
-        jLabel5.setText("Seu número de protocolo é:");
-
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("numero de protocolo");
+        jLabel5.setText("Por favor, preencha todos os dados antes de enviar");
 
         okBotaoSucesso.setBackground(new java.awt.Color(56, 113, 156));
         okBotaoSucesso.setForeground(new java.awt.Color(255, 255, 255));
@@ -72,26 +68,25 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(okBotaoSucesso)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(okBotaoSucesso)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(29, 29, 29)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addComponent(okBotaoSucesso)
                 .addContainerGap(19, Short.MAX_VALUE))
@@ -117,8 +112,7 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
     }
     
     private void okBotaoSucessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoSucessoActionPerformed
-        TelaAluno janelaTelaAluno = new TelaAluno(aluno);
-        janelaTelaAluno.setVisible(true);
+        //int DISPOSE_ON_CLOSE1 = RequerimentoGeralAluno.DISPOSE_ON_CLOSE;
         this.setVisible(false);
         this.dispose();
         // 
@@ -143,20 +137,23 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EnviadoComSucesso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PreenchaDadosPopUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EnviadoComSucesso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PreenchaDadosPopUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EnviadoComSucesso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PreenchaDadosPopUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EnviadoComSucesso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PreenchaDadosPopUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EnviadoComSucesso().setVisible(true);
+                new PreenchaDadosPopUp().setVisible(true);
             }
         });
     }
@@ -164,7 +161,6 @@ public class EnviadoComSucesso extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton okBotaoSucesso;
     // End of variables declaration//GEN-END:variables

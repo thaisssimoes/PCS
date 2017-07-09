@@ -7,10 +7,13 @@ package view;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import model.entity.Tecnico;
+import model.requerimento.Requerimento;
 
 /**
  *
@@ -35,6 +38,10 @@ public class TelaSecretaria extends javax.swing.JFrame {
         this.tecnico = tecnico;
         preencherCampos();
         centralizarTela();
+//        popularRequerimentosSecretaria();
+//        popularRequerimentos();
+        popularRequerimentosTriagem();
+                        
 
     }
 
@@ -52,32 +59,32 @@ public class TelaSecretaria extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        contadoRequerimentosGerais = new javax.swing.JLabel();
+        contadoRequerimentosTriagem = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         painelRequerimentosProfessores = new javax.swing.JTabbedPane();
         morraDesgracado = new javax.swing.JScrollPane();
-        tabRequerimentosDeProfessores = new javax.swing.JTable();
+        tabelaTodosRequerimentos = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tabelaTriagem = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaRequerimentoSecretaria = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        emailTecnico = new javax.swing.JLabel();
+        emailTecnicoLabel = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        telefoneCelTecnico = new javax.swing.JLabel();
+        telefoneCelTecnicoLabel = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        siapeTecnico = new javax.swing.JLabel();
+        siapeTecnicoLabel = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        centroAcademicoTecnico = new javax.swing.JLabel();
+        centroAcademicoTecnicoLabel = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        lotacaoTecnico = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        lotacaoTecnicoLabel = new javax.swing.JLabel();
+        quadradoAtualizacao = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        nomeTecnico = new javax.swing.JLabel();
+        setinhaAtualizacao = new javax.swing.JLabel();
+        nomeCompletoTecnicoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -94,13 +101,13 @@ public class TelaSecretaria extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Total de Requerimentos");
 
-        jLabel8.setFont(new java.awt.Font("Malayalam MN", 0, 48)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("0");
+        contadoRequerimentosGerais.setFont(new java.awt.Font("Malayalam MN", 0, 48)); // NOI18N
+        contadoRequerimentosGerais.setForeground(new java.awt.Color(255, 255, 255));
+        contadoRequerimentosGerais.setText("0");
 
-        jLabel9.setFont(new java.awt.Font("Malayalam MN", 0, 48)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("0");
+        contadoRequerimentosTriagem.setFont(new java.awt.Font("Malayalam MN", 0, 48)); // NOI18N
+        contadoRequerimentosTriagem.setForeground(new java.awt.Color(255, 255, 255));
+        contadoRequerimentosTriagem.setText("0");
 
         jLabel10.setFont(new java.awt.Font("Lao MN", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,21 +120,21 @@ public class TelaSecretaria extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(37, 37, 37))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(contadoRequerimentosGerais, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(117, 117, 117)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(96, 96, 96)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addComponent(contadoRequerimentosTriagem, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(jLabel5))
         );
         jPanel2Layout.setVerticalGroup(
@@ -146,8 +153,8 @@ public class TelaSecretaria extends javax.swing.JFrame {
                                 .addGap(124, 124, 124))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(contadoRequerimentosGerais, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(contadoRequerimentosTriagem, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel2)
@@ -158,71 +165,64 @@ public class TelaSecretaria extends javax.swing.JFrame {
         painelRequerimentosProfessores.setBackground(new java.awt.Color(255, 255, 255));
 
         if("Professor".equals("Decano") || "Professor".equals("Chefe de Departamento")){
-            tabRequerimentosDeProfessores = new javax.swing.JTable();
+            tabelaTodosRequerimentos = new javax.swing.JTable();
         }
-        tabRequerimentosDeProfessores.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaTodosRequerimentos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "Protocolo", "Tipo", "Status"
+                "Protocolo", "Nome Requerente", "Tipo", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, true, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        morraDesgracado.setViewportView(tabRequerimentosDeProfessores);
+        tabelaTodosRequerimentos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        morraDesgracado.setViewportView(tabelaTodosRequerimentos);
 
         painelRequerimentosProfessores.addTab("Todos os Requerimentos", morraDesgracado);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaTriagem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "Protocolo", "Tipo", "Status"
+                "Protocolo", "Nome Requerente", "Tipo", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, true, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.setColumnSelectionAllowed(true);
-        jScrollPane4.setViewportView(jTable2);
-        jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabelaTriagem.setColumnSelectionAllowed(true);
+        jScrollPane4.setViewportView(tabelaTriagem);
+        tabelaTriagem.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         painelRequerimentosProfessores.addTab("Triagem de Requerimentos", jScrollPane4);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaRequerimentoSecretaria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Protocolo", "Nome Requerente", "Tipo", "Status"
             }
         ));
-        jTable1.setToolTipText("");
-        jTable1.setColumnSelectionAllowed(true);
-        jScrollPane3.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabelaRequerimentoSecretaria.setToolTipText("");
+        tabelaRequerimentoSecretaria.setColumnSelectionAllowed(true);
+        tabelaRequerimentoSecretaria.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane3.setViewportView(tabelaRequerimentoSecretaria);
+        tabelaRequerimentoSecretaria.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         painelRequerimentosProfessores.addTab("Requerimentos da Secretaria", jScrollPane3);
 
@@ -232,74 +232,84 @@ public class TelaSecretaria extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("E-mail:");
 
-        emailTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        emailTecnico.setText("nome.sobrenome@uniriotec.br");
+        emailTecnicoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        emailTecnicoLabel.setText("nome.sobrenome@uniriotec.br");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setText("Telefone:");
 
-        telefoneCelTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        telefoneCelTecnico.setText("(21) 9-2222-2222");
+        telefoneCelTecnicoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        telefoneCelTecnicoLabel.setText("(21) 9-2222-2222");
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel19.setText("Matrícula SIAPE:");
 
-        siapeTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        siapeTecnico.setText("SIAPE");
+        siapeTecnicoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        siapeTecnicoLabel.setText("SIAPE");
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel23.setText("Centro Acadêmico:");
 
-        centroAcademicoTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        centroAcademicoTecnico.setText("CCET");
+        centroAcademicoTecnicoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        centroAcademicoTecnicoLabel.setText("CCET");
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel27.setText("Lotação:");
 
-        lotacaoTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lotacaoTecnico.setText("Escola de Informática Aplicada");
+        lotacaoTecnicoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lotacaoTecnicoLabel.setText("Escola de Informática Aplicada");
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(56, 113, 156), 2, true));
+        quadradoAtualizacao.setBackground(new java.awt.Color(255, 255, 255));
+        quadradoAtualizacao.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(56, 113, 156), 2, true));
+        quadradoAtualizacao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                quadradoAtualizacaoMouseClicked(evt);
+            }
+        });
 
         jLabel35.setBackground(new java.awt.Color(255, 255, 255));
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel36.setText("Atualizar");
 
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/refresh.png"))); // NOI18N
+        setinhaAtualizacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/refresh.png"))); // NOI18N
+        setinhaAtualizacao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                setinhaAtualizacaoMouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout quadradoAtualizacaoLayout = new javax.swing.GroupLayout(quadradoAtualizacao);
+        quadradoAtualizacao.setLayout(quadradoAtualizacaoLayout);
+        quadradoAtualizacaoLayout.setHorizontalGroup(
+            quadradoAtualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, quadradoAtualizacaoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel36)
                 .addContainerGap())
-            .addGroup(jPanel5Layout.createSequentialGroup()
+            .addGroup(quadradoAtualizacaoLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel37)
+                .addGroup(quadradoAtualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(setinhaAtualizacao)
                     .addComponent(jLabel35))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+        quadradoAtualizacaoLayout.setVerticalGroup(
+            quadradoAtualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(quadradoAtualizacaoLayout.createSequentialGroup()
+                .addGroup(quadradoAtualizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(quadradoAtualizacaoLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jLabel35))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGroup(quadradoAtualizacaoLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel37)))
+                        .addComponent(setinhaAtualizacao)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel36))
         );
 
-        nomeTecnico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        nomeTecnico.setText("Nome Completo do Tecnico");
+        nomeCompletoTecnicoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nomeCompletoTecnicoLabel.setText("Nome Completo do Tecnico");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -314,35 +324,35 @@ public class TelaSecretaria extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(emailTecnico))
+                                .addComponent(emailTecnicoLabel))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nomeTecnico)))
+                                .addComponent(nomeCompletoTecnicoLabel)))
                         .addGap(98, 98, 98))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(telefoneCelTecnico)
+                        .addComponent(telefoneCelTecnicoLabel)
                         .addGap(161, 161, 161)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel23)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(centroAcademicoTecnico))
+                        .addComponent(centroAcademicoTecnicoLabel))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel27)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lotacaoTecnico))
+                        .addComponent(lotacaoTecnicoLabel))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(siapeTecnico)))
+                        .addComponent(siapeTecnicoLabel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(quadradoAtualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(painelRequerimentosProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -355,28 +365,28 @@ public class TelaSecretaria extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(nomeTecnico))
+                            .addComponent(nomeCompletoTecnicoLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
-                            .addComponent(emailTecnico)))
+                            .addComponent(emailTecnicoLabel)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel23)
-                            .addComponent(centroAcademicoTecnico))
+                            .addComponent(centroAcademicoTecnicoLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
-                            .addComponent(lotacaoTecnico))))
+                            .addComponent(lotacaoTecnicoLabel))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
-                    .addComponent(telefoneCelTecnico)
+                    .addComponent(telefoneCelTecnicoLabel)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel19)
-                        .addComponent(siapeTecnico)))
+                        .addComponent(siapeTecnicoLabel)))
                 .addGap(22, 22, 22)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(quadradoAtualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(painelRequerimentosProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(362, Short.MAX_VALUE))
@@ -396,18 +406,72 @@ public class TelaSecretaria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void setinhaAtualizacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setinhaAtualizacaoMouseClicked
+        popularRequerimentosSecretaria();
+        popularRequerimentos();
+        popularRequerimentosTriagem();
+    }//GEN-LAST:event_setinhaAtualizacaoMouseClicked
+
+    private void quadradoAtualizacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quadradoAtualizacaoMouseClicked
+        popularRequerimentosSecretaria();
+        popularRequerimentos();
+        popularRequerimentosTriagem();        
+    }//GEN-LAST:event_quadradoAtualizacaoMouseClicked
+
+    
+    private void popularRequerimentosTriagem() {
+
+        DefaultTableModel model = (DefaultTableModel) tabelaTriagem.getModel();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarTriagem();
+        Object rowData[] = new Object[4];
+        for (int i = 0; i < requerimentos.size(); i++) {
+            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+            rowData[1] = requerimentos.get(i).requerente.getNome();
+            rowData[2] = requerimentos.get(i).getTipoRequerimento();
+            rowData[3] = requerimentos.get(i).getStatus();
+            model.addRow(rowData);
+        }
+    }
+    
+    private void popularRequerimentos() {
+
+        DefaultTableModel model = (DefaultTableModel) tabelaTodosRequerimentos.getModel();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarTriagem();
+        Object rowData[] = new Object[3];
+        for (int i = 0; i < requerimentos.size(); i++) {
+            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+            rowData[1] = requerimentos.get(i).getTipoRequerimento();
+            rowData[2] = requerimentos.get(i).getStatus();
+            model.addRow(rowData);
+        }
+    }
+    
+      private void popularRequerimentosSecretaria() {
+
+        DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoSecretaria.getModel();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarTriagem();
+        Object rowData[] = new Object[3];
+        for (int i = 0; i < requerimentos.size(); i++) {
+            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+            rowData[1] = requerimentos.get(i).getTipoRequerimento();
+            rowData[2] = requerimentos.get(i).getStatus();
+            model.addRow(rowData);
+        }
+    }
+    
+    
     private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
-
-    public void visibilidadeAbaProfessor(String cargo) {
-        if (!cargo.equals("Decano") && !cargo.equals("Chefe de Departamento")) {
-            painelRequerimentosProfessores.remove(morraDesgracado);     //TODO: tirar essa aba
-        }
-
+    private void preencherCampos() {
+        this.centroAcademicoTecnicoLabel.setText(tecnico.getCentroAcademico());
+        this.emailTecnicoLabel.setText(tecnico.getEmail());
+        this.lotacaoTecnicoLabel.setText(tecnico.getLotacao());
+        this.nomeCompletoTecnicoLabel.setText(tecnico.getNome());
+        this.telefoneCelTecnicoLabel.setText(tecnico.getTelefoneCelular());
+        this.siapeTecnicoLabel.setText(tecnico.getSiape());
     }
-
     /**
      * @param args the command line arguments
      */
@@ -446,15 +510,18 @@ public class TelaSecretaria extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new TelaSecretaria().setVisible(true);
+                TelaSecretaria telaSecretaria = new TelaSecretaria();
+                telaSecretaria.setVisible(true);
             }
         });
 
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel centroAcademicoTecnico;
-    private javax.swing.JLabel emailTecnico;
+    private javax.swing.JLabel centroAcademicoTecnicoLabel;
+    private javax.swing.JLabel contadoRequerimentosGerais;
+    private javax.swing.JLabel contadoRequerimentosTriagem;
+    private javax.swing.JLabel emailTecnicoLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -466,32 +533,23 @@ public class TelaSecretaria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JLabel lotacaoTecnico;
+    private javax.swing.JLabel lotacaoTecnicoLabel;
     private javax.swing.JScrollPane morraDesgracado;
-    private javax.swing.JLabel nomeTecnico;
+    private javax.swing.JLabel nomeCompletoTecnicoLabel;
     private javax.swing.JTabbedPane painelRequerimentosProfessores;
-    private javax.swing.JLabel siapeTecnico;
-    private javax.swing.JTable tabRequerimentosDeProfessores;
-    private javax.swing.JLabel telefoneCelTecnico;
+    private javax.swing.JPanel quadradoAtualizacao;
+    private javax.swing.JLabel setinhaAtualizacao;
+    private javax.swing.JLabel siapeTecnicoLabel;
+    private javax.swing.JTable tabelaRequerimentoSecretaria;
+    private javax.swing.JTable tabelaTodosRequerimentos;
+    private javax.swing.JTable tabelaTriagem;
+    private javax.swing.JLabel telefoneCelTecnicoLabel;
     // End of variables declaration//GEN-END:variables
 
-    private void preencherCampos() {
-        this.centroAcademicoTecnico.setText(tecnico.getCentroAcademico());
-        this.emailTecnico.setText(tecnico.getEmail());
-        this.lotacaoTecnico.setText(tecnico.getLotacao());
-        this.nomeTecnico.setText(tecnico.getNome());
-        this.telefoneCelTecnico.setText(tecnico.getTelefoneCelular());
-        this.siapeTecnico.setText(tecnico.getSiape());
-    }
+    
 }

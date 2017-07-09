@@ -15,7 +15,7 @@ public class Requerimento {
     private String numeroProtocolo;
     @Getter
     @Setter
-    private Usuario requerente;
+    public Usuario requerente;
     @Getter
     @Setter
     private Usuario areaResponsavel;

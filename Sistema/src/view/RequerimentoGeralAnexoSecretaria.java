@@ -8,8 +8,10 @@ package view;
 import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.time.LocalDate;
 import model.entity.Aluno;
 import model.entity.Tecnico;
+import model.requerimento.Requerimento;
 
 /**
  *
@@ -22,19 +24,21 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
      */
     public RequerimentoGeralAnexoSecretaria() {
         initComponents();
-        professorLabel.setVisible(false);
-        professorComboBox.setVisible(false);
     }
     Tecnico tecnico;
-
-    public RequerimentoGeralAnexoSecretaria(String cpf, String senha) {
+    Requerimento requerimento;
+    public RequerimentoGeralAnexoSecretaria(String cpf, String senha, String titulo) {
+        this.setTitle(titulo);
         initComponents();
+        preencherTela();
+        preencherCampos();
+        centralizarTela();
+        
+        
+        
         initComponents();
         this.tecnico = tecnico;
-        emailTecnico.setText(tecnico.getEmail());
-        nomeCompletoTecnico.setText(tecnico.getNome());
-        siapeTecnico.setText(tecnico.getSiape());
-        telefoneCelTecnico.setText(tecnico.getTelefoneCelular());
+       
 
         centralizarTela();
     }
@@ -55,9 +59,9 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
+        dataFechamentoFixo = new javax.swing.JLabel();
+        dataAberturaLabel = new javax.swing.JLabel();
+        dataFechamentoLabel = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         nomeCompletoTecnico = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -69,22 +73,22 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel25 = new javax.swing.JLabel();
-        atualizarBotao = new javax.swing.JButton();
+        exportarBotao = new javax.swing.JButton();
         cancelarBotao = new javax.swing.JButton();
         enviarBotao = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel22 = new javax.swing.JLabel();
+        disciplinaComboBox = new javax.swing.JComboBox();
+        disciplinaLabelFixo = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel29 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
+        anexo2 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
+        anexo1 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        professorComboBox = new javax.swing.JComboBox();
-        professorLabel = new javax.swing.JLabel();
+        professorLabelFixo = new javax.swing.JLabel();
+        professorLabelDisciplina = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -108,14 +112,14 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Data de abertura:");
 
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setText("Data de fechamento:");
+        dataFechamentoFixo.setForeground(new java.awt.Color(255, 255, 255));
+        dataFechamentoFixo.setText("Data de fechamento:");
 
-        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel31.setText("dd/mm/yyyy");
+        dataAberturaLabel.setForeground(new java.awt.Color(255, 255, 255));
+        dataAberturaLabel.setText("dd/mm/yyyy");
 
-        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel32.setText("dd/mm/yyyy");
+        dataFechamentoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        dataFechamentoLabel.setText("dd/mm/yyyy");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -139,12 +143,12 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
                                 .addComponent(jLabel9)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel26)
+                            .addComponent(dataFechamentoFixo)
                             .addComponent(jLabel10))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel31)
-                            .addComponent(jLabel32))
+                            .addComponent(dataAberturaLabel)
+                            .addComponent(dataFechamentoLabel))
                         .addGap(138, 138, 138))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -163,15 +167,15 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
                                 .addGap(1, 1, 1)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel10)
-                                    .addComponent(jLabel31))
+                                    .addComponent(dataAberturaLabel))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel9)
-                                    .addComponent(jLabel26)
-                                    .addComponent(jLabel32))))
+                                    .addComponent(dataFechamentoFixo)
+                                    .addComponent(dataFechamentoLabel))))
                         .addGap(19, 19, 19))))
         );
 
@@ -201,18 +205,20 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setEnabled(false);
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setText("Descrição:");
 
-        atualizarBotao.setBackground(new java.awt.Color(56, 113, 156));
-        atualizarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        atualizarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        atualizarBotao.setText("Atualizar");
-        atualizarBotao.addActionListener(new java.awt.event.ActionListener() {
+        exportarBotao.setBackground(new java.awt.Color(56, 113, 156));
+        exportarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        exportarBotao.setForeground(new java.awt.Color(255, 255, 255));
+        exportarBotao.setText("Exportar");
+        exportarBotao.setEnabled(false);
+        exportarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atualizarBotaoActionPerformed(evt);
+                exportarBotaoActionPerformed(evt);
             }
         });
 
@@ -236,10 +242,10 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administração Financeira", "Álgebra Linear", "Análise de Algoritmo", "Análise de Sistemas", "Análise Empresarial e Admin.", "Banco de Dados I", "Banco de Dados II", "Cálculo Diferenc. e Integral I", "Cálculo Diferenc. e Integral II", "Desenvolv. de Páginas Web", "Empreendedorismo", "Estatística", "Estruturas de Dados I", "Estruturas de Dados II", "Estruturas Discretas", "Fund. de Sist. de Informação", "Gerência de Proj. de Informat.", "Interação Humano Computador", "Introdução à Lógica Computac.", "Linguag. Formais e Autômatos", "Matemática Básica", "Organização de Computadores", "Probabilidade", "Processos de Software", "Programação Modular", "Projeto de Graduação I", "Projeto de Graduação II", "Proj. e Const. de Sistemas", "Proj. Const. Sistemas-SGBD", "Redes de Computadores I", "Redes de Computadores II", "Sistemas Operacionais", "Técnicas de Programação I", "Técnicas de Programação II", "Teorias e Práticas Discursivas" }));
+        disciplinaComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administração Financeira", "Álgebra Linear", "Análise de Algoritmo", "Análise de Sistemas", "Análise Empresarial e Admin.", "Banco de Dados I", "Banco de Dados II", "Cálculo Diferenc. e Integral I", "Cálculo Diferenc. e Integral II", "Desenvolv. de Páginas Web", "Empreendedorismo", "Estatística", "Estruturas de Dados I", "Estruturas de Dados II", "Estruturas Discretas", "Fund. de Sist. de Informação", "Gerência de Proj. de Informat.", "Interação Humano Computador", "Introdução à Lógica Computac.", "Linguag. Formais e Autômatos", "Matemática Básica", "Organização de Computadores", "Probabilidade", "Processos de Software", "Programação Modular", "Projeto de Graduação I", "Projeto de Graduação II", "Proj. e Const. de Sistemas", "Proj. Const. Sistemas-SGBD", "Redes de Computadores I", "Redes de Computadores II", "Sistemas Operacionais", "Técnicas de Programação I", "Técnicas de Programação II", "Teorias e Práticas Discursivas" }));
 
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel22.setText("Disciplina:");
+        disciplinaLabelFixo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        disciplinaLabelFixo.setText("Disciplina:");
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -253,20 +259,20 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
 
         jLabel4.setText("Anexo");
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout anexo2Layout = new javax.swing.GroupLayout(anexo2);
+        anexo2.setLayout(anexo2Layout);
+        anexo2Layout.setHorizontalGroup(
+            anexo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(anexo2Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(anexo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel27)
                     .addComponent(jLabel4))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+        anexo2Layout.setVerticalGroup(
+            anexo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, anexo2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel27)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -278,20 +284,20 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
 
         jLabel6.setText("Anexo");
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+        javax.swing.GroupLayout anexo1Layout = new javax.swing.GroupLayout(anexo1);
+        anexo1.setLayout(anexo1Layout);
+        anexo1Layout.setHorizontalGroup(
+            anexo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(anexo1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(anexo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel28)
                     .addComponent(jLabel6))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+        anexo1Layout.setVerticalGroup(
+            anexo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, anexo1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel28)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -299,15 +305,11 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
                 .addGap(5, 5, 5))
         );
 
-        professorComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administração Financeira", "Álgebra Linear", "Análise de Algoritmo", "Análise de Sistemas", "Análise Empresarial e Admin.", "Banco de Dados I", "Banco de Dados II", "Cálculo Diferenc. e Integral I", "Cálculo Diferenc. e Integral II", "Desenvolv. de Páginas Web", "Empreendedorismo", "Estatística", "Estruturas de Dados I", "Estruturas de Dados II", "Estruturas Discretas", "Fund. de Sist. de Informação", "Gerência de Proj. de Informat.", "Interação Humano Computador", "Introdução à Lógica Computac.", "Linguag. Formais e Autômatos", "Matemática Básica", "Organização de Computadores", "Probabilidade", "Processos de Software", "Programação Modular", "Projeto de Graduação I", "Projeto de Graduação II", "Proj. e Const. de Sistemas", "Proj. Const. Sistemas-SGBD", "Redes de Computadores I", "Redes de Computadores II", "Sistemas Operacionais", "Técnicas de Programação I", "Técnicas de Programação II", "Teorias e Práticas Discursivas" }));
-        professorComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                professorComboBoxActionPerformed(evt);
-            }
-        });
+        professorLabelFixo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        professorLabelFixo.setText("Professor:");
 
-        professorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        professorLabel.setText("Professor:");
+        professorLabelDisciplina.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        professorLabelDisciplina.setText("Professor");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -343,17 +345,18 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(professorLabel)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(professorComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(professorLabelFixo)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(professorLabelDisciplina)
+                                            .addGap(122, 122, 122))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel22)
+                                            .addComponent(disciplinaLabelFixo)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(disciplinaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel25)
@@ -366,7 +369,7 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
                         .addGap(151, 151, 151)
                         .addComponent(cancelarBotao)
                         .addGap(66, 66, 66)
-                        .addComponent(atualizarBotao)
+                        .addComponent(exportarBotao)
                         .addGap(59, 59, 59)
                         .addComponent(enviarBotao)))
                 .addGap(79, 79, 79))
@@ -396,17 +399,17 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(disciplinaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel22)
+                        .addComponent(disciplinaLabelFixo)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(professorLabel)
-                            .addComponent(professorComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(professorLabelFixo)
+                            .addComponent(professorLabelDisciplina))))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -420,7 +423,7 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelarBotao)
-                    .addComponent(atualizarBotao)
+                    .addComponent(exportarBotao)
                     .addComponent(enviarBotao))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -440,16 +443,45 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void preencherCampos() {
+        emailTecnico.setText(tecnico.getEmail());
+        nomeCompletoTecnico.setText(tecnico.getNome());
+        siapeTecnico.setText(tecnico.getSiape());
+        //telefoneCelTecnico.setText(tecnico.getTelefoneCelular()); DANDO NULL!?
+        dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
+        
+    }
+    
+      private void preencherTela(){
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        String titulo = this.getTitle();
+        System.out.println(titulo);
+        dataFechamentoLabel.setVisible(false);
+        dataFechamentoFixo.setVisible(false);
+        professorLabelFixo.setVisible(false);
+        professorLabelDisciplina.setVisible(false);
+        if(titulo.equals("Realização de segunda chamada")
+            || titulo.equals("Revisão de prova")
+            || titulo.equals("Isenção ou aproveitamento de disciplina")){
+            disciplinaLabelFixo.setVisible(true);
+            disciplinaComboBox.setVisible(true);
+            anexo1.setVisible(true);
+            anexo2.setVisible(true);
+        }
+        else{         
+            disciplinaLabelFixo.setVisible(false);
+            disciplinaComboBox.setVisible(false);
+            anexo1.setVisible(false);
+            anexo2.setVisible(false);
+            this.setBounds(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2, 700, 500);
+               
+        }
+    }
     private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
 
-
-    private void professorComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_professorComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_professorComboBoxActionPerformed
 
     private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
 //        ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
@@ -458,9 +490,9 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
 //        this.dispose();
     }//GEN-LAST:event_enviarBotaoActionPerformed
 
-    private void atualizarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoActionPerformed
+    private void exportarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportarBotaoActionPerformed
         PopupComentario janelaComentario = new PopupComentario(tecnico.getCpf(), tecnico.getSenha());
-        janelaComentario.setVisible(true);    }//GEN-LAST:event_atualizarBotaoActionPerformed
+        janelaComentario.setVisible(true);    }//GEN-LAST:event_exportarBotaoActionPerformed
 
     private void cancelarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoActionPerformed
         TelaSecretaria janelaTelaSecretaria = new TelaSecretaria(tecnico);
@@ -537,25 +569,27 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton atualizarBotao;
+    private javax.swing.JPanel anexo1;
+    private javax.swing.JPanel anexo2;
     private javax.swing.JButton cancelarBotao;
+    private javax.swing.JLabel dataAberturaLabel;
+    private javax.swing.JLabel dataFechamentoFixo;
+    private javax.swing.JLabel dataFechamentoLabel;
+    private javax.swing.JComboBox disciplinaComboBox;
+    private javax.swing.JLabel disciplinaLabelFixo;
     private javax.swing.JLabel emailTecnico;
     private javax.swing.JButton enviarBotao;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JButton exportarBotao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -563,15 +597,13 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel nomeCompletoTecnico;
-    private javax.swing.JComboBox professorComboBox;
-    private javax.swing.JLabel professorLabel;
+    private javax.swing.JLabel professorLabelDisciplina;
+    private javax.swing.JLabel professorLabelFixo;
     private javax.swing.JLabel siapeTecnico;
     private javax.swing.JLabel telefoneCelTecnico;
     // End of variables declaration//GEN-END:variables

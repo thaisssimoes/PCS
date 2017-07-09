@@ -9,7 +9,12 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.JList;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import model.entity.Aluno;
 import model.requerimento.Requerimento;
 
@@ -38,6 +43,7 @@ public class TelaAluno extends javax.swing.JFrame {
         initComponents();
         this.aluno = aluno;
         preencherCampos();
+        popularRequerimentos();
         centralizarTela();
         
     }
@@ -65,7 +71,7 @@ public class TelaAluno extends javax.swing.JFrame {
         lista = new javax.swing.JList<String>();
         painelTelaAluno = new javax.swing.JTabbedPane();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tabelaRequerimentoAluno = new javax.swing.JTable();
         verDadosCompletos = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         nomeCompletoAlunoLabel = new javax.swing.JLabel();
@@ -93,7 +99,7 @@ public class TelaAluno extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Lao MN", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Requerimentos em aberto");
+        jLabel2.setText("Requerimentos em triagem");
 
         jLabel6.setFont(new java.awt.Font("Malayalam MN", 0, 48)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,7 +119,7 @@ public class TelaAluno extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Lao MN", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Requerimentos em análise");
+        jLabel10.setText("Requerimentos designados");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -126,21 +132,22 @@ public class TelaAluno extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(114, 114, 114)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(207, 207, 207)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addGap(42, 42, 42)
-                        .addComponent(jLabel7)))
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(86, 86, 86)))
                 .addGap(65, 65, 65)
                 .addComponent(jLabel5))
         );
@@ -188,7 +195,7 @@ public class TelaAluno extends javax.swing.JFrame {
 
         painelTelaAluno.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaRequerimentoAluno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -196,10 +203,15 @@ public class TelaAluno extends javax.swing.JFrame {
                 "Protocolo", "Tipo", "Status"
             }
         ));
-        jTable2.setColumnSelectionAllowed(true);
-        jTable2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane4.setViewportView(jTable2);
-        jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabelaRequerimentoAluno.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabelaRequerimentoAluno.setUpdateSelectionOnSort(false);
+        tabelaRequerimentoAluno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaRequerimentoAlunoMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(tabelaRequerimentoAluno);
+        tabelaRequerimentoAluno.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         painelTelaAluno.addTab("Meus Requerimentos em aberto", jScrollPane4);
 
@@ -376,7 +388,7 @@ public class TelaAluno extends javax.swing.JFrame {
 
     private void popularRequerimentos() {
 
-        DefaultTableModel model = (DefaultTableModel) painelTelaAluno.getModel();
+        DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoAluno.getModel();
         ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoCPF(aluno.getCpf());
         Object rowData[] = new Object[3];
         for (int i = 0; i < requerimentos.size(); i++) {
@@ -384,6 +396,7 @@ public class TelaAluno extends javax.swing.JFrame {
             rowData[1] = requerimentos.get(i).getTipoRequerimento();
             rowData[2] = requerimentos.get(i).getStatus();
             model.addRow(rowData);
+//            System.out.println(requerimentos.get(i));
         }
     }
 
@@ -397,21 +410,20 @@ public class TelaAluno extends javax.swing.JFrame {
         JList list = (JList) evt.getSource();
         titulo = (String) list.getSelectedValue();
         if (evt.getClickCount() == 2) {
-            if (!titulo.equals("Realização de segunda chamada")
-                    && !titulo.equals("Revisão de prova")
-                    && !titulo.equals("Isenção ou aproveitamento de disciplina")) {
-                RequerimentoGeralAluno janelaRequerimento = new RequerimentoGeralAluno(aluno);
+//            if (!titulo.equals("Realização de segunda chamada")
+//                    && !titulo.equals("Revisão de prova")
+//                    && !titulo.equals("Isenção ou aproveitamento de disciplina")) {
+//                RequerimentoGeralAluno janelaRequerimento = new RequerimentoGeralAluno(aluno);
+//                janelaRequerimento.setVisible(true);
+//                janelaRequerimento.setTitle(titulo);
+//                this.setVisible(false);
+//                this.dispose();
+//            } else {
+                RequerimentoGeralAnexoAluno janelaRequerimento = new RequerimentoGeralAnexoAluno(aluno, titulo);
                 janelaRequerimento.setVisible(true);
-                janelaRequerimento.setTitle(titulo);
                 this.setVisible(false);
                 this.dispose();
-            } else {
-                RequerimentoGeralAnexoAluno janelaRequerimento = new RequerimentoGeralAnexoAluno(aluno);
-                janelaRequerimento.setVisible(true);
-                janelaRequerimento.setTitle(titulo);
-                this.setVisible(false);
-                this.dispose();
-            }
+//            }
 
         }
 
@@ -433,6 +445,22 @@ public class TelaAluno extends javax.swing.JFrame {
     private void quadradoAtualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quadradoAtualizarMouseClicked
         popularRequerimentos();
     }//GEN-LAST:event_quadradoAtualizarMouseClicked
+
+    private void tabelaRequerimentoAlunoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaRequerimentoAlunoMouseClicked
+        tabelaRequerimentoAluno = (JTable) evt.getSource();
+        TableModel modelo = new DefaultTableModel(){ 
+        @Override
+        public boolean isCellEditable(int rowIndex, int mColIndex) {  
+                return false;  
+            } 
+        };
+        if (evt.getClickCount() == 2) {
+            
+        }
+        
+        
+        
+    }//GEN-LAST:event_tabelaRequerimentoAlunoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -490,13 +518,13 @@ public class TelaAluno extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable2;
     private javax.swing.JList<String> lista;
     private javax.swing.JLabel matriculaAlunoLabel;
     private javax.swing.JLabel nomeCompletoAlunoLabel;
     private javax.swing.JTabbedPane painelTelaAluno;
     private javax.swing.JPanel quadradoAtualizar;
     private javax.swing.JLabel setinhaAtualizar;
+    private javax.swing.JTable tabelaRequerimentoAluno;
     private javax.swing.JLabel telefoneAlunoLabel;
     private javax.swing.JLabel verDadosCompletos;
     // End of variables declaration//GEN-END:variables
