@@ -173,8 +173,8 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="263" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="checkRelatorio" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="checkReconhecimento" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkComprovante" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkAfastamento" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="areaAnexo1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
@@ -325,9 +325,9 @@
                           <Component id="areaAnexo2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="checkRelatorio" min="-2" max="-2" attributes="0"/>
+                      <Component id="checkComprovante" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="checkReconhecimento" min="-2" max="-2" attributes="0"/>
+                      <Component id="checkAfastamento" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" pref="36" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="cancelarBotao" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -633,15 +633,15 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JCheckBox" name="checkRelatorio">
+            <Component class="javax.swing.JCheckBox" name="checkComprovante">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comprovante do evento"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkRelatorioActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkComprovanteActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="checkReconhecimento">
+            <Component class="javax.swing.JCheckBox" name="checkAfastamento">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Plano de afastamento"/>
               </Properties>
@@ -908,29 +908,17 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField2"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField3">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField3"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField4">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField4"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField5">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField5"/>
-              </Properties>
             </Component>
             <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker1">
             </Component>

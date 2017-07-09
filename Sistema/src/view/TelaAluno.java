@@ -5,6 +5,7 @@
  */
 package view;
 
+import static controller.Gerenciador.buscarRequerimentoProtocolo;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -339,7 +340,6 @@ public class TelaAluno extends javax.swing.JFrame {
             rowData[1] = requerimentos.get(i).getTipoRequerimento();
             rowData[2] = requerimentos.get(i).getStatus();
             model.addRow(rowData);
-//            System.out.println(requerimentos.get(i));
         }
     }
 
@@ -391,14 +391,15 @@ public class TelaAluno extends javax.swing.JFrame {
 
     private void tabelaRequerimentoAlunoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaRequerimentoAlunoMouseClicked
         tabelaRequerimentoAluno = (JTable) evt.getSource();
-        TableModel modelo = new DefaultTableModel(){ 
-        @Override
-        public boolean isCellEditable(int rowIndex, int mColIndex) {  
-                return false;  
-            } 
-        };
+        
         if (evt.getClickCount() == 2) {
-            
+            int numeroLinha = tabelaRequerimentoAluno.getSelectedRow();
+            String numeroProtocolo = (String) tabelaRequerimentoAluno.getValueAt(numeroLinha,0);
+            String tipoRequerimento =(String) tabelaRequerimentoAluno.getValueAt(numeroLinha,1);
+            ArrayList<Requerimento> requerimento = buscarRequerimentoProtocolo(numeroProtocolo);
+            RequerimentoGeralAnexoAlunoLeitura requerimentoAlunoLeitura;
+            requerimentoAlunoLeitura = new RequerimentoGeralAnexoAlunoLeitura(requerimento.get(0),tipoRequerimento);
+            requerimentoAlunoLeitura.setVisible(true);
         }
         
         

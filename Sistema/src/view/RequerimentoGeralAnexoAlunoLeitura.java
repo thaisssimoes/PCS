@@ -14,36 +14,39 @@ import static java.time.temporal.TemporalQueries.localDate;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import model.entity.Aluno;
-import model.entity.Professor;
+import model.entity.Usuario;
 import model.requerimento.Requerimento;
 
 /**
  *
  * @author labccet
  */
-public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
+public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
 
     /**
      * Creates new form telaAluno
      */
-    public RequerimentoGeralAnexoProfessor() {
+    public RequerimentoGeralAnexoAlunoLeitura() {
         initComponents();
+        criarRequerimento();
         preencherTela();
 
         dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
         dataFechamentoFixo.setVisible(false);
         dataFechamentoLabel.setVisible(false);
+        professorLabelDisciplina.setVisible(false);
     }
+    //Aluno aluno;
     Requerimento requerimento;
-    Aluno aluno;
-    Professor professor;
-    public RequerimentoGeralAnexoProfessor(Requerimento requerimento, String titulo, Professor professor) {
+    Usuario aluno;
+  
+    public RequerimentoGeralAnexoAlunoLeitura(Requerimento requerimento, String titulo) {
         this.setTitle(titulo);
         initComponents();
-        this.professor = professor;
         this.requerimento = requerimento;
+        this.aluno = requerimento.getRequerente();
         preencherTela();
-        preencherCampos();
+        preencherCamposLeitura();
         centralizarTela();
     }
 
@@ -81,10 +84,9 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         descricaoAreaTexto = new javax.swing.JTextArea();
         jLabel25 = new javax.swing.JLabel();
         voltarBotao = new javax.swing.JButton();
-        rejeitarBotao = new javax.swing.JButton();
         disciplinaLabelFixo = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        respostaAreaTexo = new javax.swing.JTextArea();
+        respostaAreaTexto = new javax.swing.JTextArea();
         jLabel29 = new javax.swing.JLabel();
         anexo2 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
@@ -92,9 +94,10 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         anexo1 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        professorLabelFixo = new javax.swing.JLabel();
+        professorLabelDisciplina = new javax.swing.JLabel();
         disciplinaLabel = new javax.swing.JLabel();
-        pendenciaBotao = new javax.swing.JButton();
-        aceitarBotao = new javax.swing.JButton();
+        atualizarBotao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -228,29 +231,20 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         voltarBotao.setBackground(new java.awt.Color(56, 113, 156));
         voltarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         voltarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        voltarBotao.setText("voltar");
+        voltarBotao.setText("Voltar");
         voltarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 voltarBotaoActionPerformed(evt);
             }
         });
 
-        rejeitarBotao.setBackground(new java.awt.Color(56, 113, 156));
-        rejeitarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        rejeitarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        rejeitarBotao.setText("Rejeitar");
-        rejeitarBotao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rejeitarBotaoActionPerformed(evt);
-            }
-        });
-
         disciplinaLabelFixo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         disciplinaLabelFixo.setText("Disciplina:");
 
-        respostaAreaTexo.setColumns(20);
-        respostaAreaTexo.setRows(5);
-        jScrollPane2.setViewportView(respostaAreaTexo);
+        respostaAreaTexto.setColumns(20);
+        respostaAreaTexto.setRows(5);
+        respostaAreaTexto.setEnabled(false);
+        jScrollPane2.setViewportView(respostaAreaTexto);
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel29.setText("Resposta:");
@@ -305,26 +299,22 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
                 .addGap(5, 5, 5))
         );
 
+        professorLabelFixo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        professorLabelFixo.setText("Professor:");
+
+        professorLabelDisciplina.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        professorLabelDisciplina.setText("Professor");
+
         disciplinaLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         disciplinaLabel.setText("Disciplina");
 
-        pendenciaBotao.setBackground(new java.awt.Color(56, 113, 156));
-        pendenciaBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        pendenciaBotao.setForeground(new java.awt.Color(255, 255, 255));
-        pendenciaBotao.setText("Pendência");
-        pendenciaBotao.addActionListener(new java.awt.event.ActionListener() {
+        atualizarBotao.setBackground(new java.awt.Color(56, 113, 156));
+        atualizarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        atualizarBotao.setForeground(new java.awt.Color(255, 255, 255));
+        atualizarBotao.setText("Voltar");
+        atualizarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pendenciaBotaoActionPerformed(evt);
-            }
-        });
-
-        aceitarBotao.setBackground(new java.awt.Color(56, 113, 156));
-        aceitarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        aceitarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        aceitarBotao.setText("Aceitar");
-        aceitarBotao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aceitarBotaoActionPerformed(evt);
+                atualizarBotaoActionPerformed(evt);
             }
         });
 
@@ -366,9 +356,16 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
                                         .addComponent(jLabel20))))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(disciplinaLabelFixo)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(disciplinaLabel)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(professorLabelFixo)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(professorLabelDisciplina))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(disciplinaLabelFixo)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(disciplinaLabel)
+                                            .addGap(115, 115, 115)))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -380,16 +377,11 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
                                     .addGap(41, 41, 41)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel29)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(atualizarBotao))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(voltarBotao)
-                        .addGap(19, 19, 19)
-                        .addComponent(pendenciaBotao)
-                        .addGap(18, 18, 18)
-                        .addComponent(rejeitarBotao)
-                        .addGap(18, 18, 18)
-                        .addComponent(aceitarBotao)))
+                        .addGap(220, 220, 220)
+                        .addComponent(voltarBotao)))
                 .addGap(79, 79, 79))
         );
         jPanel1Layout.setVerticalGroup(
@@ -417,15 +409,21 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17)
                             .addComponent(telefoneAlunoLabel))))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(disciplinaLabelFixo)
-                        .addComponent(disciplinaLabel)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(disciplinaLabelFixo)
+                            .addComponent(disciplinaLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(professorLabelFixo, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(professorLabelDisciplina))))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -438,12 +436,9 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(aceitarBotao)
-                    .addComponent(rejeitarBotao)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(voltarBotao)
-                        .addComponent(pendenciaBotao)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addComponent(voltarBotao)
+                    .addComponent(atualizarBotao))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -461,12 +456,18 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void preencherCampos() {
+
+     private void preencherCamposLeitura() {
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
-        matriculaAlunoLabel.setText(aluno.getMatricula());
+        //matriculaAlunoLabel.setText(aluno.getMatricula());
         telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
-        dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
+        dataAberturaLabel.setText(requerimento.getDataCriacao());
+        statusLabel.setText(requerimento.getStatus());
+        numeroProtocoloLabel.setText(requerimento.getNumeroProtocolo());
+        descricaoAreaTexto.setText(requerimento.getDescricao());
+        disciplinaLabel.setText(requerimento.getDisciplina());
+        respostaAreaTexto.setText(requerimento.getResposta());
         
     }
     
@@ -476,6 +477,8 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         System.out.println(titulo);
         dataFechamentoLabel.setVisible(false);
         dataFechamentoFixo.setVisible(false);
+        professorLabelFixo.setVisible(false);
+        professorLabelDisciplina.setVisible(false);
         if(titulo.equals("Realização de segunda chamada")
             || titulo.equals("Revisão de prova")
             || titulo.equals("Isenção ou aproveitamento de disciplina")){
@@ -489,7 +492,7 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
             disciplinaLabel.setVisible(false);
             anexo1.setVisible(false);
             anexo2.setVisible(false);
-            this.setBounds(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2, 700, 500);
+            this.setBounds(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2, 700, 550);
                
         }
     }
@@ -500,42 +503,45 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
     }
 
 
-    private void rejeitarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejeitarBotaoActionPerformed
-        PopupComentario janelaComentario = new PopupComentario();
-        janelaComentario.setVisible(true);
-        String comentario = janelaComentario.escreverComentario();
-        String resposta = requerimento.getResposta();
-        requerimento.setDescricao(resposta + "Nota de Rejeição:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
-
-    }//GEN-LAST:event_rejeitarBotaoActionPerformed
-
     private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
-        TelaProfessor janelaTelaProfessor = new TelaProfessor(professor);
-        janelaTelaProfessor.setVisible(true);
+       // TelaAluno janelaTelaAluno = new TelaAluno(aluno);
+       // janelaTelaAluno.setVisible(true);
         this.setVisible(false);
         this.dispose();
 
-
     }//GEN-LAST:event_voltarBotaoActionPerformed
 
-    private void pendenciaBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pendenciaBotaoActionPerformed
-            PopupComentario janelaComentario = new PopupComentario();
+    private void atualizarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoActionPerformed
+       PopupComentario janelaComentario = new PopupComentario();
         janelaComentario.setVisible(true);
         String comentario = janelaComentario.escreverComentario();
-        String resposta = requerimento.getResposta();
-        requerimento.setDescricao(resposta + "Nota de Pendência:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
-    }//GEN-LAST:event_pendenciaBotaoActionPerformed
+        String descricao = requerimento.getDescricao();
+        requerimento.setDescricao(descricao + "Nota de Atualização:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
 
-    private void aceitarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceitarBotaoActionPerformed
-        PopupComentario janelaComentario = new PopupComentario();
-        janelaComentario.setVisible(true);
-        String comentario = janelaComentario.escreverComentario();
-        String resposta = requerimento.getResposta();
-        requerimento.setDescricao(resposta + "Nota de Aceitação:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
-     }//GEN-LAST:event_aceitarBotaoActionPerformed
 
-    
- 
+    }//GEN-LAST:event_atualizarBotaoActionPerformed
+
+    private Requerimento criarRequerimento() {
+        Requerimento novoRequerimento = new Requerimento();
+        numeroProtocoloLabel.setText(novoRequerimento.getNumeroProtocolo());
+        novoRequerimento.setDataCriacao(LocalDate.now().toString());
+        novoRequerimento.setDescricao(descricaoAreaTexto.getText());
+        novoRequerimento.setRequerente(aluno);
+        novoRequerimento.setStatus("TRIAGEM");
+        novoRequerimento.setTipoRequerimento(this.getTitle());
+        return novoRequerimento;
+
+    }
+
+    private String encontrarAreaResponsavel() {
+        if (this.getTitle().equals("Cancelamento de matrícula")) {
+            return "Diretor";
+        } else if (this.getTitle().equals("Revisão de prova")) {
+            return "Chefe de Departamento";
+        } else {
+            return null;
+        }
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -551,13 +557,13 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoAlunoLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoAlunoLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoAlunoLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoAlunoLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -595,15 +601,15 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RequerimentoGeralAnexoProfessor().setVisible(true);
+                new RequerimentoGeralAnexoAlunoLeitura().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton aceitarBotao;
     private javax.swing.JPanel anexo1;
     private javax.swing.JPanel anexo2;
+    private javax.swing.JButton atualizarBotao;
     private javax.swing.JLabel dataAberturaLabel;
     private javax.swing.JLabel dataFechamentoFixo;
     private javax.swing.JLabel dataFechamentoLabel;
@@ -633,10 +639,10 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
     private javax.swing.JLabel matriculaAlunoLabel;
     private javax.swing.JLabel nomeCompletoAlunoLabel;
     private javax.swing.JLabel numeroProtocoloLabel;
-    private javax.swing.JButton pendenciaBotao;
     private javax.swing.JLabel periodoLabel;
-    private javax.swing.JButton rejeitarBotao;
-    private javax.swing.JTextArea respostaAreaTexo;
+    private javax.swing.JLabel professorLabelDisciplina;
+    private javax.swing.JLabel professorLabelFixo;
+    private javax.swing.JTextArea respostaAreaTexto;
     private javax.swing.JLabel statusLabel;
     private javax.swing.JLabel telefoneAlunoLabel;
     private javax.swing.JButton voltarBotao;

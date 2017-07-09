@@ -31,10 +31,11 @@ public class TelaProfessor extends javax.swing.JFrame {
         centralizarTela();
 
     }
-
+    Professor professor;
     public TelaProfessor(Professor professor) {
 
         initComponents();
+        this.professor = professor;
         visibilidadeAbaProfessor("Decano");
         centralizarTela();
 
@@ -430,17 +431,17 @@ public class TelaProfessor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-//    private void popularMeusRequerimentos(){ 
-//        DefaultTableModel model = (DefaultTableModel) tabelaMeusRequerimentos.getModel();
-//        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoCPF(aluno.getCpf());
-//        Object rowData[] = new Object[3];
-//        for (int i = 0; i < requerimentos.size(); i++) {
-//            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
-//            rowData[1] = requerimentos.get(i).getTipoRequerimento();
-//            rowData[2] = requerimentos.get(i).getStatus();
-//            model.addRow(rowData);
-//        }
-//    }
+    private void popularMeusRequerimentos(){ 
+        DefaultTableModel model = (DefaultTableModel) tabelaMeusRequerimentos.getModel();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoCPF(professor.getCpf());
+        Object rowData[] = new Object[3];
+        for (int i = 0; i < requerimentos.size(); i++) {
+            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+            rowData[1] = requerimentos.get(i).getTipoRequerimento();
+            rowData[2] = requerimentos.get(i).getStatus();
+            model.addRow(rowData);
+        }
+    }
 //    private void popularRequerimentosAlunos(){
 //     DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoAlunos.getModel();
 //        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoCPF(aluno.getCpf());

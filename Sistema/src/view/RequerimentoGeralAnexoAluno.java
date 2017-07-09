@@ -44,7 +44,14 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         this.aluno = aluno;
         preencherTela();
         requerimento = criarRequerimento();
-        preencherCampos();
+        preencherCamposEscrita();
+        centralizarTela();
+    }
+    public RequerimentoGeralAnexoAluno(Requerimento requerimento, String titulo) {
+        this.setTitle(titulo);
+        initComponents();
+        preencherTela();
+        preencherCamposLeitura();
         centralizarTela();
     }
 
@@ -465,12 +472,22 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void preencherCampos() {
+    private void preencherCamposEscrita() {
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
         matriculaAlunoLabel.setText(aluno.getMatricula());
         telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
         dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
+        
+    }
+    
+     private void preencherCamposLeitura() {
+        Aluno aluno =  (Aluno)requerimento.getRequerente();
+        emailAlunoLabel.setText(aluno.getEmail());
+        nomeCompletoAlunoLabel.setText(aluno.getNome());
+        matriculaAlunoLabel.setText(aluno.getMatricula());
+        telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
+        dataAberturaLabel.setText(requerimento.getDataCriacao());
         
     }
     

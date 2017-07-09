@@ -73,8 +73,8 @@ public class PedidoAfastamento extends javax.swing.JFrame {
         areaAnexo1 = new javax.swing.JPanel();
         imagemAnexo1 = new javax.swing.JLabel();
         anexo1 = new javax.swing.JLabel();
-        checkRelatorio = new javax.swing.JCheckBox();
-        checkReconhecimento = new javax.swing.JCheckBox();
+        checkComprovante = new javax.swing.JCheckBox();
+        checkAfastamento = new javax.swing.JCheckBox();
         jLabel12 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -287,14 +287,14 @@ public class PedidoAfastamento extends javax.swing.JFrame {
                 .addGap(5, 5, 5))
         );
 
-        checkRelatorio.setText("Comprovante do evento");
-        checkRelatorio.addActionListener(new java.awt.event.ActionListener() {
+        checkComprovante.setText("Comprovante do evento");
+        checkComprovante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkRelatorioActionPerformed(evt);
+                checkComprovanteActionPerformed(evt);
             }
         });
 
-        checkReconhecimento.setText("Plano de afastamento");
+        checkAfastamento.setText("Plano de afastamento");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setText("SIAPE:");
@@ -387,15 +387,11 @@ public class PedidoAfastamento extends javax.swing.JFrame {
         jLabel38.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel38.setText("Justificativa:");
 
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
-
-        jTextField3.setText("jTextField3");
-
-        jTextField4.setText("jTextField4");
-
-        jTextField5.setText("jTextField5");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -480,8 +476,8 @@ public class PedidoAfastamento extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(263, 263, 263)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(checkRelatorio)
-                                .addComponent(checkReconhecimento)
+                                .addComponent(checkComprovante)
+                                .addComponent(checkAfastamento)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(areaAnexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(21, 21, 21)
@@ -596,9 +592,9 @@ public class PedidoAfastamento extends javax.swing.JFrame {
                     .addComponent(areaAnexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(areaAnexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(checkRelatorio)
+                .addComponent(checkComprovante)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(checkReconhecimento)
+                .addComponent(checkAfastamento)
                 .addGap(18, 36, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelarBotao)
@@ -635,12 +631,22 @@ public class PedidoAfastamento extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_categoriaComboBoxActionPerformed
 
-    private void checkRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkRelatorioActionPerformed
+    private void checkComprovanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkComprovanteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_checkRelatorioActionPerformed
+    }//GEN-LAST:event_checkComprovanteActionPerformed
 
     private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
-        
+            if((checkComprovante.isSelected())&& (checkAfastamento.isSelected())){
+//                   ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
+//                   janelaConfirmacao.setVisible(true);
+                this.setVisible(false);
+                this.dispose();
+            } 
+            else{
+                PreenchaDadosPopUp dadosIncompletos = new PreenchaDadosPopUp();
+                dadosIncompletos.setVisible(true);
+        }
+           
     }//GEN-LAST:event_enviarBotaoActionPerformed
 
     private void cancelarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoActionPerformed
@@ -648,6 +654,10 @@ public class PedidoAfastamento extends javax.swing.JFrame {
         telaProfessor.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelarBotaoActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
 private void teste(){
 //    Calendar calendar = calendario.getMonthView().getCalendar();
 //    // starting today if we are in a hurry
@@ -1223,8 +1233,8 @@ private void teste(){
     private javax.swing.JComboBox categoriaComboBox;
     private javax.swing.JComboBox centroComboBox;
     private javax.swing.JComboBox centroComboBox1;
-    private javax.swing.JCheckBox checkReconhecimento;
-    private javax.swing.JCheckBox checkRelatorio;
+    private javax.swing.JCheckBox checkAfastamento;
+    private javax.swing.JCheckBox checkComprovante;
     private javax.swing.JLabel emailAlunoLabel;
     private javax.swing.JButton enviarBotao;
     private javax.swing.JComboBox escolaComboBox;
