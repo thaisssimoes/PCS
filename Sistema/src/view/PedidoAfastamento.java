@@ -114,7 +114,7 @@ public class PedidoAfastamento extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
 
         barraRolagem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -220,7 +220,7 @@ public class PedidoAfastamento extends javax.swing.JFrame {
         cancelarBotao.setBackground(new java.awt.Color(56, 113, 156));
         cancelarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cancelarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        cancelarBotao.setText("Cancelar");
+        cancelarBotao.setText("Voltar");
         cancelarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarBotaoActionPerformed(evt);

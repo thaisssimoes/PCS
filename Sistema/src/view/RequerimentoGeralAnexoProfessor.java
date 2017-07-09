@@ -96,7 +96,7 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         pendenciaBotao = new javax.swing.JButton();
         aceitarBotao = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

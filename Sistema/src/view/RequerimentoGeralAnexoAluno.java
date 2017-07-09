@@ -99,7 +99,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         professorLabelFixo = new javax.swing.JLabel();
         professorLabelDisciplina = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -240,7 +240,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         cancelarBotao.setBackground(new java.awt.Color(56, 113, 156));
         cancelarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cancelarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        cancelarBotao.setText("Cancelar");
+        cancelarBotao.setText("Voltar");
         cancelarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarBotaoActionPerformed(evt);

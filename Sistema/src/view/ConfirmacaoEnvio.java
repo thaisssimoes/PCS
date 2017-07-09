@@ -49,7 +49,7 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
         naoBotaoConfirmacao = new javax.swing.JButton();
         simBotaoConfirmacao = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
