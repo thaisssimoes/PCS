@@ -5,11 +5,13 @@
  */
 package view;
 
+import static controller.Gerenciador.buscarRequerimentoProtocolo;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import model.entity.Tecnico;
@@ -159,7 +161,13 @@ public class TelaSecretaria extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tabelaTriagem.setColumnSelectionAllowed(true);
+        tabelaTriagem.setCellSelectionEnabled(false);
+        tabelaTriagem.setRowSelectionAllowed(true);
+        tabelaTriagem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaTriagemMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(tabelaTriagem);
         tabelaTriagem.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
@@ -372,6 +380,19 @@ public class TelaSecretaria extends javax.swing.JFrame {
         popularRequerimentos();
         popularRequerimentosTriagem();        
     }//GEN-LAST:event_quadradoAtualizacaoMouseClicked
+
+    private void tabelaTriagemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaTriagemMouseClicked
+        tabelaTriagem = (JTable) evt.getSource();
+        
+        if (evt.getClickCount() == 2) {
+            int numeroLinha = tabelaTriagem.getSelectedRow();
+            String numeroProtocolo = (String) tabelaTriagem.getValueAt(numeroLinha,0);
+            String tipoRequerimento =(String) tabelaTriagem.getValueAt(numeroLinha,1);
+            ArrayList<Requerimento> requerimento = buscarRequerimentoProtocolo(numeroProtocolo);
+            RequerimentoGeralAnexoAlunoLeitura requerimentoAlunoLeitura;
+            requerimentoAlunoLeitura = new RequerimentoGeralAnexoAlunoLeitura(requerimento.get(0),tipoRequerimento);
+            requerimentoAlunoLeitura.setVisible(true);
+        }    }//GEN-LAST:event_tabelaTriagemMouseClicked
 
     
     private void popularRequerimentosTriagem() {
