@@ -128,8 +128,7 @@ public class ConfirmacaoEnvio extends javax.swing.JFrame {
     }//GEN-LAST:event_simBotaoConfirmacaoActionPerformed
 
     private void naoBotaoConfirmacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naoBotaoConfirmacaoActionPerformed
-        RequerimentoGeralAluno requerimentoGeralAluno = new RequerimentoGeralAluno(aluno.getCpf(), aluno.getSenha());
-        requerimentoGeralAluno.setVisible(true);
+
         this.setVisible(false);
         this.dispose();
         
