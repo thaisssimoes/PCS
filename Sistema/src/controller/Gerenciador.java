@@ -155,6 +155,12 @@ public class Gerenciador {
             xml.adiciona(requerimento);
             xml.escreveXML();
         }
+        else if (requerimento.getStatus().equals("PENDENTE")) {
+            ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
+            xml.leXML();
+            xml.adiciona(requerimento);
+            xml.escreveXML();
+        }
     }
 
     public static Aluno obterAluno(String cpf, String senha) {

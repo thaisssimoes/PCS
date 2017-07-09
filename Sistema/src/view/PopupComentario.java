@@ -22,15 +22,10 @@ public class PopupComentario extends javax.swing.JFrame {
      */
     public PopupComentario() {
         initComponents();
-    }
-    Aluno aluno;
-
-    public PopupComentario(String cpf, String senha) {
-        initComponents();
-        aluno = obterAluno(cpf, senha);
         centralizarTela();
 
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,7 +38,7 @@ public class PopupComentario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        comentarioAreaTexto = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         okBotaoComentario = new javax.swing.JButton();
         cancelarBotaoComentario = new javax.swing.JButton();
@@ -52,9 +47,9 @@ public class PopupComentario extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        comentarioAreaTexto.setColumns(20);
+        comentarioAreaTexto.setRows(5);
+        jScrollPane1.setViewportView(comentarioAreaTexto);
 
         jLabel1.setText("Adicionar comentário:");
 
@@ -126,6 +121,7 @@ public class PopupComentario extends javax.swing.JFrame {
     
     
     private void okBotaoComentarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoComentarioActionPerformed
+        escreverComentario();
         this.setVisible(false);
         this.dispose();
         //TODO: Colocar a leitura do XML
@@ -136,7 +132,9 @@ public class PopupComentario extends javax.swing.JFrame {
         this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelarBotaoComentarioActionPerformed
-
+    public String escreverComentario(){
+        return comentarioAreaTexto.getText();
+    }
     /**
      * @param args the command line arguments
      */
@@ -175,10 +173,10 @@ public class PopupComentario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelarBotaoComentario;
+    private javax.swing.JTextArea comentarioAreaTexto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton okBotaoComentario;
     // End of variables declaration//GEN-END:variables
 }
