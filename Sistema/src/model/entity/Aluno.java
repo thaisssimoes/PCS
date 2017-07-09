@@ -35,5 +35,4 @@ public class Aluno extends Usuario {
         this.matricula = matricula;
         this.periodo = periodo;
     }
-
 }
