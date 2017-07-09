@@ -7,7 +7,6 @@ import model.entity.Aluno;
 
 import model.entity.Professor;
 
-
 import model.requerimento.Requerimento;
 
 public class Gerenciador {
@@ -58,7 +57,7 @@ public class Gerenciador {
 //          estadoCivil, sexo, nomeDaMae, nomeDoPai, deficiencia, tipoDeEndereco, 
 //          tipoLogradouro, logradouro, complemento, estado, telefoneResidencial, 
 //          bairro, cidade, telefoneCelular, numero, cep, pais);
-        */ 
+         */
         Professor prof = new Professor("123456", "Regime3", "Classe3", "Doutora", "Decano",
                 "99900011122", "123", "Ada Augusta King", "10/12/1815",
                 "Inglesa", "ada.lovelace@uniriotec.br",
@@ -83,20 +82,20 @@ public class Gerenciador {
                 "42", "22233356", "Alemanha");
         ManipuladorXML manipulador2 = new ManipuladorXML("Professors.xml");
         ArrayList<Professor> lista2;
-        
+
         prof.getGrade().add("Administração Financeira");
         prof.getGrade().add("Estatística");
         prof.getGrade().add("Gerência de Proj. de Informat.");
         prof.getGrade().add("Probabilidade");
-        
+
         prof2.getGrade().add("Processos de Software");
         prof2.getGrade().add("Programação Modular");
         prof2.getGrade().add("Proj. Const. Sistemas-SGBD");
-               
+
         prof3.getGrade().add("Técnicas de Programação I");
         prof3.getGrade().add("Teorias e Práticas Discursivas");
         prof3.getGrade().add("Técnicas de Programação II");
-        
+
         manipulador2.adiciona(prof);
         manipulador2.adiciona(prof2);
         manipulador2.adiciona(prof3);
@@ -108,7 +107,7 @@ public class Gerenciador {
             System.out.println(lista2.get(i2).getEmail());
 
         }
-/*
+        /*
         //(siape, cpf, senha, nome, dataNascimeto, 
         // nacionalidade, email, estadoCivil, sexo, nomeDaMae, nomeDoPai, 
         // deficiencia, tipoDeEndereco, tipoLogradouro, logradouro, 
@@ -219,6 +218,7 @@ public class Gerenciador {
         }
         return professorObtido;
     }
+
     public static Professor obterProfessorCargo(String cargo) {
         ArrayList<Professor> lista;
         Professor professorObtido;
@@ -234,7 +234,6 @@ public class Gerenciador {
         }
         return professorObtido;
     }
-    
 
     public static ArrayList<Requerimento> buscarTriagem() {
         ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
