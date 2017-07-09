@@ -14,10 +14,10 @@ import static java.time.temporal.TemporalQueries.localDate;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import model.entity.Aluno;
-<<<<<<< HEAD
-=======
+
+
 import model.requerimento.Requerimento;
->>>>>>> 5992182e4a0979ec28117d526c9740a487f46f84
+
 
 /**
  *

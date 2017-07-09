@@ -219,8 +219,24 @@ public class Gerenciador {
         }
         return professorObtido;
     }
+    public static Professor obterProfessorCargo(String cargo) {
+        ArrayList<Professor> lista;
+        Professor professorObtido;
+        professorObtido = null;
+        ManipuladorXML manipulador = new ManipuladorXML("Professors.xml");
+        manipulador.leXML();
+        lista = manipulador.getLista();
+        for (int i = 0; i < lista.size(); i++) {
+            if ((lista.get(i).getCargo().equals(cargo))) {
+                professorObtido = lista.get(i);
+                return professorObtido;
+            }
+        }
+        return professorObtido;
+    }
+    
 
-    private static ArrayList<Requerimento> buscarTriagem() {
+    public static ArrayList<Requerimento> buscarTriagem() {
         ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
         xml.leXML();
         ArrayList<Requerimento> lista = xml.getLista();
@@ -234,7 +250,7 @@ public class Gerenciador {
         return listaRetorno;
     }
 
-    private static ArrayList<Requerimento> buscarRequerimentoCPF(String cpf) {
+    public static ArrayList<Requerimento> buscarRequerimentoCPF(String cpf) {
         ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
         xml.leXML();
         ArrayList<Requerimento> lista = xml.getLista();

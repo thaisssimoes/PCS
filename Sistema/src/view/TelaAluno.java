@@ -360,7 +360,7 @@ public class TelaAluno extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) painelTelaAluno.getModel();
         ArrayList<Requerimento> requerimentos = buscarRequerimentoCPF(aluno.getCpf());
         Object rowData[] = new Object[3];
-        for(int i<0; i < requerimentos.size(); i++){
+        for(int i = 0; i < requerimentos.size(); i++){
             rowData[0]= requerimentos.getNumeroProtocolo();
             rowData[1]= requerimentos.getTipoRequerimento();
             rowData[2]=requerimentos.getStatus();
