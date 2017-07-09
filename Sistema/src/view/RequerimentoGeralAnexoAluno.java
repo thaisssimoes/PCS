@@ -27,7 +27,6 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
      */
     public RequerimentoGeralAnexoAluno() {
         initComponents();
-        criarRequerimento();
         preencherTela();
 
         dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
@@ -36,22 +35,22 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         professorLabelDisciplina.setVisible(false);
     }
     Aluno aluno;
-    Requerimento requerimento;
+    Requerimento requerimento = new Requerimento();
 
     public RequerimentoGeralAnexoAluno(Aluno aluno, String titulo) {
         this.setTitle(titulo);
         initComponents();
         this.aluno = aluno;
         preencherTela();
-        requerimento = criarRequerimento();
         preencherCamposEscrita();
         centralizarTela();
     }
-    public RequerimentoGeralAnexoAluno(Requerimento requerimento, String titulo) {
+    public RequerimentoGeralAnexoAluno(String titulo) {
         this.setTitle(titulo);
         initComponents();
         preencherTela();
         preencherCamposLeitura();
+        criarRequerimento(requerimento);
         centralizarTela();
     }
 
@@ -524,11 +523,14 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
 
 
     private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
-
+        requerimento.setDescricao(this.descricaoAreaTexto.getText());
+        requerimento.setTipoRequerimento(this.getTitle());
+        requerimento.setAreaResponsavel(controller.Gerenciador.obterProfessorCargo(encontrarAreaResponsavel()));
+        requerimento.setDataCriacao(LocalDate.now().toString());
         ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno, requerimento);
         janelaConfirmacao.setVisible(true);
-        this.setVisible(false);
-        this.dispose();
+        
+      
     }//GEN-LAST:event_enviarBotaoActionPerformed
 
     private void atualizarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoActionPerformed
@@ -543,7 +545,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
 
     }//GEN-LAST:event_cancelarBotaoActionPerformed
 
-    private Requerimento criarRequerimento() {
+    private Requerimento criarRequerimento(Requerimento requerimento) {
         Requerimento novoRequerimento = new Requerimento();
         numeroProtocoloLabel.setText(novoRequerimento.getNumeroProtocolo());
         novoRequerimento.setDataCriacao(LocalDate.now().toString());
@@ -552,6 +554,8 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         novoRequerimento.setStatus("TRIAGEM");
         novoRequerimento.setTipoRequerimento(this.getTitle());
         return novoRequerimento;
+        
+       
 
     }
 
