@@ -6,7 +6,6 @@ import java.time.LocalDate;
 
 import lombok.Getter;
 import lombok.Setter;
-import model.entity.Disciplina;
 import model.entity.Usuario;
 
 public class RequerimentoAnexo {
@@ -41,11 +40,9 @@ public class RequerimentoAnexo {
     @Getter
     @Setter
     private File anexo;
-    @Getter
-    @Setter
-    private Disciplina disciplina;
 
-    public RequerimentoAnexo(Usuario requerente, Usuario areaResponsavel, String status, String descricao, LocalDate dataCriacao, LocalDate dataSolucao, String resposta, String tipoRequerimento, File anexo, Disciplina disciplina) {
+
+    public RequerimentoAnexo(Usuario requerente, Usuario areaResponsavel, String status, String descricao, LocalDate dataCriacao, LocalDate dataSolucao, String resposta, String tipoRequerimento, File anexo) {
         this.numeroProtocolo = gerarNumeroProtocolo();
         this.requerente = requerente;
         this.areaResponsavel = areaResponsavel;
@@ -56,8 +53,8 @@ public class RequerimentoAnexo {
         this.resposta = resposta;
         this.tipoRequerimento = tipoRequerimento;
         this.anexo = anexo;
-        this.disciplina = disciplina;
         
+
     }
 
     public RequerimentoAnexo() {
@@ -65,8 +62,14 @@ public class RequerimentoAnexo {
 
     }
 
+<<<<<<< HEAD
 
 private String gerarNumeroProtocolo() {
         return String.valueOf(System.currentTimeMillis());
+=======
+    private String gerarNumeroProtocolo() {
+        return String.valueOf(System.currentTimeMillis());
+
+>>>>>>> 4b45067ff4bd1be59e36e9c847f56cde9fc315b8
     }
 }

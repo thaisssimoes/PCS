@@ -1,19 +1,18 @@
 package controller;
 
 import dao.ManipuladorXML;
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 import model.entity.Aluno;
-import model.entity.Disciplina;
+
 import model.entity.Professor;
-import model.entity.Tecnico;
+
 
 import model.requerimento.Requerimento;
 
 public class Gerenciador {
 
     private static String REQUERIMENTO = "Requerimentos.xml";
-    private static String OBRIGATORIA = "Obrigatória";
 
     public static void main(String[] args) {
         /*
@@ -59,7 +58,7 @@ public class Gerenciador {
 //          estadoCivil, sexo, nomeDaMae, nomeDoPai, deficiencia, tipoDeEndereco, 
 //          tipoLogradouro, logradouro, complemento, estado, telefoneResidencial, 
 //          bairro, cidade, telefoneCelular, numero, cep, pais);
-         
+        */ 
         Professor prof = new Professor("123456", "Regime3", "Classe3", "Doutora", "Decano",
                 "99900011122", "123", "Ada Augusta King", "10/12/1815",
                 "Inglesa", "ada.lovelace@uniriotec.br",
@@ -84,19 +83,32 @@ public class Gerenciador {
                 "42", "22233356", "Alemanha");
         ManipuladorXML manipulador2 = new ManipuladorXML("Professors.xml");
         ArrayList<Professor> lista2;
-
+        
+        prof.getGrade().add("Administração Financeira");
+        prof.getGrade().add("Estatística");
+        prof.getGrade().add("Gerência de Proj. de Informat.");
+        prof.getGrade().add("Probabilidade");
+        
+        prof2.getGrade().add("Processos de Software");
+        prof2.getGrade().add("Programação Modular");
+        prof2.getGrade().add("Proj. Const. Sistemas-SGBD");
+               
+        prof3.getGrade().add("Técnicas de Programação I");
+        prof3.getGrade().add("Teorias e Práticas Discursivas");
+        prof3.getGrade().add("Técnicas de Programação II");
+        
         manipulador2.adiciona(prof);
         manipulador2.adiciona(prof2);
         manipulador2.adiciona(prof3);
         manipulador2.escreveXML();
         lista2 = manipulador2.getLista();
-        manipulador.leXML();
+        manipulador2.leXML();
 
         for (int i2 = 0; i2 < lista2.size(); i2++) {
             System.out.println(lista2.get(i2).getEmail());
 
         }
-
+/*
         //(siape, cpf, senha, nome, dataNascimeto, 
         // nacionalidade, email, estadoCivil, sexo, nomeDaMae, nomeDoPai, 
         // deficiencia, tipoDeEndereco, tipoLogradouro, logradouro, 
