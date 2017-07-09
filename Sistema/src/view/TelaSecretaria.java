@@ -40,8 +40,8 @@ public class TelaSecretaria extends javax.swing.JFrame {
         this.tecnico = tecnico;
         preencherCampos();
         centralizarTela();
-//        popularRequerimentosSecretaria();
-//        popularRequerimentos();
+        popularRequerimentosSecretaria();
+        popularRequerimentos();
         popularRequerimentosTriagem();
                         
 
@@ -141,6 +141,11 @@ public class TelaSecretaria extends javax.swing.JFrame {
             }
         });
         tabelaTodosRequerimentos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabelaTodosRequerimentos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaTodosRequerimentosMouseClicked(evt);
+            }
+        });
         morraDesgracado.setViewportView(tabelaTodosRequerimentos);
 
         painelRequerimentosProfessores.addTab("Todos os Requerimentos", morraDesgracado);
@@ -161,8 +166,6 @@ public class TelaSecretaria extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tabelaTriagem.setCellSelectionEnabled(false);
-        tabelaTriagem.setRowSelectionAllowed(true);
         tabelaTriagem.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabelaTriagemMouseClicked(evt);
@@ -180,10 +183,24 @@ public class TelaSecretaria extends javax.swing.JFrame {
             new String [] {
                 "Protocolo", "Nome Requerente", "Tipo", "Status"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tabelaRequerimentoSecretaria.setToolTipText("");
-        tabelaRequerimentoSecretaria.setColumnSelectionAllowed(true);
+        tabelaRequerimentoSecretaria.setCellSelectionEnabled(false);
+        tabelaRequerimentoSecretaria.setRowSelectionAllowed(true);
         tabelaRequerimentoSecretaria.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabelaRequerimentoSecretaria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaRequerimentoSecretariaMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tabelaRequerimentoSecretaria);
         tabelaRequerimentoSecretaria.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
@@ -368,14 +385,26 @@ public class TelaSecretaria extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    private void limparTabela(){
+        DefaultTableModel model = (DefaultTableModel) tabelaTriagem.getModel();
+        DefaultTableModel model2 = (DefaultTableModel) tabelaTodosRequerimentos.getModel();
+        DefaultTableModel model3 = (DefaultTableModel) tabelaRequerimentoSecretaria.getModel();
 
+        model.setRowCount(0);
+        model2.setRowCount(0);
+        model3.setRowCount(0);
+
+    }
+    
     private void setinhaAtualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setinhaAtualizarMouseClicked
+        limparTabela();
         popularRequerimentosSecretaria();
         popularRequerimentos();
         popularRequerimentosTriagem();
     }//GEN-LAST:event_setinhaAtualizarMouseClicked
 
     private void quadradoAtualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quadradoAtualizarMouseClicked
+      limparTabela();
         popularRequerimentosSecretaria();
         popularRequerimentos();
         popularRequerimentosTriagem();        
@@ -393,6 +422,34 @@ public class TelaSecretaria extends javax.swing.JFrame {
             requerimentoAlunoLeitura = new RequerimentoGeralAnexoSecretaria(requerimento.get(0),tipoRequerimento);
             requerimentoAlunoLeitura.setVisible(true);
         }    }//GEN-LAST:event_tabelaTriagemMouseClicked
+
+    private void tabelaRequerimentoSecretariaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaRequerimentoSecretariaMouseClicked
+        tabelaRequerimentoSecretaria = (JTable) evt.getSource();
+        
+        if (evt.getClickCount() == 2) {
+            int numeroLinha = tabelaRequerimentoSecretaria.getSelectedRow();
+            String numeroProtocolo = (String) tabelaRequerimentoSecretaria.getValueAt(numeroLinha,0);
+            String tipoRequerimento =(String) tabelaRequerimentoSecretaria.getValueAt(numeroLinha,1);
+            ArrayList<Requerimento> requerimento = buscarRequerimentoProtocolo(numeroProtocolo);
+            RequerimentoGeralAnexoSecretaria requerimentoAlunoLeitura;
+            requerimentoAlunoLeitura = new RequerimentoGeralAnexoSecretaria(requerimento.get(0),tipoRequerimento);
+            requerimentoAlunoLeitura.setVisible(true);
+        }
+    }//GEN-LAST:event_tabelaRequerimentoSecretariaMouseClicked
+
+    private void tabelaTodosRequerimentosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaTodosRequerimentosMouseClicked
+        tabelaTodosRequerimentos = (JTable) evt.getSource();
+        
+        if (evt.getClickCount() == 2) {
+            int numeroLinha = tabelaTodosRequerimentos.getSelectedRow();
+            String numeroProtocolo = (String) tabelaTodosRequerimentos.getValueAt(numeroLinha,0);
+            String tipoRequerimento =(String) tabelaTodosRequerimentos.getValueAt(numeroLinha,1);
+            ArrayList<Requerimento> requerimento = buscarRequerimentoProtocolo(numeroProtocolo);
+            RequerimentoGeralAnexoSecretaria requerimentoAlunoLeitura;
+            requerimentoAlunoLeitura = new RequerimentoGeralAnexoSecretaria(requerimento.get(0),tipoRequerimento);
+            requerimentoAlunoLeitura.setVisible(true);
+        }
+    }//GEN-LAST:event_tabelaTodosRequerimentosMouseClicked
 
      
     private void popularRequerimentosTriagem() {
@@ -413,11 +470,12 @@ public class TelaSecretaria extends javax.swing.JFrame {
 
         DefaultTableModel model = (DefaultTableModel) tabelaTodosRequerimentos.getModel();
         ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoRequerenteAluno();
-        Object rowData[] = new Object[3];
+        Object rowData[] = new Object[4];
         for (int i = 0; i < requerimentos.size(); i++) {
             rowData[0] = requerimentos.get(i).getNumeroProtocolo();
-            rowData[1] = requerimentos.get(i).getTipoRequerimento();
-            rowData[2] = requerimentos.get(i).getStatus();
+            rowData[1] = requerimentos.get(i).requerente.getNome();
+            rowData[2] = requerimentos.get(i).getTipoRequerimento();
+            rowData[3] = requerimentos.get(i).getStatus();
             model.addRow(rowData);
         }
     }
@@ -425,12 +483,13 @@ public class TelaSecretaria extends javax.swing.JFrame {
       private void popularRequerimentosSecretaria() {
 
         DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoSecretaria.getModel();
-        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoRequerenteProfessor();
-        Object rowData[] = new Object[3];
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoAreaResponsavelTecnico();
+        Object rowData[] = new Object[4];
         for (int i = 0; i < requerimentos.size(); i++) {
             rowData[0] = requerimentos.get(i).getNumeroProtocolo();
-            rowData[1] = requerimentos.get(i).getTipoRequerimento();
-            rowData[2] = requerimentos.get(i).getStatus();
+            rowData[1] = requerimentos.get(i).requerente.getNome();
+            rowData[2] = requerimentos.get(i).getTipoRequerimento();
+            rowData[3] = requerimentos.get(i).getStatus();
             model.addRow(rowData);
         }
     }

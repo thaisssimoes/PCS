@@ -37,36 +37,16 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         professorLabelDisciplina.setVisible(false);
     }
     Aluno aluno;
-    Requerimento requerimento;
+    Requerimento requerimento = new Requerimento();
     
     public RequerimentoGeralAnexoAluno(Aluno aluno, String titulo) {
         this.setTitle(titulo);
         initComponents();
         this.aluno = aluno;
         preencherTela();
-        criarRequerimento(requerimento);
         preencherCamposEscrita();
         centralizarTela();
     }
-<<<<<<< HEAD
-//    public RequerimentoGeralAnexoAluno(String titulo) {
-//        this.setTitle(titulo);
-//        initComponents();
-//        preencherTela();
-//        preencherCamposLeitura();
-//        criarRequerimento(requerimento);
-//        centralizarTela();
-//    }
-=======
-    
-    public RequerimentoGeralAnexoAluno(Requerimento requerimento, String titulo) {
-        this.setTitle(titulo);
-        initComponents();
-        preencherTela();
-        preencherCamposLeitura();
-        centralizarTela();
-    }
->>>>>>> a56b9e5cdd373fa7f56a1403324aa7a768734086
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -491,6 +471,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         matriculaAlunoLabel.setText(aluno.getMatricula());
         telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
         dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
+        periodoLabel.setText(aluno.getPeriodo());
         
     }
     
@@ -536,6 +517,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
 
 
     private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
+        criarRequerimento(requerimento);
         ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno, requerimento);
         janelaConfirmacao.setVisible(true);
         this.setVisible(false);
@@ -549,14 +531,13 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         janelaComentario.setVisible(true);    }//GEN-LAST:event_atualizarBotaoActionPerformed
 
     private void cancelarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoActionPerformed
-         TelaAluno janelaTelaAluno = new TelaAluno(aluno);
+        TelaAluno janelaTelaAluno = new TelaAluno(aluno);
         janelaTelaAluno.setVisible(true);
         this.setVisible(false);
         this.dispose();
 
     }//GEN-LAST:event_cancelarBotaoActionPerformed
     
-
     private void criarRequerimento(Requerimento requerimento) {
         numeroProtocoloLabel.setText(requerimento.getNumeroProtocolo());
         requerimento.setDataCriacao(LocalDate.now().toString());
@@ -569,7 +550,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         } else {
             requerimento.setAreaResponsavel(Gerenciador.obterProfessorCargo(encontrarCargoTipoRequerimento()));
             
-        }
+}
     }
 
      private String encontrarCargoTipoRequerimento() {

@@ -157,7 +157,7 @@ public class TelaAluno extends javax.swing.JFrame {
         jScrollPane4.setViewportView(tabelaRequerimentoAluno);
         tabelaRequerimentoAluno.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        painelTelaAluno.addTab("Meus Requerimentos em aberto", jScrollPane4);
+        painelTelaAluno.addTab("Meus Requerimentos", jScrollPane4);
 
         verDadosCompletos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         verDadosCompletos.setText("Ver dados cadastrais completos");
@@ -321,7 +321,10 @@ public class TelaAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void limparTabela(){
+        DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoAluno.getModel();
+        model.setRowCount(0);
+    }
     private void preencherCampos() {
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
@@ -353,21 +356,10 @@ public class TelaAluno extends javax.swing.JFrame {
         JList list = (JList) evt.getSource();
         titulo = (String) list.getSelectedValue();
         if (evt.getClickCount() == 2) {
-//            if (!titulo.equals("Realização de segunda chamada")
-//                    && !titulo.equals("Revisão de prova")
-//                    && !titulo.equals("Isenção ou aproveitamento de disciplina")) {
-//                RequerimentoGeralAluno janelaRequerimento = new RequerimentoGeralAluno(aluno);
-//                janelaRequerimento.setVisible(true);
-//                janelaRequerimento.setTitle(titulo);
-//                this.setVisible(false);
-//                this.dispose();
-//            } else {
-                RequerimentoGeralAnexoAluno janelaRequerimento = new RequerimentoGeralAnexoAluno(aluno, titulo);
-                janelaRequerimento.setVisible(true);
-                this.setVisible(false);
-                this.dispose();
-//            }
-
+            RequerimentoGeralAnexoAluno janelaRequerimento = new RequerimentoGeralAnexoAluno(aluno, titulo);
+            janelaRequerimento.setVisible(true);
+            this.setVisible(false);
+            this.dispose();
         }
 
 
@@ -382,10 +374,12 @@ public class TelaAluno extends javax.swing.JFrame {
      }//GEN-LAST:event_verDadosCompletosMouseClicked
 
     private void setinhaAtualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setinhaAtualizarMouseClicked
+        limparTabela();
         popularRequerimentos();
     }//GEN-LAST:event_setinhaAtualizarMouseClicked
 
     private void quadradoAtualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quadradoAtualizarMouseClicked
+        limparTabela();
         popularRequerimentos();
     }//GEN-LAST:event_quadradoAtualizarMouseClicked
 
@@ -400,9 +394,7 @@ public class TelaAluno extends javax.swing.JFrame {
             RequerimentoGeralAnexoAlunoLeitura requerimentoAlunoLeitura;
             requerimentoAlunoLeitura = new RequerimentoGeralAnexoAlunoLeitura(requerimento.get(0),tipoRequerimento);
             requerimentoAlunoLeitura.setVisible(true);
-        }
-        
-        
+        }        
         
     }//GEN-LAST:event_tabelaRequerimentoAlunoMouseClicked
 

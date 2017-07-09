@@ -232,8 +232,8 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Meus Requerimentos em aberto">
-                    <Property name="tabTitle" type="java.lang.String" value="Meus Requerimentos em aberto"/>
+                  <JTabbedPaneConstraints tabName="Meus Requerimentos">
+                    <Property name="tabTitle" type="java.lang.String" value="Meus Requerimentos"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
