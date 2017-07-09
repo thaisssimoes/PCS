@@ -124,7 +124,7 @@ public class TelaSecretaria extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(jLabel5))
         );
         jPanel2Layout.setVerticalGroup(
@@ -207,13 +207,13 @@ public class TelaSecretaria extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Protocolo", "Tipo", "Status"
+                "Protocolo", "Nome Requerente", "Tipo", "Status"
             }
         ));
         jTable1.setToolTipText("");
@@ -221,7 +221,7 @@ public class TelaSecretaria extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        painelRequerimentosProfessores.addTab("Requerimentos Fechados", jScrollPane3);
+        painelRequerimentosProfessores.addTab("Requerimentos da Secretaria", jScrollPane3);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Nome:");

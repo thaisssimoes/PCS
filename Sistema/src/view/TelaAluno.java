@@ -8,8 +8,11 @@ package view;
 import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import javax.swing.JList;
+import javax.swing.table.DefaultTableModel;
 import model.entity.Aluno;
+import model.requerimento.Requerimento;
 
 /**
  *
@@ -353,6 +356,17 @@ public class TelaAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    private void popularRequerimentos(){
+        DefaultTableModel model = (DefaultTableModel) painelTelaAluno.getModel();
+        ArrayList<Requerimento> requerimentos = buscarRequerimentoCPF(aluno.getCpf());
+        Object rowData[] = new Object[3];
+        for(int i<0; i < requerimentos.size(); i++){
+            rowData[0]= requerimentos.getNumeroProtocolo();
+            rowData[1]= requerimentos.getTipoRequerimento();
+            rowData[2]=requerimentos.getStatus();
+            model.addRow(rowData);
+      }
+    }
 
     private void centralizarTela(){
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
