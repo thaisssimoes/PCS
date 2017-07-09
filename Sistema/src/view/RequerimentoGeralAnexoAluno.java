@@ -14,6 +14,10 @@ import static java.time.temporal.TemporalQueries.localDate;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import model.entity.Aluno;
+<<<<<<< HEAD
+=======
+import model.requerimento.Requerimento;
+>>>>>>> 5992182e4a0979ec28117d526c9740a487f46f84
 
 /**
  *
@@ -494,13 +498,13 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarBotaoActionPerformed
     
     private void criarRequerimento(){
-        RequerimentoAnexo novoRequerimentoAnexo = new RequerimentoAnexo();
-        numeroProtocoloLabel.setText(novoRequerimentoAnexo.getNumeroProtocolo());
-        novoRequerimentoAnexo.setDataCriacao(LocalDate.now());
-        novoRequerimentoAnexo.setDescricao(descricaoAreaTexto.getText());
-        novoRequerimentoAnexo.setRequerente(aluno);
-        novoRequerimentoAnexo.setStatus("TRIAGEM");
-        novoRequerimentoAnexo.setTipoRequerimento(this.getTitle());
+        Requerimento novoRequerimento = new Requerimento();
+        numeroProtocoloLabel.setText(novoRequerimento.getNumeroProtocolo());
+        novoRequerimento.setDataCriacao(LocalDate.now());
+        novoRequerimento.setDescricao(descricaoAreaTexto.getText());
+        novoRequerimento.setRequerente(aluno);
+        novoRequerimento.setStatus("TRIAGEM");
+        novoRequerimento.setTipoRequerimento(this.getTitle());
             
 
     }
