@@ -128,19 +128,6 @@ public class Gerenciador {
         }
          */
 
-        ArrayList<Requerimento> lista = buscarRequerimentoRequerenteAluno();
-        for (int i = 0; i < lista.size(); i++) {
-            System.err.println(lista.get(i).getStatus());
-
-        }
-
-        System.err.println("-------------------------");
-        lista = buscarRequerimentoRequerenteProfessor();
-        for (int i = 0; i < lista.size(); i++) {
-            System.err.println(lista.get(i).getStatus());
-
-        }
-
     }
 
     public static void analisaRequerimento(Requerimento requerimento) {
@@ -148,11 +135,18 @@ public class Gerenciador {
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
             ArrayList<Requerimento> listaInicial = xml.getLista();
+            ArrayList<Requerimento> listaVazia = new ArrayList<>();
+
+            xml.setLista(listaVazia);
+            xml.escreveXML();
+
             for (int i = 0; i < listaInicial.size(); i++) {
                 if (listaInicial.get(i).getNumeroProtocolo().equals(requerimento.getNumeroProtocolo())) {
-                    xml.remove(i);
+                    listaInicial.remove(i);
                 }
             }
+
+            xml.setLista(listaInicial);
             xml.adiciona(requerimento);
             xml.escreveXML();
 
@@ -160,11 +154,18 @@ public class Gerenciador {
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
             ArrayList<Requerimento> listaInicial = xml.getLista();
+            ArrayList<Requerimento> listaVazia = new ArrayList<>();
+
+            xml.setLista(listaVazia);
+            xml.escreveXML();
+
             for (int i = 0; i < listaInicial.size(); i++) {
                 if (listaInicial.get(i).getNumeroProtocolo().equals(requerimento.getNumeroProtocolo())) {
-                    xml.remove(i);
+                    listaInicial.remove(i);
                 }
             }
+
+            xml.setLista(listaInicial);
             xml.adiciona(requerimento);
             xml.escreveXML();
 
@@ -172,11 +173,18 @@ public class Gerenciador {
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
             ArrayList<Requerimento> listaInicial = xml.getLista();
+            ArrayList<Requerimento> listaVazia = new ArrayList<>();
+
+            xml.setLista(listaVazia);
+            xml.escreveXML();
+
             for (int i = 0; i < listaInicial.size(); i++) {
                 if (listaInicial.get(i).getNumeroProtocolo().equals(requerimento.getNumeroProtocolo())) {
-                    xml.remove(i);
+                    listaInicial.remove(i);
                 }
             }
+
+            xml.setLista(listaInicial);
             xml.adiciona(requerimento);
             xml.escreveXML();
 
@@ -184,22 +192,36 @@ public class Gerenciador {
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
             ArrayList<Requerimento> listaInicial = xml.getLista();
+            ArrayList<Requerimento> listaVazia = new ArrayList<>();
+
+            xml.setLista(listaVazia);
+            xml.escreveXML();
+
             for (int i = 0; i < listaInicial.size(); i++) {
                 if (listaInicial.get(i).getNumeroProtocolo().equals(requerimento.getNumeroProtocolo())) {
-                    xml.remove(i);
+                    listaInicial.remove(i);
                 }
             }
+
+            xml.setLista(listaInicial);
             xml.adiciona(requerimento);
             xml.escreveXML();
         } else if (requerimento.getStatus().equals("PENDENTE")) {
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
             ArrayList<Requerimento> listaInicial = xml.getLista();
+            ArrayList<Requerimento> listaVazia = new ArrayList<>();
+
+            xml.setLista(listaVazia);
+            xml.escreveXML();
+
             for (int i = 0; i < listaInicial.size(); i++) {
                 if (listaInicial.get(i).getNumeroProtocolo().equals(requerimento.getNumeroProtocolo())) {
-                    xml.remove(i);
+                    listaInicial.remove(i);
                 }
             }
+
+            xml.setLista(listaInicial);
             xml.adiciona(requerimento);
             xml.escreveXML();
         }
