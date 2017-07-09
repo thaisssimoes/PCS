@@ -1,5 +1,6 @@
 package model.requerimento;
 
+import java.io.File;
 import java.time.Instant;
 import java.time.LocalDate;
 
@@ -36,8 +37,18 @@ public class Requerimento {
     @Getter
     @Setter
     private String tipoRequerimento;
+    @Getter
+    @Setter
+    private File anexo;
+    @Getter
+    @Setter
+    private String disciplina;
 
-    public Requerimento(Usuario requerente, Usuario areaResponsavel, String status, String descricao, LocalDate dataCriacao, LocalDate dataSolucao, String resposta, String tipoRequerimento) {
+    public Requerimento(Usuario requerente, 
+            Usuario areaResponsavel, String status, 
+            String descricao, LocalDate dataCriacao, 
+            LocalDate dataSolucao, String resposta, 
+            String tipoRequerimento) {
         this.numeroProtocolo = gerarNumeroProtocolo();
         this.requerente = requerente;
         this.areaResponsavel = areaResponsavel;
@@ -48,6 +59,24 @@ public class Requerimento {
         this.resposta = resposta;
         this.tipoRequerimento = tipoRequerimento;
     }
+    public Requerimento(Usuario requerente, 
+            Usuario areaResponsavel, String status, 
+            String descricao, LocalDate dataCriacao, 
+            LocalDate dataSolucao, String resposta, 
+            String tipoRequerimento, File anexo, String disciplina) {
+        this.numeroProtocolo = gerarNumeroProtocolo();
+        this.requerente = requerente;
+        this.areaResponsavel = areaResponsavel;
+        this.status = status;
+        this.descricao = descricao;
+        this.dataCriacao = dataCriacao;
+        this.dataSolucao = dataSolucao;
+        this.resposta = resposta;
+        this.tipoRequerimento = tipoRequerimento;
+        this.anexo = anexo;
+        this.disciplina = disciplina;
+    }
+    
 
     public Requerimento() {
         this.numeroProtocolo = gerarNumeroProtocolo();

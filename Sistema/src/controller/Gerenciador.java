@@ -234,8 +234,18 @@ public class Gerenciador {
         return listaRetorno;
     }
 
-    private static void encaminharParaAluno(Requerimento requerimento) {
+    private static ArrayList<Requerimento> buscarRequerimentoCPF(String cpf) {
+        ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
+        xml.leXML();
+        ArrayList<Requerimento> lista = xml.getLista();
+        ArrayList<Requerimento> listaRetorno = new ArrayList<>();
 
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getRequerente().getCpf().equals(cpf)) {
+                listaRetorno.add(lista.get(i));
+            }
+        }
+        return listaRetorno;
     }
 
     private static void encaminharParaProfessor(Requerimento requerimento) {
