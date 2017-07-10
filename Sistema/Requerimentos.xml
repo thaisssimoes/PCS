@@ -297,6 +297,108 @@
      <string></string>
     </void>
     <void property="numeroProtocolo">
+     <string>1499641465271</string>
+    </void>
+    <void property="status">
+     <string>TRIAGEM</string>
+    </void>
+    <void property="tipoRequerimento">
+     <string>Trancamento de Disciplina</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.requerimento.Requerimento" id="Requerimento3">
+    <void class="model.requerimento.Requerimento" method="getField">
+     <string>requerente</string>
+     <void method="set">
+      <object idref="Requerimento3"/>
+      <object class="model.entity.Aluno">
+       <void property="bairro">
+        <string>NemUm</string>
+       </void>
+       <void property="cep">
+        <string>12345678</string>
+       </void>
+       <void property="cidade">
+        <string>Bonn</string>
+       </void>
+       <void property="complemento">
+        <string>99</string>
+       </void>
+       <void property="cpf">
+        <string>12345678901</string>
+       </void>
+       <void property="dataNascimeto">
+        <string>16/12/1770</string>
+       </void>
+       <void property="deficiencia">
+        <string>Surdo</string>
+       </void>
+       <void property="email">
+        <string>ludwig.beethoven@uniriotec.br</string>
+       </void>
+       <void property="estado">
+        <string>PRU</string>
+       </void>
+       <void property="estadoCivil">
+        <string>Solteiro</string>
+       </void>
+       <void property="logradouro">
+        <string>AlgumNomeAlemao</string>
+       </void>
+       <void property="matricula">
+        <string>18002210002</string>
+       </void>
+       <void property="nacionalidade">
+        <string>Alemã</string>
+       </void>
+       <void property="nome">
+        <string>Ludwig Van Beethoven</string>
+       </void>
+       <void property="nomeDaMae">
+        <string>Maria</string>
+       </void>
+       <void property="nomeDoPai">
+        <string>Johann</string>
+       </void>
+       <void property="numero">
+        <string>66</string>
+       </void>
+       <void property="pais">
+        <string>Prussia</string>
+       </void>
+       <void property="periodo">
+        <string>9</string>
+       </void>
+       <void property="senha">
+        <string>123</string>
+       </void>
+       <void property="sexo">
+        <string>Masculino</string>
+       </void>
+       <void property="telefoneCelular">
+        <string>21912345678</string>
+       </void>
+       <void property="telefoneResidencial">
+        <string>2112236666</string>
+       </void>
+       <void property="tipoDeEndereco">
+        <string>Residencial</string>
+       </void>
+       <void property="tipoLogradouro">
+        <string>Avenida</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="dataCriacao">
+     <string>2017-07-09</string>
+    </void>
+    <void property="descricao">
+     <string></string>
+    </void>
+    <void property="numeroProtocolo">
      <string>1499641568209</string>
     </void>
     <void property="status">
@@ -308,11 +410,11 @@
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento3">
+   <object class="model.requerimento.Requerimento" id="Requerimento4">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento3"/>
+      <object idref="Requerimento4"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>NemUm</string>
@@ -411,11 +513,11 @@
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento4">
+   <object class="model.requerimento.Requerimento" id="Requerimento5">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento4"/>
+      <object idref="Requerimento5"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>NemUm</string>
@@ -520,115 +622,6 @@
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento5">
-    <void class="model.requerimento.Requerimento" method="getField">
-     <string>requerente</string>
-     <void method="set">
-      <object idref="Requerimento5"/>
-      <object class="model.entity.Aluno">
-       <void property="bairro">
-        <string>NemUm</string>
-       </void>
-       <void property="cep">
-        <string>12345678</string>
-       </void>
-       <void property="cidade">
-        <string>Bonn</string>
-       </void>
-       <void property="complemento">
-        <string>99</string>
-       </void>
-       <void property="cpf">
-        <string>12345678901</string>
-       </void>
-       <void property="dataNascimeto">
-        <string>16/12/1770</string>
-       </void>
-       <void property="deficiencia">
-        <string>Surdo</string>
-       </void>
-       <void property="email">
-        <string>ludwig.beethoven@uniriotec.br</string>
-       </void>
-       <void property="estado">
-        <string>PRU</string>
-       </void>
-       <void property="estadoCivil">
-        <string>Solteiro</string>
-       </void>
-       <void property="logradouro">
-        <string>AlgumNomeAlemao</string>
-       </void>
-       <void property="matricula">
-        <string>18002210002</string>
-       </void>
-       <void property="nacionalidade">
-        <string>Alemã</string>
-       </void>
-       <void property="nome">
-        <string>Ludwig Van Beethoven</string>
-       </void>
-       <void property="nomeDaMae">
-        <string>Maria</string>
-       </void>
-       <void property="nomeDoPai">
-        <string>Johann</string>
-       </void>
-       <void property="numero">
-        <string>66</string>
-       </void>
-       <void property="pais">
-        <string>Prussia</string>
-       </void>
-       <void property="periodo">
-        <string>9</string>
-       </void>
-       <void property="senha">
-        <string>123</string>
-       </void>
-       <void property="sexo">
-        <string>Masculino</string>
-       </void>
-       <void property="telefoneCelular">
-        <string>21912345678</string>
-       </void>
-       <void property="telefoneResidencial">
-        <string>2112236666</string>
-       </void>
-       <void property="tipoDeEndereco">
-        <string>Residencial</string>
-       </void>
-       <void property="tipoLogradouro">
-        <string>Avenida</string>
-       </void>
-      </object>
-     </void>
-    </void>
-    <void property="areaResponsavel">
-     <object class="model.entity.Tecnico">
-      <void property="nome">
-       <string>Tecnico Generico</string>
-      </void>
-     </object>
-    </void>
-    <void property="dataCriacao">
-     <string>2017-07-09</string>
-    </void>
-    <void property="descricao">
-     <string>Sofrivel</string>
-    </void>
-    <void property="numeroProtocolo">
-     <string>1499641824358</string>
-    </void>
-    <void property="status">
-     <string>TRIAGEM</string>
-    </void>
-    <void property="tipoRequerimento">
-     <string>Realização de segunda chamada</string>
-    </void>
-   </object>
-  </void>
-  <void method="add">
    <object class="model.requerimento.Requerimento" id="Requerimento6">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
@@ -724,6 +717,115 @@
      <string>2017-07-09</string>
     </void>
     <void property="descricao">
+     <string>Sofrivel</string>
+    </void>
+    <void property="numeroProtocolo">
+     <string>1499641824358</string>
+    </void>
+    <void property="status">
+     <string>TRIAGEM</string>
+    </void>
+    <void property="tipoRequerimento">
+     <string>Realização de segunda chamada</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.requerimento.Requerimento" id="Requerimento7">
+    <void class="model.requerimento.Requerimento" method="getField">
+     <string>requerente</string>
+     <void method="set">
+      <object idref="Requerimento7"/>
+      <object class="model.entity.Aluno">
+       <void property="bairro">
+        <string>NemUm</string>
+       </void>
+       <void property="cep">
+        <string>12345678</string>
+       </void>
+       <void property="cidade">
+        <string>Bonn</string>
+       </void>
+       <void property="complemento">
+        <string>99</string>
+       </void>
+       <void property="cpf">
+        <string>12345678901</string>
+       </void>
+       <void property="dataNascimeto">
+        <string>16/12/1770</string>
+       </void>
+       <void property="deficiencia">
+        <string>Surdo</string>
+       </void>
+       <void property="email">
+        <string>ludwig.beethoven@uniriotec.br</string>
+       </void>
+       <void property="estado">
+        <string>PRU</string>
+       </void>
+       <void property="estadoCivil">
+        <string>Solteiro</string>
+       </void>
+       <void property="logradouro">
+        <string>AlgumNomeAlemao</string>
+       </void>
+       <void property="matricula">
+        <string>18002210002</string>
+       </void>
+       <void property="nacionalidade">
+        <string>Alemã</string>
+       </void>
+       <void property="nome">
+        <string>Ludwig Van Beethoven</string>
+       </void>
+       <void property="nomeDaMae">
+        <string>Maria</string>
+       </void>
+       <void property="nomeDoPai">
+        <string>Johann</string>
+       </void>
+       <void property="numero">
+        <string>66</string>
+       </void>
+       <void property="pais">
+        <string>Prussia</string>
+       </void>
+       <void property="periodo">
+        <string>9</string>
+       </void>
+       <void property="senha">
+        <string>123</string>
+       </void>
+       <void property="sexo">
+        <string>Masculino</string>
+       </void>
+       <void property="telefoneCelular">
+        <string>21912345678</string>
+       </void>
+       <void property="telefoneResidencial">
+        <string>2112236666</string>
+       </void>
+       <void property="tipoDeEndereco">
+        <string>Residencial</string>
+       </void>
+       <void property="tipoLogradouro">
+        <string>Avenida</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="areaResponsavel">
+     <object class="model.entity.Tecnico">
+      <void property="nome">
+       <string>Tecnico Generico</string>
+      </void>
+     </object>
+    </void>
+    <void property="dataCriacao">
+     <string>2017-07-09</string>
+    </void>
+    <void property="descricao">
      <string>descricao</string>
     </void>
     <void property="numeroProtocolo">
@@ -738,11 +840,11 @@
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento7">
+   <object class="model.requerimento.Requerimento" id="Requerimento8">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento7"/>
+      <object idref="Requerimento8"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>NemUm</string>
@@ -847,128 +949,11 @@
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento8">
-    <void class="model.requerimento.Requerimento" method="getField">
-     <string>requerente</string>
-     <void method="set">
-      <object idref="Requerimento8"/>
-      <object class="model.entity.Aluno">
-       <void property="bairro">
-        <string>NemUm</string>
-       </void>
-       <void property="cep">
-        <string>12345678</string>
-       </void>
-       <void property="cidade">
-        <string>Bonn</string>
-       </void>
-       <void property="complemento">
-        <string>99</string>
-       </void>
-       <void property="cpf">
-        <string>12345678901</string>
-       </void>
-       <void property="dataNascimeto">
-        <string>16/12/1770</string>
-       </void>
-       <void property="deficiencia">
-        <string>Surdo</string>
-       </void>
-       <void property="email">
-        <string>ludwig.beethoven@uniriotec.br</string>
-       </void>
-       <void property="estado">
-        <string>PRU</string>
-       </void>
-       <void property="estadoCivil">
-        <string>Solteiro</string>
-       </void>
-       <void property="logradouro">
-        <string>AlgumNomeAlemao</string>
-       </void>
-       <void property="matricula">
-        <string>18002210002</string>
-       </void>
-       <void property="nacionalidade">
-        <string>Alemã</string>
-       </void>
-       <void property="nome">
-        <string>Ludwig Van Beethoven</string>
-       </void>
-       <void property="nomeDaMae">
-        <string>Maria</string>
-       </void>
-       <void property="nomeDoPai">
-        <string>Johann</string>
-       </void>
-       <void property="numero">
-        <string>66</string>
-       </void>
-       <void property="pais">
-        <string>Prussia</string>
-       </void>
-       <void property="periodo">
-        <string>9</string>
-       </void>
-       <void property="senha">
-        <string>123</string>
-       </void>
-       <void property="sexo">
-        <string>Masculino</string>
-       </void>
-       <void property="telefoneCelular">
-        <string>21912345678</string>
-       </void>
-       <void property="telefoneResidencial">
-        <string>2112236666</string>
-       </void>
-       <void property="tipoDeEndereco">
-        <string>Residencial</string>
-       </void>
-       <void property="tipoLogradouro">
-        <string>Avenida</string>
-       </void>
-      </object>
-     </void>
-    </void>
-    <void property="areaResponsavel">
-     <object class="model.entity.Tecnico">
-      <void property="nome">
-       <string>Tecnico Generico</string>
-      </void>
-     </object>
-    </void>
-    <void property="dataCriacao">
-     <string>2017-07-09</string>
-    </void>
-    <void property="descricao">
-     <string>Sofrivel</string>
-    </void>
-    <void property="numeroProtocolo">
-     <string>1499641824358</string>
-    </void>
-    <void property="status">
-     <string>DESIGNADO</string>
-    </void>
-    <void property="tipoRequerimento">
-     <string>Realização de segunda chamada</string>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-<<<<<<< HEAD
    <object class="model.requerimento.Requerimento" id="Requerimento9">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
       <object idref="Requerimento9"/>
-=======
-   <object class="model.requerimento.Requerimento" id="Requerimento7">
-    <void class="model.requerimento.Requerimento" method="getField">
-     <string>requerente</string>
-     <void method="set">
-      <object idref="Requerimento7"/>
->>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>NemUm</string>
@@ -1048,130 +1033,6 @@
       </object>
      </void>
     </void>
-    <void property="dataCriacao">
-     <string>2017-07-09</string>
-    </void>
-    <void property="descricao">
-<<<<<<< HEAD
-     <string>Bananal
-</string>
-    </void>
-    <void property="numeroProtocolo">
-     <string>1499641639942</string>
-=======
-     <string></string>
-    </void>
-    <void property="numeroProtocolo">
-     <string>1499641465271</string>
->>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
-    </void>
-    <void property="status">
-     <string>DESIGNADO</string>
-    </void>
-    <void property="tipoRequerimento">
-<<<<<<< HEAD
-     <string>Emissão de histórico escolar</string>
-=======
-     <string>Trancamento de Disciplina</string>
->>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
-    </void>
-   </object>
-  </void>
-  <void method="add">
-<<<<<<< HEAD
-   <object class="model.requerimento.Requerimento" id="Requerimento10">
-    <void class="model.requerimento.Requerimento" method="getField">
-     <string>requerente</string>
-     <void method="set">
-      <object idref="Requerimento10"/>
-=======
-   <object class="model.requerimento.Requerimento" id="Requerimento8">
-    <void class="model.requerimento.Requerimento" method="getField">
-     <string>requerente</string>
-     <void method="set">
-      <object idref="Requerimento8"/>
->>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
-      <object class="model.entity.Aluno">
-       <void property="bairro">
-        <string>NemUm</string>
-       </void>
-       <void property="cep">
-        <string>12345678</string>
-       </void>
-       <void property="cidade">
-        <string>Bonn</string>
-       </void>
-       <void property="complemento">
-        <string>99</string>
-       </void>
-       <void property="cpf">
-        <string>12345678901</string>
-       </void>
-       <void property="dataNascimeto">
-        <string>16/12/1770</string>
-       </void>
-       <void property="deficiencia">
-        <string>Surdo</string>
-       </void>
-       <void property="email">
-        <string>ludwig.beethoven@uniriotec.br</string>
-       </void>
-       <void property="estado">
-        <string>PRU</string>
-       </void>
-       <void property="estadoCivil">
-        <string>Solteiro</string>
-       </void>
-       <void property="logradouro">
-        <string>AlgumNomeAlemao</string>
-       </void>
-       <void property="matricula">
-        <string>18002210002</string>
-       </void>
-       <void property="nacionalidade">
-        <string>Alemã</string>
-       </void>
-       <void property="nome">
-        <string>Ludwig Van Beethoven</string>
-       </void>
-       <void property="nomeDaMae">
-        <string>Maria</string>
-       </void>
-       <void property="nomeDoPai">
-        <string>Johann</string>
-       </void>
-       <void property="numero">
-        <string>66</string>
-       </void>
-       <void property="pais">
-        <string>Prussia</string>
-       </void>
-       <void property="periodo">
-        <string>9</string>
-       </void>
-       <void property="senha">
-        <string>123</string>
-       </void>
-       <void property="sexo">
-        <string>Masculino</string>
-       </void>
-       <void property="telefoneCelular">
-        <string>21912345678</string>
-       </void>
-       <void property="telefoneResidencial">
-        <string>2112236666</string>
-       </void>
-       <void property="tipoDeEndereco">
-        <string>Residencial</string>
-       </void>
-       <void property="tipoLogradouro">
-        <string>Avenida</string>
-       </void>
-      </object>
-     </void>
-    </void>
-<<<<<<< HEAD
-=======
     <void property="areaResponsavel">
      <object class="model.entity.Tecnico">
       <void property="nome">
@@ -1179,32 +1040,123 @@
       </void>
      </object>
     </void>
->>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
     <void property="dataCriacao">
      <string>2017-07-09</string>
     </void>
     <void property="descricao">
-<<<<<<< HEAD
-     <string></string>
-    </void>
-    <void property="numeroProtocolo">
-     <string>1499641465271</string>
-=======
      <string>Sofrivel</string>
     </void>
     <void property="numeroProtocolo">
      <string>1499641824358</string>
->>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
     </void>
     <void property="status">
      <string>DESIGNADO</string>
     </void>
     <void property="tipoRequerimento">
-<<<<<<< HEAD
-     <string>Trancamento de Disciplina</string>
-=======
      <string>Realização de segunda chamada</string>
->>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.requerimento.Requerimento" id="Requerimento10">
+    <void class="model.requerimento.Requerimento" method="getField">
+     <string>requerente</string>
+     <void method="set">
+      <object idref="Requerimento10"/>
+      <object class="model.entity.Aluno">
+       <void property="bairro">
+        <string>NemUm</string>
+       </void>
+       <void property="cep">
+        <string>12345678</string>
+       </void>
+       <void property="cidade">
+        <string>Bonn</string>
+       </void>
+       <void property="complemento">
+        <string>99</string>
+       </void>
+       <void property="cpf">
+        <string>12345678901</string>
+       </void>
+       <void property="dataNascimeto">
+        <string>16/12/1770</string>
+       </void>
+       <void property="deficiencia">
+        <string>Surdo</string>
+       </void>
+       <void property="email">
+        <string>ludwig.beethoven@uniriotec.br</string>
+       </void>
+       <void property="estado">
+        <string>PRU</string>
+       </void>
+       <void property="estadoCivil">
+        <string>Solteiro</string>
+       </void>
+       <void property="logradouro">
+        <string>AlgumNomeAlemao</string>
+       </void>
+       <void property="matricula">
+        <string>18002210002</string>
+       </void>
+       <void property="nacionalidade">
+        <string>Alemã</string>
+       </void>
+       <void property="nome">
+        <string>Ludwig Van Beethoven</string>
+       </void>
+       <void property="nomeDaMae">
+        <string>Maria</string>
+       </void>
+       <void property="nomeDoPai">
+        <string>Johann</string>
+       </void>
+       <void property="numero">
+        <string>66</string>
+       </void>
+       <void property="pais">
+        <string>Prussia</string>
+       </void>
+       <void property="periodo">
+        <string>9</string>
+       </void>
+       <void property="senha">
+        <string>123</string>
+       </void>
+       <void property="sexo">
+        <string>Masculino</string>
+       </void>
+       <void property="telefoneCelular">
+        <string>21912345678</string>
+       </void>
+       <void property="telefoneResidencial">
+        <string>2112236666</string>
+       </void>
+       <void property="tipoDeEndereco">
+        <string>Residencial</string>
+       </void>
+       <void property="tipoLogradouro">
+        <string>Avenida</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="dataCriacao">
+     <string>2017-07-09</string>
+    </void>
+    <void property="descricao">
+     <string>Bananal
+</string>
+    </void>
+    <void property="numeroProtocolo">
+     <string>1499641639942</string>
+    </void>
+    <void property="status">
+     <string>DESIGNADO</string>
+    </void>
+    <void property="tipoRequerimento">
+     <string>Emissão de histórico escolar</string>
     </void>
    </object>
   </void>
