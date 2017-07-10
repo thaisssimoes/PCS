@@ -25,6 +25,7 @@ public class PedidoProgressao extends javax.swing.JFrame {
      */
     public PedidoProgressao() {
         initComponents();
+        centralizarTela();
         areaAnexo4.setVisible(false);
         imagemAnexo4.setVisible(false);
         anexo4.setVisible(false);
@@ -37,7 +38,7 @@ public class PedidoProgressao extends javax.swing.JFrame {
     public PedidoProgressao(Professor professor){
         initComponents();
         this.professor= professor;
-        
+        preencherCampos();
 //        calendario.setFormats(new String[] {"dd/MM/yyyy"});
 //        calendario.setLinkDate(System.currentTimeMillis(), "Hoje é: {0}");
         centralizarTela();
@@ -637,15 +638,15 @@ public class PedidoProgressao extends javax.swing.JFrame {
         if((checkRelatorio.isSelected())&& (checkPortaria.isSelected())&&(checkReconhecimento.isSelected())){
             if(checkComprovante.isVisible()){
                 if(checkComprovante.isSelected()){
-//                   ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
-//                   janelaConfirmacao.setVisible(true);
+                    TelaProfessor novaTelaProfessor = new TelaProfessor(professor);
+                    novaTelaProfessor.setVisible(true);
                     this.setVisible(false);
                     this.dispose();
             }
             }
             else{
-//                   ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
-//                   janelaConfirmacao.setVisible(true);
+                    TelaProfessor novaTelaProfessor = new TelaProfessor(professor);
+                    novaTelaProfessor.setVisible(true);
                     this.setVisible(false);
                     this.dispose();
             }
@@ -660,7 +661,7 @@ public class PedidoProgressao extends javax.swing.JFrame {
     }//GEN-LAST:event_enviarBotaoActionPerformed
 
     private void cancelarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoActionPerformed
-        TelaProfessor telaProfessor = new TelaProfessor();
+        TelaProfessor telaProfessor = new TelaProfessor(professor);
         telaProfessor.setVisible(true);
         this.setVisible(false);
         this.dispose(); ;

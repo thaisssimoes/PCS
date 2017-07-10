@@ -529,12 +529,12 @@ public class TelaProfessor extends javax.swing.JFrame {
         titulo = (String) list.getSelectedValue();
         if (evt.getClickCount() == 2) {
             if (titulo.equals("Pedido de Progressão")) {
-                PedidoProgressao janelaPedidoProgressao = new PedidoProgressao();
+                PedidoProgressao janelaPedidoProgressao = new PedidoProgressao(professor);
                 janelaPedidoProgressao.setVisible(true);
                 janelaPedidoProgressao.setTitle(titulo);
                 this.setVisible(false);
             } else if (titulo.equals("Pedido de Afastamento")) {
-                PedidoAfastamento janelaPedidoAfastamento = new PedidoAfastamento();
+                PedidoAfastamento janelaPedidoAfastamento = new PedidoAfastamento(professor);
                 janelaPedidoAfastamento.setVisible(true);
                 janelaPedidoAfastamento.setTitle(titulo);
                 this.setVisible(false);

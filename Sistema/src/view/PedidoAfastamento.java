@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import java.util.Calendar;
 import java.util.Date;
 import model.entity.Aluno;
+import model.entity.Professor;
 import org.jdesktop.swingx.JXDatePicker;
 
 /**
@@ -24,6 +25,8 @@ public class PedidoAfastamento extends javax.swing.JFrame {
      */
     public PedidoAfastamento() {
         initComponents();
+        centralizarTela();
+
 //        barraRolagem.set
 //        areaAnexo4.setVisible(false);
 //        imagemAnexo4.setVisible(false);
@@ -32,12 +35,20 @@ public class PedidoAfastamento extends javax.swing.JFrame {
 //        calendario.setFormats(new String[] {"dd/MM/yyyy"});
 //        calendario.setLinkDate(System.currentTimeMillis(), "Hoje é: {0}");
     }
-    public PedidoAfastamento(String cpf, String senha){
+    Professor professor;
+    public PedidoAfastamento(Professor professor){
         initComponents();
-       
-//        calendario.setFormats(new String[] {"dd/MM/yyyy"});
-//        calendario.setLinkDate(System.currentTimeMillis(), "Hoje é: {0}");
+        this.professor = professor;
+        preencherCampos();
         centralizarTela();
+    }
+    
+      private void preencherCampos(){
+        emailProfessorLabel.setText(professor.getEmail());
+        nomeCompletoProfessorLabel.setText(professor.getNome());
+        siapeProfessorLabel.setText(professor.getSiape());
+        telefoneCelularProfessorLabel.setText(professor.getTelefoneCelular());
+        
     }
 
     /**
@@ -62,9 +73,9 @@ public class PedidoAfastamento extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        nomeCompletoAlunoLabel = new javax.swing.JLabel();
+        nomeCompletoProfessorLabel = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        emailAlunoLabel = new javax.swing.JLabel();
+        emailProfessorLabel = new javax.swing.JLabel();
         cancelarBotao = new javax.swing.JButton();
         enviarBotao = new javax.swing.JButton();
         areaAnexo2 = new javax.swing.JPanel();
@@ -76,11 +87,11 @@ public class PedidoAfastamento extends javax.swing.JFrame {
         checkComprovante = new javax.swing.JCheckBox();
         checkAfastamento = new javax.swing.JCheckBox();
         jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        siapeProfessorLabel = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        classeDocenteProfessorLabel = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
+        telefoneCelularProfessorLabel = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         categoriaComboBox = new javax.swing.JComboBox();
@@ -91,7 +102,7 @@ public class PedidoAfastamento extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox();
         jLabel7 = new javax.swing.JLabel();
         centroComboBox1 = new javax.swing.JComboBox();
-        jLabel25 = new javax.swing.JLabel();
+        titulacaoProfessorLabel = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
@@ -208,14 +219,14 @@ public class PedidoAfastamento extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Nome:");
 
-        nomeCompletoAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        nomeCompletoAlunoLabel.setText("Nome Completo do Professor");
+        nomeCompletoProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nomeCompletoProfessorLabel.setText("Nome Completo do Professor");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("E-mail:");
 
-        emailAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        emailAlunoLabel.setText("nome.sobrenome@uniriotec.br");
+        emailProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        emailProfessorLabel.setText("nome.sobrenome@uniriotec.br");
 
         cancelarBotao.setBackground(new java.awt.Color(56, 113, 156));
         cancelarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -299,20 +310,20 @@ public class PedidoAfastamento extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setText("SIAPE:");
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel14.setText("numeroSIAPE");
+        siapeProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        siapeProfessorLabel.setText("numeroSIAPE");
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setText("Classe docente:");
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel18.setText("ClasseDocente");
+        classeDocenteProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        classeDocenteProfessorLabel.setText("ClasseDocente");
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel22.setText("Lotação:");
 
-        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel23.setText("222222222");
+        telefoneCelularProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        telefoneCelularProfessorLabel.setText("222222222");
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel24.setText("Telefone: ");
@@ -348,8 +359,8 @@ public class PedidoAfastamento extends javax.swing.JFrame {
         centroComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         centroComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20 horas", "40 horas" }));
 
-        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel25.setText("Titulação");
+        titulacaoProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        titulacaoProfessorLabel.setText("Titulação");
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel27.setText("Titulação:");
@@ -423,9 +434,9 @@ public class PedidoAfastamento extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(centroComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(nomeCompletoAlunoLabel)
-                                .addComponent(jLabel23)
-                                .addComponent(emailAlunoLabel)
+                                .addComponent(nomeCompletoProfessorLabel)
+                                .addComponent(telefoneCelularProfessorLabel)
+                                .addComponent(emailProfessorLabel)
                                 .addComponent(categoriaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(127, 127, 127)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -436,11 +447,11 @@ public class PedidoAfastamento extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel12)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel14))
+                                    .addComponent(siapeProfessorLabel))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel16)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel18))
+                                    .addComponent(classeDocenteProfessorLabel))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel22)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -448,7 +459,7 @@ public class PedidoAfastamento extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel27)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel25))))
+                                    .addComponent(titulacaoProfessorLabel))))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel7)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -507,14 +518,14 @@ public class PedidoAfastamento extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(nomeCompletoAlunoLabel))
+                            .addComponent(nomeCompletoProfessorLabel))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
-                            .addComponent(emailAlunoLabel))
+                            .addComponent(emailProfessorLabel))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel23)
+                            .addComponent(telefoneCelularProfessorLabel)
                             .addComponent(jLabel24))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -566,15 +577,15 @@ public class PedidoAfastamento extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
-                            .addComponent(jLabel14))
+                            .addComponent(siapeProfessorLabel))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
-                            .addComponent(jLabel18))
+                            .addComponent(classeDocenteProfessorLabel))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
-                            .addComponent(jLabel25))
+                            .addComponent(titulacaoProfessorLabel))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel22)
@@ -637,8 +648,8 @@ public class PedidoAfastamento extends javax.swing.JFrame {
 
     private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
             if((checkComprovante.isSelected())&& (checkAfastamento.isSelected())){
-//                   ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno.getCpf(),aluno.getSenha());
-//                   janelaConfirmacao.setVisible(true);
+                TelaProfessor novaTelaProfessor = new TelaProfessor(professor);
+                novaTelaProfessor.setVisible(true);
                 this.setVisible(false);
                 this.dispose();
             } 
@@ -650,7 +661,7 @@ public class PedidoAfastamento extends javax.swing.JFrame {
     }//GEN-LAST:event_enviarBotaoActionPerformed
 
     private void cancelarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoActionPerformed
-        TelaProfessor telaProfessor = new TelaProfessor();
+        TelaProfessor telaProfessor = new TelaProfessor(professor);
         telaProfessor.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelarBotaoActionPerformed
@@ -1235,7 +1246,8 @@ private void teste(){
     private javax.swing.JComboBox centroComboBox1;
     private javax.swing.JCheckBox checkAfastamento;
     private javax.swing.JCheckBox checkComprovante;
-    private javax.swing.JLabel emailAlunoLabel;
+    private javax.swing.JLabel classeDocenteProfessorLabel;
+    private javax.swing.JLabel emailProfessorLabel;
     private javax.swing.JButton enviarBotao;
     private javax.swing.JComboBox escolaComboBox;
     private javax.swing.JLabel imagemAnexo1;
@@ -1245,14 +1257,10 @@ private void teste(){
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -1286,6 +1294,9 @@ private void teste(){
     private javax.swing.JTextField jTextField5;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker2;
-    private javax.swing.JLabel nomeCompletoAlunoLabel;
+    private javax.swing.JLabel nomeCompletoProfessorLabel;
+    private javax.swing.JLabel siapeProfessorLabel;
+    private javax.swing.JLabel telefoneCelularProfessorLabel;
+    private javax.swing.JLabel titulacaoProfessorLabel;
     // End of variables declaration//GEN-END:variables
 }

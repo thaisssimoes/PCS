@@ -22,6 +22,8 @@ public class PreenchaDadosPopUp extends javax.swing.JFrame {
      */
     public PreenchaDadosPopUp() {
         initComponents();
+        centralizarTela();
+
     }
     Aluno aluno;
 
@@ -114,7 +116,6 @@ public class PreenchaDadosPopUp extends javax.swing.JFrame {
     }
     
     private void okBotaoSucessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoSucessoActionPerformed
-        //int DISPOSE_ON_CLOSE1 = RequerimentoGeralAluno.DISPOSE_ON_CLOSE;
         this.setVisible(false);
         this.dispose();
         // 
