@@ -830,7 +830,7 @@ public class RequerimentoGeralAnexoSecretaria extends javax.swing.JFrame {
     private javax.swing.JLabel disciplinaLabel;
     private javax.swing.JLabel disciplinaLabelFixo;
     private javax.swing.JLabel emailAlunoLabel;
-    private javax.swing.JButton exportarBotao;
+    javax.swing.JButton exportarBotao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

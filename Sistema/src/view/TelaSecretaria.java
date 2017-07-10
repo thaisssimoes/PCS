@@ -43,6 +43,7 @@ public class TelaSecretaria extends javax.swing.JFrame {
         popularRequerimentosSecretaria();
         popularRequerimentos();
         popularRequerimentosTriagem();
+        popularRequerimentosFinalizados();
                         
 
     }
@@ -68,6 +69,8 @@ public class TelaSecretaria extends javax.swing.JFrame {
         tabelaTriagem = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         tabelaRequerimentoSecretaria = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaRequerimentosFinalizados = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         emailTecnicoLabel = new javax.swing.JLabel();
@@ -209,8 +212,6 @@ public class TelaSecretaria extends javax.swing.JFrame {
             }
         });
         tabelaRequerimentoSecretaria.setToolTipText("");
-        tabelaRequerimentoSecretaria.setCellSelectionEnabled(false);
-        tabelaRequerimentoSecretaria.setRowSelectionAllowed(true);
         tabelaRequerimentoSecretaria.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tabelaRequerimentoSecretaria.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -221,6 +222,32 @@ public class TelaSecretaria extends javax.swing.JFrame {
         tabelaRequerimentoSecretaria.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         painelRequerimentosProfessores.addTab("Requerimentos da Secretaria", jScrollPane3);
+
+        tabelaRequerimentosFinalizados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Protocolo", "Nome Requerente", "Tipo", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaRequerimentosFinalizados.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabelaRequerimentosFinalizados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaRequerimentosFinalizadosMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tabelaRequerimentosFinalizados);
+
+        painelRequerimentosProfessores.addTab("Requerimentos Finalizados", jScrollPane1);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Nome:");
@@ -316,6 +343,9 @@ public class TelaSecretaria extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(painelRequerimentosProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(33, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel17)
@@ -344,9 +374,8 @@ public class TelaSecretaria extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(siapeTecnicoLabel)))
                         .addGap(24, 24, 24)
-                        .addComponent(quadradoAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(painelRequerimentosProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addComponent(quadradoAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -380,19 +409,23 @@ public class TelaSecretaria extends javax.swing.JFrame {
                             .addComponent(jLabel19)
                             .addComponent(siapeTecnicoLabel))))
                 .addGap(28, 28, 28)
-                .addComponent(painelRequerimentosProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addComponent(painelRequerimentosProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 708, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -401,10 +434,12 @@ public class TelaSecretaria extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) tabelaTriagem.getModel();
         DefaultTableModel model2 = (DefaultTableModel) tabelaTodosRequerimentos.getModel();
         DefaultTableModel model3 = (DefaultTableModel) tabelaRequerimentoSecretaria.getModel();
+        DefaultTableModel model4 = (DefaultTableModel) tabelaRequerimentosFinalizados.getModel();
 
         model.setRowCount(0);
         model2.setRowCount(0);
         model3.setRowCount(0);
+        model4.setRowCount(0);
 
     }
     
@@ -413,13 +448,15 @@ public class TelaSecretaria extends javax.swing.JFrame {
         popularRequerimentosSecretaria();
         popularRequerimentos();
         popularRequerimentosTriagem();
+        popularRequerimentosFinalizados();
     }//GEN-LAST:event_setinhaAtualizarMouseClicked
 
     private void quadradoAtualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quadradoAtualizarMouseClicked
       limparTabela();
         popularRequerimentosSecretaria();
         popularRequerimentos();
-        popularRequerimentosTriagem();        
+        popularRequerimentosTriagem();
+        popularRequerimentosFinalizados();
     }//GEN-LAST:event_quadradoAtualizarMouseClicked
 
     private void tabelaTriagemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaTriagemMouseClicked
@@ -470,7 +507,34 @@ public class TelaSecretaria extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_logoutLabelMouseClicked
 
-     
+    private void tabelaRequerimentosFinalizadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaRequerimentosFinalizadosMouseClicked
+        tabelaRequerimentosFinalizados = (JTable) evt.getSource();
+        
+        if (evt.getClickCount() == 2) {
+            int numeroLinha = tabelaRequerimentosFinalizados.getSelectedRow();
+            String numeroProtocolo = (String) tabelaRequerimentosFinalizados.getValueAt(numeroLinha,0);
+            String tipoRequerimento =(String) tabelaRequerimentosFinalizados.getValueAt(numeroLinha,1);
+            ArrayList<Requerimento> requerimento = buscarRequerimentoProtocolo(numeroProtocolo);
+            RequerimentoGeralAnexoSecretariaLeitura requerimentoAlunoLeitura;
+            requerimentoAlunoLeitura = new RequerimentoGeralAnexoSecretariaLeitura(requerimento.get(0),tipoRequerimento);         
+            requerimentoAlunoLeitura.setVisible(true);
+//            requerimentoAlunoLeitura.exportarBotao.setEnabled(true);
+
+        }
+    }//GEN-LAST:event_tabelaRequerimentosFinalizadosMouseClicked
+
+     private void popularRequerimentosFinalizados(){
+        DefaultTableModel model = (DefaultTableModel) tabelaRequerimentosFinalizados.getModel();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoFinalizado();
+        Object rowData[] = new Object[4];
+        for (int i = 0; i < requerimentos.size(); i++) {
+            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+            rowData[1] = requerimentos.get(i).requerente.getNome();
+            rowData[2] = requerimentos.get(i).getTipoRequerimento();
+            rowData[3] = requerimentos.get(i).getStatus();
+            model.addRow(rowData);
+        }
+     } 
     private void popularRequerimentosTriagem() {
 
         DefaultTableModel model = (DefaultTableModel) tabelaTriagem.getModel();
@@ -586,6 +650,7 @@ public class TelaSecretaria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JLabel logoutLabel;
@@ -597,6 +662,7 @@ public class TelaSecretaria extends javax.swing.JFrame {
     private javax.swing.JLabel setinhaAtualizar;
     private javax.swing.JLabel siapeTecnicoLabel;
     private javax.swing.JTable tabelaRequerimentoSecretaria;
+    private javax.swing.JTable tabelaRequerimentosFinalizados;
     private javax.swing.JTable tabelaTodosRequerimentos;
     private javax.swing.JTable tabelaTriagem;
     private javax.swing.JLabel telefoneCelTecnicoLabel;

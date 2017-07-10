@@ -436,10 +436,10 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(exportarBotao)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rejeitarBotao)
-                        .addComponent(aceitarBotao)
-                        .addComponent(exportarBotao))
+                        .addComponent(aceitarBotao))
                     .addComponent(voltarBotao))
                 .addContainerGap(47, Short.MAX_VALUE))
         );

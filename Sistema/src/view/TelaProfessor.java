@@ -497,7 +497,7 @@ public class TelaProfessor extends javax.swing.JFrame {
     }
     private void popularRequerimentosAlunos(){
      DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoAlunos.getModel();
-        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoAreaResponsavelProfessorNaoTRIAGEM(professor.getCpf());
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoAreaResponsavelProfessorDesignado(professor.getCpf());
         Object rowData[] = new Object[3];
         for (int i = 0; i < requerimentos.size(); i++) {
             rowData[0] = requerimentos.get(i).getNumeroProtocolo();
