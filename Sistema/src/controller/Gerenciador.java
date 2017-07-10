@@ -169,7 +169,7 @@ public class Gerenciador {
             xml.adiciona(requerimento);
             xml.escreveXML();
 
-        } else if (requerimento.getStatus().equals("ACEITO")) {
+        } else if (requerimento.getStatus().equals("CONCLUIDO")) {
             ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
             xml.leXML();
             ArrayList<Requerimento> listaInicial = xml.getLista();
@@ -419,17 +419,12 @@ public class Gerenciador {
         ArrayList<Requerimento> lista = xml.getLista();
         ArrayList<Requerimento> listaRetorno = new ArrayList<>();
         for (int i = 0; i < lista.size(); i++) {
-<<<<<<< HEAD
 
-            if (!lista.get(i).getStatus().equals("TRIAGEM") && lista.get(i).getAreaResponsavel().getCpf().equals(cpf))  {
-                listaRetorno.add(lista.get(i));
-=======
             if (!lista.get(i).getStatus().equals("TRIAGEM")) {
                         
                 if (lista.get(i).getAreaResponsavel().getCpf().equals(cpf)) {
                     listaRetorno.add(lista.get(i));
                 }
->>>>>>> a1394e0bcf16dfae889fcc8a435b49e268e1a122
             }
         }
         return listaRetorno;

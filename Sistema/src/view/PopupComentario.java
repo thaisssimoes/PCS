@@ -9,7 +9,9 @@ import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.time.LocalDate;
 import model.entity.Aluno;
+import model.requerimento.Requerimento;
 
 /**
  *
@@ -25,7 +27,15 @@ public class PopupComentario extends javax.swing.JFrame {
         centralizarTela();
 
     }
-    
+    String tipoAtualizacao;
+    Requerimento requerimento;
+     public PopupComentario(Requerimento requerimento, String tipoAtualizacao) {
+        initComponents();
+        this.tipoAtualizacao = tipoAtualizacao;
+        this.requerimento = requerimento;
+        centralizarTela();
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -132,8 +142,33 @@ public class PopupComentario extends javax.swing.JFrame {
         this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelarBotaoComentarioActionPerformed
-    public String escreverComentario(){
-        return comentarioAreaTexto.getText();
+    public void escreverComentario(){
+        String comentario = comentarioAreaTexto.getText();
+        String resposta = requerimento.getResposta();
+        String descricao = requerimento.getDescricao();
+       
+        switch(tipoAtualizacao){
+            case "PENDENTE":{
+                requerimento.setResposta( "Nota de Pendencia - " + String.valueOf(LocalDate.now()) + ":\n" + comentario);
+                requerimento.setStatus("PENDENTE");
+                controller.Gerenciador.analisaRequerimento(requerimento); 
+                break;}
+            case "ACEITO":{
+                requerimento.setResposta("Nota de Aceitação - " + String.valueOf(LocalDate.now()) + ":\n" + comentario);
+                requerimento.setStatus("CONCLUIDO");
+                controller.Gerenciador.analisaRequerimento(requerimento); break;}
+            case "REJEITADO":{
+                requerimento.setResposta( "Nota de rejeição - " + String.valueOf(LocalDate.now()) + ":\n" + comentario);
+                requerimento.setStatus("REJEITADO");
+                controller.Gerenciador.analisaRequerimento(requerimento); 
+                break;}
+            case "ATUALIZACAO":{requerimento.setDescricao(descricao + "Nota de atualizacao - " + String.valueOf(LocalDate.now()) + ":\n" + comentario);
+                requerimento.setStatus("DESIGNADO");
+                controller.Gerenciador.analisaRequerimento(requerimento); 
+                break;}
+            default: break;
+        }
+               
     }
     /**
      * @param args the command line arguments

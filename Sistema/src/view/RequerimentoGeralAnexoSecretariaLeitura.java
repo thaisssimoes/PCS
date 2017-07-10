@@ -5,50 +5,49 @@
  */
 package view;
 
-import controller.Gerenciador;
 import static controller.Gerenciador.obterAluno;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.time.Instant;
 import java.time.LocalDate;
-import static java.time.temporal.TemporalQueries.localDate;
-import java.util.ArrayList;
-import javax.swing.DefaultComboBoxModel;
 import model.entity.Aluno;
-import model.entity.Professor;
+import model.entity.Tecnico;
 import model.requerimento.Requerimento;
 
 /**
  *
  * @author labccet
  */
-public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
+public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame {
 
     /**
      * Creates new form telaAluno
      */
-    public RequerimentoGeralAnexoAluno() {
+    public RequerimentoGeralAnexoSecretariaLeitura() {
         initComponents();
-        criarRequerimento(requerimento);
-        preencherTela();
-        
-        dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
-        dataFechamentoFixo.setVisible(false);
-        dataFechamentoLabel.setVisible(false);
-       
     }
+    Tecnico tecnico;
+    Requerimento requerimento;
     Aluno aluno;
-    Requerimento requerimento = new Requerimento();
-    
-    public RequerimentoGeralAnexoAluno(Aluno aluno, String titulo) {
+    public RequerimentoGeralAnexoSecretariaLeitura(String cpf, String senha, String titulo) {
         this.setTitle(titulo);
         initComponents();
-        this.aluno = aluno;
         preencherTela();
-        preencherCamposEscrita();
+        preencherCampos();
+        centralizarTela();
+        initComponents();
+        this.tecnico = tecnico;
         centralizarTela();
     }
-
+    public RequerimentoGeralAnexoSecretariaLeitura(Requerimento requerimento,String titulo){
+        this.setTitle(titulo);
+        initComponents();
+        this.requerimento = requerimento;
+        this.aluno = (Aluno) requerimento.getRequerente();
+        preencherTela();
+        preencherCampos();
+        centralizarTela();
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,25 +70,16 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         dataFechamentoLabel = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         nomeCompletoAlunoLabel = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        matriculaAlunoLabel = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         emailAlunoLabel = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        telefoneAlunoLabel = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        periodoLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         descricaoAreaTexto = new javax.swing.JTextArea();
         jLabel25 = new javax.swing.JLabel();
-        atualizarBotao = new javax.swing.JButton();
-        cancelarBotao = new javax.swing.JButton();
-        enviarBotao = new javax.swing.JButton();
-        disciplinaComboBox = new javax.swing.JComboBox();
+        rejeitarBotao = new javax.swing.JButton();
+        aceitarBotao = new javax.swing.JButton();
         disciplinaLabelFixo = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        respostaAreaTexo = new javax.swing.JTextArea();
+        respostaAreaTexto = new javax.swing.JTextArea();
         jLabel29 = new javax.swing.JLabel();
         anexo2 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
@@ -97,6 +87,16 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         anexo1 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        disciplinaLabel = new javax.swing.JLabel();
+        matriculaAlunoLabel = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        periodoLabel = new javax.swing.JLabel();
+        telefoneAlunoLabel = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        voltarBotao = new javax.swing.JButton();
+        exportarBotao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
@@ -157,7 +157,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(dataAberturaLabel)
                             .addComponent(dataFechamentoLabel))
-                        .addGap(138, 138, 138))))
+                        .addGap(183, 183, 183))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,78 +193,47 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         nomeCompletoAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         nomeCompletoAlunoLabel.setText("Nome Completo do Aluno");
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setText("Matrícula:");
-
-        matriculaAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        matriculaAlunoLabel.setText("123456789");
-
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("E-mail:");
 
         emailAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         emailAlunoLabel.setText("nome.sobrenome@uniriotec.br");
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel17.setText("Telefone:");
-
-        telefoneAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        telefoneAlunoLabel.setText("(21) 9-2222-2222");
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel19.setText("Período:");
-
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel20.setText("período");
-
-        periodoLabel.setText("X");
-
         descricaoAreaTexto.setColumns(20);
         descricaoAreaTexto.setRows(5);
+        descricaoAreaTexto.setEnabled(false);
         jScrollPane1.setViewportView(descricaoAreaTexto);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setText("Descrição:");
 
-        atualizarBotao.setBackground(new java.awt.Color(56, 113, 156));
-        atualizarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        atualizarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        atualizarBotao.setText("Atualizar");
-        atualizarBotao.addActionListener(new java.awt.event.ActionListener() {
+        rejeitarBotao.setBackground(new java.awt.Color(56, 113, 156));
+        rejeitarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rejeitarBotao.setForeground(new java.awt.Color(255, 255, 255));
+        rejeitarBotao.setText("Rejeitar");
+        rejeitarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atualizarBotaoActionPerformed(evt);
+                rejeitarBotaoActionPerformed(evt);
             }
         });
 
-        cancelarBotao.setBackground(new java.awt.Color(56, 113, 156));
-        cancelarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cancelarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        cancelarBotao.setText("Voltar");
-        cancelarBotao.addActionListener(new java.awt.event.ActionListener() {
+        aceitarBotao.setBackground(new java.awt.Color(56, 113, 156));
+        aceitarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        aceitarBotao.setForeground(new java.awt.Color(255, 255, 255));
+        aceitarBotao.setText("Concluir");
+        aceitarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarBotaoActionPerformed(evt);
+                aceitarBotaoActionPerformed(evt);
             }
         });
-
-        enviarBotao.setBackground(new java.awt.Color(56, 113, 156));
-        enviarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        enviarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        enviarBotao.setText("Enviar");
-        enviarBotao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enviarBotaoActionPerformed(evt);
-            }
-        });
-
-        disciplinaComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administração Financeira", "Álgebra Linear", "Análise de Algoritmo", "Análise de Sistemas", "Análise Empresarial e Admin.", "Banco de Dados I", "Banco de Dados II", "Cálculo Diferenc. e Integral I", "Cálculo Diferenc. e Integral II", "Desenvolv. de Páginas Web", "Empreendedorismo", "Estatística", "Estruturas de Dados I", "Estruturas de Dados II", "Estruturas Discretas", "Fund. de Sist. de Informação", "Gerência de Proj. de Informat.", "Interação Humano Computador", "Introdução à Lógica Computac.", "Linguag. Formais e Autômatos", "Matemática Básica", "Organização de Computadores", "Probabilidade", "Processos de Software", "Programação Modular", "Projeto de Graduação I", "Projeto de Graduação II", "Proj. e Const. de Sistemas", "Proj. Const. Sistemas-SGBD", "Redes de Computadores I", "Redes de Computadores II", "Sistemas Operacionais", "Técnicas de Programação I", "Técnicas de Programação II", "Teorias e Práticas Discursivas" }));
 
         disciplinaLabelFixo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         disciplinaLabelFixo.setText("Disciplina:");
 
-        respostaAreaTexo.setColumns(20);
-        respostaAreaTexo.setRows(5);
-        respostaAreaTexo.setEnabled(false);
-        jScrollPane2.setViewportView(respostaAreaTexo);
+        respostaAreaTexto.setColumns(20);
+        respostaAreaTexto.setRows(5);
+        respostaAreaTexto.setEnabled(false);
+        jScrollPane2.setViewportView(respostaAreaTexto);
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel29.setText("Resposta:");
@@ -319,6 +288,50 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
                 .addGap(5, 5, 5))
         );
 
+        disciplinaLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        disciplinaLabel.setText("Disciplina:");
+
+        matriculaAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        matriculaAlunoLabel.setText("123456789");
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel14.setText("Matrícula:");
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel19.setText("Período:");
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel20.setText("período");
+
+        periodoLabel.setText("X");
+
+        telefoneAlunoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        telefoneAlunoLabel.setText("(21) 9-2222-2222");
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel18.setText("Telefone:");
+
+        voltarBotao.setBackground(new java.awt.Color(56, 113, 156));
+        voltarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        voltarBotao.setForeground(new java.awt.Color(255, 255, 255));
+        voltarBotao.setText("Voltar");
+        voltarBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarBotaoActionPerformed(evt);
+            }
+        });
+
+        exportarBotao.setBackground(new java.awt.Color(56, 113, 156));
+        exportarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        exportarBotao.setForeground(new java.awt.Color(255, 255, 255));
+        exportarBotao.setText("Exportar");
+        exportarBotao.setEnabled(false);
+        exportarBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exportarBotaoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -328,8 +341,24 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(disciplinaLabelFixo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(disciplinaLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(41, 41, 41)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel11)
@@ -339,82 +368,62 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
                                         .addComponent(jLabel15)
                                         .addGap(21, 21, 21)
                                         .addComponent(emailAlunoLabel)))
-                                .addGap(41, 41, 41)
+                                .addGap(47, 47, 47)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel14))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(telefoneAlunoLabel)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel17)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(telefoneAlunoLabel))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel13)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(matriculaAlunoLabel)
-                                        .addGap(77, 77, 77)
+                                        .addGap(59, 59, 59)
                                         .addComponent(jLabel19)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(periodoLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel20))))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(disciplinaLabelFixo)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(disciplinaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel25)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(41, 41, 41)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel29)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel20))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(cancelarBotao)
-                        .addGap(66, 66, 66)
-                        .addComponent(atualizarBotao)
-                        .addGap(59, 59, 59)
-                        .addComponent(enviarBotao)))
-                .addGap(79, 79, 79))
+                        .addGap(97, 97, 97)
+                        .addComponent(voltarBotao)
+                        .addGap(57, 57, 57)
+                        .addComponent(rejeitarBotao)
+                        .addGap(62, 62, 62)
+                        .addComponent(exportarBotao)
+                        .addGap(63, 63, 63)
+                        .addComponent(aceitarBotao)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(nomeCompletoAlunoLabel))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15)
-                            .addComponent(emailAlunoLabel)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(matriculaAlunoLabel)
-                            .addComponent(jLabel19)
-                            .addComponent(periodoLabel)
-                            .addComponent(jLabel20))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel17)
-                            .addComponent(telefoneAlunoLabel))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(nomeCompletoAlunoLabel)
+                    .addComponent(jLabel14)
+                    .addComponent(matriculaAlunoLabel)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel20)
+                    .addComponent(periodoLabel))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(emailAlunoLabel)
+                    .addComponent(jLabel18)
+                    .addComponent(telefoneAlunoLabel))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(disciplinaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11)
+                        .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(disciplinaLabelFixo))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(disciplinaLabelFixo)
+                            .addComponent(disciplinaLabel))))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -426,11 +435,13 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cancelarBotao)
-                    .addComponent(atualizarBotao)
-                    .addComponent(enviarBotao))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(rejeitarBotao)
+                        .addComponent(aceitarBotao)
+                        .addComponent(exportarBotao))
+                    .addComponent(voltarBotao))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -448,106 +459,75 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-     private void preencherCamposEscrita() {
-        emailAlunoLabel.setText(aluno.getEmail());
-        nomeCompletoAlunoLabel.setText(aluno.getNome());
-        matriculaAlunoLabel.setText(aluno.getMatricula());
-        telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
-        dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
-        periodoLabel.setText(aluno.getPeriodo());
-        
-    }
     
-    private void preencherCamposLeitura() {
-        Aluno aluno = (Aluno) requerimento.getRequerente();
+    
+    private void preencherCampos() {
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
         matriculaAlunoLabel.setText(aluno.getMatricula());
         telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
         dataAberturaLabel.setText(requerimento.getDataCriacao());
-        
+        statusLabel.setText(requerimento.getStatus());
+        numeroProtocoloLabel.setText(requerimento.getNumeroProtocolo());
+        descricaoAreaTexto.setText(requerimento.getDescricao());
+        disciplinaLabel.setText(requerimento.getDisciplina());
+        respostaAreaTexto.setText(requerimento.getResposta());
+        periodoLabel.setText(aluno.getPeriodo());
     }
     
-    private void preencherTela() {
+      private void preencherTela(){
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         String titulo = this.getTitle();
         System.out.println(titulo);
-        numeroProtocoloLabel.setVisible(false);
-        statusLabel.setVisible(false);
         dataFechamentoLabel.setVisible(false);
         dataFechamentoFixo.setVisible(false);
-        if (titulo.equals("Realização de segunda chamada")
-                || titulo.equals("Revisão de prova")
-                || titulo.equals("Isenção ou aproveitamento de disciplina")) {
+
+        if(titulo.equals("Realização de segunda chamada")
+            || titulo.equals("Revisão de prova")
+            || titulo.equals("Isenção ou aproveitamento de disciplina")){
             disciplinaLabelFixo.setVisible(true);
-            disciplinaComboBox.setVisible(true);
+            disciplinaLabel.setVisible(true);
             anexo1.setVisible(true);
             anexo2.setVisible(true);
-        } else {
+        }
+        else{         
             disciplinaLabelFixo.setVisible(false);
-            disciplinaComboBox.setVisible(false);
+            disciplinaLabel.setVisible(false);
             anexo1.setVisible(false);
             anexo2.setVisible(false);
-            this.setBounds(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2, 700, 500);
-            
+            this.setBounds(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2, 700, 550);
+               
         }
     }
-    
     private void centralizarTela() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
     }
 
 
-    private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
-        criarRequerimento(requerimento);
-        ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno, requerimento);
-        janelaConfirmacao.setVisible(true);
-        
+    private void aceitarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceitarBotaoActionPerformed
+        PopupComentario janelaComentario = new PopupComentario(requerimento, "ACEITO");
+        janelaComentario.setVisible(true);
+    }//GEN-LAST:event_aceitarBotaoActionPerformed
 
+    private void rejeitarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejeitarBotaoActionPerformed
+        PopupComentario janelaComentario = new PopupComentario(requerimento, "REJEITADO");
+        janelaComentario.setVisible(true);
 
-    }//GEN-LAST:event_enviarBotaoActionPerformed
+    }//GEN-LAST:event_rejeitarBotaoActionPerformed
 
-    private void atualizarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoActionPerformed
-        PopupComentario janelaComentario = new PopupComentario();
-        janelaComentario.setVisible(true);    }//GEN-LAST:event_atualizarBotaoActionPerformed
-
-    private void cancelarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoActionPerformed
-        TelaAluno janelaTelaAluno = new TelaAluno(aluno);
-        janelaTelaAluno.setVisible(true);
+    private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
         this.setVisible(false);
         this.dispose();
+    }//GEN-LAST:event_voltarBotaoActionPerformed
 
-    }//GEN-LAST:event_cancelarBotaoActionPerformed
-    
-    private void criarRequerimento(Requerimento requerimento) {
-        numeroProtocoloLabel.setText(requerimento.getNumeroProtocolo());
-        requerimento.setDataCriacao(LocalDate.now().toString());
-        requerimento.setDescricao(descricaoAreaTexto.getText());
-        requerimento.setRequerente(aluno);
-        requerimento.setStatus("TRIAGEM");
-        requerimento.setTipoRequerimento(this.getTitle());
-        requerimento.setDisciplina(String.valueOf(disciplinaComboBox.getSelectedItem()));
-        if (encontrarCargoTipoRequerimento().equals("Criar tecnico")) {
-            requerimento.setAreaResponsavel(Gerenciador.criarTecnicoGenerico());
-        } else if(this.getTitle().equals("Cancelamento de matrícula") || this.getTitle().equals("Revisão de prova")) {
-            requerimento.setAreaResponsavel(Gerenciador.obterProfessorCargo(encontrarCargoTipoRequerimento()));
-        }
-        else{
-            requerimento.setAreaResponsavel(controller.Gerenciador.obterProfessorDisciplina(String.valueOf(disciplinaComboBox.getSelectedItem())));
-        }
-    }
+    private void exportarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportarBotaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exportarBotaoActionPerformed
 
-     private String encontrarCargoTipoRequerimento() {
-        if (this.getTitle().equals("Cancelamento de matrícula")) {
-            return "Diretor";
-        } else if (this.getTitle().equals("Revisão de prova")) {
-            return "Chefe de Departamento";
-        } else {
-            return "Criar tecnico";
-        }
-    }
-
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -562,14 +542,254 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoSecretariaLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoSecretariaLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoSecretariaLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoSecretariaLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -590,30 +810,29 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RequerimentoGeralAnexoAluno().setVisible(true);
+                new RequerimentoGeralAnexoSecretariaLeitura().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton aceitarBotao;
     private javax.swing.JPanel anexo1;
     private javax.swing.JPanel anexo2;
-    private javax.swing.JButton atualizarBotao;
-    private javax.swing.JButton cancelarBotao;
     private javax.swing.JLabel dataAberturaLabel;
     private javax.swing.JLabel dataFechamentoFixo;
     private javax.swing.JLabel dataFechamentoLabel;
     private javax.swing.JTextArea descricaoAreaTexto;
-    private javax.swing.JComboBox disciplinaComboBox;
+    private javax.swing.JLabel disciplinaLabel;
     private javax.swing.JLabel disciplinaLabelFixo;
     private javax.swing.JLabel emailAlunoLabel;
-    private javax.swing.JButton enviarBotao;
+    private javax.swing.JButton exportarBotao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel25;
@@ -631,8 +850,10 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
     private javax.swing.JLabel nomeCompletoAlunoLabel;
     private javax.swing.JLabel numeroProtocoloLabel;
     private javax.swing.JLabel periodoLabel;
-    private javax.swing.JTextArea respostaAreaTexo;
+    private javax.swing.JButton rejeitarBotao;
+    private javax.swing.JTextArea respostaAreaTexto;
     private javax.swing.JLabel statusLabel;
     private javax.swing.JLabel telefoneAlunoLabel;
+    private javax.swing.JButton voltarBotao;
     // End of variables declaration//GEN-END:variables
 }

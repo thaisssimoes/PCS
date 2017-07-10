@@ -5,11 +5,13 @@
  */
 package view;
 
+import static controller.Gerenciador.buscarRequerimentoProtocolo;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import model.entity.Professor;
@@ -241,7 +243,13 @@ public class TelaProfessor extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tabelaRequerimentoAlunos.setColumnSelectionAllowed(true);
+        tabelaRequerimentoAlunos.setCellSelectionEnabled(false);
+        tabelaRequerimentoAlunos.setRowSelectionAllowed(true);
+        tabelaRequerimentoAlunos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaRequerimentoAlunosMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(tabelaRequerimentoAlunos);
         tabelaRequerimentoAlunos.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
@@ -455,13 +463,13 @@ public class TelaProfessor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void limparTabela(){
-        DefaultTableModel model = (DefaultTableModel) tabelaMeusRequerimentos.getModel();
+       // DefaultTableModel model = (DefaultTableModel) tabelaMeusRequerimentos.getModel();
         DefaultTableModel model2 = (DefaultTableModel) tabelaRequerimentoAlunos.getModel();
-        DefaultTableModel model3 = (DefaultTableModel) tabelaRequerimentosDeProfessores.getModel();
+       // DefaultTableModel model3 = (DefaultTableModel) tabelaRequerimentosDeProfessores.getModel();
 
-        model.setRowCount(0);
+      //  model.setRowCount(0);
         model2.setRowCount(0);
-        model3.setRowCount(0);
+       // model3.setRowCount(0);
 
     }
     private void popularMeusRequerimentos(){ 
@@ -523,7 +531,7 @@ public class TelaProfessor extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_selecionarRequerimento
-
+   
     private void logoutLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutLabelMouseClicked
         Login telaLogin = new Login();
         telaLogin.setVisible(true);
@@ -532,11 +540,27 @@ public class TelaProfessor extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutLabelMouseClicked
 
     private void quadradoAtualizacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quadradoAtualizacaoMouseClicked
+        limparTabela();
         popularRequerimentosProfessores();
         popularMeusRequerimentos();
         popularRequerimentosAlunos();       
         
     }//GEN-LAST:event_quadradoAtualizacaoMouseClicked
+
+    private void tabelaRequerimentoAlunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaRequerimentoAlunosMouseClicked
+        tabelaRequerimentoAlunos = (JTable) evt.getSource();
+        
+        if (evt.getClickCount() == 2) {
+            int numeroLinha = tabelaRequerimentoAlunos.getSelectedRow();
+            String numeroProtocolo = (String) tabelaRequerimentoAlunos.getValueAt(numeroLinha,0);
+            String tipoRequerimento =(String) tabelaRequerimentoAlunos.getValueAt(numeroLinha,1);
+            ArrayList<Requerimento> requerimento = buscarRequerimentoProtocolo(numeroProtocolo);
+            RequerimentoGeralAnexoProfessorLeitura requerimentoAlunoLeitura;
+            requerimentoAlunoLeitura = new RequerimentoGeralAnexoProfessorLeitura(requerimento.get(0),tipoRequerimento, professor);
+            requerimentoAlunoLeitura.setVisible(true);
+        }   
+
+    }//GEN-LAST:event_tabelaRequerimentoAlunosMouseClicked
 
     public void visibilidadeAbaProfessor(String cargo) {
         if (!cargo.equals("Decano") && !cargo.equals("Chefe de Departamento")) {

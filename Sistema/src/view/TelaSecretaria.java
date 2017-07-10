@@ -443,8 +443,8 @@ public class TelaSecretaria extends javax.swing.JFrame {
             String numeroProtocolo = (String) tabelaRequerimentoSecretaria.getValueAt(numeroLinha,0);
             String tipoRequerimento =(String) tabelaRequerimentoSecretaria.getValueAt(numeroLinha,1);
             ArrayList<Requerimento> requerimento = buscarRequerimentoProtocolo(numeroProtocolo);
-            RequerimentoGeralAnexoSecretaria requerimentoAlunoLeitura;
-            requerimentoAlunoLeitura = new RequerimentoGeralAnexoSecretaria(requerimento.get(0),tipoRequerimento);
+            RequerimentoGeralAnexoSecretariaLeitura requerimentoAlunoLeitura;
+            requerimentoAlunoLeitura = new RequerimentoGeralAnexoSecretariaLeitura(requerimento.get(0),tipoRequerimento);
             requerimentoAlunoLeitura.setVisible(true);
         }
     }//GEN-LAST:event_tabelaRequerimentoSecretariaMouseClicked

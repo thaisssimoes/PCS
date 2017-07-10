@@ -28,7 +28,6 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
      */
     public RequerimentoGeralAnexoAlunoLeitura() {
         initComponents();
-        criarRequerimento();
         preencherTela();
 
         dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
@@ -441,7 +440,6 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
      private void preencherCamposLeitura() {
-        this.getTitle().equals("Revisão de prova");
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
         matriculaAlunoLabel.setText(aluno.getMatricula());
@@ -493,37 +491,15 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
     }//GEN-LAST:event_voltarBotaoActionPerformed
 
     private void atualizarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoActionPerformed
-       PopupComentario janelaComentario = new PopupComentario();
-        janelaComentario.setVisible(true);
-        String comentario = janelaComentario.escreverComentario();
-        String descricao = requerimento.getDescricao();
-        requerimento.setDescricao(descricao + "Nota de Atualização:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
-
+       PopupComentario janelaComentario = new PopupComentario(requerimento, "ATUALIZACAO");
+       janelaComentario.setVisible(true);
+       
 
     }//GEN-LAST:event_atualizarBotaoActionPerformed
 
-    private Requerimento criarRequerimento() {
-        Requerimento novoRequerimento = new Requerimento();
-        numeroProtocoloLabel.setText(novoRequerimento.getNumeroProtocolo());
-        novoRequerimento.setDataCriacao(LocalDate.now().toString());
-        novoRequerimento.setDescricao(descricaoAreaTexto.getText());
-        novoRequerimento.setRequerente(aluno);
-        novoRequerimento.setStatus("TRIAGEM");
-        novoRequerimento.setTipoRequerimento(this.getTitle());
-        return novoRequerimento;
+ 
 
-    }
-
-    private String encontrarAreaResponsavel() {
-        if (this.getTitle().equals("Cancelamento de matrícula")) {
-            return "Diretor";
-        } else if (this.getTitle().equals("Revisão de prova")) {
-            return "Chefe de Departamento";
-        } else {
-            return null;
-        }
-    }
-
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

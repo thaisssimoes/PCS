@@ -21,12 +21,12 @@ import model.requerimento.Requerimento;
  *
  * @author labccet
  */
-public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
+public class RequerimentoGeralAnexoProfessorLeitura extends javax.swing.JFrame {
 
     /**
      * Creates new form telaAluno
      */
-    public RequerimentoGeralAnexoProfessor() {
+    public RequerimentoGeralAnexoProfessorLeitura() {
         initComponents();
         preencherTela();
 
@@ -37,10 +37,12 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
     Requerimento requerimento;
     Aluno aluno;
     Professor professor;
-    public RequerimentoGeralAnexoProfessor(Requerimento requerimento, String titulo, Professor professor) {
+    
+    public RequerimentoGeralAnexoProfessorLeitura(Requerimento requerimento, String titulo, Professor professor) {
         this.setTitle(titulo);
         initComponents();
-        this.professor = professor;
+        this.professor=professor;
+        aluno = (Aluno) requerimento.getRequerente();
         this.requerimento = requerimento;
         preencherTela();
         preencherCampos();
@@ -84,7 +86,7 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         rejeitarBotao = new javax.swing.JButton();
         disciplinaLabelFixo = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        respostaAreaTexo = new javax.swing.JTextArea();
+        respostaAreaTexto = new javax.swing.JTextArea();
         jLabel29 = new javax.swing.JLabel();
         anexo2 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
@@ -228,7 +230,7 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         voltarBotao.setBackground(new java.awt.Color(56, 113, 156));
         voltarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         voltarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        voltarBotao.setText("voltar");
+        voltarBotao.setText("Voltar");
         voltarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 voltarBotaoActionPerformed(evt);
@@ -248,9 +250,10 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         disciplinaLabelFixo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         disciplinaLabelFixo.setText("Disciplina:");
 
-        respostaAreaTexo.setColumns(20);
-        respostaAreaTexo.setRows(5);
-        jScrollPane2.setViewportView(respostaAreaTexo);
+        respostaAreaTexto.setColumns(20);
+        respostaAreaTexto.setRows(5);
+        respostaAreaTexto.setEnabled(false);
+        jScrollPane2.setViewportView(respostaAreaTexto);
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel29.setText("Resposta:");
@@ -468,7 +471,13 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         nomeCompletoAlunoLabel.setText(aluno.getNome());
         matriculaAlunoLabel.setText(aluno.getMatricula());
         telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
-        dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
+        dataAberturaLabel.setText(requerimento.getDataCriacao());
+        statusLabel.setText(requerimento.getStatus());
+        numeroProtocoloLabel.setText(requerimento.getNumeroProtocolo());
+        descricaoAreaTexto.setText(requerimento.getDescricao());
+        disciplinaLabel.setText(requerimento.getDisciplina());
+        respostaAreaTexto.setText(requerimento.getResposta());
+        periodoLabel.setText(aluno.getPeriodo());
         
     }
     
@@ -503,17 +512,13 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
 
 
     private void rejeitarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejeitarBotaoActionPerformed
-        PopupComentario janelaComentario = new PopupComentario();
+        PopupComentario janelaComentario = new PopupComentario(requerimento, "REJEITADO");
         janelaComentario.setVisible(true);
-        String comentario = janelaComentario.escreverComentario();
-        String resposta = requerimento.getResposta();
-        requerimento.setResposta(resposta + "Nota de Rejeição:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
-
+        
+       
     }//GEN-LAST:event_rejeitarBotaoActionPerformed
 
     private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
-        TelaProfessor janelaTelaProfessor = new TelaProfessor(professor);
-        janelaTelaProfessor.setVisible(true);
         this.setVisible(false);
         this.dispose();
 
@@ -521,19 +526,18 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
     }//GEN-LAST:event_voltarBotaoActionPerformed
 
     private void pendenciaBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pendenciaBotaoActionPerformed
-            PopupComentario janelaComentario = new PopupComentario();
+        PopupComentario janelaComentario = new PopupComentario(requerimento, "PENDENTE");
         janelaComentario.setVisible(true);
-        String comentario = janelaComentario.escreverComentario();
-        String resposta = requerimento.getResposta();
-        requerimento.setResposta(resposta + "Nota de Pendência:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
+        
+        
     }//GEN-LAST:event_pendenciaBotaoActionPerformed
 
     private void aceitarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceitarBotaoActionPerformed
-        PopupComentario janelaComentario = new PopupComentario();
+        PopupComentario janelaComentario = new PopupComentario(requerimento, "ACEITO");
         janelaComentario.setVisible(true);
-        String comentario = janelaComentario.escreverComentario();
-        String resposta = requerimento.getResposta();
-        requerimento.setResposta(resposta + "Nota de Aceitação:\n" + String.valueOf(LocalDate.now()) + "\n" + comentario);
+        
+        
+
      }//GEN-LAST:event_aceitarBotaoActionPerformed
 
     
@@ -553,14 +557,46 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoProfessorLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoProfessorLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoProfessorLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoProfessorLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -597,7 +633,7 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RequerimentoGeralAnexoProfessor().setVisible(true);
+                new RequerimentoGeralAnexoProfessorLeitura().setVisible(true);
             }
         });
     }
@@ -638,7 +674,7 @@ public class RequerimentoGeralAnexoProfessor extends javax.swing.JFrame {
     private javax.swing.JButton pendenciaBotao;
     private javax.swing.JLabel periodoLabel;
     private javax.swing.JButton rejeitarBotao;
-    private javax.swing.JTextArea respostaAreaTexo;
+    private javax.swing.JTextArea respostaAreaTexto;
     private javax.swing.JLabel statusLabel;
     private javax.swing.JLabel telefoneAlunoLabel;
     private javax.swing.JButton voltarBotao;
