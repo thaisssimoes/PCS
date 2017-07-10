@@ -112,7 +112,7 @@ public class DadosCadastraisCompletos extends javax.swing.JFrame {
         emailAluno = new javax.swing.JLabel();
         okBotaoDadosCompletos = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 700));
         setResizable(false);
 

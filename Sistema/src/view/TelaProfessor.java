@@ -54,6 +54,7 @@ public class TelaProfessor extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        logoutLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lista = new javax.swing.JList<String>();
         painelRequerimentosProfessores = new javax.swing.JTabbedPane();
@@ -98,6 +99,15 @@ public class TelaProfessor extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iBSI.png"))); // NOI18N
 
+        logoutLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        logoutLabel.setForeground(new java.awt.Color(255, 255, 255));
+        logoutLabel.setText("Trocar de Usuário");
+        logoutLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutLabelMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -105,8 +115,14 @@ public class TelaProfessor extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(937, 937, 937)
-                .addComponent(jLabel5))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(937, 937, 937)
+                        .addComponent(jLabel5))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(logoutLabel)
+                        .addGap(31, 31, 31))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,7 +135,9 @@ public class TelaProfessor extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel5)
-                        .addGap(124, 124, 124))))
+                        .addGap(63, 63, 63)
+                        .addComponent(logoutLabel)
+                        .addGap(44, 44, 44))))
         );
 
         lista.setModel(new javax.swing.AbstractListModel() {
@@ -442,28 +460,28 @@ public class TelaProfessor extends javax.swing.JFrame {
             model.addRow(rowData);
         }
     }
-//    private void popularRequerimentosAlunos(){
-//     DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoAlunos.getModel();
-//        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoCPF(aluno.getCpf());
-//        Object rowData[] = new Object[3];
-//        for (int i = 0; i < requerimentos.size(); i++) {
-//            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
-//            rowData[1] = requerimentos.get(i).getTipoRequerimento();
-//            rowData[2] = requerimentos.get(i).getStatus();
-//            model.addRow(rowData);
-//        }
-//    }
-//    private void popularRequerimentosProfessores(){
-//     DefaultTableModel model = (DefaultTableModel) tabelaRequerimentosDeProfessores.getModel();
-//        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoCPF(aluno.getCpf());
-//        Object rowData[] = new Object[3];
-//        for (int i = 0; i < requerimentos.size(); i++) {
-//            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
-//            rowData[1] = requerimentos.get(i).getTipoRequerimento();
-//            rowData[2] = requerimentos.get(i).getStatus();
-//            model.addRow(rowData);
-//        }
-//    }
+    private void popularRequerimentosAlunos(){
+     DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoAlunos.getModel();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoAreaResponsavelProfessor();
+        Object rowData[] = new Object[3];
+        for (int i = 0; i < requerimentos.size(); i++) {
+            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+            rowData[1] = requerimentos.get(i).getTipoRequerimento();
+            rowData[2] = requerimentos.get(i).getStatus();
+            model.addRow(rowData);
+        }
+    }
+    private void popularRequerimentosProfessores(){
+     DefaultTableModel model = (DefaultTableModel) tabelaRequerimentosDeProfessores.getModel();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoRequerenteProfessor();
+        Object rowData[] = new Object[3];
+        for (int i = 0; i < requerimentos.size(); i++) {
+            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+            rowData[1] = requerimentos.get(i).getTipoRequerimento();
+            rowData[2] = requerimentos.get(i).getStatus();
+            model.addRow(rowData);
+        }
+    }
 
     
     private void centralizarTela() {
@@ -490,6 +508,13 @@ public class TelaProfessor extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_selecionarRequerimento
+
+    private void logoutLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutLabelMouseClicked
+        Login telaLogin = new Login();
+        telaLogin.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_logoutLabelMouseClicked
 
     public void visibilidadeAbaProfessor(String cargo) {
         if (!cargo.equals("Decano") && !cargo.equals("Chefe de Departamento")) {
@@ -567,6 +592,7 @@ public class TelaProfessor extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JList<String> lista;
+    private javax.swing.JLabel logoutLabel;
     private javax.swing.JTabbedPane painelRequerimentosProfessores;
     private javax.swing.JTabbedPane painelTelaAluno1;
     private javax.swing.JPanel quadradoAtualizacao;

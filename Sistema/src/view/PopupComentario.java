@@ -43,7 +43,7 @@ public class PopupComentario extends javax.swing.JFrame {
         okBotaoComentario = new javax.swing.JButton();
         cancelarBotaoComentario = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

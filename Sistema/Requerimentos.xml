@@ -956,11 +956,19 @@
    </object>
   </void>
   <void method="add">
+<<<<<<< HEAD
    <object class="model.requerimento.Requerimento" id="Requerimento9">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
       <object idref="Requerimento9"/>
+=======
+   <object class="model.requerimento.Requerimento" id="Requerimento7">
+    <void class="model.requerimento.Requerimento" method="getField">
+     <string>requerente</string>
+     <void method="set">
+      <object idref="Requerimento7"/>
+>>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>NemUm</string>
@@ -1044,26 +1052,45 @@
      <string>2017-07-09</string>
     </void>
     <void property="descricao">
+<<<<<<< HEAD
      <string>Bananal
 </string>
     </void>
     <void property="numeroProtocolo">
      <string>1499641639942</string>
+=======
+     <string></string>
+    </void>
+    <void property="numeroProtocolo">
+     <string>1499641465271</string>
+>>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
     </void>
     <void property="status">
      <string>DESIGNADO</string>
     </void>
     <void property="tipoRequerimento">
+<<<<<<< HEAD
      <string>Emissão de histórico escolar</string>
+=======
+     <string>Trancamento de Disciplina</string>
+>>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
     </void>
    </object>
   </void>
   <void method="add">
+<<<<<<< HEAD
    <object class="model.requerimento.Requerimento" id="Requerimento10">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
       <object idref="Requerimento10"/>
+=======
+   <object class="model.requerimento.Requerimento" id="Requerimento8">
+    <void class="model.requerimento.Requerimento" method="getField">
+     <string>requerente</string>
+     <void method="set">
+      <object idref="Requerimento8"/>
+>>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>NemUm</string>
@@ -1143,20 +1170,41 @@
       </object>
      </void>
     </void>
+<<<<<<< HEAD
+=======
+    <void property="areaResponsavel">
+     <object class="model.entity.Tecnico">
+      <void property="nome">
+       <string>Tecnico Generico</string>
+      </void>
+     </object>
+    </void>
+>>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
     <void property="dataCriacao">
      <string>2017-07-09</string>
     </void>
     <void property="descricao">
+<<<<<<< HEAD
      <string></string>
     </void>
     <void property="numeroProtocolo">
      <string>1499641465271</string>
+=======
+     <string>Sofrivel</string>
+    </void>
+    <void property="numeroProtocolo">
+     <string>1499641824358</string>
+>>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
     </void>
     <void property="status">
      <string>DESIGNADO</string>
     </void>
     <void property="tipoRequerimento">
+<<<<<<< HEAD
      <string>Trancamento de Disciplina</string>
+=======
+     <string>Realização de segunda chamada</string>
+>>>>>>> 46d064c5a7ac3a22d58f784f328f2a3f4388aaa0
     </void>
    </object>
   </void>
