@@ -131,9 +131,15 @@ public class PopupComentario extends javax.swing.JFrame {
     
     
     private void okBotaoComentarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBotaoComentarioActionPerformed
-        escreverComentario();
-        this.setVisible(false);
-        this.dispose();
+        if(comentarioAreaTexto.getText().equals("")||comentarioAreaTexto.getText().equals(" ")){
+            PreenchaDadosPopUp alertaFaltaDados = new PreenchaDadosPopUp();
+            alertaFaltaDados.setVisible(true);
+        }
+        else{
+            escreverComentario();
+            this.setVisible(false);
+            this.dispose();
+        }
         //TODO: Colocar a leitura do XML
     }//GEN-LAST:event_okBotaoComentarioActionPerformed
 

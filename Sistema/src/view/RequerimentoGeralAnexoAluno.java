@@ -483,10 +483,16 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
 
 
     private void enviarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotaoActionPerformed
-        criarRequerimento(requerimento);
-        ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno, requerimento);
-        janelaConfirmacao.setVisible(true);
+       if(descricaoAreaTexto.getText().equals("")||descricaoAreaTexto.getText().equals(" ")){
+            PreenchaDadosPopUp alertaFaltaDados = new PreenchaDadosPopUp();
+            alertaFaltaDados.setVisible(true);
+        }
+        else{
         
+            criarRequerimento(requerimento);
+            ConfirmacaoEnvio janelaConfirmacao = new ConfirmacaoEnvio(aluno, requerimento);
+            janelaConfirmacao.setVisible(true);
+       }
 
 
     }//GEN-LAST:event_enviarBotaoActionPerformed
