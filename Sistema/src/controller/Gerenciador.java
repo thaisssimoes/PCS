@@ -295,6 +295,7 @@ public class Gerenciador {
     public static Tecnico criarTecnicoGenerico() {
         Tecnico tecnico = new Tecnico();
         tecnico.setNome("Tecnico Generico");
+        tecnico.setCpf("0000");
         return tecnico;
     }
 
@@ -418,9 +419,17 @@ public class Gerenciador {
         ArrayList<Requerimento> lista = xml.getLista();
         ArrayList<Requerimento> listaRetorno = new ArrayList<>();
         for (int i = 0; i < lista.size(); i++) {
+<<<<<<< HEAD
 
             if (!lista.get(i).getStatus().equals("TRIAGEM") && lista.get(i).getAreaResponsavel().getCpf().equals(cpf))  {
                 listaRetorno.add(lista.get(i));
+=======
+            if (!lista.get(i).getStatus().equals("TRIAGEM")) {
+                        
+                if (lista.get(i).getAreaResponsavel().getCpf().equals(cpf)) {
+                    listaRetorno.add(lista.get(i));
+                }
+>>>>>>> a1394e0bcf16dfae889fcc8a435b49e268e1a122
             }
         }
         return listaRetorno;
