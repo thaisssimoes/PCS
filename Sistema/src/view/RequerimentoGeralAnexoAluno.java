@@ -527,6 +527,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         requerimento.setRequerente(aluno);
         requerimento.setStatus("TRIAGEM");
         requerimento.setTipoRequerimento(this.getTitle());
+        requerimento.setResposta(""); 
         requerimento.setDisciplina(String.valueOf(disciplinaComboBox.getSelectedItem()));
         if (encontrarCargoTipoRequerimento().equals("Criar tecnico")) {
             requerimento.setAreaResponsavel(Gerenciador.criarTecnicoGenerico());

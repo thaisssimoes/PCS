@@ -149,16 +149,16 @@ public class PopupComentario extends javax.swing.JFrame {
        
         switch(tipoAtualizacao){
             case "PENDENTE":{
-                requerimento.setResposta( "Nota de Pendencia - " + String.valueOf(LocalDate.now()) + ":\n" + comentario);
+                requerimento.setResposta(resposta+ "Nota de Pendencia - " + String.valueOf(LocalDate.now()) + ":\n" + comentario);
                 requerimento.setStatus("PENDENTE");
                 controller.Gerenciador.analisaRequerimento(requerimento); 
                 break;}
             case "ACEITO":{
-                requerimento.setResposta("Nota de Aceitação - " + String.valueOf(LocalDate.now()) + ":\n" + comentario);
+                requerimento.setResposta(resposta+"Nota de Aceitação - " + String.valueOf(LocalDate.now()) + ":\n" + comentario);
                 requerimento.setStatus("CONCLUIDO");
                 controller.Gerenciador.analisaRequerimento(requerimento); break;}
             case "REJEITADO":{
-                requerimento.setResposta( "Nota de rejeição - " + String.valueOf(LocalDate.now()) + ":\n" + comentario);
+                requerimento.setResposta( resposta+"Nota de rejeição - " + String.valueOf(LocalDate.now()) + ":\n" + comentario);
                 requerimento.setStatus("REJEITADO");
                 controller.Gerenciador.analisaRequerimento(requerimento); 
                 break;}
