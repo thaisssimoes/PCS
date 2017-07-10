@@ -411,15 +411,15 @@ public class Gerenciador {
         }
         return listaRetorno;
     }
-    
-    public static ArrayList<Requerimento> buscarRequerimentoAreaResponsavelProfessorNaoTRIAGEM() {
+
+    public static ArrayList<Requerimento> buscarRequerimentoAreaResponsavelProfessorNaoTRIAGEM(String cpf) {
         ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
         xml.leXML();
         ArrayList<Requerimento> lista = xml.getLista();
         ArrayList<Requerimento> listaRetorno = new ArrayList<>();
 
         for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i).getAreaResponsavel() instanceof model.entity.Professor && !lista.get(i).getStatus().equals("TRIAGEM")) {
+            if (!lista.get(i).getStatus().equals("TRIAGEM") && lista.get(i).getAreaResponsavel().getCpf().equals(cpf)) {
                 listaRetorno.add(lista.get(i));
             }
         }
