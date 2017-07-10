@@ -37,6 +37,7 @@ public class TelaProfessor extends javax.swing.JFrame {
     public TelaProfessor(Professor professor) {
         initComponents();
         this.professor = professor; 
+        preencherTela();
         popularRequerimentosAlunos();
         visibilidadeAbaProfessor(professor.getCargo());
         centralizarTela();
@@ -66,26 +67,26 @@ public class TelaProfessor extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tabelaMeusRequerimentos = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        nomeCompletoProfessorLabel = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        emailProfessorLabel = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        telefoneCelularProfessorLabel = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         painelTelaAluno1 = new javax.swing.JTabbedPane();
         jScrollPane5 = new javax.swing.JScrollPane();
         tabelaRequerimentoAlunos = new javax.swing.JTable();
-        jLabel22 = new javax.swing.JLabel();
+        siapieProfessorLabel = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+        centroAcademicoProfessorLabel = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
+        regimeTrabalhoProfessorLabel = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
+        lotacaoProfessorLabel = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
+        classeDocenteProfessorLabel = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
+        titulacaoProfessorLabel = new javax.swing.JLabel();
         quadradoAtualizacao = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -207,20 +208,20 @@ public class TelaProfessor extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Nome:");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel12.setText("Nome Completo do Professor");
+        nomeCompletoProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nomeCompletoProfessorLabel.setText("Nome Completo do Professor");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("E-mail:");
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel16.setText("nome.sobrenome@uniriotec.br");
+        emailProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        emailProfessorLabel.setText("nome.sobrenome@uniriotec.br");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setText("Telefone:");
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel18.setText("(21) 9-2222-2222");
+        telefoneCelularProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        telefoneCelularProfessorLabel.setText("(21) 9-2222-2222");
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel19.setText("Matrícula SIAPE:");
@@ -243,8 +244,6 @@ public class TelaProfessor extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tabelaRequerimentoAlunos.setCellSelectionEnabled(false);
-        tabelaRequerimentoAlunos.setRowSelectionAllowed(true);
         tabelaRequerimentoAlunos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabelaRequerimentoAlunosMouseClicked(evt);
@@ -255,38 +254,38 @@ public class TelaProfessor extends javax.swing.JFrame {
 
         painelTelaAluno1.addTab("Requerimentos de Alunos", jScrollPane5);
 
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel22.setText("SIAPE");
+        siapieProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        siapieProfessorLabel.setText("SIAPE");
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel23.setText("Centro Acadêmico:");
 
-        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel24.setText("CCET");
+        centroAcademicoProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        centroAcademicoProfessorLabel.setText("CCET");
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setText("Regime Trabalho:");
 
-        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel26.setText("regimeTrabalho");
+        regimeTrabalhoProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        regimeTrabalhoProfessorLabel.setText("regimeTrabalho");
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel27.setText("Lotação:");
 
-        jLabel28.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel28.setText("Escola de Informática Aplicada");
+        lotacaoProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lotacaoProfessorLabel.setText("Escola de Informática Aplicada");
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel29.setText("Classe docente:");
 
-        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel30.setText("ClasseDocente");
+        classeDocenteProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        classeDocenteProfessorLabel.setText("ClasseDocente");
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel31.setText("Titulação:");
 
-        jLabel32.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel32.setText("Titulação");
+        titulacaoProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        titulacaoProfessorLabel.setText("Titulação");
 
         quadradoAtualizacao.setBackground(new java.awt.Color(255, 255, 255));
         quadradoAtualizacao.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(56, 113, 156), 2, true));
@@ -351,43 +350,43 @@ public class TelaProfessor extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel12))
+                                .addComponent(nomeCompletoProfessorLabel))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel16))
+                                .addComponent(emailProfessorLabel))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel17)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel18)))
+                                .addComponent(telefoneCelularProfessorLabel)))
                         .addGap(90, 90, 90)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel19)
                                 .addGap(7, 7, 7)
-                                .addComponent(jLabel22))
+                                .addComponent(siapieProfessorLabel))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel23)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel24))
+                                .addComponent(centroAcademicoProfessorLabel))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel27)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel28)))
+                                .addComponent(lotacaoProfessorLabel)))
                         .addGap(90, 90, 90)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel29)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel30))
+                                .addComponent(classeDocenteProfessorLabel))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel31)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel32))
+                                .addComponent(titulacaoProfessorLabel))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel25)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel26)))
+                                .addComponent(regimeTrabalhoProfessorLabel)))
                         .addGap(82, 82, 82)
                         .addComponent(quadradoAtualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(51, 51, 51))
@@ -406,36 +405,36 @@ public class TelaProfessor extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel19)
-                                    .addComponent(jLabel22))
+                                    .addComponent(siapieProfessorLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel23)
-                                    .addComponent(jLabel24))
+                                    .addComponent(centroAcademicoProfessorLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel25)
-                                    .addComponent(jLabel26)
+                                    .addComponent(regimeTrabalhoProfessorLabel)
                                     .addComponent(jLabel27)
-                                    .addComponent(jLabel28)))
+                                    .addComponent(lotacaoProfessorLabel)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel12)
+                                    .addComponent(nomeCompletoProfessorLabel)
                                     .addComponent(jLabel11))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel15)
-                                    .addComponent(jLabel16))
+                                    .addComponent(emailProfessorLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel17)
-                                    .addComponent(jLabel18)))
+                                    .addComponent(telefoneCelularProfessorLabel)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel29)
-                                    .addComponent(jLabel30))
+                                    .addComponent(classeDocenteProfessorLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel32)
+                                    .addComponent(titulacaoProfessorLabel)
                                     .addComponent(jLabel31))))))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -462,6 +461,19 @@ public class TelaProfessor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+ 
+    private void preencherTela(){
+        emailProfessorLabel.setText(professor.getEmail());
+        nomeCompletoProfessorLabel.setText(professor.getNome());
+        siapieProfessorLabel.setText(professor.getSiape());
+        telefoneCelularProfessorLabel.setText(professor.getTelefoneCelular());
+        centroAcademicoProfessorLabel.setText(professor.getCentroAcademico());
+        classeDocenteProfessorLabel.setText(professor.getClasseDocente());
+        titulacaoProfessorLabel.setText(professor.getTitulacao());
+        regimeTrabalhoProfessorLabel.setText(professor.getRegimeTrabalho());
+        
+    }
+    
     private void limparTabela(){
        // DefaultTableModel model = (DefaultTableModel) tabelaMeusRequerimentos.getModel();
         DefaultTableModel model2 = (DefaultTableModel) tabelaRequerimentoAlunos.getModel();
@@ -610,25 +622,19 @@ public class TelaProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel centroAcademicoProfessorLabel;
+    private javax.swing.JLabel classeDocenteProfessorLabel;
+    private javax.swing.JLabel emailProfessorLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel5;
@@ -639,13 +645,19 @@ public class TelaProfessor extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JList<String> lista;
     private javax.swing.JLabel logoutLabel;
+    private javax.swing.JLabel lotacaoProfessorLabel;
+    private javax.swing.JLabel nomeCompletoProfessorLabel;
     private javax.swing.JTabbedPane painelRequerimentosProfessores;
     private javax.swing.JTabbedPane painelTelaAluno1;
     private javax.swing.JPanel quadradoAtualizacao;
+    private javax.swing.JLabel regimeTrabalhoProfessorLabel;
     private javax.swing.JLabel setinhaAtualizacao;
+    private javax.swing.JLabel siapieProfessorLabel;
     private javax.swing.JScrollPane tabRequerimentoProfessores;
     private javax.swing.JTable tabelaMeusRequerimentos;
     private javax.swing.JTable tabelaRequerimentoAlunos;
     private javax.swing.JTable tabelaRequerimentosDeProfessores;
+    private javax.swing.JLabel telefoneCelularProfessorLabel;
+    private javax.swing.JLabel titulacaoProfessorLabel;
     // End of variables declaration//GEN-END:variables
 }
