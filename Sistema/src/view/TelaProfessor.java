@@ -27,17 +27,18 @@ public class TelaProfessor extends javax.swing.JFrame {
     public TelaProfessor() {
 
         initComponents();
-        visibilidadeAbaProfessor("Decano");
+        visibilidadeAbaProfessor(professor.getCargo());
         centralizarTela();
 
     }
     Professor professor;
     public TelaProfessor(Professor professor) {
-
         initComponents();
-        this.professor = professor;
-        visibilidadeAbaProfessor("Decano");
+        this.professor = professor; 
+        popularRequerimentosAlunos();
+        visibilidadeAbaProfessor(professor.getCargo());
         centralizarTela();
+        
 
     }
 
@@ -281,6 +282,11 @@ public class TelaProfessor extends javax.swing.JFrame {
 
         quadradoAtualizacao.setBackground(new java.awt.Color(255, 255, 255));
         quadradoAtualizacao.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(56, 113, 156), 2, true));
+        quadradoAtualizacao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                quadradoAtualizacaoMouseClicked(evt);
+            }
+        });
 
         jLabel35.setBackground(new java.awt.Color(255, 255, 255));
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
@@ -448,21 +454,30 @@ public class TelaProfessor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void popularMeusRequerimentos(){ 
+    private void limparTabela(){
         DefaultTableModel model = (DefaultTableModel) tabelaMeusRequerimentos.getModel();
-        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoCPF(professor.getCpf());
-        Object rowData[] = new Object[3];
-        for (int i = 0; i < requerimentos.size(); i++) {
-            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
-            rowData[1] = requerimentos.get(i).getTipoRequerimento();
-            rowData[2] = requerimentos.get(i).getStatus();
-            model.addRow(rowData);
-        }
+        DefaultTableModel model2 = (DefaultTableModel) tabelaRequerimentoAlunos.getModel();
+        DefaultTableModel model3 = (DefaultTableModel) tabelaRequerimentosDeProfessores.getModel();
+
+        model.setRowCount(0);
+        model2.setRowCount(0);
+        model3.setRowCount(0);
+
+    }
+    private void popularMeusRequerimentos(){ 
+//        DefaultTableModel model = (DefaultTableModel) tabelaMeusRequerimentos.getModel();
+//        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoCPF(professor.getCpf());
+//        Object rowData[] = new Object[3];
+//        for (int i = 0; i < requerimentos.size(); i++) {
+//            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+//            rowData[1] = requerimentos.get(i).getTipoRequerimento();
+//            rowData[2] = requerimentos.get(i).getStatus();
+//            model.addRow(rowData);
+//        }
     }
     private void popularRequerimentosAlunos(){
      DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoAlunos.getModel();
-        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoAreaResponsavelProfessor();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoAreaResponsavelProfessorNaoTRIAGEM(professor.getCpf());
         Object rowData[] = new Object[3];
         for (int i = 0; i < requerimentos.size(); i++) {
             rowData[0] = requerimentos.get(i).getNumeroProtocolo();
@@ -472,15 +487,15 @@ public class TelaProfessor extends javax.swing.JFrame {
         }
     }
     private void popularRequerimentosProfessores(){
-     DefaultTableModel model = (DefaultTableModel) tabelaRequerimentosDeProfessores.getModel();
-        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoRequerenteProfessor();
-        Object rowData[] = new Object[3];
-        for (int i = 0; i < requerimentos.size(); i++) {
-            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
-            rowData[1] = requerimentos.get(i).getTipoRequerimento();
-            rowData[2] = requerimentos.get(i).getStatus();
-            model.addRow(rowData);
-        }
+//     DefaultTableModel model = (DefaultTableModel) tabelaRequerimentosDeProfessores.getModel();
+//        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoRequerenteProfessor();
+//        Object rowData[] = new Object[3];
+//        for (int i = 0; i < requerimentos.size(); i++) {
+//            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+//            rowData[1] = requerimentos.get(i).getTipoRequerimento();
+//            rowData[2] = requerimentos.get(i).getStatus();
+//            model.addRow(rowData);
+//        }
     }
 
     
@@ -515,6 +530,13 @@ public class TelaProfessor extends javax.swing.JFrame {
         this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_logoutLabelMouseClicked
+
+    private void quadradoAtualizacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quadradoAtualizacaoMouseClicked
+        popularRequerimentosProfessores();
+        popularMeusRequerimentos();
+        popularRequerimentosAlunos();       
+        
+    }//GEN-LAST:event_quadradoAtualizacaoMouseClicked
 
     public void visibilidadeAbaProfessor(String cargo) {
         if (!cargo.equals("Decano") && !cargo.equals("Chefe de Departamento")) {

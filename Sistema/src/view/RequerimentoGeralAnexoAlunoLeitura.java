@@ -34,7 +34,6 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
         dataAberturaLabel.setText(String.valueOf(LocalDate.now()));
         dataFechamentoFixo.setVisible(false);
         dataFechamentoLabel.setVisible(false);
-        professorLabelDisciplina.setVisible(false);
     }
     Aluno aluno;
     Requerimento requerimento;
@@ -93,8 +92,6 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
         anexo1 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        professorLabelFixo = new javax.swing.JLabel();
-        professorLabelDisciplina = new javax.swing.JLabel();
         disciplinaLabel = new javax.swing.JLabel();
         atualizarBotao = new javax.swing.JButton();
 
@@ -298,12 +295,6 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
                 .addGap(5, 5, 5))
         );
 
-        professorLabelFixo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        professorLabelFixo.setText("Professor:");
-
-        professorLabelDisciplina.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        professorLabelDisciplina.setText("Professor");
-
         disciplinaLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         disciplinaLabel.setText("Disciplina");
 
@@ -355,20 +346,17 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
                                         .addComponent(jLabel20))))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addComponent(professorLabelFixo)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(professorLabelDisciplina))
+                                    .addComponent(disciplinaLabelFixo)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(disciplinaLabelFixo)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGap(0, 0, Short.MAX_VALUE)
+                                            .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(disciplinaLabel)
-                                            .addGap(115, 115, 115)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(0, 0, Short.MAX_VALUE))))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel25)
@@ -415,13 +403,10 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
                             .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(disciplinaLabelFixo)
-                            .addComponent(disciplinaLabel))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(professorLabelFixo, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(professorLabelDisciplina))))
+                            .addComponent(disciplinaLabel))))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -456,6 +441,7 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
      private void preencherCamposLeitura() {
+        this.getTitle().equals("Revisão de prova");
         emailAlunoLabel.setText(aluno.getEmail());
         nomeCompletoAlunoLabel.setText(aluno.getNome());
         matriculaAlunoLabel.setText(aluno.getMatricula());
@@ -476,9 +462,7 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
         System.out.println(titulo);
         dataFechamentoLabel.setVisible(false);
         dataFechamentoFixo.setVisible(false);
-        professorLabelFixo.setVisible(false);
-        professorLabelDisciplina.setVisible(false);
-        if(titulo.equals("Realização de segunda chamada")
+       if(titulo.equals("Realização de segunda chamada")
             || titulo.equals("Revisão de prova")
             || titulo.equals("Isenção ou aproveitamento de disciplina")){
             disciplinaLabelFixo.setVisible(true);
@@ -637,8 +621,6 @@ public class RequerimentoGeralAnexoAlunoLeitura extends javax.swing.JFrame {
     private javax.swing.JLabel nomeCompletoAlunoLabel;
     private javax.swing.JLabel numeroProtocoloLabel;
     private javax.swing.JLabel periodoLabel;
-    private javax.swing.JLabel professorLabelDisciplina;
-    private javax.swing.JLabel professorLabelFixo;
     private javax.swing.JTextArea respostaAreaTexto;
     private javax.swing.JLabel statusLabel;
     private javax.swing.JLabel telefoneAlunoLabel;

@@ -417,9 +417,9 @@ public class Gerenciador {
         xml.leXML();
         ArrayList<Requerimento> lista = xml.getLista();
         ArrayList<Requerimento> listaRetorno = new ArrayList<>();
-
         for (int i = 0; i < lista.size(); i++) {
-            if (!lista.get(i).getStatus().equals("TRIAGEM") && lista.get(i).getAreaResponsavel().getCpf().equals(cpf)) {
+
+            if (!lista.get(i).getStatus().equals("TRIAGEM") && lista.get(i).getAreaResponsavel().getCpf().equals(cpf))  {
                 listaRetorno.add(lista.get(i));
             }
         }
