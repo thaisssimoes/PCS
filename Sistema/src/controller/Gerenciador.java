@@ -267,7 +267,8 @@ public class Gerenciador {
         manipulador.leXML();
         lista = manipulador.getLista();
         for (int i = 0; i < lista.size(); i++) {
-            
+//            System.out.println(lista.get(i).getGrade().get(i));
+//
             if ((lista.get(i).getGrade().contains(disciplina))) {
                 
                 professorObtido = lista.get(i);
@@ -448,7 +449,38 @@ public class Gerenciador {
         }
         return listaRetorno;
     }
+public static ArrayList<Requerimento> buscarRequerimentoAreaResponsavelProfessorDesignadoPendente(String cpf) {
+        ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
+        xml.leXML();
+        ArrayList<Requerimento> lista = xml.getLista();
+        ArrayList<Requerimento> listaRetorno = new ArrayList<>();
+        for (int i = 0; i < lista.size(); i++) {
 
+            if (lista.get(i).getStatus().equals("PENDENTE")) {
+                        
+                if (lista.get(i).getAreaResponsavel().getCpf().equals(cpf)) {
+                    listaRetorno.add(lista.get(i));
+                }
+            }
+        }
+        return listaRetorno;
+    }
+    public static ArrayList<Requerimento> buscarRequerimentoAreaResponsavelProfessorFinalizado(String cpf) {
+        ManipuladorXML xml = new ManipuladorXML(REQUERIMENTO);
+        xml.leXML();
+        ArrayList<Requerimento> lista = xml.getLista();
+        ArrayList<Requerimento> listaRetorno = new ArrayList<>();
+        for (int i = 0; i < lista.size(); i++) {
+
+            if ((lista.get(i).getStatus().equals("CONCLUIDO") )|| (lista.get(i).getStatus().equals("REJEITADO"))) {
+                        
+                if (lista.get(i).getAreaResponsavel().getCpf().equals(cpf)) {
+                    listaRetorno.add(lista.get(i));
+                }
+            }
+        }
+        return listaRetorno;
+    }
     public static ArrayList acessarXML(String tipoUsuario) {
         ManipuladorXML manipulador = new ManipuladorXML(String.valueOf(tipoUsuario) + "s.xml");
         manipulador.leXML();

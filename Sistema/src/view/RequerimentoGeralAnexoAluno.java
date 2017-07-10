@@ -7,13 +7,16 @@ package view;
 
 import controller.Gerenciador;
 import static controller.Gerenciador.obterAluno;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.time.Instant;
 import java.time.LocalDate;
 import static java.time.temporal.TemporalQueries.localDate;
 import java.util.ArrayList;
+import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.border.Border;
 import model.entity.Aluno;
 import model.entity.Professor;
 import model.requerimento.Requerimento;
@@ -47,6 +50,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         preencherTela();
         preencherCamposEscrita();
         centralizarTela();
+
     }
 
     
@@ -83,7 +87,6 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         descricaoAreaTexto = new javax.swing.JTextArea();
         jLabel25 = new javax.swing.JLabel();
-        atualizarBotao = new javax.swing.JButton();
         cancelarBotao = new javax.swing.JButton();
         enviarBotao = new javax.swing.JButton();
         disciplinaComboBox = new javax.swing.JComboBox();
@@ -226,16 +229,6 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setText("Descrição:");
 
-        atualizarBotao.setBackground(new java.awt.Color(56, 113, 156));
-        atualizarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        atualizarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        atualizarBotao.setText("Atualizar");
-        atualizarBotao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atualizarBotaoActionPerformed(evt);
-            }
-        });
-
         cancelarBotao.setBackground(new java.awt.Color(56, 113, 156));
         cancelarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cancelarBotao.setForeground(new java.awt.Color(255, 255, 255));
@@ -325,60 +318,53 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addGap(21, 21, 21)
-                                        .addComponent(nomeCompletoAlunoLabel))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel15)
-                                        .addGap(21, 21, 21)
-                                        .addComponent(emailAlunoLabel)))
-                                .addGap(41, 41, 41)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel17)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(telefoneAlunoLabel))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel13)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(matriculaAlunoLabel)
-                                        .addGap(77, 77, 77)
-                                        .addComponent(jLabel19)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(periodoLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel20))))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(disciplinaLabelFixo)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(disciplinaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel25)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(41, 41, 41)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel29)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(cancelarBotao)
-                        .addGap(66, 66, 66)
-                        .addComponent(atualizarBotao)
-                        .addGap(59, 59, 59)
-                        .addComponent(enviarBotao)))
+                                .addComponent(jLabel11)
+                                .addGap(21, 21, 21)
+                                .addComponent(nomeCompletoAlunoLabel))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(21, 21, 21)
+                                .addComponent(emailAlunoLabel)))
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(telefoneAlunoLabel))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matriculaAlunoLabel)
+                                .addGap(77, 77, 77)
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(periodoLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel20))))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(disciplinaLabelFixo)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(disciplinaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel25)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cancelarBotao, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addGap(41, 41, 41)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel29)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(enviarBotao)))))
                 .addGap(79, 79, 79))
         );
         jPanel1Layout.setVerticalGroup(
@@ -428,7 +414,6 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelarBotao)
-                    .addComponent(atualizarBotao)
                     .addComponent(enviarBotao))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -508,10 +493,6 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
 
     }//GEN-LAST:event_enviarBotaoActionPerformed
 
-    private void atualizarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarBotaoActionPerformed
-        PopupComentario janelaComentario = new PopupComentario();
-        janelaComentario.setVisible(true);    }//GEN-LAST:event_atualizarBotaoActionPerformed
-
     private void cancelarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotaoActionPerformed
         TelaAluno janelaTelaAluno = new TelaAluno(aluno);
         janelaTelaAluno.setVisible(true);
@@ -529,13 +510,15 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         requerimento.setTipoRequerimento(this.getTitle());
         requerimento.setResposta(""); 
         requerimento.setDisciplina(String.valueOf(disciplinaComboBox.getSelectedItem()));
-        if (encontrarCargoTipoRequerimento().equals("Criar tecnico")) {
-            requerimento.setAreaResponsavel(Gerenciador.criarTecnicoGenerico());
+        if (!requerimento.getDisciplina().equals(null)) {
+            requerimento.setAreaResponsavel(controller.Gerenciador.obterProfessorDisciplina(String.valueOf(disciplinaComboBox.getSelectedItem())));
+
         } else if(this.getTitle().equals("Cancelamento de matrícula") || this.getTitle().equals("Revisão de prova")) {
             requerimento.setAreaResponsavel(Gerenciador.obterProfessorCargo(encontrarCargoTipoRequerimento()));
         }
         else{
-            requerimento.setAreaResponsavel(controller.Gerenciador.obterProfessorDisciplina(String.valueOf(disciplinaComboBox.getSelectedItem())));
+            requerimento.setAreaResponsavel(Gerenciador.criarTecnicoGenerico());
+
         }
     }
 
@@ -599,7 +582,6 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel anexo1;
     private javax.swing.JPanel anexo2;
-    private javax.swing.JButton atualizarBotao;
     private javax.swing.JButton cancelarBotao;
     private javax.swing.JLabel dataAberturaLabel;
     private javax.swing.JLabel dataFechamentoFixo;

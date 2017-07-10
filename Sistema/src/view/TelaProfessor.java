@@ -38,8 +38,10 @@ public class TelaProfessor extends javax.swing.JFrame {
         initComponents();
         this.professor = professor; 
         preencherTela();
-        popularRequerimentosAlunos();
         visibilidadeAbaProfessor(professor.getCargo());
+        popularRequerimentosAlunos();
+        popularRequerimentosAlunosPendentes();
+        popularRequerimentosAlunosFinalizado();
         centralizarTela();
         
 
@@ -76,6 +78,10 @@ public class TelaProfessor extends javax.swing.JFrame {
         painelTelaAluno1 = new javax.swing.JTabbedPane();
         jScrollPane5 = new javax.swing.JScrollPane();
         tabelaRequerimentoAlunos = new javax.swing.JTable();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tabelaRequerimentoAlunosPendentes = new javax.swing.JTable();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tabelaRequerimentoAlunosFinalizados = new javax.swing.JTable();
         siapieProfessorLabel = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         centroAcademicoProfessorLabel = new javax.swing.JLabel();
@@ -253,6 +259,58 @@ public class TelaProfessor extends javax.swing.JFrame {
         tabelaRequerimentoAlunos.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         painelTelaAluno1.addTab("Requerimentos de Alunos", jScrollPane5);
+
+        tabelaRequerimentoAlunosPendentes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Protocolo", "Nome Requerente", "Tipo", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaRequerimentoAlunosPendentes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaRequerimentoAlunosPendentesMouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(tabelaRequerimentoAlunosPendentes);
+        tabelaRequerimentoAlunosPendentes.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        painelTelaAluno1.addTab("Requerimentos de Alunos Pendentes", jScrollPane6);
+
+        tabelaRequerimentoAlunosFinalizados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Protocolo", "Nome Requerente", "Tipo", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaRequerimentoAlunosFinalizados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaRequerimentoAlunosFinalizadosMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(tabelaRequerimentoAlunosFinalizados);
+        tabelaRequerimentoAlunosFinalizados.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        painelTelaAluno1.addTab("Requerimentos de Alunos Finalizados", jScrollPane7);
 
         siapieProfessorLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         siapieProfessorLabel.setText("SIAPE");
@@ -475,13 +533,13 @@ public class TelaProfessor extends javax.swing.JFrame {
     }
     
     private void limparTabela(){
-       // DefaultTableModel model = (DefaultTableModel) tabelaMeusRequerimentos.getModel();
-        DefaultTableModel model2 = (DefaultTableModel) tabelaRequerimentoAlunos.getModel();
-       // DefaultTableModel model3 = (DefaultTableModel) tabelaRequerimentosDeProfessores.getModel();
+        DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoAlunosPendentes.getModel();
+        DefaultTableModel model2 = (DefaultTableModel) tabelaRequerimentoAlunosFinalizados.getModel();
+        DefaultTableModel model3 = (DefaultTableModel) tabelaRequerimentoAlunos.getModel();
 
-      //  model.setRowCount(0);
+        model.setRowCount(0);
         model2.setRowCount(0);
-       // model3.setRowCount(0);
+        model3.setRowCount(0);
 
     }
     private void popularMeusRequerimentos(){ 
@@ -498,14 +556,42 @@ public class TelaProfessor extends javax.swing.JFrame {
     private void popularRequerimentosAlunos(){
      DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoAlunos.getModel();
         ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoAreaResponsavelProfessorDesignado(professor.getCpf());
-        Object rowData[] = new Object[3];
+        Object rowData[] = new Object[4];
         for (int i = 0; i < requerimentos.size(); i++) {
             rowData[0] = requerimentos.get(i).getNumeroProtocolo();
-            rowData[1] = requerimentos.get(i).getTipoRequerimento();
-            rowData[2] = requerimentos.get(i).getStatus();
+            rowData[1] = requerimentos.get(i).requerente.getNome();
+            rowData[2] = requerimentos.get(i).getTipoRequerimento();
+            rowData[3] = requerimentos.get(i).getStatus();
             model.addRow(rowData);
         }
     }
+    
+    private void popularRequerimentosAlunosFinalizado(){
+        DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoAlunosFinalizados.getModel();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoAreaResponsavelProfessorFinalizado(professor.getCpf());
+        Object rowData[] = new Object[4];
+        for (int i = 0; i < requerimentos.size(); i++) {
+            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+            rowData[1] = requerimentos.get(i).requerente.getNome();
+            rowData[2] = requerimentos.get(i).getTipoRequerimento();
+            rowData[3] = requerimentos.get(i).getStatus();
+            model.addRow(rowData);
+        }
+    }
+    
+    private void popularRequerimentosAlunosPendentes(){
+     DefaultTableModel model = (DefaultTableModel) tabelaRequerimentoAlunosPendentes.getModel();
+        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoAreaResponsavelProfessorDesignadoPendente(professor.getCpf());
+        Object rowData[] = new Object[4];
+        for (int i = 0; i < requerimentos.size(); i++) {
+            rowData[0] = requerimentos.get(i).getNumeroProtocolo();
+            rowData[1] = requerimentos.get(i).requerente.getNome();
+            rowData[2] = requerimentos.get(i).getTipoRequerimento();
+            rowData[3] = requerimentos.get(i).getStatus();
+            model.addRow(rowData);
+        }
+    }
+    
     private void popularRequerimentosProfessores(){
 //     DefaultTableModel model = (DefaultTableModel) tabelaRequerimentosDeProfessores.getModel();
 //        ArrayList<Requerimento> requerimentos = controller.Gerenciador.buscarRequerimentoRequerenteProfessor();
@@ -553,9 +639,9 @@ public class TelaProfessor extends javax.swing.JFrame {
 
     private void quadradoAtualizacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quadradoAtualizacaoMouseClicked
         limparTabela();
-        popularRequerimentosProfessores();
-        popularMeusRequerimentos();
-        popularRequerimentosAlunos();       
+        popularRequerimentosAlunos();
+        popularRequerimentosAlunosPendentes();
+        popularRequerimentosAlunosFinalizado();       
         
     }//GEN-LAST:event_quadradoAtualizacaoMouseClicked
 
@@ -573,6 +659,36 @@ public class TelaProfessor extends javax.swing.JFrame {
         }   
 
     }//GEN-LAST:event_tabelaRequerimentoAlunosMouseClicked
+
+    private void tabelaRequerimentoAlunosPendentesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaRequerimentoAlunosPendentesMouseClicked
+    tabelaRequerimentoAlunosPendentes = (JTable) evt.getSource();
+        
+        if (evt.getClickCount() == 2) {
+            int numeroLinha = tabelaRequerimentoAlunosPendentes.getSelectedRow();
+            String numeroProtocolo = (String) tabelaRequerimentoAlunosPendentes.getValueAt(numeroLinha,0);
+            String tipoRequerimento =(String) tabelaRequerimentoAlunosPendentes.getValueAt(numeroLinha,1);
+            ArrayList<Requerimento> requerimento = buscarRequerimentoProtocolo(numeroProtocolo);
+            RequerimentoGeralAnexoProfessorLeitura requerimentoAlunoLeitura;
+            requerimentoAlunoLeitura = new RequerimentoGeralAnexoProfessorLeitura(requerimento.get(0),tipoRequerimento, professor);
+            requerimentoAlunoLeitura.setVisible(true);
+        }   
+    }//GEN-LAST:event_tabelaRequerimentoAlunosPendentesMouseClicked
+
+    private void tabelaRequerimentoAlunosFinalizadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaRequerimentoAlunosFinalizadosMouseClicked
+        tabelaRequerimentoAlunosFinalizados = (JTable) evt.getSource();
+        
+        if (evt.getClickCount() == 2) {
+            int numeroLinha = tabelaRequerimentoAlunosFinalizados.getSelectedRow();
+            String numeroProtocolo = (String) tabelaRequerimentoAlunosFinalizados.getValueAt(numeroLinha,0);
+            String tipoRequerimento =(String) tabelaRequerimentoAlunosFinalizados.getValueAt(numeroLinha,1);
+            ArrayList<Requerimento> requerimento = buscarRequerimentoProtocolo(numeroProtocolo);
+            RequerimentoGeralAnexoProfessorLeitura requerimentoAlunoLeitura;
+            requerimentoAlunoLeitura = new RequerimentoGeralAnexoProfessorLeitura(requerimento.get(0),tipoRequerimento, professor);
+            requerimentoAlunoLeitura.setVisible(true);
+        }   
+
+
+    }//GEN-LAST:event_tabelaRequerimentoAlunosFinalizadosMouseClicked
 
     public void visibilidadeAbaProfessor(String cargo) {
         if (!cargo.equals("Decano") && !cargo.equals("Chefe de Departamento")) {
@@ -643,6 +759,8 @@ public class TelaProfessor extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JList<String> lista;
     private javax.swing.JLabel logoutLabel;
     private javax.swing.JLabel lotacaoProfessorLabel;
@@ -656,6 +774,8 @@ public class TelaProfessor extends javax.swing.JFrame {
     private javax.swing.JScrollPane tabRequerimentoProfessores;
     private javax.swing.JTable tabelaMeusRequerimentos;
     private javax.swing.JTable tabelaRequerimentoAlunos;
+    private javax.swing.JTable tabelaRequerimentoAlunosFinalizados;
+    private javax.swing.JTable tabelaRequerimentoAlunosPendentes;
     private javax.swing.JTable tabelaRequerimentosDeProfessores;
     private javax.swing.JLabel telefoneCelularProfessorLabel;
     private javax.swing.JLabel titulacaoProfessorLabel;
