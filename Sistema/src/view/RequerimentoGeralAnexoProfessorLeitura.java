@@ -142,13 +142,10 @@ public class RequerimentoGeralAnexoProfessorLeitura extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(numeroProtocoloLabel))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(69, 69, 69)
-                                .addComponent(statusLabel)))
+                            .addComponent(numeroProtocoloLabel)
+                            .addComponent(statusLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(dataFechamentoFixo)
@@ -217,6 +214,7 @@ public class RequerimentoGeralAnexoProfessorLeitura extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel20.setText("período");
 
+        periodoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         periodoLabel.setText("X");
 
         descricaoAreaTexto.setColumns(20);
@@ -472,6 +470,7 @@ public class RequerimentoGeralAnexoProfessorLeitura extends javax.swing.JFrame {
         matriculaAlunoLabel.setText(aluno.getMatricula());
         telefoneAlunoLabel.setText(aluno.getTelefoneCelular());
         dataAberturaLabel.setText(requerimento.getDataCriacao());
+        dataFechamentoLabel.setText(requerimento.getDataSolucao());
         statusLabel.setText(requerimento.getStatus());
         numeroProtocoloLabel.setText(requerimento.getNumeroProtocolo());
         descricaoAreaTexto.setText(requerimento.getDescricao());
@@ -485,8 +484,8 @@ public class RequerimentoGeralAnexoProfessorLeitura extends javax.swing.JFrame {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         String titulo = this.getTitle();
         System.out.println(titulo);
-        dataFechamentoLabel.setVisible(false);
-        dataFechamentoFixo.setVisible(false);
+        dataFechamentoLabel.setVisible(true);
+        dataFechamentoFixo.setVisible(true);
         if(titulo.equals("Realização de segunda chamada")
             || titulo.equals("Revisão de prova")
             || titulo.equals("Isenção ou aproveitamento de disciplina")){

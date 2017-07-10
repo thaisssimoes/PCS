@@ -145,13 +145,10 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(numeroProtocoloLabel))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(69, 69, 69)
-                                .addComponent(statusLabel)))
+                            .addComponent(numeroProtocoloLabel)
+                            .addComponent(statusLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(dataFechamentoFixo)
@@ -220,6 +217,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel20.setText("período");
 
+        periodoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         periodoLabel.setText("X");
 
         descricaoAreaTexto.setColumns(20);
@@ -412,7 +410,7 @@ public class RequerimentoGeralAnexoAluno extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cancelarBotao)
                     .addComponent(enviarBotao))
                 .addContainerGap(29, Short.MAX_VALUE))

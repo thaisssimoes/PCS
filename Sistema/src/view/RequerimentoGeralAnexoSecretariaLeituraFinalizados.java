@@ -17,18 +17,18 @@ import model.requerimento.Requerimento;
  *
  * @author labccet
  */
-public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame {
+public class RequerimentoGeralAnexoSecretariaLeituraFinalizados extends javax.swing.JFrame {
 
     /**
      * Creates new form telaAluno
      */
-    public RequerimentoGeralAnexoSecretariaLeitura() {
+    public RequerimentoGeralAnexoSecretariaLeituraFinalizados() {
         initComponents();
     }
     Tecnico tecnico;
     Requerimento requerimento;
     Aluno aluno;
-    public RequerimentoGeralAnexoSecretariaLeitura(String cpf, String senha, String titulo) {
+    public RequerimentoGeralAnexoSecretariaLeituraFinalizados(String cpf, String senha, String titulo) {
         this.setTitle(titulo);
         initComponents();
         preencherTela();
@@ -38,7 +38,7 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
         this.tecnico = tecnico;
         centralizarTela();
     }
-    public RequerimentoGeralAnexoSecretariaLeitura(Requerimento requerimento,String titulo){
+    public RequerimentoGeralAnexoSecretariaLeituraFinalizados(Requerimento requerimento,String titulo){
         this.setTitle(titulo);
         initComponents();
         this.requerimento = requerimento;
@@ -75,8 +75,6 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
         jScrollPane1 = new javax.swing.JScrollPane();
         descricaoAreaTexto = new javax.swing.JTextArea();
         jLabel25 = new javax.swing.JLabel();
-        rejeitarBotao = new javax.swing.JButton();
-        aceitarBotao = new javax.swing.JButton();
         disciplinaLabelFixo = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         respostaAreaTexto = new javax.swing.JTextArea();
@@ -204,26 +202,6 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setText("Descrição:");
 
-        rejeitarBotao.setBackground(new java.awt.Color(56, 113, 156));
-        rejeitarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        rejeitarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        rejeitarBotao.setText("Rejeitar");
-        rejeitarBotao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rejeitarBotaoActionPerformed(evt);
-            }
-        });
-
-        aceitarBotao.setBackground(new java.awt.Color(56, 113, 156));
-        aceitarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        aceitarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        aceitarBotao.setText("Concluir");
-        aceitarBotao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aceitarBotaoActionPerformed(evt);
-            }
-        });
-
         disciplinaLabelFixo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         disciplinaLabelFixo.setText("Disciplina:");
 
@@ -323,7 +301,6 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
         exportarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         exportarBotao.setForeground(new java.awt.Color(255, 255, 255));
         exportarBotao.setText("Exportar");
-        exportarBotao.setEnabled(false);
         exportarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exportarBotaoActionPerformed(evt);
@@ -336,60 +313,51 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(disciplinaLabelFixo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(disciplinaLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(voltarBotao, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel29)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(exportarBotao)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(disciplinaLabelFixo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(disciplinaLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(anexo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(anexo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel11)
+                                .addGap(21, 21, 21)
+                                .addComponent(nomeCompletoAlunoLabel))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel25)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(41, 41, 41)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel29)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addGap(21, 21, 21)
-                                        .addComponent(nomeCompletoAlunoLabel))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel15)
-                                        .addGap(21, 21, 21)
-                                        .addComponent(emailAlunoLabel)))
-                                .addGap(47, 47, 47)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel14))
+                                .addComponent(jLabel15)
+                                .addGap(21, 21, 21)
+                                .addComponent(emailAlunoLabel)))
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(telefoneAlunoLabel)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(matriculaAlunoLabel)
+                                .addGap(59, 59, 59)
+                                .addComponent(jLabel19)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(telefoneAlunoLabel)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(matriculaAlunoLabel)
-                                        .addGap(59, 59, 59)
-                                        .addComponent(jLabel19)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(periodoLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel20))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(voltarBotao)
-                        .addGap(57, 57, 57)
-                        .addComponent(rejeitarBotao)
-                        .addGap(62, 62, 62)
-                        .addComponent(exportarBotao)
-                        .addGap(63, 63, 63)
-                        .addComponent(aceitarBotao)))
+                                .addComponent(periodoLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel20)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -435,9 +403,6 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(exportarBotao)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rejeitarBotao)
-                        .addComponent(aceitarBotao))
                     .addComponent(voltarBotao))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
@@ -504,17 +469,6 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
     }
 
 
-    private void aceitarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceitarBotaoActionPerformed
-        PopupComentario janelaComentario = new PopupComentario(requerimento, "ACEITO");
-        janelaComentario.setVisible(true);
-    }//GEN-LAST:event_aceitarBotaoActionPerformed
-
-    private void rejeitarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejeitarBotaoActionPerformed
-        PopupComentario janelaComentario = new PopupComentario(requerimento, "REJEITADO");
-        janelaComentario.setVisible(true);
-
-    }//GEN-LAST:event_rejeitarBotaoActionPerformed
-
     private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
         this.setVisible(false);
         this.dispose();
@@ -541,14 +495,270 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoSecretariaLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoSecretariaLeituraFinalizados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoSecretariaLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoSecretariaLeituraFinalizados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoSecretariaLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoSecretariaLeituraFinalizados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoSecretariaLeitura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequerimentoGeralAnexoSecretariaLeituraFinalizados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -809,13 +1019,12 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RequerimentoGeralAnexoSecretariaLeitura().setVisible(true);
+                new RequerimentoGeralAnexoSecretariaLeituraFinalizados().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton aceitarBotao;
     private javax.swing.JPanel anexo1;
     private javax.swing.JPanel anexo2;
     private javax.swing.JLabel dataAberturaLabel;
@@ -849,7 +1058,6 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
     private javax.swing.JLabel nomeCompletoAlunoLabel;
     private javax.swing.JLabel numeroProtocoloLabel;
     private javax.swing.JLabel periodoLabel;
-    private javax.swing.JButton rejeitarBotao;
     private javax.swing.JTextArea respostaAreaTexto;
     private javax.swing.JLabel statusLabel;
     private javax.swing.JLabel telefoneAlunoLabel;

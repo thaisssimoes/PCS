@@ -42,6 +42,12 @@ public class Login extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         tipoUsuario = new javax.swing.JComboBox<String>();
         campoCPF = new javax.swing.JTextField();
+        //try{
+            //javax.swing.text.MaskFormatter cpf= new javax.swing.text.MaskFormatter("###.###.###-##");
+            //campoCPF = new javax.swing.JFormattedTextField(cpf);
+            //}
+        //catch (Exception e){
+            //}
         campoSenha = new javax.swing.JPasswordField();
         botaoLogin = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -65,6 +71,11 @@ public class Login extends javax.swing.JFrame {
         campoCPF.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 campoCPFLimparTexto(evt);
+            }
+        });
+        campoCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoCPFActionPerformed(evt);
             }
         });
 
@@ -278,6 +289,10 @@ public class Login extends javax.swing.JFrame {
         campoSenha.setText("");
 
     }//GEN-LAST:event_campoSenhaLimparTabFocus
+
+    private void campoCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoCPFActionPerformed
 
     /**
      * @param args the command line arguments
