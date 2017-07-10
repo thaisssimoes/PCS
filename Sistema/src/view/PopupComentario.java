@@ -163,7 +163,6 @@ public class PopupComentario extends javax.swing.JFrame {
                 controller.Gerenciador.analisaRequerimento(requerimento); 
                 break;}
             case "ATUALIZACAO":{requerimento.setDescricao(descricao + "Nota de atualizacao - " + String.valueOf(LocalDate.now()) + ":\n" + comentario);
-                requerimento.setStatus("DESIGNADO");
                 controller.Gerenciador.analisaRequerimento(requerimento); 
                 break;}
             default: break;
