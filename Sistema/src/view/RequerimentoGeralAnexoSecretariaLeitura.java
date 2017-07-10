@@ -96,7 +96,6 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
         telefoneAlunoLabel = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         voltarBotao = new javax.swing.JButton();
-        exportarBotao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
@@ -319,17 +318,6 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
             }
         });
 
-        exportarBotao.setBackground(new java.awt.Color(56, 113, 156));
-        exportarBotao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        exportarBotao.setForeground(new java.awt.Color(255, 255, 255));
-        exportarBotao.setText("Exportar");
-        exportarBotao.setEnabled(false);
-        exportarBotao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exportarBotaoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -386,9 +374,7 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
                         .addComponent(voltarBotao)
                         .addGap(57, 57, 57)
                         .addComponent(rejeitarBotao)
-                        .addGap(62, 62, 62)
-                        .addComponent(exportarBotao)
-                        .addGap(63, 63, 63)
+                        .addGap(218, 218, 218)
                         .addComponent(aceitarBotao)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -434,7 +420,6 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(exportarBotao)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rejeitarBotao)
                         .addComponent(aceitarBotao))
@@ -519,10 +504,6 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
         this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_voltarBotaoActionPerformed
-
-    private void exportarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportarBotaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_exportarBotaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -825,7 +806,6 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
     private javax.swing.JLabel disciplinaLabel;
     private javax.swing.JLabel disciplinaLabelFixo;
     private javax.swing.JLabel emailAlunoLabel;
-    private javax.swing.JButton exportarBotao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
