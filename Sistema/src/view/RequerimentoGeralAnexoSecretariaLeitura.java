@@ -379,6 +379,10 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
                                 .addComponent(voltarBotao)
                                 .addGap(57, 57, 57)
                                 .addComponent(rejeitarBotao)))))
+<<<<<<< HEAD
+=======
+
+>>>>>>> df7a517efa58ceedc8a99e367f143e1da9d35638
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -425,6 +429,10 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(aceitarBotao)
                     .addComponent(rejeitarBotao)
+<<<<<<< HEAD
+=======
+
+>>>>>>> df7a517efa58ceedc8a99e367f143e1da9d35638
                     .addComponent(voltarBotao))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
@@ -507,7 +515,12 @@ public class RequerimentoGeralAnexoSecretariaLeitura extends javax.swing.JFrame 
         this.dispose();
     }//GEN-LAST:event_voltarBotaoActionPerformed
 
+<<<<<<< HEAD
   
+=======
+
+ 
+>>>>>>> df7a517efa58ceedc8a99e367f143e1da9d35638
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceitarBotao;

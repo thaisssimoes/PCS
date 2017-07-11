@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_111" class="java.beans.XMLDecoder">
+<java version="1.8.0_31" class="java.beans.XMLDecoder">
  <object class="java.util.ArrayList">
   <void method="add">
    <object class="model.requerimento.Requerimento" id="Requerimento0">
@@ -3454,6 +3454,7 @@ Banana</string>
     </void>
    </object>
   </void>
+<<<<<<< HEAD
   <void method="add">
    <object class="model.requerimento.Requerimento" id="Requerimento22">
     <void class="model.requerimento.Requerimento" method="getField">
@@ -3878,5 +3879,7 @@ Tudo bem!</string>
     </void>
    </object>
   </void>
+=======
+>>>>>>> df7a517efa58ceedc8a99e367f143e1da9d35638
  </object>
 </java>
