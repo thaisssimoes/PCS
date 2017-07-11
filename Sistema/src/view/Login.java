@@ -192,10 +192,10 @@ public class Login extends javax.swing.JFrame {
         cpf = campoCPF.getText();
         boolean autenticado = Autenticacao.reconhecerUsuario(tipoUsuarioString, cpf, senha);
         if (autenticado) {
-            this.setVisible(false);
-            this.dispose();
+                this.setVisible(false);
+                this.dispose();
 
-            if (tipoUsuarioString.equals("Aluno")) {
+                if (tipoUsuarioString.equals("Aluno")) {
                 aluno = controller.Gerenciador.obterAluno(cpf, senha);
                 TelaAluno janelaTelaAluno = new TelaAluno(aluno);
                 janelaTelaAluno.setVisible(true);
@@ -203,15 +203,16 @@ public class Login extends javax.swing.JFrame {
                 professor = controller.Gerenciador.obterProfessorCPF(cpf, senha);
                 TelaProfessor janelaTelaProfessor = new TelaProfessor(professor);
                 janelaTelaProfessor.setVisible(true);
-            } else if (tipoUsuarioString.equals("Tecnico")){
+            } else {
                 tecnico = controller.Gerenciador.obterTecnico(cpf, senha);
                 TelaSecretaria janelaTelaTecnico = new TelaSecretaria(tecnico);
                 janelaTelaTecnico.setVisible(true);
-            } else {
-                JOptionPane.showMessageDialog(this, "Erro no Login");
+                }
             } 
-        }
-
+            else {
+                JOptionPane.showMessageDialog(this, "Erro no Login");
+            }
+        
     }//GEN-LAST:event_botaoLoginActionPerformed
 
     private void login_enter(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_login_enter

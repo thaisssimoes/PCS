@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_31" class="java.beans.XMLDecoder">
+<java version="1.8.0_111" class="java.beans.XMLDecoder">
  <object class="java.util.ArrayList">
   <void method="add">
    <object class="model.requerimento.Requerimento" id="Requerimento0">
@@ -3219,6 +3219,9 @@ Tu tá errado</string>
     <void property="dataCriacao">
      <string>2017-07-10</string>
     </void>
+    <void property="dataSolucao">
+     <string>2017-07-10</string>
+    </void>
     <void property="descricao">
      <string>Nota de atualizacao - 2017-07-10:
  </string>
@@ -3230,10 +3233,645 @@ Tu tá errado</string>
      <string>1499662929682</string>
     </void>
     <void property="resposta">
+     <string>Nota de Aceitação - 2017-07-10:
+Banana</string>
+    </void>
+    <void property="status">
+     <string>CONCLUIDO</string>
+    </void>
+    <void property="tipoRequerimento">
+     <string>Realização de segunda chamada</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.requerimento.Requerimento" id="Requerimento21">
+    <void class="model.requerimento.Requerimento" method="getField">
+     <string>requerente</string>
+     <void method="set">
+      <object idref="Requerimento21"/>
+      <object class="model.entity.Aluno">
+       <void property="bairro">
+        <string>NemUm</string>
+       </void>
+       <void property="cep">
+        <string>12345678</string>
+       </void>
+       <void property="cidade">
+        <string>Bonn</string>
+       </void>
+       <void property="complemento">
+        <string>99</string>
+       </void>
+       <void property="cpf">
+        <string>12345678901</string>
+       </void>
+       <void property="dataNascimeto">
+        <string>16/12/1770</string>
+       </void>
+       <void property="deficiencia">
+        <string>Surdo</string>
+       </void>
+       <void property="email">
+        <string>ludwig.beethoven@uniriotec.br</string>
+       </void>
+       <void property="estado">
+        <string>PRU</string>
+       </void>
+       <void property="estadoCivil">
+        <string>Solteiro</string>
+       </void>
+       <void property="logradouro">
+        <string>AlgumNomeAlemao</string>
+       </void>
+       <void property="matricula">
+        <string>18002210002</string>
+       </void>
+       <void property="nacionalidade">
+        <string>Alemã</string>
+       </void>
+       <void property="nome">
+        <string>Ludwig Van Beethoven</string>
+       </void>
+       <void property="nomeDaMae">
+        <string>Maria</string>
+       </void>
+       <void property="nomeDoPai">
+        <string>Johann</string>
+       </void>
+       <void property="numero">
+        <string>66</string>
+       </void>
+       <void property="pais">
+        <string>Prussia</string>
+       </void>
+       <void property="periodo">
+        <string>9</string>
+       </void>
+       <void property="senha">
+        <string>123</string>
+       </void>
+       <void property="sexo">
+        <string>Masculino</string>
+       </void>
+       <void property="telefoneCelular">
+        <string>21912345678</string>
+       </void>
+       <void property="telefoneResidencial">
+        <string>2112236666</string>
+       </void>
+       <void property="tipoDeEndereco">
+        <string>Residencial</string>
+       </void>
+       <void property="tipoLogradouro">
+        <string>Avenida</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="areaResponsavel">
+     <object class="model.entity.Professor" id="Professor8">
+      <void property="bairro">
+       <string>EnglishTea</string>
+      </void>
+      <void property="cargo">
+       <string>Decano</string>
+      </void>
+      <void property="cep">
+       <string>06987648</string>
+      </void>
+      <void property="cidade">
+       <string>Londres</string>
+      </void>
+      <void property="classeDocente">
+       <string>Classe3</string>
+      </void>
+      <void property="complemento">
+       <string>42</string>
+      </void>
+      <void property="cpf">
+       <string>99900011122</string>
+      </void>
+      <void property="dataNascimeto">
+       <string>10/12/1815</string>
+      </void>
+      <void property="deficiencia">
+       <string>Nenhuma</string>
+      </void>
+      <void property="email">
+       <string>ada.lovelace@uniriotec.br</string>
+      </void>
+      <void property="estado">
+       <string>Byron</string>
+      </void>
+      <void property="estadoCivil">
+       <string>Casado</string>
+      </void>
+      <void property="grade">
+       <void method="add">
+        <string>Administração Financeira</string>
+       </void>
+       <void method="add">
+        <string>Estatística</string>
+       </void>
+       <void method="add">
+        <string>Gerência de Proj. de Informat.</string>
+       </void>
+       <void method="add">
+        <string>Probabilidade</string>
+       </void>
+      </void>
+      <void property="logradouro">
+       <string>Matemática</string>
+      </void>
+      <void property="nacionalidade">
+       <string>Inglesa</string>
+      </void>
+      <void property="nome">
+       <string>Ada Augusta King</string>
+      </void>
+      <void property="nomeDaMae">
+       <string>Anne Isabella</string>
+      </void>
+      <void property="nomeDoPai">
+       <string>Lord Byron</string>
+      </void>
+      <void property="numero">
+       <string>42</string>
+      </void>
+      <void property="pais">
+       <string>Inglaterra</string>
+      </void>
+      <void property="regimeTrabalho">
+       <string>Regime3</string>
+      </void>
+      <void property="senha">
+       <string>123</string>
+      </void>
+      <void property="sexo">
+       <string>Feminino</string>
+      </void>
+      <void property="siape">
+       <string>123456</string>
+      </void>
+      <void property="telefoneCelular">
+       <string>5647483</string>
+      </void>
+      <void property="telefoneResidencial">
+       <string>08000099</string>
+      </void>
+      <void property="tipoDeEndereco">
+       <string>Residencial</string>
+      </void>
+      <void property="tipoLogradouro">
+       <string>Rua</string>
+      </void>
+      <void property="titulacao">
+       <string>Doutora</string>
+      </void>
+     </object>
+    </void>
+    <void property="dataCriacao">
+     <string>2017-07-10</string>
+    </void>
+    <void property="descricao">
+     <string>Olá! Quero emitir meus histórico.</string>
+    </void>
+    <void property="disciplina">
+     <string>Administração Financeira</string>
+    </void>
+    <void property="numeroProtocolo">
+     <string>1499716365531</string>
+    </void>
+    <void property="resposta">
      <string></string>
     </void>
     <void property="status">
      <string>DESIGNADO</string>
+    </void>
+    <void property="tipoRequerimento">
+     <string>Emissão de histórico escolar</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.requerimento.Requerimento" id="Requerimento22">
+    <void class="model.requerimento.Requerimento" method="getField">
+     <string>requerente</string>
+     <void method="set">
+      <object idref="Requerimento22"/>
+      <object class="model.entity.Aluno">
+       <void property="bairro">
+        <string>NemUm</string>
+       </void>
+       <void property="cep">
+        <string>12345678</string>
+       </void>
+       <void property="cidade">
+        <string>Bonn</string>
+       </void>
+       <void property="complemento">
+        <string>99</string>
+       </void>
+       <void property="cpf">
+        <string>12345678901</string>
+       </void>
+       <void property="dataNascimeto">
+        <string>16/12/1770</string>
+       </void>
+       <void property="deficiencia">
+        <string>Surdo</string>
+       </void>
+       <void property="email">
+        <string>ludwig.beethoven@uniriotec.br</string>
+       </void>
+       <void property="estado">
+        <string>PRU</string>
+       </void>
+       <void property="estadoCivil">
+        <string>Solteiro</string>
+       </void>
+       <void property="logradouro">
+        <string>AlgumNomeAlemao</string>
+       </void>
+       <void property="matricula">
+        <string>18002210002</string>
+       </void>
+       <void property="nacionalidade">
+        <string>Alemã</string>
+       </void>
+       <void property="nome">
+        <string>Ludwig Van Beethoven</string>
+       </void>
+       <void property="nomeDaMae">
+        <string>Maria</string>
+       </void>
+       <void property="nomeDoPai">
+        <string>Johann</string>
+       </void>
+       <void property="numero">
+        <string>66</string>
+       </void>
+       <void property="pais">
+        <string>Prussia</string>
+       </void>
+       <void property="periodo">
+        <string>9</string>
+       </void>
+       <void property="senha">
+        <string>123</string>
+       </void>
+       <void property="sexo">
+        <string>Masculino</string>
+       </void>
+       <void property="telefoneCelular">
+        <string>21912345678</string>
+       </void>
+       <void property="telefoneResidencial">
+        <string>2112236666</string>
+       </void>
+       <void property="tipoDeEndereco">
+        <string>Residencial</string>
+       </void>
+       <void property="tipoLogradouro">
+        <string>Avenida</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="areaResponsavel">
+     <object class="model.entity.Professor" id="Professor9">
+      <void property="bairro">
+       <string>EnglishTea</string>
+      </void>
+      <void property="cargo">
+       <string>Decano</string>
+      </void>
+      <void property="cep">
+       <string>06987648</string>
+      </void>
+      <void property="cidade">
+       <string>Londres</string>
+      </void>
+      <void property="classeDocente">
+       <string>Classe3</string>
+      </void>
+      <void property="complemento">
+       <string>42</string>
+      </void>
+      <void property="cpf">
+       <string>99900011122</string>
+      </void>
+      <void property="dataNascimeto">
+       <string>10/12/1815</string>
+      </void>
+      <void property="deficiencia">
+       <string>Nenhuma</string>
+      </void>
+      <void property="email">
+       <string>ada.lovelace@uniriotec.br</string>
+      </void>
+      <void property="estado">
+       <string>Byron</string>
+      </void>
+      <void property="estadoCivil">
+       <string>Casado</string>
+      </void>
+      <void property="grade">
+       <void method="add">
+        <string>Administração Financeira</string>
+       </void>
+       <void method="add">
+        <string>Estatística</string>
+       </void>
+       <void method="add">
+        <string>Gerência de Proj. de Informat.</string>
+       </void>
+       <void method="add">
+        <string>Probabilidade</string>
+       </void>
+      </void>
+      <void property="logradouro">
+       <string>Matemática</string>
+      </void>
+      <void property="nacionalidade">
+       <string>Inglesa</string>
+      </void>
+      <void property="nome">
+       <string>Ada Augusta King</string>
+      </void>
+      <void property="nomeDaMae">
+       <string>Anne Isabella</string>
+      </void>
+      <void property="nomeDoPai">
+       <string>Lord Byron</string>
+      </void>
+      <void property="numero">
+       <string>42</string>
+      </void>
+      <void property="pais">
+       <string>Inglaterra</string>
+      </void>
+      <void property="regimeTrabalho">
+       <string>Regime3</string>
+      </void>
+      <void property="senha">
+       <string>123</string>
+      </void>
+      <void property="sexo">
+       <string>Feminino</string>
+      </void>
+      <void property="siape">
+       <string>123456</string>
+      </void>
+      <void property="telefoneCelular">
+       <string>5647483</string>
+      </void>
+      <void property="telefoneResidencial">
+       <string>08000099</string>
+      </void>
+      <void property="tipoDeEndereco">
+       <string>Residencial</string>
+      </void>
+      <void property="tipoLogradouro">
+       <string>Rua</string>
+      </void>
+      <void property="titulacao">
+       <string>Doutora</string>
+      </void>
+     </object>
+    </void>
+    <void property="dataCriacao">
+     <string>2017-07-10</string>
+    </void>
+    <void property="descricao">
+     <string>Ola! Testando!Nota de atualizacao - 2017-07-10:
+Alo! Comentando!</string>
+    </void>
+    <void property="disciplina">
+     <string>Administração Financeira</string>
+    </void>
+    <void property="numeroProtocolo">
+     <string>1499721942986</string>
+    </void>
+    <void property="resposta">
+     <string></string>
+    </void>
+    <void property="status">
+     <string>DESIGNADO</string>
+    </void>
+    <void property="tipoRequerimento">
+     <string>Emissão do programa de disciplinas</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.requerimento.Requerimento" id="Requerimento23">
+    <void class="model.requerimento.Requerimento" method="getField">
+     <string>requerente</string>
+     <void method="set">
+      <object idref="Requerimento23"/>
+      <object class="model.entity.Aluno">
+       <void property="bairro">
+        <string>NemUm</string>
+       </void>
+       <void property="cep">
+        <string>12345678</string>
+       </void>
+       <void property="cidade">
+        <string>Bonn</string>
+       </void>
+       <void property="complemento">
+        <string>99</string>
+       </void>
+       <void property="cpf">
+        <string>12345678901</string>
+       </void>
+       <void property="dataNascimeto">
+        <string>16/12/1770</string>
+       </void>
+       <void property="deficiencia">
+        <string>Surdo</string>
+       </void>
+       <void property="email">
+        <string>ludwig.beethoven@uniriotec.br</string>
+       </void>
+       <void property="estado">
+        <string>PRU</string>
+       </void>
+       <void property="estadoCivil">
+        <string>Solteiro</string>
+       </void>
+       <void property="logradouro">
+        <string>AlgumNomeAlemao</string>
+       </void>
+       <void property="matricula">
+        <string>18002210002</string>
+       </void>
+       <void property="nacionalidade">
+        <string>Alemã</string>
+       </void>
+       <void property="nome">
+        <string>Ludwig Van Beethoven</string>
+       </void>
+       <void property="nomeDaMae">
+        <string>Maria</string>
+       </void>
+       <void property="nomeDoPai">
+        <string>Johann</string>
+       </void>
+       <void property="numero">
+        <string>66</string>
+       </void>
+       <void property="pais">
+        <string>Prussia</string>
+       </void>
+       <void property="periodo">
+        <string>9</string>
+       </void>
+       <void property="senha">
+        <string>123</string>
+       </void>
+       <void property="sexo">
+        <string>Masculino</string>
+       </void>
+       <void property="telefoneCelular">
+        <string>21912345678</string>
+       </void>
+       <void property="telefoneResidencial">
+        <string>2112236666</string>
+       </void>
+       <void property="tipoDeEndereco">
+        <string>Residencial</string>
+       </void>
+       <void property="tipoLogradouro">
+        <string>Avenida</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="areaResponsavel">
+     <object class="model.entity.Professor" id="Professor10">
+      <void property="bairro">
+       <string>Princeton</string>
+      </void>
+      <void property="cargo">
+       <string>Diretor</string>
+      </void>
+      <void property="cep">
+       <string>22233356</string>
+      </void>
+      <void property="cidade">
+       <string>Princeton</string>
+      </void>
+      <void property="classeDocente">
+       <string>Classe1</string>
+      </void>
+      <void property="complemento">
+       <string>42</string>
+      </void>
+      <void property="cpf">
+       <string>11122233344</string>
+      </void>
+      <void property="dataNascimeto">
+       <string>14/03/1879</string>
+      </void>
+      <void property="deficiencia">
+       <string>Nenhuma</string>
+      </void>
+      <void property="email">
+       <string>albert.einstein@uniriotec.br</string>
+      </void>
+      <void property="estado">
+       <string>Ulm</string>
+      </void>
+      <void property="estadoCivil">
+       <string>Casado</string>
+      </void>
+      <void property="grade">
+       <void method="add">
+        <string>Técnicas de Programação I</string>
+       </void>
+       <void method="add">
+        <string>Teorias e Práticas Discursivas</string>
+       </void>
+       <void method="add">
+        <string>Técnicas de Programação II</string>
+       </void>
+      </void>
+      <void property="logradouro">
+       <string>Fisica</string>
+      </void>
+      <void property="nacionalidade">
+       <string>Alemã</string>
+      </void>
+      <void property="nome">
+       <string>Albert Einstein</string>
+      </void>
+      <void property="nomeDaMae">
+       <string>Pauline</string>
+      </void>
+      <void property="nomeDoPai">
+       <string>Hermann</string>
+      </void>
+      <void property="numero">
+       <string>42</string>
+      </void>
+      <void property="pais">
+       <string>Alemanha</string>
+      </void>
+      <void property="regimeTrabalho">
+       <string>Regime1</string>
+      </void>
+      <void property="senha">
+       <string>345</string>
+      </void>
+      <void property="sexo">
+       <string>Masculino</string>
+      </void>
+      <void property="siape">
+       <string>345678</string>
+      </void>
+      <void property="telefoneCelular">
+       <string>08001122</string>
+      </void>
+      <void property="telefoneResidencial">
+       <string>08000099</string>
+      </void>
+      <void property="tipoDeEndereco">
+       <string>Residencial</string>
+      </void>
+      <void property="tipoLogradouro">
+       <string>Rua</string>
+      </void>
+      <void property="titulacao">
+       <string>Doutor</string>
+      </void>
+     </object>
+    </void>
+    <void property="dataCriacao">
+     <string>2017-07-10</string>
+    </void>
+    <void property="dataSolucao">
+     <string>2017-07-10</string>
+    </void>
+    <void property="descricao">
+     <string>Testando realizacao de segunda chamada na aulaNota de atualizacao - 2017-07-10:
+atualizacao de pendencia</string>
+    </void>
+    <void property="disciplina">
+     <string>Técnicas de Programação I</string>
+    </void>
+    <void property="numeroProtocolo">
+     <string>1499722453509</string>
+    </void>
+    <void property="resposta">
+     <string>Nota de Pendencia - 2017-07-10:
+Oi nota de pendenciaNota de Aceitação - 2017-07-10:
+Tudo bem!</string>
+    </void>
+    <void property="status">
+     <string>CONCLUIDO</string>
     </void>
     <void property="tipoRequerimento">
      <string>Realização de segunda chamada</string>
