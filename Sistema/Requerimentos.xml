@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_111" class="java.beans.XMLDecoder">
+<java version="1.8.0_31" class="java.beans.XMLDecoder">
  <object class="java.util.ArrayList">
   <void method="add">
    <object class="model.requerimento.Requerimento" id="Requerimento0">
@@ -7,217 +7,6 @@
      <string>requerente</string>
      <void method="set">
       <object idref="Requerimento0"/>
-      <object class="model.entity.Aluno">
-       <void property="bairro">
-        <string>NemUm</string>
-       </void>
-       <void property="cep">
-        <string>12345678</string>
-       </void>
-       <void property="cidade">
-        <string>Bonn</string>
-       </void>
-       <void property="complemento">
-        <string>99</string>
-       </void>
-       <void property="cpf">
-        <string>12345678901</string>
-       </void>
-       <void property="dataNascimeto">
-        <string>16/12/1770</string>
-       </void>
-       <void property="deficiencia">
-        <string>Surdo</string>
-       </void>
-       <void property="email">
-        <string>ludwig.beethoven@uniriotec.br</string>
-       </void>
-       <void property="estado">
-        <string>PRU</string>
-       </void>
-       <void property="estadoCivil">
-        <string>Solteiro</string>
-       </void>
-       <void property="logradouro">
-        <string>AlgumNomeAlemao</string>
-       </void>
-       <void property="matricula">
-        <string>18002210002</string>
-       </void>
-       <void property="nacionalidade">
-        <string>Alemã</string>
-       </void>
-       <void property="nome">
-        <string>Ludwig Van Beethoven</string>
-       </void>
-       <void property="nomeDaMae">
-        <string>Maria</string>
-       </void>
-       <void property="nomeDoPai">
-        <string>Johann</string>
-       </void>
-       <void property="numero">
-        <string>66</string>
-       </void>
-       <void property="pais">
-        <string>Prussia</string>
-       </void>
-       <void property="periodo">
-        <string>9</string>
-       </void>
-       <void property="senha">
-        <string>123</string>
-       </void>
-       <void property="sexo">
-        <string>Masculino</string>
-       </void>
-       <void property="telefoneCelular">
-        <string>21912345678</string>
-       </void>
-       <void property="telefoneResidencial">
-        <string>2112236666</string>
-       </void>
-       <void property="tipoDeEndereco">
-        <string>Residencial</string>
-       </void>
-       <void property="tipoLogradouro">
-        <string>Avenida</string>
-       </void>
-      </object>
-     </void>
-    </void>
-    <void property="areaResponsavel">
-     <object class="model.entity.Professor" id="Professor0">
-      <void property="bairro">
-       <string>Local</string>
-      </void>
-      <void property="cargo">
-       <string>Chefe de Departamento</string>
-      </void>
-      <void property="cep">
-       <string>64745678</string>
-      </void>
-      <void property="cidade">
-       <string>Paris</string>
-      </void>
-      <void property="classeDocente">
-       <string>Classe2</string>
-      </void>
-      <void property="complemento">
-       <string>88</string>
-      </void>
-      <void property="cpf">
-       <string>55566677788</string>
-      </void>
-      <void property="dataNascimeto">
-       <string>07/11/1867</string>
-      </void>
-      <void property="deficiencia">
-       <string>Nenhuma</string>
-      </void>
-      <void property="email">
-       <string>marie.curie@uniriotec.br</string>
-      </void>
-      <void property="estado">
-       <string>Passy</string>
-      </void>
-      <void property="estadoCivil">
-       <string>Casada</string>
-      </void>
-      <void property="grade">
-       <void method="add">
-        <string>Processos de Software</string>
-       </void>
-       <void method="add">
-        <string>Programação Modular</string>
-       </void>
-       <void method="add">
-        <string>Proj. Const. Sistemas-SGBD</string>
-       </void>
-      </void>
-      <void property="logradouro">
-       <string>Química</string>
-      </void>
-      <void property="nacionalidade">
-       <string>Polonesa</string>
-      </void>
-      <void property="nome">
-       <string>Marie Skłodowska Curie</string>
-      </void>
-      <void property="nomeDaMae">
-       <string>Bronisława</string>
-      </void>
-      <void property="nomeDoPai">
-       <string>Władysław</string>
-      </void>
-      <void property="numero">
-       <string>88</string>
-      </void>
-      <void property="pais">
-       <string>Polônia</string>
-      </void>
-      <void property="regimeTrabalho">
-       <string>Regime2</string>
-      </void>
-      <void property="senha">
-       <string>789</string>
-      </void>
-      <void property="sexo">
-       <string>Feminino</string>
-      </void>
-      <void property="siape">
-       <string>789012</string>
-      </void>
-      <void property="telefoneCelular">
-       <string>6655474</string>
-      </void>
-      <void property="telefoneResidencial">
-       <string>5556677</string>
-      </void>
-      <void property="tipoDeEndereco">
-       <string>Residencial</string>
-      </void>
-      <void property="tipoLogradouro">
-       <string>Rua</string>
-      </void>
-      <void property="titulacao">
-       <string>Doutora</string>
-      </void>
-     </object>
-    </void>
-    <void property="dataCriacao">
-     <string>2017-07-09</string>
-    </void>
-    <void property="descricao">
-     <string>Posso tentar</string>
-    </void>
-    <void property="disciplina">
-     <string>Técnicas de Programação I</string>
-    </void>
-    <void property="numeroProtocolo">
-     <string>1499648062164</string>
-    </void>
-    <void property="resposta">
-     <string>nullNota de Rejeição:
-2017-07-09
-Nota de rejeição:
-2017-07-09
-Tu tá errado</string>
-    </void>
-    <void property="status">
-     <string>REJEITADO</string>
-    </void>
-    <void property="tipoRequerimento">
-     <string>Revisão de prova</string>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento1">
-    <void class="model.requerimento.Requerimento" method="getField">
-     <string>requerente</string>
-     <void method="set">
-      <object idref="Requerimento1"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>Algum</string>
@@ -298,7 +87,7 @@ Tu tá errado</string>
      </void>
     </void>
     <void property="areaResponsavel">
-     <object class="model.entity.Professor" id="Professor1">
+     <object class="model.entity.Professor" id="Professor0">
       <void property="bairro">
        <string>Local</string>
       </void>
@@ -423,11 +212,11 @@ Comentario de rejeição</string>
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento2">
+   <object class="model.requerimento.Requerimento" id="Requerimento1">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento2"/>
+      <object idref="Requerimento1"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -551,11 +340,11 @@ Trabalho faculdade
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento3">
+   <object class="model.requerimento.Requerimento" id="Requerimento2">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento3"/>
+      <object idref="Requerimento2"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -666,11 +455,11 @@ Trabalho faculdade
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento4">
+   <object class="model.requerimento.Requerimento" id="Requerimento3">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento4"/>
+      <object idref="Requerimento3"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -751,7 +540,7 @@ Trabalho faculdade
      </void>
     </void>
     <void property="areaResponsavel">
-     <object class="model.entity.Professor" id="Professor2">
+     <object class="model.entity.Professor" id="Professor1">
       <void property="bairro">
        <string>Princeton</string>
       </void>
@@ -874,11 +663,11 @@ et</string>
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento5">
+   <object class="model.requerimento.Requerimento" id="Requerimento4">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento5"/>
+      <object idref="Requerimento4"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -993,11 +782,11 @@ dfsdf</string>
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento6">
+   <object class="model.requerimento.Requerimento" id="Requerimento5">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento6"/>
+      <object idref="Requerimento5"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -1113,11 +902,11 @@ sdfsdf</string>
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento7">
+   <object class="model.requerimento.Requerimento" id="Requerimento6">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento7"/>
+      <object idref="Requerimento6"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>Algum</string>
@@ -1236,11 +1025,11 @@ nota 2
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento8">
+   <object class="model.requerimento.Requerimento" id="Requerimento7">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento8"/>
+      <object idref="Requerimento7"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -1356,11 +1145,11 @@ Ops</string>
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento9">
+   <object class="model.requerimento.Requerimento" id="Requerimento8">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento9"/>
+      <object idref="Requerimento8"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -1475,11 +1264,11 @@ dfd</string>
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento10">
+   <object class="model.requerimento.Requerimento" id="Requerimento9">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento10"/>
+      <object idref="Requerimento9"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -1595,11 +1384,11 @@ blablabla
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento11">
+   <object class="model.requerimento.Requerimento" id="Requerimento10">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento11"/>
+      <object idref="Requerimento10"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -1713,11 +1502,11 @@ blablabla
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento12">
+   <object class="model.requerimento.Requerimento" id="Requerimento11">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento12"/>
+      <object idref="Requerimento11"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -1831,11 +1620,11 @@ blablabla
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento13">
+   <object class="model.requerimento.Requerimento" id="Requerimento12">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento13"/>
+      <object idref="Requerimento12"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -1949,11 +1738,11 @@ blablabla
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento14">
+   <object class="model.requerimento.Requerimento" id="Requerimento13">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento14"/>
+      <object idref="Requerimento13"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>NemUm</string>
@@ -2034,125 +1823,7 @@ blablabla
      </void>
     </void>
     <void property="areaResponsavel">
-     <object class="model.entity.Tecnico">
-      <void property="cpf">
-       <string>0000</string>
-      </void>
-      <void property="nome">
-       <string>Tecnico Generico</string>
-      </void>
-     </object>
-    </void>
-    <void property="dataCriacao">
-     <string>2017-07-10</string>
-    </void>
-    <void property="descricao">
-     <string></string>
-    </void>
-    <void property="disciplina">
-     <string>Técnicas de Programação I</string>
-    </void>
-    <void property="numeroProtocolo">
-     <string>1499662929682</string>
-    </void>
-    <void property="resposta">
-     <string></string>
-    </void>
-    <void property="status">
-     <string>DESIGNADO</string>
-    </void>
-    <void property="tipoRequerimento">
-     <string>Realização de segunda chamada</string>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento15">
-    <void class="model.requerimento.Requerimento" method="getField">
-     <string>requerente</string>
-     <void method="set">
-      <object idref="Requerimento15"/>
-      <object class="model.entity.Aluno">
-       <void property="bairro">
-        <string>NemUm</string>
-       </void>
-       <void property="cep">
-        <string>12345678</string>
-       </void>
-       <void property="cidade">
-        <string>Bonn</string>
-       </void>
-       <void property="complemento">
-        <string>99</string>
-       </void>
-       <void property="cpf">
-        <string>12345678901</string>
-       </void>
-       <void property="dataNascimeto">
-        <string>16/12/1770</string>
-       </void>
-       <void property="deficiencia">
-        <string>Surdo</string>
-       </void>
-       <void property="email">
-        <string>ludwig.beethoven@uniriotec.br</string>
-       </void>
-       <void property="estado">
-        <string>PRU</string>
-       </void>
-       <void property="estadoCivil">
-        <string>Solteiro</string>
-       </void>
-       <void property="logradouro">
-        <string>AlgumNomeAlemao</string>
-       </void>
-       <void property="matricula">
-        <string>18002210002</string>
-       </void>
-       <void property="nacionalidade">
-        <string>Alemã</string>
-       </void>
-       <void property="nome">
-        <string>Ludwig Van Beethoven</string>
-       </void>
-       <void property="nomeDaMae">
-        <string>Maria</string>
-       </void>
-       <void property="nomeDoPai">
-        <string>Johann</string>
-       </void>
-       <void property="numero">
-        <string>66</string>
-       </void>
-       <void property="pais">
-        <string>Prussia</string>
-       </void>
-       <void property="periodo">
-        <string>9</string>
-       </void>
-       <void property="senha">
-        <string>123</string>
-       </void>
-       <void property="sexo">
-        <string>Masculino</string>
-       </void>
-       <void property="telefoneCelular">
-        <string>21912345678</string>
-       </void>
-       <void property="telefoneResidencial">
-        <string>2112236666</string>
-       </void>
-       <void property="tipoDeEndereco">
-        <string>Residencial</string>
-       </void>
-       <void property="tipoLogradouro">
-        <string>Avenida</string>
-       </void>
-      </object>
-     </void>
-    </void>
-    <void property="areaResponsavel">
-     <object class="model.entity.Professor" id="Professor3">
+     <object class="model.entity.Professor" id="Professor2">
       <void property="bairro">
        <string>Local</string>
       </void>
@@ -2275,11 +1946,11 @@ fgdfgd</string>
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento16">
+   <object class="model.requerimento.Requerimento" id="Requerimento14">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento16"/>
+      <object idref="Requerimento14"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -2360,7 +2031,7 @@ fgdfgd</string>
      </void>
     </void>
     <void property="areaResponsavel">
-     <object class="model.entity.Professor" id="Professor4">
+     <object class="model.entity.Professor" id="Professor3">
       <void property="bairro">
        <string>Local</string>
       </void>
@@ -2485,11 +2156,11 @@ Sou legal
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento17">
+   <object class="model.requerimento.Requerimento" id="Requerimento15">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento17"/>
+      <object idref="Requerimento15"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>NemUm</string>
@@ -2570,7 +2241,7 @@ Sou legal
      </void>
     </void>
     <void property="areaResponsavel">
-     <object class="model.entity.Professor" id="Professor5">
+     <object class="model.entity.Professor" id="Professor4">
       <void property="bairro">
        <string>Local</string>
       </void>
@@ -2695,11 +2366,11 @@ Não sou legal
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento18">
+   <object class="model.requerimento.Requerimento" id="Requerimento16">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento18"/>
+      <object idref="Requerimento16"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>Algum</string>
@@ -2780,7 +2451,7 @@ Não sou legal
      </void>
     </void>
     <void property="areaResponsavel">
-     <object class="model.entity.Professor" id="Professor6">
+     <object class="model.entity.Professor" id="Professor5">
       <void property="bairro">
        <string>EnglishTea</string>
       </void>
@@ -2906,11 +2577,11 @@ Não quero te dar segunda chamada, você escreve como um macaco</string>
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento19">
+   <object class="model.requerimento.Requerimento" id="Requerimento17">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento19"/>
+      <object idref="Requerimento17"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -2991,7 +2662,7 @@ Não quero te dar segunda chamada, você escreve como um macaco</string>
      </void>
     </void>
     <void property="areaResponsavel">
-     <object class="model.entity.Professor" id="Professor7">
+     <object class="model.entity.Professor" id="Professor6">
       <void property="bairro">
        <string>EnglishTea</string>
       </void>
@@ -3116,11 +2787,11 @@ Não quero te dar segunda chamada, você escreve como um macaco</string>
    </object>
   </void>
   <void method="add">
-   <object class="model.requerimento.Requerimento" id="Requerimento20">
+   <object class="model.requerimento.Requerimento" id="Requerimento18">
     <void class="model.requerimento.Requerimento" method="getField">
      <string>requerente</string>
      <void method="set">
-      <object idref="Requerimento20"/>
+      <object idref="Requerimento18"/>
       <object class="model.entity.Aluno">
        <void property="bairro">
         <string>São Luís</string>
@@ -3234,6 +2905,552 @@ Concluidíssimo!</string>
     </void>
     <void property="tipoRequerimento">
      <string>Realização de segunda chamada</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.requerimento.Requerimento" id="Requerimento19">
+    <void class="model.requerimento.Requerimento" method="getField">
+     <string>requerente</string>
+     <void method="set">
+      <object idref="Requerimento19"/>
+      <object class="model.entity.Aluno">
+       <void property="bairro">
+        <string>NemUm</string>
+       </void>
+       <void property="cep">
+        <string>12345678</string>
+       </void>
+       <void property="cidade">
+        <string>Bonn</string>
+       </void>
+       <void property="complemento">
+        <string>99</string>
+       </void>
+       <void property="cpf">
+        <string>12345678901</string>
+       </void>
+       <void property="dataNascimeto">
+        <string>16/12/1770</string>
+       </void>
+       <void property="deficiencia">
+        <string>Surdo</string>
+       </void>
+       <void property="email">
+        <string>ludwig.beethoven@uniriotec.br</string>
+       </void>
+       <void property="estado">
+        <string>PRU</string>
+       </void>
+       <void property="estadoCivil">
+        <string>Solteiro</string>
+       </void>
+       <void property="logradouro">
+        <string>AlgumNomeAlemao</string>
+       </void>
+       <void property="matricula">
+        <string>18002210002</string>
+       </void>
+       <void property="nacionalidade">
+        <string>Alemã</string>
+       </void>
+       <void property="nome">
+        <string>Ludwig Van Beethoven</string>
+       </void>
+       <void property="nomeDaMae">
+        <string>Maria</string>
+       </void>
+       <void property="nomeDoPai">
+        <string>Johann</string>
+       </void>
+       <void property="numero">
+        <string>66</string>
+       </void>
+       <void property="pais">
+        <string>Prussia</string>
+       </void>
+       <void property="periodo">
+        <string>9</string>
+       </void>
+       <void property="senha">
+        <string>123</string>
+       </void>
+       <void property="sexo">
+        <string>Masculino</string>
+       </void>
+       <void property="telefoneCelular">
+        <string>21912345678</string>
+       </void>
+       <void property="telefoneResidencial">
+        <string>2112236666</string>
+       </void>
+       <void property="tipoDeEndereco">
+        <string>Residencial</string>
+       </void>
+       <void property="tipoLogradouro">
+        <string>Avenida</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="areaResponsavel">
+     <object class="model.entity.Professor" id="Professor7">
+      <void property="bairro">
+       <string>Local</string>
+      </void>
+      <void property="cargo">
+       <string>Chefe de Departamento</string>
+      </void>
+      <void property="cep">
+       <string>64745678</string>
+      </void>
+      <void property="cidade">
+       <string>Paris</string>
+      </void>
+      <void property="classeDocente">
+       <string>Classe2</string>
+      </void>
+      <void property="complemento">
+       <string>88</string>
+      </void>
+      <void property="cpf">
+       <string>55566677788</string>
+      </void>
+      <void property="dataNascimeto">
+       <string>07/11/1867</string>
+      </void>
+      <void property="deficiencia">
+       <string>Nenhuma</string>
+      </void>
+      <void property="email">
+       <string>marie.curie@uniriotec.br</string>
+      </void>
+      <void property="estado">
+       <string>Passy</string>
+      </void>
+      <void property="estadoCivil">
+       <string>Casada</string>
+      </void>
+      <void property="grade">
+       <void method="add">
+        <string>Processos de Software</string>
+       </void>
+       <void method="add">
+        <string>Programação Modular</string>
+       </void>
+       <void method="add">
+        <string>Proj. Const. Sistemas-SGBD</string>
+       </void>
+      </void>
+      <void property="logradouro">
+       <string>Química</string>
+      </void>
+      <void property="nacionalidade">
+       <string>Polonesa</string>
+      </void>
+      <void property="nome">
+       <string>Marie Skłodowska Curie</string>
+      </void>
+      <void property="nomeDaMae">
+       <string>Bronisława</string>
+      </void>
+      <void property="nomeDoPai">
+       <string>Władysław</string>
+      </void>
+      <void property="numero">
+       <string>88</string>
+      </void>
+      <void property="pais">
+       <string>Polônia</string>
+      </void>
+      <void property="regimeTrabalho">
+       <string>Regime2</string>
+      </void>
+      <void property="senha">
+       <string>789</string>
+      </void>
+      <void property="sexo">
+       <string>Feminino</string>
+      </void>
+      <void property="siape">
+       <string>789012</string>
+      </void>
+      <void property="telefoneCelular">
+       <string>6655474</string>
+      </void>
+      <void property="telefoneResidencial">
+       <string>5556677</string>
+      </void>
+      <void property="tipoDeEndereco">
+       <string>Residencial</string>
+      </void>
+      <void property="tipoLogradouro">
+       <string>Rua</string>
+      </void>
+      <void property="titulacao">
+       <string>Doutora</string>
+      </void>
+     </object>
+    </void>
+    <void property="dataCriacao">
+     <string>2017-07-09</string>
+    </void>
+    <void property="descricao">
+     <string>Posso tentarNota de atualizacao - 2017-07-10:
+Nota de atualizacao - 2017-07-10:
+</string>
+    </void>
+    <void property="disciplina">
+     <string>Técnicas de Programação I</string>
+    </void>
+    <void property="numeroProtocolo">
+     <string>1499648062164</string>
+    </void>
+    <void property="resposta">
+     <string>nullNota de Rejeição:
+2017-07-09
+Nota de rejeição:
+2017-07-09
+Tu tá errado</string>
+    </void>
+    <void property="status">
+     <string>REJEITADO</string>
+    </void>
+    <void property="tipoRequerimento">
+     <string>Revisão de prova</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.requerimento.Requerimento" id="Requerimento20">
+    <void class="model.requerimento.Requerimento" method="getField">
+     <string>requerente</string>
+     <void method="set">
+      <object idref="Requerimento20"/>
+      <object class="model.entity.Aluno">
+       <void property="bairro">
+        <string>NemUm</string>
+       </void>
+       <void property="cep">
+        <string>12345678</string>
+       </void>
+       <void property="cidade">
+        <string>Bonn</string>
+       </void>
+       <void property="complemento">
+        <string>99</string>
+       </void>
+       <void property="cpf">
+        <string>12345678901</string>
+       </void>
+       <void property="dataNascimeto">
+        <string>16/12/1770</string>
+       </void>
+       <void property="deficiencia">
+        <string>Surdo</string>
+       </void>
+       <void property="email">
+        <string>ludwig.beethoven@uniriotec.br</string>
+       </void>
+       <void property="estado">
+        <string>PRU</string>
+       </void>
+       <void property="estadoCivil">
+        <string>Solteiro</string>
+       </void>
+       <void property="logradouro">
+        <string>AlgumNomeAlemao</string>
+       </void>
+       <void property="matricula">
+        <string>18002210002</string>
+       </void>
+       <void property="nacionalidade">
+        <string>Alemã</string>
+       </void>
+       <void property="nome">
+        <string>Ludwig Van Beethoven</string>
+       </void>
+       <void property="nomeDaMae">
+        <string>Maria</string>
+       </void>
+       <void property="nomeDoPai">
+        <string>Johann</string>
+       </void>
+       <void property="numero">
+        <string>66</string>
+       </void>
+       <void property="pais">
+        <string>Prussia</string>
+       </void>
+       <void property="periodo">
+        <string>9</string>
+       </void>
+       <void property="senha">
+        <string>123</string>
+       </void>
+       <void property="sexo">
+        <string>Masculino</string>
+       </void>
+       <void property="telefoneCelular">
+        <string>21912345678</string>
+       </void>
+       <void property="telefoneResidencial">
+        <string>2112236666</string>
+       </void>
+       <void property="tipoDeEndereco">
+        <string>Residencial</string>
+       </void>
+       <void property="tipoLogradouro">
+        <string>Avenida</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="areaResponsavel">
+     <object class="model.entity.Tecnico">
+      <void property="cpf">
+       <string>0000</string>
+      </void>
+      <void property="nome">
+       <string>Tecnico Generico</string>
+      </void>
+     </object>
+    </void>
+    <void property="dataCriacao">
+     <string>2017-07-10</string>
+    </void>
+    <void property="dataSolucao">
+     <string>2017-07-10</string>
+    </void>
+    <void property="descricao">
+     <string>Nota de atualizacao - 2017-07-10:
+ </string>
+    </void>
+    <void property="disciplina">
+     <string>Técnicas de Programação I</string>
+    </void>
+    <void property="numeroProtocolo">
+     <string>1499662929682</string>
+    </void>
+    <void property="resposta">
+     <string>Nota de Aceitação - 2017-07-10:
+Banana</string>
+    </void>
+    <void property="status">
+     <string>CONCLUIDO</string>
+    </void>
+    <void property="tipoRequerimento">
+     <string>Realização de segunda chamada</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.requerimento.Requerimento" id="Requerimento21">
+    <void class="model.requerimento.Requerimento" method="getField">
+     <string>requerente</string>
+     <void method="set">
+      <object idref="Requerimento21"/>
+      <object class="model.entity.Aluno">
+       <void property="bairro">
+        <string>NemUm</string>
+       </void>
+       <void property="cep">
+        <string>12345678</string>
+       </void>
+       <void property="cidade">
+        <string>Bonn</string>
+       </void>
+       <void property="complemento">
+        <string>99</string>
+       </void>
+       <void property="cpf">
+        <string>12345678901</string>
+       </void>
+       <void property="dataNascimeto">
+        <string>16/12/1770</string>
+       </void>
+       <void property="deficiencia">
+        <string>Surdo</string>
+       </void>
+       <void property="email">
+        <string>ludwig.beethoven@uniriotec.br</string>
+       </void>
+       <void property="estado">
+        <string>PRU</string>
+       </void>
+       <void property="estadoCivil">
+        <string>Solteiro</string>
+       </void>
+       <void property="logradouro">
+        <string>AlgumNomeAlemao</string>
+       </void>
+       <void property="matricula">
+        <string>18002210002</string>
+       </void>
+       <void property="nacionalidade">
+        <string>Alemã</string>
+       </void>
+       <void property="nome">
+        <string>Ludwig Van Beethoven</string>
+       </void>
+       <void property="nomeDaMae">
+        <string>Maria</string>
+       </void>
+       <void property="nomeDoPai">
+        <string>Johann</string>
+       </void>
+       <void property="numero">
+        <string>66</string>
+       </void>
+       <void property="pais">
+        <string>Prussia</string>
+       </void>
+       <void property="periodo">
+        <string>9</string>
+       </void>
+       <void property="senha">
+        <string>123</string>
+       </void>
+       <void property="sexo">
+        <string>Masculino</string>
+       </void>
+       <void property="telefoneCelular">
+        <string>21912345678</string>
+       </void>
+       <void property="telefoneResidencial">
+        <string>2112236666</string>
+       </void>
+       <void property="tipoDeEndereco">
+        <string>Residencial</string>
+       </void>
+       <void property="tipoLogradouro">
+        <string>Avenida</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="areaResponsavel">
+     <object class="model.entity.Professor" id="Professor8">
+      <void property="bairro">
+       <string>EnglishTea</string>
+      </void>
+      <void property="cargo">
+       <string>Decano</string>
+      </void>
+      <void property="cep">
+       <string>06987648</string>
+      </void>
+      <void property="cidade">
+       <string>Londres</string>
+      </void>
+      <void property="classeDocente">
+       <string>Classe3</string>
+      </void>
+      <void property="complemento">
+       <string>42</string>
+      </void>
+      <void property="cpf">
+       <string>99900011122</string>
+      </void>
+      <void property="dataNascimeto">
+       <string>10/12/1815</string>
+      </void>
+      <void property="deficiencia">
+       <string>Nenhuma</string>
+      </void>
+      <void property="email">
+       <string>ada.lovelace@uniriotec.br</string>
+      </void>
+      <void property="estado">
+       <string>Byron</string>
+      </void>
+      <void property="estadoCivil">
+       <string>Casado</string>
+      </void>
+      <void property="grade">
+       <void method="add">
+        <string>Administração Financeira</string>
+       </void>
+       <void method="add">
+        <string>Estatística</string>
+       </void>
+       <void method="add">
+        <string>Gerência de Proj. de Informat.</string>
+       </void>
+       <void method="add">
+        <string>Probabilidade</string>
+       </void>
+      </void>
+      <void property="logradouro">
+       <string>Matemática</string>
+      </void>
+      <void property="nacionalidade">
+       <string>Inglesa</string>
+      </void>
+      <void property="nome">
+       <string>Ada Augusta King</string>
+      </void>
+      <void property="nomeDaMae">
+       <string>Anne Isabella</string>
+      </void>
+      <void property="nomeDoPai">
+       <string>Lord Byron</string>
+      </void>
+      <void property="numero">
+       <string>42</string>
+      </void>
+      <void property="pais">
+       <string>Inglaterra</string>
+      </void>
+      <void property="regimeTrabalho">
+       <string>Regime3</string>
+      </void>
+      <void property="senha">
+       <string>123</string>
+      </void>
+      <void property="sexo">
+       <string>Feminino</string>
+      </void>
+      <void property="siape">
+       <string>123456</string>
+      </void>
+      <void property="telefoneCelular">
+       <string>5647483</string>
+      </void>
+      <void property="telefoneResidencial">
+       <string>08000099</string>
+      </void>
+      <void property="tipoDeEndereco">
+       <string>Residencial</string>
+      </void>
+      <void property="tipoLogradouro">
+       <string>Rua</string>
+      </void>
+      <void property="titulacao">
+       <string>Doutora</string>
+      </void>
+     </object>
+    </void>
+    <void property="dataCriacao">
+     <string>2017-07-10</string>
+    </void>
+    <void property="descricao">
+     <string>Olá! Quero emitir meus histórico.</string>
+    </void>
+    <void property="disciplina">
+     <string>Administração Financeira</string>
+    </void>
+    <void property="numeroProtocolo">
+     <string>1499716365531</string>
+    </void>
+    <void property="resposta">
+     <string></string>
+    </void>
+    <void property="status">
+     <string>DESIGNADO</string>
+    </void>
+    <void property="tipoRequerimento">
+     <string>Emissão de histórico escolar</string>
     </void>
    </object>
   </void>
